@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.rjComboBox1 = new WinFormsApp1.Templates.RjComboBox();
+            this.rjComboBox1 = new Sistema_de_sanciones.Templates.RjComboBox();
             this.textBox2 = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox4 = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox7 = new Sistema_de_sanciones.Templates.TextBox();
@@ -400,7 +400,7 @@
         private Label label2;
         private Sistema_de_sanciones.Templates.TextBox textBox2;
         private Sistema_de_sanciones.Templates.TextBox textBox1;
-        private WinFormsApp1.Templates.RjComboBox rjComboBox1;
+        private Sistema_de_sanciones.Templates.RjComboBox rjComboBox1;
         private Sistema_de_sanciones.Templates.TextBox textBox4;
         private Sistema_de_sanciones.Templates.TextBox textBox7;
         private Sistema_de_sanciones.Templates.TextBox textBox6;
