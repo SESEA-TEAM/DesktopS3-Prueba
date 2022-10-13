@@ -139,7 +139,7 @@
             this.buttonUsuarios.Name = "buttonUsuarios";
             this.buttonUsuarios.Size = new System.Drawing.Size(160, 35);
             this.buttonUsuarios.TabIndex = 2;
-            this.buttonUsuarios.Text = "Usuarios1";
+            this.buttonUsuarios.Text = "Usuarios3";
             this.buttonUsuarios.UseVisualStyleBackColor = false;
             this.buttonUsuarios.Click += new System.EventHandler(this.buttonUsuarios_Click);
             // 
