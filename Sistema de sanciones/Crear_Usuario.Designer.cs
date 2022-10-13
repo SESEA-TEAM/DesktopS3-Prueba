@@ -33,10 +33,10 @@
             this.textBox2 = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox3 = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox4 = new Sistema_de_sanciones.Templates.TextBox();
-            this.textBox5 = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox6 = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox7 = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox8 = new Sistema_de_sanciones.Templates.TextBox();
+            this.textBox5 = new Sistema_de_sanciones.Templates.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -118,23 +118,6 @@
             this.textBox4.Texts = "Cargo *";
             this.textBox4.UnderlinedStyle = true;
             // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox5.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox5.BorderSize = 2;
-            this.textBox5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.Location = new System.Drawing.Point(619, 187);
-            this.textBox5.Multiline = false;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox5.PasswordChar = false;
-            this.textBox5.Size = new System.Drawing.Size(169, 31);
-            this.textBox5.TabIndex = 10;
-            this.textBox5.Texts = "Nombre Usuario *";
-            this.textBox5.UnderlinedStyle = true;
-            // 
             // textBox6
             // 
             this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -186,6 +169,23 @@
             this.textBox8.Texts = "Correo eléctronico *";
             this.textBox8.UnderlinedStyle = true;
             // 
+            // textBox5
+            // 
+            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.textBox5.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textBox5.BorderSize = 2;
+            this.textBox5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox5.Location = new System.Drawing.Point(619, 187);
+            this.textBox5.Multiline = false;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Padding = new System.Windows.Forms.Padding(7);
+            this.textBox5.PasswordChar = false;
+            this.textBox5.Size = new System.Drawing.Size(169, 31);
+            this.textBox5.TabIndex = 11;
+            this.textBox5.Texts = "Nombre Usuario *";
+            this.textBox5.UnderlinedStyle = true;
+            // 
             // Crear_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -216,9 +216,9 @@
         private Templates.TextBox textBox2;
         private Templates.TextBox textBox3;
         private Templates.TextBox textBox4;
-        private Templates.TextBox textBox5;
         private Templates.TextBox textBox6;
         private Templates.TextBox textBox7;
         private Templates.TextBox textBox8;
+        private Templates.TextBox textBox5;
     }
 }
