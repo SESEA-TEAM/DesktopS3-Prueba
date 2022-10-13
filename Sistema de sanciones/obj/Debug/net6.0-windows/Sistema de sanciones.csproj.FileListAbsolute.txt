@@ -40,3 +40,4 @@ C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Templates.RjComboBox.resources
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Crear_Usuario.resources
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listar_Usuarios.resources
+C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Form2.resources
