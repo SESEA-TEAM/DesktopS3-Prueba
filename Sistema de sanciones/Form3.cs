@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema_de_sanciones
 {
-    public partial class Crear_Usuario : Form
+    public partial class Form3 : Form
     {
-        public Crear_Usuario()
+        public Form3()
         {
             InitializeComponent();
         }
