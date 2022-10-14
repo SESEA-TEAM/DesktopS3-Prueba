@@ -16,5 +16,25 @@ namespace Sistema_de_sanciones
         {
             InitializeComponent();
         }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Texts == "Proveedor*")
+            {
+                textBox1.Texts = "";
+                textBox1.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Texts == "")
+            {
+                textBox1.Texts = "Proveedor*";
+                textBox1.ForeColor = Color.Black;
+
+            }
+        }
     }
 }
