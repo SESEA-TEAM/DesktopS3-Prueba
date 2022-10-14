@@ -11,6 +11,7 @@ namespace Sistema_de_sanciones
         private void customDesing()
         {
             panelMenuUser.Visible = false;
+            panelMenuProv.Visible = false;
 
         }
 
@@ -18,6 +19,8 @@ namespace Sistema_de_sanciones
         {
             if(panelMenuUser.Visible ==true)
                 panelMenuUser.Visible=false;
+            if(panelMenuProv.Visible ==true)
+                panelMenuProv.Visible=false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -57,7 +60,22 @@ namespace Sistema_de_sanciones
 
         private void buttonCrearUsuario_Click(object sender, EventArgs e)
         {
-            loadform(new Crear_Usuario());
+            
+        }
+
+        private void buttonProveedores_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelMenuProv);
+        }
+
+        private void buttonCrearProveedor_Click(object sender, EventArgs e)
+        {
+            loadform(new Crear_Proveedores());
+        }
+
+        private void buttonListarProveedor_Click(object sender, EventArgs e)
+        {
+            loadform(new Listar_Proveedores());
         }
     }
 }
