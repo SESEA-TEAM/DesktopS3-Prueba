@@ -41,3 +41,4 @@ C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listar_Usuarios.resources
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Crear_Proveedores.resources
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listar_Proveedores.resources
+C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Crear_Usuarios.resources
