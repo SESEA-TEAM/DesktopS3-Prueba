@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.buttonBitacora = new System.Windows.Forms.Button();
+            this.panelMenuProv = new System.Windows.Forms.Panel();
+            this.buttonListarProveedor = new System.Windows.Forms.Button();
+            this.buttonCrearProveedor = new System.Windows.Forms.Button();
             this.buttonProveedores = new System.Windows.Forms.Button();
             this.panelMenuUser = new System.Windows.Forms.Panel();
             this.buttonListarUsuarios = new System.Windows.Forms.Button();
@@ -38,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
+            this.panelMenuProv.SuspendLayout();
             this.panelMenuUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +48,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.White;
-            this.panelMenu.Controls.Add(this.buttonBitacora);
+            this.panelMenu.Controls.Add(this.panelMenuProv);
             this.panelMenu.Controls.Add(this.buttonProveedores);
             this.panelMenu.Controls.Add(this.panelMenuUser);
             this.panelMenu.Controls.Add(this.buttonUsuarios);
@@ -56,19 +59,45 @@
             this.panelMenu.Size = new System.Drawing.Size(160, 575);
             this.panelMenu.TabIndex = 0;
             // 
-            // buttonBitacora
+            // panelMenuProv
             // 
-            this.buttonBitacora.BackColor = System.Drawing.Color.White;
-            this.buttonBitacora.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonBitacora.FlatAppearance.BorderSize = 0;
-            this.buttonBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBitacora.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonBitacora.Location = new System.Drawing.Point(0, 231);
-            this.buttonBitacora.Name = "buttonBitacora";
-            this.buttonBitacora.Size = new System.Drawing.Size(160, 35);
-            this.buttonBitacora.TabIndex = 5;
-            this.buttonBitacora.Text = "Bitacora";
-            this.buttonBitacora.UseVisualStyleBackColor = false;
+            this.panelMenuProv.Controls.Add(this.buttonListarProveedor);
+            this.panelMenuProv.Controls.Add(this.buttonCrearProveedor);
+            this.panelMenuProv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMenuProv.Location = new System.Drawing.Point(0, 231);
+            this.panelMenuProv.Name = "panelMenuProv";
+            this.panelMenuProv.Size = new System.Drawing.Size(160, 77);
+            this.panelMenuProv.TabIndex = 5;
+            // 
+            // buttonListarProveedor
+            // 
+            this.buttonListarProveedor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonListarProveedor.FlatAppearance.BorderSize = 0;
+            this.buttonListarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListarProveedor.Image = global::Sistema_de_sanciones.Properties.Resources.flechaAzul;
+            this.buttonListarProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonListarProveedor.Location = new System.Drawing.Point(0, 35);
+            this.buttonListarProveedor.Name = "buttonListarProveedor";
+            this.buttonListarProveedor.Size = new System.Drawing.Size(160, 35);
+            this.buttonListarProveedor.TabIndex = 7;
+            this.buttonListarProveedor.Text = "Listar Proveedor";
+            this.buttonListarProveedor.UseVisualStyleBackColor = true;
+            this.buttonListarProveedor.Click += new System.EventHandler(this.buttonListarProveedor_Click);
+            // 
+            // buttonCrearProveedor
+            // 
+            this.buttonCrearProveedor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCrearProveedor.FlatAppearance.BorderSize = 0;
+            this.buttonCrearProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCrearProveedor.Image = global::Sistema_de_sanciones.Properties.Resources.flechaAzul;
+            this.buttonCrearProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCrearProveedor.Location = new System.Drawing.Point(0, 0);
+            this.buttonCrearProveedor.Name = "buttonCrearProveedor";
+            this.buttonCrearProveedor.Size = new System.Drawing.Size(160, 35);
+            this.buttonCrearProveedor.TabIndex = 6;
+            this.buttonCrearProveedor.Text = "Crear Proveedor";
+            this.buttonCrearProveedor.UseVisualStyleBackColor = true;
+            this.buttonCrearProveedor.Click += new System.EventHandler(this.buttonCrearProveedor_Click);
             // 
             // buttonProveedores
             // 
@@ -83,6 +112,7 @@
             this.buttonProveedores.TabIndex = 4;
             this.buttonProveedores.Text = "Proveedores";
             this.buttonProveedores.UseVisualStyleBackColor = false;
+            this.buttonProveedores.Click += new System.EventHandler(this.buttonProveedores_Click);
             // 
             // panelMenuUser
             // 
@@ -174,6 +204,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.panelMenu.ResumeLayout(false);
+            this.panelMenuProv.ResumeLayout(false);
             this.panelMenuUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -183,7 +214,6 @@
         #endregion
 
         private Panel panelMenu;
-        private Button buttonBitacora;
         private Button buttonProveedores;
         private Panel panelMenuUser;
         private Button buttonListarUsuarios;
@@ -191,5 +221,8 @@
         private Button buttonUsuarios;
         private PictureBox pictureBox1;
         private Panel mainPanel;
+        private Panel panelMenuProv;
+        private Button buttonListarProveedor;
+        private Button buttonCrearProveedor;
     }
 }
