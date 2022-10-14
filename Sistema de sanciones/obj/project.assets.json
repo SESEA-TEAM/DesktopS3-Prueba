@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Invitado2022\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
+      "projectUniqueName": "C:\\Users\\Invitado2022\\Documents\\GitHub\\Nueva carpeta\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
       "projectName": "Sistema de sanciones",
-      "projectPath": "C:\\Users\\Invitado2022\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
+      "projectPath": "C:\\Users\\Invitado2022\\Documents\\GitHub\\Nueva carpeta\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
       "packagesPath": "C:\\Users\\Invitado2022\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Invitado2022\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\obj\\",
+      "outputPath": "C:\\Users\\Invitado2022\\Documents\\GitHub\\Nueva carpeta\\DesktopS3-Prueba\\Sistema de sanciones\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Invitado2022\\AppData\\Roaming\\NuGet\\NuGet.Config",
