@@ -60,7 +60,7 @@ namespace Sistema_de_sanciones
 
         private void buttonCrearUsuario_Click(object sender, EventArgs e)
         {
-            
+            loadform(new Crear_Usuarios());
         }
 
         private void buttonProveedores_Click(object sender, EventArgs e)
