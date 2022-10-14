@@ -4,9 +4,6 @@
     <Compile Update="Crear_Proveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Crear_Usuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
