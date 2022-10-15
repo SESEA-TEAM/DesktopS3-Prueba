@@ -7,7 +7,13 @@
     <Compile Update="Crear_Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Editar_Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Listado_SPS.cs">
@@ -17,6 +23,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Listar_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Templates\ComboBox.cs">

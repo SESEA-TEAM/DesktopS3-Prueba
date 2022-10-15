@@ -31,9 +31,9 @@
             this.textBox1 = new Sistema_de_sanciones.Templates.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonEntrar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rjComboBox1 = new Sistema_de_sanciones.Templates.RjComboBox();
+            this.rjToggleButton1 = new Sistema_de_sanciones.Templates.RJToggleButton();
             this.SuspendLayout();
             // 
             // textBox1
@@ -52,6 +52,8 @@
             this.textBox1.TabIndex = 14;
             this.textBox1.Texts = "Proveedor*";
             this.textBox1.UnderlinedStyle = true;
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // button1
             // 
@@ -61,7 +63,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(609, 183);
+            this.button1.Location = new System.Drawing.Point(610, 242);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 35);
             this.button1.TabIndex = 19;
@@ -76,22 +78,12 @@
             this.buttonEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEntrar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonEntrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonEntrar.Location = new System.Drawing.Point(463, 183);
+            this.buttonEntrar.Location = new System.Drawing.Point(464, 242);
             this.buttonEntrar.Name = "buttonEntrar";
             this.buttonEntrar.Size = new System.Drawing.Size(126, 35);
             this.buttonEntrar.TabIndex = 18;
             this.buttonEntrar.Text = "CANCELAR";
             this.buttonEntrar.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(463, 97);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(261, 23);
-            this.comboBox1.TabIndex = 17;
-            this.comboBox1.Text = "Selecciona los sistemas aplicables*";
             // 
             // label1
             // 
@@ -100,20 +92,42 @@
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(355, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 16);
+            this.label1.Size = new System.Drawing.Size(114, 16);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Crear Proveedor";
+            this.label1.Text = "Editar Proveedor";
             // 
-            // radioButton1
+            // rjComboBox1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(117, 183);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(62, 19);
-            this.radioButton1.TabIndex = 21;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Estatus";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rjComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.rjComboBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.rjComboBox1.BorderSize = 1;
+            this.rjComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.rjComboBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rjComboBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.rjComboBox1.IconColor = System.Drawing.SystemColors.ControlDark;
+            this.rjComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.rjComboBox1.ListTextColor = System.Drawing.Color.DimGray;
+            this.rjComboBox1.Location = new System.Drawing.Point(464, 90);
+            this.rjComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
+            this.rjComboBox1.Name = "rjComboBox1";
+            this.rjComboBox1.Padding = new System.Windows.Forms.Padding(1);
+            this.rjComboBox1.Size = new System.Drawing.Size(260, 30);
+            this.rjComboBox1.TabIndex = 22;
+            this.rjComboBox1.Texts = "Selecciona los sistemas aplicables*";
+            // 
+            // rjToggleButton1
+            // 
+            this.rjToggleButton1.AutoSize = true;
+            this.rjToggleButton1.Location = new System.Drawing.Point(117, 183);
+            this.rjToggleButton1.MinimumSize = new System.Drawing.Size(45, 22);
+            this.rjToggleButton1.Name = "rjToggleButton1";
+            this.rjToggleButton1.OffBackColor = System.Drawing.Color.Gray;
+            this.rjToggleButton1.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.rjToggleButton1.OnBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjToggleButton1.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.rjToggleButton1.Size = new System.Drawing.Size(45, 22);
+            this.rjToggleButton1.TabIndex = 23;
+            this.rjToggleButton1.UseVisualStyleBackColor = true;
             // 
             // Editar_Proveedor
             // 
@@ -122,11 +136,11 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rjToggleButton1);
+            this.Controls.Add(this.rjComboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonEntrar);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Editar_Proveedor";
@@ -141,8 +155,8 @@
         private Templates.TextBox textBox1;
         private Button button1;
         private Button buttonEntrar;
-        private ComboBox comboBox1;
         private Label label1;
-        private RadioButton radioButton1;
+        private Templates.RjComboBox rjComboBox1;
+        private Templates.RJToggleButton rjToggleButton1;
     }
 }
