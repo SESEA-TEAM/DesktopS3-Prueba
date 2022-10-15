@@ -31,6 +31,9 @@
     <Compile Update="Templates\ComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Templates\RJToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Templates\TextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>

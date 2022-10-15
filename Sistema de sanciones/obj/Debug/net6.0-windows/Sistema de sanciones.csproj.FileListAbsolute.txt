@@ -77,7 +77,6 @@ C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Editar_Proveedor.resources
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Form1.resources
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Home.resources
-C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\WinFormsApp1.Form1.resources
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listar_Proveedores.resources
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listar_Usuarios.resources
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Login.resources
@@ -94,3 +93,4 @@ C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.pdb
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.genruntimeconfig.cache
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\ref\Sistema de sanciones.dll
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listado_SPS.resources

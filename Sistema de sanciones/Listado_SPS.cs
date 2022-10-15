@@ -1,8 +1,8 @@
-namespace WinFormsApp1
+namespace Sistema_de_sanciones
 {
-    public partial class Form1 : Form
+    public partial class Listado_SPS : Form
     {
-        public Form1()
+        public Listado_SPS()
         {
             InitializeComponent();
         }
