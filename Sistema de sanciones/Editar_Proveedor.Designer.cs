@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.rjComboBox1 = new Sistema_de_sanciones.Templates.RjComboBox();
             this.rjToggleButton1 = new Sistema_de_sanciones.Templates.RJToggleButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -123,11 +125,33 @@
             this.rjToggleButton1.Name = "rjToggleButton1";
             this.rjToggleButton1.OffBackColor = System.Drawing.Color.Gray;
             this.rjToggleButton1.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.rjToggleButton1.OnBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjToggleButton1.OnBackColor = System.Drawing.Color.Black;
             this.rjToggleButton1.OnToggleColor = System.Drawing.Color.WhiteSmoke;
             this.rjToggleButton1.Size = new System.Drawing.Size(45, 22);
             this.rjToggleButton1.TabIndex = 23;
             this.rjToggleButton1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(117, 155);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Estatus*";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(168, 189);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 16);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Vigente";
             // 
             // Editar_Proveedor
             // 
@@ -136,6 +160,8 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.rjToggleButton1);
             this.Controls.Add(this.rjComboBox1);
             this.Controls.Add(this.label1);
@@ -158,5 +184,7 @@
         private Label label1;
         private Templates.RjComboBox rjComboBox1;
         private Templates.RJToggleButton rjToggleButton1;
+        private Label label2;
+        private Label label3;
     }
 }
