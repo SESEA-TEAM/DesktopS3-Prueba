@@ -36,5 +36,25 @@ namespace Sistema_de_sanciones
         {
 
         }
+
+        private void textBox17_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox32_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox33_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
