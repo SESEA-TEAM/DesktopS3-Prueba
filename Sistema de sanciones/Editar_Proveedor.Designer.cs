@@ -32,10 +32,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.buttonEntrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.rjComboBox1 = new Sistema_de_sanciones.Templates.RjComboBox();
             this.rjToggleButton1 = new Sistema_de_sanciones.Templates.RJToggleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -99,25 +99,6 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Editar Proveedor";
             // 
-            // rjComboBox1
-            // 
-            this.rjComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rjComboBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.rjComboBox1.BorderSize = 1;
-            this.rjComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rjComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.IconColor = System.Drawing.SystemColors.ControlDark;
-            this.rjComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.rjComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.Location = new System.Drawing.Point(651, 108);
-            this.rjComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.rjComboBox1.Name = "rjComboBox1";
-            this.rjComboBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.rjComboBox1.Size = new System.Drawing.Size(297, 30);
-            this.rjComboBox1.TabIndex = 22;
-            this.rjComboBox1.Texts = "Selecciona los sistemas aplicables*";
-            // 
             // rjToggleButton1
             // 
             this.rjToggleButton1.AutoSize = true;
@@ -154,6 +135,18 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "Vigente";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox1.ForeColor = System.Drawing.Color.Gray;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(656, 114);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(292, 24);
+            this.comboBox1.TabIndex = 42;
+            this.comboBox1.Text = "Selecciona los sistemas aplicables*";
+            // 
             // Editar_Proveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -161,10 +154,10 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(1174, 801);
             this.ControlBox = false;
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rjToggleButton1);
-            this.Controls.Add(this.rjComboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonEntrar);
@@ -183,9 +176,9 @@
         private Button button1;
         private Button buttonEntrar;
         private Label label1;
-        private Templates.RjComboBox rjComboBox1;
         private Templates.RJToggleButton rjToggleButton1;
         private Label label2;
         private Label label3;
+        private ComboBox comboBox1;
     }
 }

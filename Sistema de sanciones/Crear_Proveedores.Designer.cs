@@ -32,7 +32,7 @@
             this.textBox1 = new Sistema_de_sanciones.Templates.TextBox();
             this.buttonEntrar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.rjComboBox1 = new Sistema_de_sanciones.Templates.RjComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -96,31 +96,27 @@
             this.button1.Text = "GUARDAR";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // rjComboBox1
+            // comboBox1
             // 
-            this.rjComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rjComboBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.rjComboBox1.BorderSize = 1;
-            this.rjComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rjComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.IconColor = System.Drawing.SystemColors.ControlDark;
-            this.rjComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.rjComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.Location = new System.Drawing.Point(650, 106);
-            this.rjComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.rjComboBox1.Name = "rjComboBox1";
-            this.rjComboBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.rjComboBox1.Size = new System.Drawing.Size(261, 30);
-            this.rjComboBox1.TabIndex = 17;
-            this.rjComboBox1.Texts = "Selecciona los sistemas aplicables*";
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox1.ForeColor = System.Drawing.Color.Gray;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Sistema de Servidores Públicos Sancionados",
+            "Sistema de Servidores Particulares Sancionados"});
+            this.comboBox1.Location = new System.Drawing.Point(619, 113);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(292, 24);
+            this.comboBox1.TabIndex = 43;
+            this.comboBox1.Text = "Selecciona los sistemas aplicables*";
             // 
             // Crear_Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 801);
-            this.Controls.Add(this.rjComboBox1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonEntrar);
             this.Controls.Add(this.textBox1);
@@ -139,6 +135,6 @@
         private Templates.TextBox textBox1;
         private Button buttonEntrar;
         private Button button1;
-        private Templates.RjComboBox rjComboBox1;
+        private ComboBox comboBox1;
     }
 }
