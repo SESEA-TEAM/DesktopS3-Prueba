@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Invitado2022\\source\\repos\\DesktopS3-main\\Sistema de sanciones\\Sistema de sanciones.csproj": {}
+    "C:\\Users\\Invitado2022\\Documents\\GitHub\\Nueva carpeta\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Invitado2022\\source\\repos\\DesktopS3-main\\Sistema de sanciones\\Sistema de sanciones.csproj": {
+    "C:\\Users\\Invitado2022\\Documents\\GitHub\\Nueva carpeta\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Invitado2022\\source\\repos\\DesktopS3-main\\Sistema de sanciones\\Sistema de sanciones.csproj",
+        "projectUniqueName": "C:\\Users\\Invitado2022\\Documents\\GitHub\\Nueva carpeta\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
         "projectName": "Sistema de sanciones",
-        "projectPath": "C:\\Users\\Invitado2022\\source\\repos\\DesktopS3-main\\Sistema de sanciones\\Sistema de sanciones.csproj",
+        "projectPath": "C:\\Users\\Invitado2022\\Documents\\GitHub\\Nueva carpeta\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
         "packagesPath": "C:\\Users\\Invitado2022\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Invitado2022\\source\\repos\\DesktopS3-main\\Sistema de sanciones\\obj\\",
+        "outputPath": "C:\\Users\\Invitado2022\\Documents\\GitHub\\Nueva carpeta\\DesktopS3-Prueba\\Sistema de sanciones\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Invitado2022\\AppData\\Roaming\\NuGet\\NuGet.Config",
