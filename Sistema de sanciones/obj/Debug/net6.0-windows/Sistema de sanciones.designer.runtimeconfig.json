@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\cacam\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\cacam\\.nuget\\packages"
+      "C:\\Users\\radge\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\radge\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
