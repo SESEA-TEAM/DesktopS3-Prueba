@@ -4,6 +4,9 @@
     <Compile Update="CapturaPS.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CapturaSPS.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Crear_Proveedores.cs">
       <SubType>Form</SubType>
     </Compile>
