@@ -74,6 +74,7 @@
             this.buttonListarProveedor.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonListarProveedor.FlatAppearance.BorderSize = 0;
             this.buttonListarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListarProveedor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonListarProveedor.Image = global::Sistema_de_sanciones.Properties.Resources.flechaAzul;
             this.buttonListarProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonListarProveedor.Location = new System.Drawing.Point(0, 35);
@@ -89,6 +90,7 @@
             this.buttonCrearProveedor.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonCrearProveedor.FlatAppearance.BorderSize = 0;
             this.buttonCrearProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCrearProveedor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCrearProveedor.Image = global::Sistema_de_sanciones.Properties.Resources.flechaAzul;
             this.buttonCrearProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCrearProveedor.Location = new System.Drawing.Point(0, 0);
@@ -105,7 +107,7 @@
             this.buttonProveedores.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonProveedores.FlatAppearance.BorderSize = 0;
             this.buttonProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProveedores.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonProveedores.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonProveedores.Location = new System.Drawing.Point(0, 196);
             this.buttonProveedores.Name = "buttonProveedores";
             this.buttonProveedores.Size = new System.Drawing.Size(160, 35);
@@ -130,7 +132,7 @@
             this.buttonListarUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonListarUsuarios.FlatAppearance.BorderSize = 0;
             this.buttonListarUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonListarUsuarios.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonListarUsuarios.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonListarUsuarios.Image = global::Sistema_de_sanciones.Properties.Resources.flechaAzul;
             this.buttonListarUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonListarUsuarios.Location = new System.Drawing.Point(0, 35);
@@ -147,7 +149,7 @@
             this.buttonCrearUsuario.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonCrearUsuario.FlatAppearance.BorderSize = 0;
             this.buttonCrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCrearUsuario.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonCrearUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCrearUsuario.Image = global::Sistema_de_sanciones.Properties.Resources.flechaAzul;
             this.buttonCrearUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCrearUsuario.Location = new System.Drawing.Point(0, 0);
@@ -164,7 +166,7 @@
             this.buttonUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonUsuarios.FlatAppearance.BorderSize = 0;
             this.buttonUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUsuarios.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonUsuarios.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonUsuarios.Location = new System.Drawing.Point(0, 83);
             this.buttonUsuarios.Name = "buttonUsuarios";
             this.buttonUsuarios.Size = new System.Drawing.Size(160, 35);
