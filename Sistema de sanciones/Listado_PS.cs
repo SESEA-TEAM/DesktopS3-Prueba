@@ -16,5 +16,10 @@ namespace Sistema_de_sanciones
         {
             InitializeComponent();
         }
+
+        private void Listado_PS_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
