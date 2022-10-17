@@ -61,6 +61,11 @@ namespace Sistema_de_sanciones
             }
         }
 
-       
+        private void buttonEntrar_Click(object sender, EventArgs e)
+        {
+            Form1 inicio = new Form1();
+            inicio.Show();
+            this.Hide();
+        }
     }
 }

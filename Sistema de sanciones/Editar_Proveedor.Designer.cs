@@ -45,12 +45,13 @@
             this.textBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox1.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox1.BorderSize = 2;
-            this.textBox1.Location = new System.Drawing.Point(117, 90);
+            this.textBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(117, 107);
             this.textBox1.Multiline = false;
             this.textBox1.Name = "textBox1";
             this.textBox1.Padding = new System.Windows.Forms.Padding(7);
             this.textBox1.PasswordChar = false;
-            this.textBox1.Size = new System.Drawing.Size(266, 30);
+            this.textBox1.Size = new System.Drawing.Size(266, 31);
             this.textBox1.TabIndex = 14;
             this.textBox1.Texts = "Proveedor*";
             this.textBox1.UnderlinedStyle = true;
@@ -63,9 +64,9 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(610, 242);
+            this.button1.Location = new System.Drawing.Point(833, 283);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 35);
             this.button1.TabIndex = 19;
@@ -78,9 +79,9 @@
             this.buttonEntrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.buttonEntrar.FlatAppearance.BorderSize = 0;
             this.buttonEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEntrar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonEntrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonEntrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonEntrar.Location = new System.Drawing.Point(464, 242);
+            this.buttonEntrar.Location = new System.Drawing.Point(687, 283);
             this.buttonEntrar.Name = "buttonEntrar";
             this.buttonEntrar.Size = new System.Drawing.Size(126, 35);
             this.buttonEntrar.TabIndex = 18;
@@ -91,10 +92,10 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(355, 25);
+            this.label1.Font = new System.Drawing.Font("Arial", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(501, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 16);
+            this.label1.Size = new System.Drawing.Size(158, 21);
             this.label1.TabIndex = 20;
             this.label1.Text = "Editar Proveedor";
             // 
@@ -104,23 +105,23 @@
             this.rjComboBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.rjComboBox1.BorderSize = 1;
             this.rjComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rjComboBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rjComboBox1.ForeColor = System.Drawing.Color.DimGray;
             this.rjComboBox1.IconColor = System.Drawing.SystemColors.ControlDark;
             this.rjComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.rjComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.Location = new System.Drawing.Point(464, 90);
+            this.rjComboBox1.Location = new System.Drawing.Point(651, 108);
             this.rjComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
             this.rjComboBox1.Name = "rjComboBox1";
             this.rjComboBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.rjComboBox1.Size = new System.Drawing.Size(260, 30);
+            this.rjComboBox1.Size = new System.Drawing.Size(297, 30);
             this.rjComboBox1.TabIndex = 22;
             this.rjComboBox1.Texts = "Selecciona los sistemas aplicables*";
             // 
             // rjToggleButton1
             // 
             this.rjToggleButton1.AutoSize = true;
-            this.rjToggleButton1.Location = new System.Drawing.Point(117, 183);
+            this.rjToggleButton1.Location = new System.Drawing.Point(117, 208);
             this.rjToggleButton1.MinimumSize = new System.Drawing.Size(45, 22);
             this.rjToggleButton1.Name = "rjToggleButton1";
             this.rjToggleButton1.OffBackColor = System.Drawing.Color.Gray;
@@ -135,10 +136,10 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(117, 155);
+            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(117, 189);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.Size = new System.Drawing.Size(64, 16);
             this.label2.TabIndex = 24;
             this.label2.Text = "Estatus*";
             // 
@@ -146,10 +147,10 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(168, 189);
+            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(181, 214);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 16);
+            this.label3.Size = new System.Drawing.Size(61, 16);
             this.label3.TabIndex = 25;
             this.label3.Text = "Vigente";
             // 
@@ -158,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1174, 801);
             this.ControlBox = false;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
