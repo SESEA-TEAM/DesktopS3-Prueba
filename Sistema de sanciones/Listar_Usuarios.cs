@@ -16,5 +16,10 @@ namespace Sistema_de_sanciones
         {
             InitializeComponent();
         }
+
+        private void panelTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

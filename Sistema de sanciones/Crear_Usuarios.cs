@@ -168,5 +168,10 @@ namespace Sistema_de_sanciones
                 textUser.ForeColor = Color.Gray;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
