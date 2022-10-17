@@ -56,7 +56,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(160, 575);
+            this.panelMenu.Size = new System.Drawing.Size(160, 801);
             this.panelMenu.TabIndex = 0;
             // 
             // panelMenuProv
@@ -190,14 +190,14 @@
             this.mainPanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mainPanel.Location = new System.Drawing.Point(160, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(880, 575);
+            this.mainPanel.Size = new System.Drawing.Size(1174, 801);
             this.mainPanel.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 575);
+            this.ClientSize = new System.Drawing.Size(1334, 801);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panelMenu);
             this.Name = "Form1";
