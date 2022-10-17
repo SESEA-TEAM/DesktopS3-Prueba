@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelMenuProv = new System.Windows.Forms.Panel();
             this.buttonListarProveedor = new System.Windows.Forms.Button();
             this.buttonCrearProveedor = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.White;
+            this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.panelMenuProv);
             this.panelMenu.Controls.Add(this.buttonProveedores);
             this.panelMenu.Controls.Add(this.panelMenuUser);
@@ -58,6 +60,21 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(160, 801);
             this.panelMenu.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(0, 308);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(160, 35);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Bitácora";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelMenuProv
             // 
@@ -226,5 +243,6 @@
         private Panel panelMenuProv;
         private Button buttonListarProveedor;
         private Button buttonCrearProveedor;
+        private Button button1;
     }
 }

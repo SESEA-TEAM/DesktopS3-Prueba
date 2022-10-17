@@ -77,5 +77,10 @@ namespace Sistema_de_sanciones
         {
             loadform(new Listar_Proveedores());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loadform(new ReporteBitacora());
+        }
     }
 }
