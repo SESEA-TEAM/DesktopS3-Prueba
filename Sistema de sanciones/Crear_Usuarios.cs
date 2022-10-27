@@ -295,10 +295,15 @@ namespace Sistema_de_sanciones
                 MessageBox.Show("Registro Insertado");
                 limpiar();
                 errorProvider1.Clear();
-
             }
             
         }
 
+        private void buttonEntrar_Click(object sender, EventArgs e)
+        {
+            Form1 open = new Form1();
+            this.Hide();
+            this.Close();
+        }
     }
 }

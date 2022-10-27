@@ -278,6 +278,7 @@
             this.buttonEntrar.TabIndex = 20;
             this.buttonEntrar.Text = "CANCELAR";
             this.buttonEntrar.UseVisualStyleBackColor = false;
+            this.buttonEntrar.Click += new System.EventHandler(this.buttonEntrar_Click);
             // 
             // comboSistemas
             // 
