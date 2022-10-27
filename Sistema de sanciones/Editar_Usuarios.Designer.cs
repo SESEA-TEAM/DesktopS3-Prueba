@@ -43,6 +43,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.rjToggleButton1 = new Sistema_de_sanciones.Templates.RJToggleButton();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -286,11 +288,23 @@
             this.rjToggleButton1.TabIndex = 44;
             this.rjToggleButton1.UseVisualStyleBackColor = true;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Image = global::Sistema_de_sanciones.Properties.Resources.cruz;
+            this.btnCerrar.Location = new System.Drawing.Point(1130, 12);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(16, 16);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnCerrar.TabIndex = 47;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // Editar_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 801);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rjToggleButton1);
@@ -309,6 +323,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Editar_Usuarios";
             this.Text = "Editar_Usuarios";
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,5 +345,6 @@
         private Label label3;
         private Label label2;
         private Templates.RJToggleButton rjToggleButton1;
+        private PictureBox btnCerrar;
     }
 }

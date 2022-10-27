@@ -125,7 +125,6 @@ D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CapturaSPS.resources
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CargaMasiva.resources
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CapturaPS.resources
-C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CapturaSPS.resources
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CargaMasiva.resources
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Datos_PS.resources
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Datos_SPS.resources
@@ -152,3 +151,13 @@ C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.ModificarPS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Modificar_SPS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.ReporteBitacora.resources
+C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Captura_SPS.resources
+C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Form2.resources
+C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Modificar_PS.resources
+C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.csproj.CopyComplete

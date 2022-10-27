@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema_de_sanciones.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,18 @@ namespace Sistema_de_sanciones.Templates
 {
     public partial class TextBox : UserControl
     {
+        private Usuarios usuarios = new Usuarios();
+
+        //Default Event
+        public event EventHandler _TextChanged;
+        
+        //TextBox-> TextChanged event
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (_TextChanged != null)
+                _TextChanged.Invoke(sender, e);
+        }
+                //TextBox-> TextChanged event
         private Color borderColor = Color.MediumSlateBlue;
         private int borderSize = 2;
         private bool underlinedStyle = false;
@@ -165,7 +178,18 @@ namespace Sistema_de_sanciones.Templates
             this.Invalidate();
         }
 
+        //TextBox events
+        /// <summary>
+        /// textbox events attached to user control events
+        /// </summary>
 
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.OnKeyPress(e);
+
+        }
+
+        //Generar un metodo que acepte todos los caracteres y posteriormente limitarlo en el KeyPress de Form1
     }
 
 
