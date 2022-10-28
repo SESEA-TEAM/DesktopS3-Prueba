@@ -28,50 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new Sistema_de_sanciones.Templates.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textProveedor = new Sistema_de_sanciones.Templates.TextBox();
+            this.Guardar = new System.Windows.Forms.Button();
             this.buttonEntrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.rjToggleButton1 = new Sistema_de_sanciones.Templates.RJToggleButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboSistema = new System.Windows.Forms.ComboBox();
+            this.comboEstatus = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textProveedor
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox1.BorderSize = 2;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(117, 107);
-            this.textBox1.Multiline = false;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox1.PasswordChar = false;
-            this.textBox1.Size = new System.Drawing.Size(266, 31);
-            this.textBox1.TabIndex = 14;
-            this.textBox1.Texts = "Proveedor*";
-            this.textBox1.UnderlinedStyle = true;
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.textProveedor.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textProveedor.BackColor = System.Drawing.SystemColors.Control;
+            this.textProveedor.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.textProveedor.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textProveedor.BorderSize = 2;
+            this.textProveedor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textProveedor.Location = new System.Drawing.Point(117, 107);
+            this.textProveedor.Multiline = false;
+            this.textProveedor.Name = "textProveedor";
+            this.textProveedor.Padding = new System.Windows.Forms.Padding(7);
+            this.textProveedor.PasswordChar = false;
+            this.textProveedor.Size = new System.Drawing.Size(266, 31);
+            this.textProveedor.TabIndex = 14;
+            this.textProveedor.Texts = "";
+            this.textProveedor.UnderlinedStyle = true;
+            this.textProveedor.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textProveedor.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
-            // button1
+            // Guardar
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(833, 283);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 35);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "GUARDAR";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Guardar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.Guardar.FlatAppearance.BorderSize = 0;
+            this.Guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Guardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Guardar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Guardar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.Guardar.Location = new System.Drawing.Point(833, 283);
+            this.Guardar.Name = "Guardar";
+            this.Guardar.Size = new System.Drawing.Size(115, 35);
+            this.Guardar.TabIndex = 19;
+            this.Guardar.Text = "GUARDAR";
+            this.Guardar.UseVisualStyleBackColor = false;
+            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
             // buttonEntrar
             // 
@@ -99,20 +101,6 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Editar Proveedor";
             // 
-            // rjToggleButton1
-            // 
-            this.rjToggleButton1.AutoSize = true;
-            this.rjToggleButton1.Location = new System.Drawing.Point(117, 208);
-            this.rjToggleButton1.MinimumSize = new System.Drawing.Size(45, 22);
-            this.rjToggleButton1.Name = "rjToggleButton1";
-            this.rjToggleButton1.OffBackColor = System.Drawing.Color.Gray;
-            this.rjToggleButton1.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.rjToggleButton1.OnBackColor = System.Drawing.Color.Black;
-            this.rjToggleButton1.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.rjToggleButton1.Size = new System.Drawing.Size(45, 22);
-            this.rjToggleButton1.TabIndex = 23;
-            this.rjToggleButton1.UseVisualStyleBackColor = true;
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -124,28 +112,45 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Estatus*";
             // 
-            // label3
+            // label4
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(181, 214);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 16);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Vigente";
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(531, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(255, 16);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Selecciona los sistemas aplicables*";
             // 
-            // comboBox1
+            // comboSistema
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.ForeColor = System.Drawing.Color.Gray;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(656, 114);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(292, 24);
-            this.comboBox1.TabIndex = 42;
-            this.comboBox1.Text = "Selecciona los sistemas aplicables*";
+            this.comboSistema.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboSistema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.comboSistema.FormattingEnabled = true;
+            this.comboSistema.Items.AddRange(new object[] {
+            "Sistema de los Servidores Públicos Sancionados",
+            "Sistema de los Particulares Sancionados",
+            "Sistema de los Particulares Sancionados, Sistema de los Particulares Sancionados"});
+            this.comboSistema.Location = new System.Drawing.Point(531, 114);
+            this.comboSistema.Name = "comboSistema";
+            this.comboSistema.Size = new System.Drawing.Size(524, 24);
+            this.comboSistema.TabIndex = 28;
+            this.comboSistema.Text = "Sistemas aplicable*";
+            // 
+            // comboEstatus
+            // 
+            this.comboEstatus.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboEstatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.comboEstatus.FormattingEnabled = true;
+            this.comboEstatus.Items.AddRange(new object[] {
+            "Vigente",
+            "No vigente"});
+            this.comboEstatus.Location = new System.Drawing.Point(117, 214);
+            this.comboEstatus.Name = "comboEstatus";
+            this.comboEstatus.Size = new System.Drawing.Size(172, 24);
+            this.comboEstatus.TabIndex = 29;
+            this.comboEstatus.Text = "Seleccionar Estatus*";
             // 
             // Editar_Proveedor
             // 
@@ -154,14 +159,14 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(1174, 801);
             this.ControlBox = false;
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboEstatus);
+            this.Controls.Add(this.comboSistema);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.rjToggleButton1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Guardar);
             this.Controls.Add(this.buttonEntrar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textProveedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Editar_Proveedor";
             this.Text = "Editar_Proveedor";
@@ -171,14 +176,13 @@
         }
 
         #endregion
-
-        private Templates.TextBox textBox1;
-        private Button button1;
+        private Button Guardar;
         private Button buttonEntrar;
         private Label label1;
-        private Templates.RJToggleButton rjToggleButton1;
-        private Label label2;
-        private Label label3;
-        private ComboBox comboBox1;
+        public Templates.TextBox textProveedor;
+        public Label label2;
+        public Label label4;
+        public ComboBox comboSistema;
+        public ComboBox comboEstatus;
     }
 }

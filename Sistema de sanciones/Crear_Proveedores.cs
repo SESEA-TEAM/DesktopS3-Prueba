@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema_de_sanciones.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace Sistema_de_sanciones
 {
     public partial class Crear_Proveedores : Form
     {
+        Controlador_Proveedor objp = new Controlador_Proveedor();
+        DataSet dsTabla;
         public Crear_Proveedores()
         {
             InitializeComponent();
@@ -19,21 +22,38 @@ namespace Sistema_de_sanciones
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            if (textBox1.Texts == "Proveedor*")
+            if (textProveedor.Texts == "Proveedor*")
             {
-                textBox1.Texts = "";
-                textBox1.ForeColor = Color.Black;
+                textProveedor.Texts = "";
+                textProveedor.ForeColor = Color.Black;
 
             }
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Texts == "")
+            if (textProveedor.Texts == "")
             {
-                textBox1.Texts = "Proveedor*";
-                textBox1.ForeColor = Color.Black;
+                textProveedor.Texts = "Proveedor*";
+                textProveedor.ForeColor = Color.Black;
 
+            }
+        }
+
+      
+
+        private void Guardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                objp.InsertarProveedor(textProveedor.Texts, comboSistema.SelectedItem.ToString()) ;
+                MessageBox.Show("Registro Guardado");
+
+             
+            }
+            catch(Exception ex)
+            {
+                
             }
         }
     }
