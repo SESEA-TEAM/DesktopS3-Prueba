@@ -12,8 +12,8 @@ namespace Sistema_de_sanciones.Controladores
     public class Controlador_Usuario
     {
 
-        private Conexion ConexionBD = new Conexion();
-        private SqlDataReader LeerFilas;
+        private Conexion ConexionBD = new Conexion(); //Mando a llamar a la conexion a la base de datos.
+        private SqlDataReader LeerFilas; //Permite renderizar los datos de la BD.
 
         public DataTable ControladorUsuario()
         {
@@ -28,7 +28,20 @@ namespace Sistema_de_sanciones.Controladores
             return Tabla;
         }
 
-        public void InsertarUsuario(string nombre, string apellidoUno, string apellidoDos, string cargo, string correoElectronico, string telefono, string extension, string usuario, string sistema)
+        public DataTable Seleccionar_Datos_User()
+        {
+            DataTable Tabla = new DataTable();
+            SqlCommand comando = new SqlCommand("seleccionar_datosUser");
+            comando.Connection = ConexionBD.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            LeerFilas = comando.ExecuteReader();
+            Tabla.Load(LeerFilas);
+            LeerFilas.Close();
+            ConexionBD.CerrarConexion();
+            return Tabla;
+        }
+
+        public void InsertarUsuario(string nombre, string apellidoUno, string apellidoDos, string cargo, string correoElectronico, string telefono, string extension, string usuario, string sistema, int proveedorDatos)
         {
 
             SqlCommand comando = new SqlCommand("insertar_usuario");
@@ -43,16 +56,18 @@ namespace Sistema_de_sanciones.Controladores
             comando.Parameters.AddWithValue("@Extension", extension);
             comando.Parameters.AddWithValue("@Usuario", usuario);
             comando.Parameters.AddWithValue("@Sistemas", sistema);
+            comando.Parameters.AddWithValue("@ProveedorDatos", proveedorDatos);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             ConexionBD.CerrarConexion();
         }
 
-        public void EditarUsuario(string nombre, string apellidoUno, string apellidoDos, string cargo, string correoElectronico, string telefono, string extension, string usuario, string sistema, int estatus)
+        public void EditarUsuario(int id,string nombre, string apellidoUno, string apellidoDos, string cargo, string correoElectronico, string telefono, string extension, string usuario, string sistema,int proveedorDatos, int estatus)
         {
             SqlCommand comando = new SqlCommand("Editar_proveedor");
             comando.Connection = ConexionBD.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Id", id);
             comando.Parameters.AddWithValue("@Nombre", nombre);
             comando.Parameters.AddWithValue("@ApellidoUno", apellidoUno);
             comando.Parameters.AddWithValue("@ApellidoDos", apellidoDos);
@@ -62,6 +77,7 @@ namespace Sistema_de_sanciones.Controladores
             comando.Parameters.AddWithValue("@Extension", extension);
             comando.Parameters.AddWithValue("@Usuario", usuario);
             comando.Parameters.AddWithValue("@Sistemas", sistema);
+            comando.Parameters.AddWithValue("@ProveedorDatos", proveedorDatos);
             comando.Parameters.AddWithValue("@Estatus", estatus);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();

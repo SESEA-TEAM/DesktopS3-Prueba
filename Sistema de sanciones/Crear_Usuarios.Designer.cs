@@ -240,8 +240,6 @@
             this.comboProveedor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboProveedor.ForeColor = System.Drawing.Color.Gray;
             this.comboProveedor.FormattingEnabled = true;
-            this.comboProveedor.Items.AddRange(new object[] {
-            "SECRETARIA EJECUTIVA DEL SISTEMA ESTATAL ANTICORRUPCION"});
             this.comboProveedor.Location = new System.Drawing.Point(184, 307);
             this.comboProveedor.Name = "comboProveedor";
             this.comboProveedor.Size = new System.Drawing.Size(173, 24);
@@ -294,7 +292,7 @@
             this.comboSistemas.Name = "comboSistemas";
             this.comboSistemas.Size = new System.Drawing.Size(231, 24);
             this.comboSistemas.TabIndex = 22;
-            this.comboSistemas.Text = "Selecciona los sistemas aplicables";
+            this.comboSistemas.Text = "Selecciona los sistemas aplicables *";
             // 
             // errorProvider1
             // 

@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonEntrar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboProveedor = new System.Windows.Forms.ComboBox();
             this.textUser = new Sistema_de_sanciones.Templates.TextBox();
             this.textExtension = new Sistema_de_sanciones.Templates.TextBox();
             this.textTelefono = new Sistema_de_sanciones.Templates.TextBox();
@@ -44,6 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.rjToggleButton1 = new Sistema_de_sanciones.Templates.RJToggleButton();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.comboSistemas = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +73,7 @@
             this.button3.TabIndex = 43;
             this.button3.Text = "GUARDAR";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // buttonEntrar
             // 
@@ -88,17 +90,17 @@
             this.buttonEntrar.Text = "CANCELAR";
             this.buttonEntrar.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // comboProveedor
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.ForeColor = System.Drawing.Color.Gray;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(393, 307);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(173, 24);
-            this.comboBox1.TabIndex = 41;
-            this.comboBox1.Text = "  Proveedor de Datos *";
+            this.comboProveedor.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboProveedor.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboProveedor.ForeColor = System.Drawing.Color.Gray;
+            this.comboProveedor.FormattingEnabled = true;
+            this.comboProveedor.Location = new System.Drawing.Point(393, 307);
+            this.comboProveedor.Name = "comboProveedor";
+            this.comboProveedor.Size = new System.Drawing.Size(173, 24);
+            this.comboProveedor.TabIndex = 41;
+            this.comboProveedor.Text = "  Proveedor de Datos *";
             // 
             // textUser
             // 
@@ -299,18 +301,27 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // comboSistemas
+            // 
+            this.comboSistemas.FormattingEnabled = true;
+            this.comboSistemas.Location = new System.Drawing.Point(598, 308);
+            this.comboSistemas.Name = "comboSistemas";
+            this.comboSistemas.Size = new System.Drawing.Size(173, 23);
+            this.comboSistemas.TabIndex = 48;
+            // 
             // Editar_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 801);
+            this.Controls.Add(this.comboSistemas);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rjToggleButton1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.buttonEntrar);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboProveedor);
             this.Controls.Add(this.textUser);
             this.Controls.Add(this.textExtension);
             this.Controls.Add(this.textTelefono);
@@ -333,18 +344,19 @@
         private Label label1;
         private Button button3;
         private Button buttonEntrar;
-        private ComboBox comboBox1;
-        private Templates.TextBox textUser;
-        private Templates.TextBox textExtension;
-        private Templates.TextBox textTelefono;
-        private Templates.TextBox textCorreo;
-        private Templates.TextBox textCargo;
-        private Templates.TextBox textSApellido;
-        private Templates.TextBox textPApellido;
-        private Templates.TextBox txtNombres;
         private Label label3;
         private Label label2;
-        private Templates.RJToggleButton rjToggleButton1;
         private PictureBox btnCerrar;
+        public ComboBox comboProveedor;
+        public Templates.TextBox textUser;
+        public Templates.TextBox textExtension;
+        public Templates.TextBox textTelefono;
+        public Templates.TextBox textCorreo;
+        public Templates.TextBox textCargo;
+        public Templates.TextBox textSApellido;
+        public Templates.TextBox textPApellido;
+        public Templates.TextBox txtNombres;
+        public Templates.RJToggleButton rjToggleButton1;
+        public ComboBox comboSistemas;
     }
 }

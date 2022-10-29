@@ -1,8 +1,10 @@
-﻿using Sistema_de_sanciones.Controladores;
+﻿using Sistema_de_sanciones.ConexionBD;
+using Sistema_de_sanciones.Controladores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,8 +16,13 @@ namespace Sistema_de_sanciones
 {
     public partial class Crear_Usuarios : Form
     {
-        Controlador_Usuario objp = new Controlador_Usuario();
+        Controlador_Usuario objp = new Controlador_Usuario(); //Creo un nuevo objeto para llamar la clase de usuarios.
+
         DataSet dsTabla;
+
+        private Conexion ConexionBD = new Conexion();
+        private SqlDataReader LeerFilas;
+
 
         private Usuarios usuarios = new Usuarios();
 
@@ -26,7 +33,17 @@ namespace Sistema_de_sanciones
 
         private void Crear_Usuarios_Load(object sender, EventArgs e)
         {
+            SqlCommand comando = new SqlCommand("seleccionar_proveedor");
+            comando.Connection = ConexionBD.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            LeerFilas = comando.ExecuteReader();
+            while (LeerFilas.Read())
+            {
+                comboProveedor.Items.Add(LeerFilas["proveedor"]);
+            }
+            ConexionBD.CerrarConexion();
         }
+
 
         private void txtNombres_Enter(object sender, EventArgs e)
         {
@@ -47,10 +64,11 @@ namespace Sistema_de_sanciones
             }
             else
             {
-                errorProvider1.Clear();
+                errorProvider1.SetError(txtNombres,String.Empty);
+
             }
 
-                
+
         }
 
         private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
@@ -78,7 +96,8 @@ namespace Sistema_de_sanciones
             }
             else
             {
-                errorProvider1.Clear();
+                errorProvider1.SetError(textPApellido, String.Empty);
+
             }
         }
 
@@ -129,7 +148,7 @@ namespace Sistema_de_sanciones
             }
             else
             {
-                errorProvider1.Clear();
+                errorProvider1.SetError(textCargo, String.Empty);
             }
         }
 
@@ -158,7 +177,7 @@ namespace Sistema_de_sanciones
             if (!usuarios.textBoxEvent.emialKeyPress(textCorreo.Texts))
                 errorProvider1.SetError(textCorreo, "Correo no valido");
             else
-                errorProvider1.Clear();
+                errorProvider1.SetError(textCorreo, String.Empty);
         }
 
         private void textCorreo_KeyPress(object sender, KeyPressEventArgs e)
@@ -185,7 +204,7 @@ namespace Sistema_de_sanciones
             }
             else
             {
-                errorProvider1.Clear();
+                errorProvider1.SetError(textTelefono, String.Empty);
             }
         }
 
@@ -236,7 +255,7 @@ namespace Sistema_de_sanciones
             }
             else
             {
-                errorProvider1.Clear();
+                errorProvider1.SetError(textUser, String.Empty);
             }
         }
 
@@ -275,23 +294,20 @@ namespace Sistema_de_sanciones
             comboSistemas.Text = "Selecciona los sistemas aplicables";
         }
 
+
+
         private void button3_Click(object sender, EventArgs e)
         {
             if (!usuarios.textBoxEvent.emialKeyPress(textCorreo.Texts) || txtNombres.Texts == "Nombres *" || textPApellido.Texts == "Primer Apellido *" ||
                             textCargo.Texts == "Cargo *" || textCorreo.Texts == "Correo eléctronico *" ||
-                            textTelefono.Texts == "Número de télefono *" || textUser.Texts == "Nombre de Usuario *" || comboProveedor.Text == "  Proveedor de Datos *")
+                            textTelefono.Texts == "Número de télefono *" || textUser.Texts == "Nombre de Usuario *" || comboProveedor.Text == "  Proveedor de Datos *" || comboSistemas.Text == "Selecciona los sistemas aplicables *")
             {
-                errorProvider1.SetError(txtNombres, "Se debe de ingresar el dato");
-                errorProvider1.SetError(textPApellido, "Se debe de ingresar el dato");
-                errorProvider1.SetError(textCargo, "Se debe de ingresar el dato");
-                errorProvider1.SetError(textCorreo, "Se debe de ingresar el dato");
-                errorProvider1.SetError(textTelefono, "Se debe de ingresar el dato");
-                errorProvider1.SetError(textUser, "Se debe de ingresar el dato");
-                errorProvider1.SetError(comboProveedor, "Se debe de ingresar el dato");
+                MessageBox.Show("Hay datos que aun no se han proporcionado");
             }
             else
             {
-                objp.InsertarUsuario(txtNombres.Texts, textPApellido.Texts, textSApellido.Texts, textCargo.Texts, textCorreo.Texts, textTelefono.Texts, textExtension.Texts, textUser.Texts, comboSistemas.SelectedItem.ToString());
+
+                objp.InsertarUsuario(txtNombres.Texts, textPApellido.Texts, textSApellido.Texts, textCargo.Texts, textCorreo.Texts, textTelefono.Texts, textExtension.Texts, textUser.Texts, comboSistemas.SelectedItem.ToString(), comboProveedor.SelectedIndex+1);
                 MessageBox.Show("Registro Insertado");
                 limpiar();
                 errorProvider1.Clear();
@@ -302,8 +318,12 @@ namespace Sistema_de_sanciones
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
             Form1 open = new Form1();
+            Listar_Usuarios open1 = new Listar_Usuarios();  
             this.Hide();
+            open1.Hide();
             this.Close();
+
         }
+
     }
 }
