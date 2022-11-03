@@ -103,7 +103,34 @@ namespace Sistema_de_sanciones
                     frm.comboSistema.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                     frm.comboEstatus.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                     frm.ShowDialog();
-                  
+                    //dataGridView1.Refresh();
+                    //CargarDG();
+                    //loadform(new Listar_Proveedores());
+                    this.Controls.Clear();
+                    this.InitializeComponent();
+                    CargarDG();
+                    //Listar_Proveedores_Load();
+                    DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
+                    Ver.HeaderText = "Ver";
+                    Ver.Name = "Ver";
+                    Ver.Width = 90;
+                    Ver.FlatStyle = FlatStyle.Flat;
+                    dataGridView1.Columns.Add(Ver);
+
+                    DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
+                    btnclm.HeaderText = "Eliminar";
+                    btnclm.Name = "Eliminar";
+                    btnclm.Width = 90;
+                    btnclm.FlatStyle = FlatStyle.Flat;
+                    dataGridView1.Columns.Add(btnclm);
+
+                    DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
+                    editar.HeaderText = "Editar";
+                    editar.Name = "Editar";
+                    editar.Width = 90;
+                    editar.FlatStyle = FlatStyle.Flat;
+                    dataGridView1.Columns.Add(editar);
+
 
                 }
             }

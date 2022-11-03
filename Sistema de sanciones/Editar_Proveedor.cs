@@ -50,6 +50,7 @@ namespace Sistema_de_sanciones
             {
                 objp.EditarProveedor(Convert.ToInt32(id),textProveedor.Texts, comboSistema.SelectedItem.ToString(), comboEstatus.SelectedItem.ToString());
                 MessageBox.Show("Registro Insertado");
+                Close();
 
             }
             catch (Exception ex)
