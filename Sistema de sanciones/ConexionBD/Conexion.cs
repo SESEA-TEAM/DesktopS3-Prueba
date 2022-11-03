@@ -10,7 +10,7 @@ namespace Sistema_de_sanciones.ConexionBD
 {
     public class Conexion
     {
-        private SqlConnection ConexionBD = new SqlConnection("Server=CPC2;DataBase=Usuario; Integrated Security= true;");
+        private SqlConnection ConexionBD = new SqlConnection("Server=localhost;DataBase=Usuario; Integrated Security= true;");
 
         public SqlConnection AbrirConexion()
         {
