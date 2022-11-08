@@ -56,7 +56,6 @@
             this.VerProveedor = new System.Windows.Forms.TabPage();
             this.btnVerProveedor = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelTitulo.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -125,7 +124,6 @@
             // ListaProveedor
             // 
             this.ListaProveedor.BackColor = System.Drawing.SystemColors.Control;
-            this.ListaProveedor.Controls.Add(this.panel3);
             this.ListaProveedor.Controls.Add(this.label1);
             this.ListaProveedor.Controls.Add(this.panel2);
             this.ListaProveedor.Controls.Add(this.dataGridView1);
@@ -430,13 +428,6 @@
             this.label13.TabIndex = 6;
             this.label13.Text = "Ver proveedores";
             // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(29, 13);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(299, 28);
-            this.panel3.TabIndex = 22;
-            // 
             // panel4
             // 
             this.panel4.Location = new System.Drawing.Point(13, 58);
@@ -502,7 +493,6 @@
         private Label label5;
         private Label label1;
         private Panel panel1;
-        private Panel panel3;
         private Panel panel4;
     }
 }
