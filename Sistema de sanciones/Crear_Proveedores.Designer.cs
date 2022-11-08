@@ -41,7 +41,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(487, 45);
+            this.label1.Location = new System.Drawing.Point(479, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 21);
             this.label1.TabIndex = 9;
@@ -55,7 +55,7 @@
             this.textProveedor.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textProveedor.BorderSize = 2;
             this.textProveedor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textProveedor.Location = new System.Drawing.Point(143, 106);
+            this.textProveedor.Location = new System.Drawing.Point(135, 106);
             this.textProveedor.Multiline = false;
             this.textProveedor.Name = "textProveedor";
             this.textProveedor.Padding = new System.Windows.Forms.Padding(7);
@@ -75,7 +75,7 @@
             this.buttonEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEntrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonEntrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonEntrar.Location = new System.Drawing.Point(759, 279);
+            this.buttonEntrar.Location = new System.Drawing.Point(751, 279);
             this.buttonEntrar.Name = "buttonEntrar";
             this.buttonEntrar.Size = new System.Drawing.Size(126, 35);
             this.buttonEntrar.TabIndex = 15;
@@ -90,7 +90,7 @@
             this.Guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Guardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Guardar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Guardar.Location = new System.Drawing.Point(905, 279);
+            this.Guardar.Location = new System.Drawing.Point(897, 279);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(115, 35);
             this.Guardar.TabIndex = 16;
@@ -103,7 +103,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(588, 96);
+            this.label2.Location = new System.Drawing.Point(572, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(255, 16);
             this.label2.TabIndex = 25;
@@ -118,7 +118,7 @@
             "Sistema de los Servidores Públicos Sancionados",
             "Sistema de los Particulares Sancionados",
             "Sistema de los Particulares Sancionados, Sistema de los Particulares Sancionados"});
-            this.comboSistema.Location = new System.Drawing.Point(496, 125);
+            this.comboSistema.Location = new System.Drawing.Point(488, 124);
             this.comboSistema.Name = "comboSistema";
             this.comboSistema.Size = new System.Drawing.Size(524, 24);
             this.comboSistema.TabIndex = 26;
@@ -128,7 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 788);
+            this.ClientSize = new System.Drawing.Size(1158, 762);
             this.Controls.Add(this.comboSistema);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Guardar);

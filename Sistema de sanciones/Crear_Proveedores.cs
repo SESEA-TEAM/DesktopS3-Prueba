@@ -14,7 +14,7 @@ namespace Sistema_de_sanciones
     public partial class Crear_Proveedores : Form
     {
         Controlador_Proveedor objp = new Controlador_Proveedor();
-        DataSet dsTabla;
+      
         public Crear_Proveedores()
         {
             InitializeComponent();

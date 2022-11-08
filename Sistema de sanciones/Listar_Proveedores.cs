@@ -13,24 +13,20 @@ namespace Sistema_de_sanciones
 {
     public partial class Listar_Proveedores : Form
     {
+        // crea un nuevo objto de la clase controlado proveedor
         Controlador_Proveedor objp = new Controlador_Proveedor();
         DataTable dsTabla;
-      
 
         private int id;
-
-        public int ID
-        {
-            get { return id;  }
-            set { id = value; }
-        }
 
         public Listar_Proveedores()
         {
             InitializeComponent();
             CargarDG();
-        }
+         
 
+        }
+        
         private void CargarDG()
         {
             
@@ -40,8 +36,9 @@ namespace Sistema_de_sanciones
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Width = 251;
             dataGridView1.Columns[2].Width = 250;
-            dataGridView1.Columns[3].Width = 196;
+            dataGridView1.Columns[3].Width = 80;
             dataGridView1.Columns[4].Width = 200;
+            dataGridView1.Columns[5].Width = 120;
 
 
         }
@@ -52,21 +49,21 @@ namespace Sistema_de_sanciones
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "Ver";
             Ver.Name = "Ver";
-            Ver.Width = 90;
+            Ver.Width = 80;
             Ver.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(Ver);
 
             DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
             btnclm.HeaderText = "Eliminar";
             btnclm.Name = "Eliminar";
-            btnclm.Width = 90;
+            btnclm.Width = 80;
             btnclm.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(btnclm);
 
             DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
             editar.HeaderText = "Editar";
             editar.Name = "Editar";
-            editar.Width = 90;
+            editar.Width = 80;
             editar.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(editar);
 
@@ -74,6 +71,17 @@ namespace Sistema_de_sanciones
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Ver")
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    tabControl1.SelectedTab = VerProveedor;
+
+
+                }
+            }
+            
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")
             {
                 if (dataGridView1.SelectedRows.Count > 0)
@@ -84,6 +92,7 @@ namespace Sistema_de_sanciones
                         objp.EliminarProveedor(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
                         dataGridView1.Rows.Remove(dataGridView1.CurrentRow); //Se elimina la fila seleccionada del DataGridView.
                         MessageBox.Show("Registro Eliminado");
+                       
                        
                     }
                     else if (resut == DialogResult.No)
@@ -97,51 +106,21 @@ namespace Sistema_de_sanciones
             {
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    Editar_Proveedor frm = new Editar_Proveedor();
-                    frm.id = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    frm.textProveedor.Texts = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    frm.comboSistema.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    frm.comboEstatus.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    frm.ShowDialog();
-                    //dataGridView1.Refresh();
-                    //CargarDG();
-                    //loadform(new Listar_Proveedores());
-                    this.Controls.Clear();
-                    this.InitializeComponent();
-                    CargarDG();
-                    //Listar_Proveedores_Load();
-                    DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
-                    Ver.HeaderText = "Ver";
-                    Ver.Name = "Ver";
-                    Ver.Width = 90;
-                    Ver.FlatStyle = FlatStyle.Flat;
-                    dataGridView1.Columns.Add(Ver);
+                    id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                    textProveedor.Texts = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    comboSistema.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    comboEstatus.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
 
-                    DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
-                    btnclm.HeaderText = "Eliminar";
-                    btnclm.Name = "Eliminar";
-                    btnclm.Width = 90;
-                    btnclm.FlatStyle = FlatStyle.Flat;
-                    dataGridView1.Columns.Add(btnclm);
-
-                    DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
-                    editar.HeaderText = "Editar";
-                    editar.Name = "Editar";
-                    editar.Width = 90;
-                    editar.FlatStyle = FlatStyle.Flat;
-                    dataGridView1.Columns.Add(editar);
-
+                    tabControl1.SelectedTab = EditarProveedor;
 
                 }
             }
-
-
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
 
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 6)
             {
                 Image someImage = Properties.Resources.abajo;
 
@@ -154,7 +133,7 @@ namespace Sistema_de_sanciones
                 e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 7)
             {
                 Image someImage = Properties.Resources.basura;
 
@@ -168,8 +147,7 @@ namespace Sistema_de_sanciones
                 e.Handled = true;
             }
 
-
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 8)
             {
                 Image someImage = Properties.Resources.lapiz;
 
@@ -182,10 +160,103 @@ namespace Sistema_de_sanciones
                 e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
+        }
+
+        private void btnCancelarEditar_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(EditarProveedor);
+            tabControl1.TabPages.Add(ListaProveedor);
+
+            this.Controls.Clear();
+            this.InitializeComponent();
+            CargarDG();
+            //Listar_Proveedores_Load();
+            DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
+            Ver.HeaderText = "Ver";
+            Ver.Name = "Ver";
+            Ver.Width = 80;
+            Ver.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(Ver);
+
+            DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
+            btnclm.HeaderText = "Eliminar";
+            btnclm.Name = "Eliminar";
+            btnclm.Width = 80;
+            btnclm.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(btnclm);
+
+            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
+            editar.HeaderText = "Editar";
+            editar.Name = "Editar";
+            editar.Width = 80;
+            editar.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(editar);
+        }
+
+        private void btnVerProveedor_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(VerProveedor);
+            tabControl1.TabPages.Add(ListaProveedor);
+
+            this.Controls.Clear();
+            this.InitializeComponent();
+            CargarDG();
+            //Listar_Proveedores_Load();
+            DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
+            Ver.HeaderText = "Ver";
+            Ver.Name = "Ver";
+            Ver.Width = 80;
+            Ver.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(Ver);
+
+            DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
+            btnclm.HeaderText = "Eliminar";
+            btnclm.Name = "Eliminar";
+            btnclm.Width = 80;
+            btnclm.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(btnclm);
+
+            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
+            editar.HeaderText = "Editar";
+            editar.Name = "Editar";
+            editar.Width = 80;
+            editar.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(editar);
+        }
+
+        private void Guardar_Click(object sender, EventArgs e)
+        {
+            objp.EditarProveedor(id, textProveedor.Texts, comboSistema.SelectedItem.ToString(), comboEstatus.SelectedItem.ToString());
+            MessageBox.Show("Registro Insertado");
+
+            tabControl1.SelectedTab = ListaProveedor;
+
+            this.Controls.Clear();
+            this.InitializeComponent();
+            CargarDG();
+            //Listar_Proveedores_Load();
+            DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
+            Ver.HeaderText = "Ver";
+            Ver.Name = "Ver";
+            Ver.Width = 80;
+            Ver.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(Ver);
+
+            DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
+            btnclm.HeaderText = "Eliminar";
+            btnclm.Name = "Eliminar";
+            btnclm.Width = 80;
+            btnclm.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(btnclm);
+
+            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
+            editar.HeaderText = "Editar";
+            editar.Name = "Editar";
+            editar.Width = 80;
+            editar.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(editar);
 
         }
     }
-
-     
 }
 
