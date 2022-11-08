@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ListaProveedor = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,7 +56,8 @@
             this.VerProveedor = new System.Windows.Forms.TabPage();
             this.btnVerProveedor = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panelTitulo.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.ListaProveedor.SuspendLayout();
@@ -74,8 +76,16 @@
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(1174, 57);
+            this.panelTitulo.Size = new System.Drawing.Size(1174, 54);
             this.panelTitulo.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Location = new System.Drawing.Point(12, 57);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(289, 25);
+            this.panel1.TabIndex = 3;
             // 
             // label8
             // 
@@ -83,7 +93,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(891, -18);
+            this.label8.Location = new System.Drawing.Point(891, -21);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(23, 16);
             this.label8.TabIndex = 2;
@@ -101,24 +111,12 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Sistema de Carga de Datos";
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label1.Location = new System.Drawing.Point(518, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 19);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Lista de proveedores";
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.ListaProveedor);
             this.tabControl1.Controls.Add(this.EditarProveedor);
             this.tabControl1.Controls.Add(this.VerProveedor);
-            this.tabControl1.Location = new System.Drawing.Point(12, 97);
+            this.tabControl1.Location = new System.Drawing.Point(12, 60);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1162, 512);
@@ -127,6 +125,8 @@
             // ListaProveedor
             // 
             this.ListaProveedor.BackColor = System.Drawing.SystemColors.Control;
+            this.ListaProveedor.Controls.Add(this.panel3);
+            this.ListaProveedor.Controls.Add(this.label1);
             this.ListaProveedor.Controls.Add(this.panel2);
             this.ListaProveedor.Controls.Add(this.dataGridView1);
             this.ListaProveedor.Location = new System.Drawing.Point(4, 24);
@@ -135,6 +135,18 @@
             this.ListaProveedor.Size = new System.Drawing.Size(1154, 484);
             this.ListaProveedor.TabIndex = 0;
             this.ListaProveedor.Text = "Lista Proveedor";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
+            this.label1.Location = new System.Drawing.Point(513, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 19);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Lista de proveedores";
             // 
             // panel2
             // 
@@ -147,7 +159,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Location = new System.Drawing.Point(2, 2);
+            this.panel2.Location = new System.Drawing.Point(2, 42);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1159, 36);
             this.panel2.TabIndex = 27;
@@ -228,17 +240,17 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 40);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 79);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1174, 334);
@@ -320,7 +332,8 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(486, 31);
+            this.label12.ForeColor = System.Drawing.Color.Firebrick;
+            this.label12.Location = new System.Drawing.Point(516, 3);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(158, 21);
             this.label12.TabIndex = 33;
@@ -410,19 +423,26 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(483, 26);
+            this.label13.ForeColor = System.Drawing.Color.Firebrick;
+            this.label13.Location = new System.Drawing.Point(507, 3);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(170, 19);
+            this.label13.Size = new System.Drawing.Size(135, 19);
             this.label13.TabIndex = 6;
-            this.label13.Text = "Lista de proveedores";
+            this.label13.Text = "Ver proveedores";
             // 
-            // panel1
+            // panel3
             // 
-            this.panel1.Location = new System.Drawing.Point(16, 54);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(299, 40);
-            this.panel1.TabIndex = 22;
+            this.panel3.Location = new System.Drawing.Point(29, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(299, 28);
+            this.panel3.TabIndex = 22;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(13, 58);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(298, 25);
+            this.panel4.TabIndex = 22;
             // 
             // Listar_Proveedores
             // 
@@ -430,8 +450,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1174, 801);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelTitulo);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Listar_Proveedores";
@@ -441,6 +461,7 @@
             this.panelTitulo.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.ListaProveedor.ResumeLayout(false);
+            this.ListaProveedor.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -449,7 +470,6 @@
             this.VerProveedor.ResumeLayout(false);
             this.VerProveedor.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -458,7 +478,6 @@
         private Panel panelTitulo;
         private Label label8;
         private Label label7;
-        private Label label1;
         private TabControl tabControl1;
         private TabPage ListaProveedor;
         private DataGridView dataGridView1;
@@ -474,7 +493,6 @@
         private TabPage VerProveedor;
         private Button btnVerProveedor;
         private Label label13;
-        private Panel panel1;
         private Panel panel2;
         private Label label14;
         private Label label2;
@@ -482,5 +500,9 @@
         private Label label4;
         private Label label3;
         private Label label5;
+        private Label label1;
+        private Panel panel1;
+        private Panel panel3;
+        private Panel panel4;
     }
 }
