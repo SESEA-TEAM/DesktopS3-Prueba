@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Invitado2022\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Invitado2022\\.nuget\\packages"
+      "C:\\Users\\DarkFrostMoe\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\DarkFrostMoe\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

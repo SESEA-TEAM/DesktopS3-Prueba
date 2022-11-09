@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace Sistema_de_sanciones
 {
@@ -29,28 +30,20 @@ namespace Sistema_de_sanciones
         public Crear_Usuarios()
         {
             InitializeComponent();
+            listarProveedor();
         }
 
         private void Crear_Usuarios_Load(object sender, EventArgs e)
         {
-            SqlCommand comando = new SqlCommand("seleccionar_proveedor");
-            comando.Connection = ConexionBD.AbrirConexion();
-            comando.CommandType = CommandType.StoredProcedure;
-            LeerFilas = comando.ExecuteReader();
-            while (LeerFilas.Read())
-            {
-                comboProveedor.Items.Add(LeerFilas["proveedor"]);
-            }
-            ConexionBD.CerrarConexion();
-        }
 
+        }
 
         private void txtNombres_Enter(object sender, EventArgs e)
         {
             if(txtNombres.Texts == "Nombres *")
             {
                 txtNombres.Texts = "";
-                txtNombres.ForeColor = Color.Black;
+                txtNombres.ForeColor = Color.Black;      
             }
         }
 
@@ -67,8 +60,6 @@ namespace Sistema_de_sanciones
                 errorProvider1.SetError(txtNombres,String.Empty);
 
             }
-
-
         }
 
         private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
@@ -173,11 +164,12 @@ namespace Sistema_de_sanciones
                 textCorreo.Texts = "Correo eléctronico *";
                 textCorreo.ForeColor = Color.Gray;
             }
-
+ 
             if (!usuarios.textBoxEvent.emialKeyPress(textCorreo.Texts))
                 errorProvider1.SetError(textCorreo, "Correo no valido");
             else
                 errorProvider1.SetError(textCorreo, String.Empty);
+        
         }
 
         private void textCorreo_KeyPress(object sender, KeyPressEventArgs e)
@@ -206,6 +198,7 @@ namespace Sistema_de_sanciones
             {
                 errorProvider1.SetError(textTelefono, String.Empty);
             }
+
         }
 
         private void textTelefono_KeyPress(object sender, KeyPressEventArgs e)
@@ -289,25 +282,36 @@ namespace Sistema_de_sanciones
             //Limpiar Usuario y aplicar color del texto
             textUser.Texts = "Nombre de Usuario *";
             textUser.ForeColor = Color.Gray;
-            
+            //Limpiar Contraseña y aplica color del texto
+            textContraseña.Texts = "";
+            textContraseña.ForeColor = Color.Gray;
+
+
             comboProveedor.Text = "  Proveedor de Datos *";
             comboSistemas.Text = "Selecciona los sistemas aplicables";
+            
         }
 
-
+        private void listarProveedor()
+        {
+            comboProveedor.DataSource = new Controlador_Usuario().obtenerListaProveedor();
+            comboProveedor.ValueMember = "proveedor";
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {
             if (!usuarios.textBoxEvent.emialKeyPress(textCorreo.Texts) || txtNombres.Texts == "Nombres *" || textPApellido.Texts == "Primer Apellido *" ||
                             textCargo.Texts == "Cargo *" || textCorreo.Texts == "Correo eléctronico *" ||
-                            textTelefono.Texts == "Número de télefono *" || textUser.Texts == "Nombre de Usuario *" || comboProveedor.Text == "  Proveedor de Datos *" || comboSistemas.Text == "Selecciona los sistemas aplicables *")
+                            textTelefono.Texts == "Número de télefono *" || textUser.Texts == "Nombre de Usuario *" || comboProveedor.Text == "Proveedor" || comboSistemas.Text == "Selecciona los sistemas aplicables *" || textContraseña.Texts == "")
             {
                 MessageBox.Show("Hay datos que aun no se han proporcionado");
             }
             else
             {
-
-                objp.InsertarUsuario(txtNombres.Texts, textPApellido.Texts, textSApellido.Texts, textCargo.Texts, textCorreo.Texts, textTelefono.Texts, textExtension.Texts, textUser.Texts, comboSistemas.SelectedItem.ToString(), comboProveedor.SelectedIndex+1);
+                modeloListaProveedores user = (modeloListaProveedores)comboProveedor.SelectedItem;
+                int us = Convert.ToInt32(user.id);
+                objp.InsertarUsuario(txtNombres.Texts, textPApellido.Texts, textSApellido.Texts, textCargo.Texts, textCorreo.Texts, textTelefono.Texts, textExtension.Texts, textUser.Texts,comboSistemas.SelectedItem.ToString(), us);
+                objp.IngresarContrasena(textContraseña.Texts);
                 MessageBox.Show("Registro Insertado");
                 limpiar();
                 errorProvider1.Clear();
@@ -322,8 +326,8 @@ namespace Sistema_de_sanciones
             this.Hide();
             open1.Hide();
             this.Close();
-
         }
+
 
     }
 }

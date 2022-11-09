@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using Sistema_de_sanciones.ConexionBD;
+using Sistema_de_sanciones.Modelo;
 
 namespace Sistema_de_sanciones.Controladores
 {
@@ -62,9 +63,9 @@ namespace Sistema_de_sanciones.Controladores
             ConexionBD.CerrarConexion();
         }
 
-        public void EditarUsuario(int id,string nombre, string apellidoUno, string apellidoDos, string cargo, string correoElectronico, string telefono, string extension, string usuario, string sistema,int proveedorDatos, int estatus)
+        public void EditarUsuario(int id, string nombre, string apellidoUno, string apellidoDos, string cargo, string correoElectronico, string telefono, string extension, string usuario, string sistema, int proveedorDatos, string estatus)
         {
-            SqlCommand comando = new SqlCommand("Editar_proveedor");
+            SqlCommand comando = new SqlCommand("Editar_usuario");
             comando.Connection = ConexionBD.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@Id", id);
@@ -93,6 +94,48 @@ namespace Sistema_de_sanciones.Controladores
             comando.ExecuteReader();
             comando.Parameters.Clear();
             ConexionBD.CerrarConexion();
+        }
+
+        public void IngresarContrasena(string contrasena)
+        {
+            SqlCommand comando = new SqlCommand("insertar_contraseña");
+            comando.Connection = ConexionBD.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Contraseña", contrasena);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            ConexionBD.CerrarConexion();
+        }
+
+
+        public List<modeloListaProveedores> obtenerListaProveedor()
+        {
+            List<modeloListaProveedores> oListaUsuarios = new List<modeloListaProveedores>();
+            oListaUsuarios.Add(new modeloListaProveedores { id = 0, proveedor = "Proveedor" });
+            try
+            {
+                SqlCommand comando = new SqlCommand("cargarComboProveedor");
+                comando.Connection = ConexionBD.AbrirConexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandTimeout = 600;
+
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    oListaUsuarios.Add(new modeloListaProveedores
+                    {
+                        id = Convert.ToInt32(dr["id"]),
+                        proveedor = Convert.ToString(dr["proveedor"])
+                    });
+                }
+                dr.Close();
+                return oListaUsuarios;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+                return oListaUsuarios;
+            }
         }
 
 

@@ -43,6 +43,8 @@
             this.buttonEntrar = new System.Windows.Forms.Button();
             this.comboSistemas = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.textContraseña = new Sistema_de_sanciones.Templates.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -237,14 +239,14 @@
             // 
             this.comboProveedor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboProveedor.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboProveedor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboProveedor.ForeColor = System.Drawing.Color.Gray;
             this.comboProveedor.FormattingEnabled = true;
-            this.comboProveedor.Location = new System.Drawing.Point(184, 307);
+            this.comboProveedor.Location = new System.Drawing.Point(393, 311);
             this.comboProveedor.Name = "comboProveedor";
             this.comboProveedor.Size = new System.Drawing.Size(173, 24);
             this.comboProveedor.TabIndex = 19;
-            this.comboProveedor.Text = "  Proveedor de Datos *";
             // 
             // button3
             // 
@@ -288,9 +290,9 @@
             this.comboSistemas.Items.AddRange(new object[] {
             "Sistema de los Servidores Públicos Sancionados",
             "Sistema de los Particulares Sancionados"});
-            this.comboSistemas.Location = new System.Drawing.Point(393, 307);
+            this.comboSistemas.Location = new System.Drawing.Point(592, 311);
             this.comboSistemas.Name = "comboSistemas";
-            this.comboSistemas.Size = new System.Drawing.Size(231, 24);
+            this.comboSistemas.Size = new System.Drawing.Size(378, 24);
             this.comboSistemas.TabIndex = 22;
             this.comboSistemas.Text = "Selecciona los sistemas aplicables *";
             // 
@@ -298,11 +300,43 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // textContraseña
+            // 
+            this.textContraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textContraseña.BackColor = System.Drawing.SystemColors.Control;
+            this.textContraseña.BorderColor = System.Drawing.Color.DimGray;
+            this.textContraseña.BorderFocusColor = System.Drawing.Color.IndianRed;
+            this.textContraseña.BorderSize = 2;
+            this.textContraseña.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textContraseña.ForeColor = System.Drawing.Color.Gray;
+            this.textContraseña.Location = new System.Drawing.Point(184, 304);
+            this.textContraseña.Multiline = false;
+            this.textContraseña.Name = "textContraseña";
+            this.textContraseña.Padding = new System.Windows.Forms.Padding(7);
+            this.textContraseña.PasswordChar = true;
+            this.textContraseña.Size = new System.Drawing.Size(173, 31);
+            this.textContraseña.TabIndex = 23;
+            this.textContraseña.Texts = "";
+            this.textContraseña.UnderlinedStyle = true;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(184, 285);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(135, 16);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "Ingresa Contraseña*";
+            // 
             // Crear_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 801);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textContraseña);
             this.Controls.Add(this.comboSistemas);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.buttonEntrar);
@@ -341,5 +375,7 @@
         private Button buttonEntrar;
         private ComboBox comboSistemas;
         private ErrorProvider errorProvider1;
+        private Templates.TextBox textContraseña;
+        private Label label2;
     }
 }
