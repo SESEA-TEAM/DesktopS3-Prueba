@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +17,7 @@ namespace Sistema_de_sanciones
         // crea un nuevo objto de la clase controlado proveedor
         Controlador_Proveedor objp = new Controlador_Proveedor();
         DataTable dsTabla;
-
+        private Proveedores proveedores = new Proveedores();
         private int id;
 
         public Listar_Proveedores()
@@ -226,37 +227,82 @@ namespace Sistema_de_sanciones
 
         private void Guardar_Click(object sender, EventArgs e)
         {
-            objp.EditarProveedor(id, textProveedor.Texts, comboSistema.SelectedItem.ToString(), comboEstatus.SelectedItem.ToString());
-            MessageBox.Show("Registro Insertado");
 
-            tabControl1.SelectedTab = ListaProveedor;
+            if (textProveedor.Texts == "Proveedor*" )
+            {
+                
+                MessageBox.Show("Hay datos que aun no se han proporcionado");
+            }
+            else
+            {
 
-            this.Controls.Clear();
-            this.InitializeComponent();
-            CargarDG();
-            //Listar_Proveedores_Load();
-            DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
-            Ver.HeaderText = "Ver";
-            Ver.Name = "Ver";
-            Ver.Width = 80;
-            Ver.FlatStyle = FlatStyle.Flat;
-            dataGridView1.Columns.Add(Ver);
+                objp.EditarProveedor(id, textProveedor.Texts, comboSistema.SelectedItem.ToString(), comboEstatus.SelectedItem.ToString());
+                MessageBox.Show("Registro Insertado");
+                tabControl1.SelectedTab = ListaProveedor;
 
-            DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
-            btnclm.HeaderText = "Eliminar";
-            btnclm.Name = "Eliminar";
-            btnclm.Width = 80;
-            btnclm.FlatStyle = FlatStyle.Flat;
-            dataGridView1.Columns.Add(btnclm);
+                this.Controls.Clear();
+                this.InitializeComponent();
+                CargarDG();
+                //Listar_Proveedores_Load();
+                DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
+                Ver.HeaderText = "Ver";
+                Ver.Name = "Ver";
+                Ver.Width = 80;
+                Ver.FlatStyle = FlatStyle.Flat;
+                dataGridView1.Columns.Add(Ver);
 
-            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
-            editar.HeaderText = "Editar";
-            editar.Name = "Editar";
-            editar.Width = 80;
-            editar.FlatStyle = FlatStyle.Flat;
-            dataGridView1.Columns.Add(editar);
+                DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
+                btnclm.HeaderText = "Eliminar";
+                btnclm.Name = "Eliminar";
+                btnclm.Width = 80;
+                btnclm.FlatStyle = FlatStyle.Flat;
+                dataGridView1.Columns.Add(btnclm);
+
+                DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
+                editar.HeaderText = "Editar";
+                editar.Name = "Editar";
+                editar.Width = 80;
+                editar.FlatStyle = FlatStyle.Flat;
+                dataGridView1.Columns.Add(editar);
+            }
+            
+
+            
 
         }
+
+        private void textProveedor_Enter(object sender, EventArgs e)
+        {
+            if (textProveedor.Texts == "Proveedor*")
+            {
+                textProveedor.Texts = "";
+                textProveedor.ForeColor = Color.Gray;
+
+            }
+        }
+
+        private void textProveedor_Leave(object sender, EventArgs e)
+        {
+            if (textProveedor.Texts == "")
+            {
+                textProveedor.Texts = "Proveedor*";
+                errorProvider1.SetError(textProveedor, "Se necesita ingresar un proveedor");
+                textProveedor.ForeColor = Color.Gray;
+            }
+            else
+            {
+                errorProvider1.SetError(textProveedor, String.Empty);
+
+            }
+            
+        }
+
+        private void textProveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            proveedores.textBoxEvent.textKeyPress(e);
+        }
+       
+
     }
 }
 

@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textProveedor = new Sistema_de_sanciones.Templates.TextBox();
             this.buttonEntrar = new System.Windows.Forms.Button();
             this.Guardar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboSistema = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,7 +55,7 @@
             this.textProveedor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textProveedor.BackColor = System.Drawing.SystemColors.Control;
             this.textProveedor.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textProveedor.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textProveedor.BorderFocusColor = System.Drawing.Color.IndianRed;
             this.textProveedor.BorderSize = 2;
             this.textProveedor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textProveedor.Location = new System.Drawing.Point(135, 106);
@@ -65,6 +68,7 @@
             this.textProveedor.Texts = "Proveedor*";
             this.textProveedor.UnderlinedStyle = true;
             this.textProveedor.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             this.textProveedor.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // buttonEntrar
@@ -124,6 +128,10 @@
             this.comboSistema.TabIndex = 26;
             this.comboSistema.Text = "Sistemas aplicable*";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Crear_Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -138,6 +146,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Crear_Proveedores";
             this.Text = "Crear_Proveedores";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,5 +160,6 @@
         private Button Guardar;
         public Label label2;
         private ComboBox comboSistema;
+        private ErrorProvider errorProvider1;
     }
 }

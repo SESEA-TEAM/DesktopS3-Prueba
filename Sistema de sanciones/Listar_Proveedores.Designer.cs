@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,6 +47,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.EditarProveedor = new System.Windows.Forms.TabPage();
+            this.textProveedor = new Sistema_de_sanciones.Templates.TextBox();
             this.comboEstatus = new System.Windows.Forms.ComboBox();
             this.comboSistema = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -52,11 +55,10 @@
             this.label12 = new System.Windows.Forms.Label();
             this.Guardar = new System.Windows.Forms.Button();
             this.btnCancelarEditar = new System.Windows.Forms.Button();
-            this.textProveedor = new Sistema_de_sanciones.Templates.TextBox();
             this.VerProveedor = new System.Windows.Forms.TabPage();
             this.btnVerProveedor = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelTitulo.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.ListaProveedor.SuspendLayout();
@@ -64,11 +66,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.EditarProveedor.SuspendLayout();
             this.VerProveedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitulo
             // 
             this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.panelTitulo.Controls.Add(this.panel4);
             this.panelTitulo.Controls.Add(this.panel1);
             this.panelTitulo.Controls.Add(this.label8);
             this.panelTitulo.Controls.Add(this.label7);
@@ -77,6 +81,13 @@
             this.panelTitulo.Name = "panelTitulo";
             this.panelTitulo.Size = new System.Drawing.Size(1174, 54);
             this.panelTitulo.TabIndex = 6;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(141, 53);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(298, 25);
+            this.panel4.TabIndex = 22;
             // 
             // panel1
             // 
@@ -242,13 +253,13 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1174, 334);
@@ -259,6 +270,7 @@
             // EditarProveedor
             // 
             this.EditarProveedor.BackColor = System.Drawing.SystemColors.Control;
+            this.EditarProveedor.Controls.Add(this.textProveedor);
             this.EditarProveedor.Controls.Add(this.comboEstatus);
             this.EditarProveedor.Controls.Add(this.comboSistema);
             this.EditarProveedor.Controls.Add(this.label10);
@@ -266,13 +278,33 @@
             this.EditarProveedor.Controls.Add(this.label12);
             this.EditarProveedor.Controls.Add(this.Guardar);
             this.EditarProveedor.Controls.Add(this.btnCancelarEditar);
-            this.EditarProveedor.Controls.Add(this.textProveedor);
             this.EditarProveedor.Location = new System.Drawing.Point(4, 24);
             this.EditarProveedor.Name = "EditarProveedor";
             this.EditarProveedor.Padding = new System.Windows.Forms.Padding(3);
             this.EditarProveedor.Size = new System.Drawing.Size(1154, 484);
             this.EditarProveedor.TabIndex = 1;
             this.EditarProveedor.Text = "Editar Proveedor";
+            // 
+            // textProveedor
+            // 
+            this.textProveedor.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textProveedor.BackColor = System.Drawing.SystemColors.Control;
+            this.textProveedor.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.textProveedor.BorderFocusColor = System.Drawing.Color.IndianRed;
+            this.textProveedor.BorderSize = 2;
+            this.textProveedor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textProveedor.Location = new System.Drawing.Point(102, 99);
+            this.textProveedor.Multiline = false;
+            this.textProveedor.Name = "textProveedor";
+            this.textProveedor.Padding = new System.Windows.Forms.Padding(7);
+            this.textProveedor.PasswordChar = false;
+            this.textProveedor.Size = new System.Drawing.Size(266, 31);
+            this.textProveedor.TabIndex = 38;
+            this.textProveedor.Texts = "Proveedor*";
+            this.textProveedor.UnderlinedStyle = true;
+            this.textProveedor.Enter += new System.EventHandler(this.textProveedor_Enter);
+            this.textProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textProveedor_KeyPress);
+            this.textProveedor.Leave += new System.EventHandler(this.textProveedor_Leave);
             // 
             // comboEstatus
             // 
@@ -370,24 +402,6 @@
             this.btnCancelarEditar.UseVisualStyleBackColor = false;
             this.btnCancelarEditar.Click += new System.EventHandler(this.btnCancelarEditar_Click);
             // 
-            // textProveedor
-            // 
-            this.textProveedor.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textProveedor.BackColor = System.Drawing.SystemColors.Control;
-            this.textProveedor.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textProveedor.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textProveedor.BorderSize = 2;
-            this.textProveedor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textProveedor.Location = new System.Drawing.Point(102, 99);
-            this.textProveedor.Multiline = false;
-            this.textProveedor.Name = "textProveedor";
-            this.textProveedor.Padding = new System.Windows.Forms.Padding(7);
-            this.textProveedor.PasswordChar = false;
-            this.textProveedor.Size = new System.Drawing.Size(266, 31);
-            this.textProveedor.TabIndex = 30;
-            this.textProveedor.Texts = "";
-            this.textProveedor.UnderlinedStyle = true;
-            // 
             // VerProveedor
             // 
             this.VerProveedor.BackColor = System.Drawing.SystemColors.Control;
@@ -428,20 +442,16 @@
             this.label13.TabIndex = 6;
             this.label13.Text = "Ver proveedores";
             // 
-            // panel4
+            // errorProvider1
             // 
-            this.panel4.Location = new System.Drawing.Point(13, 58);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(298, 25);
-            this.panel4.TabIndex = 22;
+            this.errorProvider1.ContainerControl = this;
             // 
             // Listar_Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1174, 801);
-            this.Controls.Add(this.panel4);
+            this.ClientSize = new System.Drawing.Size(1174, 788);
             this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -460,6 +470,7 @@
             this.EditarProveedor.PerformLayout();
             this.VerProveedor.ResumeLayout(false);
             this.VerProveedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -480,7 +491,6 @@
         private Label label12;
         private Button Guardar;
         private Button btnCancelarEditar;
-        public Templates.TextBox textProveedor;
         private TabPage VerProveedor;
         private Button btnVerProveedor;
         private Label label13;
@@ -494,5 +504,7 @@
         private Label label1;
         private Panel panel1;
         private Panel panel4;
+        private ErrorProvider errorProvider1;
+        private Templates.TextBox textProveedor;
     }
 }
