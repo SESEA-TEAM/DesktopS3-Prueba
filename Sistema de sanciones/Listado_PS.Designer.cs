@@ -31,16 +31,17 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox7 = new Sistema_de_sanciones.Templates.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.botonBuscar = new System.Windows.Forms.Button();
+            this.botonLimpiar = new System.Windows.Forms.Button();
             this.textBox6 = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox5 = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox3 = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox1 = new Sistema_de_sanciones.Templates.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,11 +50,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.botonPrimero = new System.Windows.Forms.Button();
+            this.botonAnterior = new System.Windows.Forms.Button();
+            this.botonSiguiente = new System.Windows.Forms.Button();
+            this.botonUltimo = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox7 = new Sistema_de_sanciones.Templates.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,10 +88,12 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.botonBuscar);
+            this.panel1.Controls.Add(this.botonLimpiar);
             this.panel1.Controls.Add(this.textBox7);
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.textBox5);
@@ -96,49 +106,53 @@
             this.panel1.Size = new System.Drawing.Size(1174, 209);
             this.panel1.TabIndex = 5;
             // 
-            // button2
+            // comboBox2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(1040, 160);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 26);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "BUSCAR";
-            this.button2.UseVisualStyleBackColor = false;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(312, 117);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(264, 24);
+            this.comboBox2.TabIndex = 6;
             // 
-            // button1
+            // comboBox1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(900, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 26);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "LIMPIAR";
-            this.button1.UseVisualStyleBackColor = false;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(24, 117);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(264, 24);
+            this.comboBox1.TabIndex = 5;
             // 
-            // textBox7
+            // botonBuscar
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox7.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox7.BorderSize = 2;
-            this.textBox7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox7.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox7.Location = new System.Drawing.Point(600, 110);
-            this.textBox7.Multiline = false;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.textBox7.PasswordChar = false;
-            this.textBox7.Size = new System.Drawing.Size(264, 31);
-            this.textBox7.TabIndex = 1;
-            this.textBox7.Texts = "Inhabilitación fecha final";
-            this.textBox7.UnderlinedStyle = true;
+            this.botonBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.botonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonBuscar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.botonBuscar.ForeColor = System.Drawing.SystemColors.Control;
+            this.botonBuscar.Location = new System.Drawing.Point(1040, 160);
+            this.botonBuscar.Name = "botonBuscar";
+            this.botonBuscar.Size = new System.Drawing.Size(100, 26);
+            this.botonBuscar.TabIndex = 3;
+            this.botonBuscar.Text = "BUSCAR";
+            this.botonBuscar.UseVisualStyleBackColor = false;
+            // 
+            // botonLimpiar
+            // 
+            this.botonLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.botonLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonLimpiar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.botonLimpiar.ForeColor = System.Drawing.SystemColors.Control;
+            this.botonLimpiar.Location = new System.Drawing.Point(900, 160);
+            this.botonLimpiar.Name = "botonLimpiar";
+            this.botonLimpiar.Size = new System.Drawing.Size(100, 26);
+            this.botonLimpiar.TabIndex = 3;
+            this.botonLimpiar.Text = "LIMPIAR";
+            this.botonLimpiar.UseVisualStyleBackColor = false;
             // 
             // textBox6
             // 
@@ -151,7 +165,7 @@
             this.textBox6.Location = new System.Drawing.Point(888, 60);
             this.textBox6.Multiline = false;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBox6.Padding = new System.Windows.Forms.Padding(7);
             this.textBox6.PasswordChar = false;
             this.textBox6.Size = new System.Drawing.Size(264, 31);
             this.textBox6.TabIndex = 1;
@@ -169,7 +183,7 @@
             this.textBox5.Location = new System.Drawing.Point(600, 60);
             this.textBox5.Multiline = false;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBox5.Padding = new System.Windows.Forms.Padding(7);
             this.textBox5.PasswordChar = false;
             this.textBox5.Size = new System.Drawing.Size(264, 31);
             this.textBox5.TabIndex = 1;
@@ -187,7 +201,7 @@
             this.textBox3.Location = new System.Drawing.Point(312, 60);
             this.textBox3.Multiline = false;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBox3.Padding = new System.Windows.Forms.Padding(7);
             this.textBox3.PasswordChar = false;
             this.textBox3.Size = new System.Drawing.Size(264, 31);
             this.textBox3.TabIndex = 1;
@@ -200,12 +214,13 @@
             this.textBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox1.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox1.BorderSize = 2;
+            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox1.Location = new System.Drawing.Point(24, 60);
+            this.textBox1.Location = new System.Drawing.Point(24, 42);
             this.textBox1.Multiline = false;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBox1.Padding = new System.Windows.Forms.Padding(7);
             this.textBox1.PasswordChar = false;
             this.textBox1.Size = new System.Drawing.Size(264, 31);
             this.textBox1.TabIndex = 1;
@@ -225,29 +240,22 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.tableLayoutPanel1);
+            this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(0, 311);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1174, 478);
+            this.panel2.Size = new System.Drawing.Size(1174, 432);
             this.panel2.TabIndex = 6;
             // 
-            // tableLayoutPanel1
+            // dataGridView1
             // 
-            this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.78431F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.21568F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 222F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 98);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1174, 100);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 98);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(1174, 332);
+            this.dataGridView1.TabIndex = 1;
             // 
             // label3
             // 
@@ -341,27 +349,111 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Expediente";
             // 
-            // comboBox1
+            // botonPrimero
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(24, 117);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(264, 24);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.Text = "Tipo sanción";
+            this.botonPrimero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.botonPrimero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPrimero.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.botonPrimero.ForeColor = System.Drawing.SystemColors.Control;
+            this.botonPrimero.Location = new System.Drawing.Point(713, 750);
+            this.botonPrimero.Name = "botonPrimero";
+            this.botonPrimero.Size = new System.Drawing.Size(100, 28);
+            this.botonPrimero.TabIndex = 7;
+            this.botonPrimero.Text = "|<";
+            this.botonPrimero.UseVisualStyleBackColor = false;
+            this.botonPrimero.Click += new System.EventHandler(this.button3_Click);
             // 
-            // comboBox2
+            // botonAnterior
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(312, 117);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(264, 24);
-            this.comboBox2.TabIndex = 6;
-            this.comboBox2.Text = "Tipo persona";
+            this.botonAnterior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.botonAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonAnterior.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.botonAnterior.ForeColor = System.Drawing.SystemColors.Control;
+            this.botonAnterior.Location = new System.Drawing.Point(822, 750);
+            this.botonAnterior.Name = "botonAnterior";
+            this.botonAnterior.Size = new System.Drawing.Size(100, 28);
+            this.botonAnterior.TabIndex = 7;
+            this.botonAnterior.Text = "<";
+            this.botonAnterior.UseVisualStyleBackColor = false;
+            this.botonAnterior.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // botonSiguiente
+            // 
+            this.botonSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.botonSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonSiguiente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.botonSiguiente.ForeColor = System.Drawing.SystemColors.Control;
+            this.botonSiguiente.Location = new System.Drawing.Point(931, 750);
+            this.botonSiguiente.Name = "botonSiguiente";
+            this.botonSiguiente.Size = new System.Drawing.Size(100, 28);
+            this.botonSiguiente.TabIndex = 7;
+            this.botonSiguiente.Text = ">";
+            this.botonSiguiente.UseVisualStyleBackColor = false;
+            this.botonSiguiente.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // botonUltimo
+            // 
+            this.botonUltimo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.botonUltimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonUltimo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.botonUltimo.ForeColor = System.Drawing.SystemColors.Control;
+            this.botonUltimo.Location = new System.Drawing.Point(1040, 750);
+            this.botonUltimo.Name = "botonUltimo";
+            this.botonUltimo.Size = new System.Drawing.Size(100, 28);
+            this.botonUltimo.TabIndex = 7;
+            this.botonUltimo.Text = ">|";
+            this.botonUltimo.UseVisualStyleBackColor = false;
+            this.botonUltimo.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.label10.Location = new System.Drawing.Point(514, 756);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 16);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Registros:";
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.textBox7.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textBox7.BorderSize = 2;
+            this.textBox7.Enabled = false;
+            this.textBox7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox7.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.textBox7.Location = new System.Drawing.Point(600, 92);
+            this.textBox7.Multiline = false;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Padding = new System.Windows.Forms.Padding(7);
+            this.textBox7.PasswordChar = false;
+            this.textBox7.Size = new System.Drawing.Size(264, 31);
+            this.textBox7.TabIndex = 1;
+            this.textBox7.Texts = "Inhabilitación fecha final";
+            this.textBox7.UnderlinedStyle = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(600, 118);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(264, 23);
+            this.dateTimePicker1.TabIndex = 7;
+            this.dateTimePicker1.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(24, 68);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(264, 23);
+            this.dateTimePicker2.TabIndex = 7;
+            this.dateTimePicker2.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // Listado_PS
             // 
@@ -369,6 +461,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1174, 801);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.botonUltimo);
+            this.Controls.Add(this.botonSiguiente);
+            this.Controls.Add(this.botonAnterior);
+            this.Controls.Add(this.botonPrimero);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
@@ -381,9 +478,11 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -392,9 +491,8 @@
         private Panel panel4;
         private Label label1;
         private Panel panel1;
-        private Button button2;
-        private Button button1;
-        private Templates.TextBox textBox7;
+        private Button botonBuscar;
+        private Button botonLimpiar;
         private Templates.TextBox textBox6;
         private Templates.TextBox textBox5;
         private Templates.TextBox textBox3;
@@ -409,8 +507,16 @@
         private Label label5;
         private Label label4;
         private Label label9;
-        private TableLayoutPanel tableLayoutPanel1;
         private ComboBox comboBox2;
         private ComboBox comboBox1;
+        private DataGridView dataGridView1;
+        private Button botonPrimero;
+        private Button botonAnterior;
+        private Button botonSiguiente;
+        private Button botonUltimo;
+        private Label label10;
+        private DateTimePicker dateTimePicker1;
+        private Templates.TextBox textBox7;
+        private DateTimePicker dateTimePicker2;
     }
 }
