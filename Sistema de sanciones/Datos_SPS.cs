@@ -31,5 +31,20 @@ namespace Sistema_de_sanciones
         {
 
         }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
