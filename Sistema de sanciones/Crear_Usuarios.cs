@@ -23,9 +23,9 @@ namespace Sistema_de_sanciones
 
         private Conexion ConexionBD = new Conexion();
         private SqlDataReader LeerFilas;
-
-
         private Usuarios usuarios = new Usuarios();
+
+
 
         public Crear_Usuarios()
         {
@@ -58,14 +58,12 @@ namespace Sistema_de_sanciones
             else
             {
                 errorProvider1.SetError(txtNombres,String.Empty);
-
             }
         }
 
         private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
         {
             usuarios.textBoxEvent.textKeyPress(e);
-
         }
 
         private void textPApellido_Enter(object sender, EventArgs e)
@@ -88,7 +86,6 @@ namespace Sistema_de_sanciones
             else
             {
                 errorProvider1.SetError(textPApellido, String.Empty);
-
             }
         }
 
@@ -164,12 +161,18 @@ namespace Sistema_de_sanciones
                 textCorreo.Texts = "Correo eléctronico *";
                 textCorreo.ForeColor = Color.Gray;
             }
- 
-            if (!usuarios.textBoxEvent.emialKeyPress(textCorreo.Texts))
+
+            string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
+            bool isEmailValid = Regex.IsMatch(textCorreo.Texts, emailPattern);
+            
+            if (!isEmailValid)
+            {
                 errorProvider1.SetError(textCorreo, "Correo no valido");
+            }
             else
+            {
                 errorProvider1.SetError(textCorreo, String.Empty);
-        
+            }
         }
 
         private void textCorreo_KeyPress(object sender, KeyPressEventArgs e)
@@ -203,7 +206,7 @@ namespace Sistema_de_sanciones
 
         private void textTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            usuarios.textBoxEvent.numberKeyPress(e);
+            usuarios.textBoxEvent.validarNumeros(e);
         }
 
         private void textExtension_Enter(object sender, EventArgs e)
@@ -226,7 +229,7 @@ namespace Sistema_de_sanciones
 
         private void textExtension_KeyPress(object sender, KeyPressEventArgs e)
         {
-            usuarios.textBoxEvent.numberKeyPress(e);
+            usuarios.textBoxEvent.validarNumeros(e);
         }
 
         private void textUser_Enter(object sender, EventArgs e)
@@ -286,11 +289,12 @@ namespace Sistema_de_sanciones
             textContraseña.Texts = "";
             textContraseña.ForeColor = Color.Gray;
 
-
             comboProveedor.Text = "  Proveedor de Datos *";
             comboSistemas.Text = "Selecciona los sistemas aplicables";
-            
         }
+
+
+
 
         private void listarProveedor()
         {
@@ -300,7 +304,10 @@ namespace Sistema_de_sanciones
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (!usuarios.textBoxEvent.emialKeyPress(textCorreo.Texts) || txtNombres.Texts == "Nombres *" || textPApellido.Texts == "Primer Apellido *" ||
+            string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
+            bool isEmailValid = Regex.IsMatch(textCorreo.Texts, emailPattern);
+
+            if (!isEmailValid || txtNombres.Texts == "Nombres *" || textPApellido.Texts == "Primer Apellido *" ||
                             textCargo.Texts == "Cargo *" || textCorreo.Texts == "Correo eléctronico *" ||
                             textTelefono.Texts == "Número de télefono *" || textUser.Texts == "Nombre de Usuario *" || comboProveedor.Text == "Proveedor" || comboSistemas.Text == "Selecciona los sistemas aplicables *" || textContraseña.Texts == "")
             {
@@ -321,13 +328,7 @@ namespace Sistema_de_sanciones
 
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
-            Form1 open = new Form1();
-            Listar_Usuarios open1 = new Listar_Usuarios();  
-            this.Hide();
-            open1.Hide();
             this.Close();
         }
-
-
     }
 }

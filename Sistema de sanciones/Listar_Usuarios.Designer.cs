@@ -107,7 +107,7 @@
             // 
             // panel4
             // 
-            this.panel4.Location = new System.Drawing.Point(-2, 59);
+            this.panel4.Location = new System.Drawing.Point(-2, 58);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1179, 29);
             this.panel4.TabIndex = 23;
@@ -409,7 +409,7 @@
             this.textTelefono.TabIndex = 58;
             this.textTelefono.Texts = "Número de teléfono *";
             this.textTelefono.UnderlinedStyle = true;
-            this.textTelefono.Enter += new System.EventHandler(this.textCorreo_Enter);
+            this.textTelefono.Enter += new System.EventHandler(this.textTelefono_Enter);
             this.textTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTelefono_KeyPress);
             this.textTelefono.Leave += new System.EventHandler(this.textTelefono_Leave);
             // 
@@ -431,9 +431,9 @@
             this.textCorreo.TabIndex = 57;
             this.textCorreo.Texts = "Correo eléctronico *";
             this.textCorreo.UnderlinedStyle = true;
-            this.textCorreo.Load += new System.EventHandler(this.textCorreo_Leave);
             this.textCorreo.Enter += new System.EventHandler(this.textCorreo_Enter);
             this.textCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCorreo_KeyPress);
+            this.textCorreo.Leave += new System.EventHandler(this.textCorreo_Leave);
             // 
             // textCargo
             // 

@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 using System.Drawing.Text;
 using Sistema_de_sanciones.Modelo;
 using Microsoft.VisualBasic;
-using Sistema_de_sanciones.ConexionDB;
+//using Sistema_de_sanciones.ConexionDB;
+using Sistema_de_sanciones.ConexionBD;
 
 
 namespace Sistema_de_sanciones.Controlador

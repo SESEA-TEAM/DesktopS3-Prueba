@@ -1,5 +1,4 @@
 ﻿using Sistema_de_sanciones.Controladores;
-
 using Sistema_de_sanciones.Properties;
 using System;
 using System.Collections.Generic;
@@ -10,6 +9,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -337,10 +337,17 @@ namespace Sistema_de_sanciones
                 textCorreo.ForeColor = Color.Gray;
             }
 
-            if (!usuarios.textBoxEvent.emialKeyPress(textCorreo.Texts))
+            string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
+            bool isEmailValid = Regex.IsMatch(textCorreo.Texts, emailPattern);
+
+            if (!isEmailValid)
+            {
                 errorProvider1.SetError(textCorreo, "Correo no valido");
+            }
             else
+            {
                 errorProvider1.SetError(textCorreo, String.Empty);
+            }
 
         }
 
@@ -375,7 +382,7 @@ namespace Sistema_de_sanciones
 
         private void textTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            usuarios.textBoxEvent.numberKeyPress(e);
+            usuarios.textBoxEvent.validarNumeros(e);
         }
 
         private void textExtension_Enter(object sender, EventArgs e)
@@ -398,7 +405,7 @@ namespace Sistema_de_sanciones
 
         private void textExtension_KeyPress(object sender, KeyPressEventArgs e)
         {
-            usuarios.textBoxEvent.numberKeyPress(e);
+            usuarios.textBoxEvent.validarNumeros(e);
         }
 
         private void textUser_Enter(object sender, EventArgs e)
@@ -468,12 +475,25 @@ namespace Sistema_de_sanciones
 
         private void buttonCancelar_Mod_Click(object sender, EventArgs e)
         {
+            errorProvider1.Clear();
             tabControl1.SelectedTab = ListaUsuario;
+            txtNombres.ForeColor = Color.Black;
+            textPApellido.ForeColor = Color.Black;
+            textSApellido.ForeColor = Color.Black;
+            textCargo.ForeColor = Color.Black;
+            textCorreo.ForeColor = Color.Black;
+            textTelefono.ForeColor = Color.Black;
+            textExtension.ForeColor = Color.Black;
+            textUser.ForeColor = Color.Black;
         }
 
         private void buttonGuardar_Mod_Click(object sender, EventArgs e)
         {
-            if (!usuarios.textBoxEvent.emialKeyPress(textCorreo.Texts) || txtNombres.Texts == "Nombres *" || textPApellido.Texts == "Primer Apellido *" ||
+
+            string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
+            bool isEmailValid = Regex.IsMatch(textCorreo.Texts, emailPattern);
+
+            if (!isEmailValid || txtNombres.Texts == "Nombres *" || textPApellido.Texts == "Primer Apellido *" ||
                             textCargo.Texts == "Cargo *" || textCorreo.Texts == "Correo eléctronico *" ||
                             textTelefono.Texts == "Número de télefono *" || textUser.Texts == "Nombre de Usuario *" || comboProveedor.Text == "Proveedor" || comboSistemas.Text == "Selecciona los sistemas aplicables *")
             {
@@ -517,7 +537,6 @@ namespace Sistema_de_sanciones
 
 
         }
-
 
         //Sección Ver Usuario
         private void buttonCancelar_Ver_Click(object sender, EventArgs e)
