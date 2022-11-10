@@ -54,8 +54,12 @@ namespace Sistema_de_sanciones
             dataGridView1.Columns[8].Width = 230;     //Se le asigna tamaño a la columna Proveedor
             dataGridView1.Columns[9].Visible = false; //Desactiva la columna Teléfono
             dataGridView1.Columns[10].Visible = false; //Desactiva la columna Extensión
-            dataGridView1.Columns[11].Visible = false; //Desactiva la columna Sistemas
+            dataGridView1.Columns[11].Visible = false; //Desactiva la columna ComboSistemas
             dataGridView1.Columns[12].Visible = false; //Desactiva la columna Sistemas
+            dataGridView1.Columns[13].Visible = false; //Desactiva columna fecha alta
+            dataGridView1.Columns[14].Visible = false; //Desactiva columna fecha actualización
+
+
 
             listarProveedor();
 
@@ -63,7 +67,6 @@ namespace Sistema_de_sanciones
         //
         private void Listar_Usuarios_Load(object sender, EventArgs e)
         {
-
             //Se genera 3 nuevas columas con botones.
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "Ver";
@@ -153,6 +156,9 @@ namespace Sistema_de_sanciones
                     comboSistemas1.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
                     comboEstatus1.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
 
+                    fecha_Alta.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
+                    fechaActualizacion.Text = dataGridView1.CurrentRow.Cells[14].Value.ToString();
+
                     tabControl1.SelectedTab = VerUsuario;
 
                 }
@@ -164,7 +170,7 @@ namespace Sistema_de_sanciones
         {
             //En el DataGridView se pintan las imagenes en sus respectivos botones.
 
-            if (e.ColumnIndex == 13)
+            if (e.ColumnIndex == 15)
             {
                 Image someImage = Properties.Resources.abajo;
 
@@ -177,7 +183,7 @@ namespace Sistema_de_sanciones
                 e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
-            if (e.ColumnIndex == 14)
+            if (e.ColumnIndex == 16)
             {
                 Image someImage = Properties.Resources.basura;
 
@@ -192,7 +198,7 @@ namespace Sistema_de_sanciones
             }
 
             
-            if (e.ColumnIndex == 15)
+            if (e.ColumnIndex == 17)
             {
                 Image someImage = Properties.Resources.lapiz;
 
@@ -541,7 +547,6 @@ namespace Sistema_de_sanciones
         //Sección Ver Usuario
         private void buttonCancelar_Ver_Click(object sender, EventArgs e)
         {
-
             tabControl1.SelectedTab = ListaUsuario;
         }
 

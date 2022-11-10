@@ -59,6 +59,10 @@
             this.txtNombres = new Sistema_de_sanciones.Templates.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.VerUsuario = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.fechaActualizacion = new System.Windows.Forms.DateTimePicker();
+            this.fecha_Alta = new System.Windows.Forms.DateTimePicker();
             this.buttonCancelar_Ver = new System.Windows.Forms.Button();
             this.comboSistemas1 = new System.Windows.Forms.ComboBox();
             this.comboEstatus1 = new System.Windows.Forms.ComboBox();
@@ -107,7 +111,7 @@
             // 
             // panel4
             // 
-            this.panel4.Location = new System.Drawing.Point(-2, 58);
+            this.panel4.Location = new System.Drawing.Point(-2, 59);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1179, 29);
             this.panel4.TabIndex = 23;
@@ -143,7 +147,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(969, 6);
+            this.label6.Location = new System.Drawing.Point(997, 6);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 16);
             this.label6.TabIndex = 4;
@@ -154,7 +158,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(749, 6);
+            this.label4.Location = new System.Drawing.Point(743, 6);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 16);
             this.label4.TabIndex = 2;
@@ -537,6 +541,10 @@
             // VerUsuario
             // 
             this.VerUsuario.BackColor = System.Drawing.SystemColors.Control;
+            this.VerUsuario.Controls.Add(this.label11);
+            this.VerUsuario.Controls.Add(this.label10);
+            this.VerUsuario.Controls.Add(this.fechaActualizacion);
+            this.VerUsuario.Controls.Add(this.fecha_Alta);
             this.VerUsuario.Controls.Add(this.buttonCancelar_Ver);
             this.VerUsuario.Controls.Add(this.comboSistemas1);
             this.VerUsuario.Controls.Add(this.comboEstatus1);
@@ -556,6 +564,49 @@
             this.VerUsuario.Size = new System.Drawing.Size(1166, 538);
             this.VerUsuario.TabIndex = 2;
             this.VerUsuario.Text = "Ver Usuario";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.Brown;
+            this.label11.Location = new System.Drawing.Point(465, 314);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(116, 15);
+            this.label11.TabIndex = 79;
+            this.label11.Text = "Fecha Modificación";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.Brown;
+            this.label10.Location = new System.Drawing.Point(195, 314);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(66, 15);
+            this.label10.TabIndex = 78;
+            this.label10.Text = "Fecha Alta";
+            // 
+            // fechaActualizacion
+            // 
+            this.fechaActualizacion.CustomFormat = "dddd dd MMMM yyyy, hh:mm:ss";
+            this.fechaActualizacion.Enabled = false;
+            this.fechaActualizacion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.fechaActualizacion.Location = new System.Drawing.Point(465, 339);
+            this.fechaActualizacion.Name = "fechaActualizacion";
+            this.fechaActualizacion.Size = new System.Drawing.Size(240, 23);
+            this.fechaActualizacion.TabIndex = 77;
+            // 
+            // fecha_Alta
+            // 
+            this.fecha_Alta.CustomFormat = "dddd dd MMMM yyyy, hh:mm:ss";
+            this.fecha_Alta.Enabled = false;
+            this.fecha_Alta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.fecha_Alta.Location = new System.Drawing.Point(195, 339);
+            this.fecha_Alta.Name = "fecha_Alta";
+            this.fecha_Alta.Size = new System.Drawing.Size(240, 23);
+            this.fecha_Alta.TabIndex = 76;
+            this.fecha_Alta.Value = new System.DateTime(2022, 11, 2, 0, 0, 0, 0);
             // 
             // buttonCancelar_Ver
             // 
@@ -579,7 +630,7 @@
             this.comboSistemas1.BackColor = System.Drawing.SystemColors.Menu;
             this.comboSistemas1.Enabled = false;
             this.comboSistemas1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboSistemas1.ForeColor = System.Drawing.Color.Gray;
+            this.comboSistemas1.ForeColor = System.Drawing.Color.Black;
             this.comboSistemas1.FormattingEnabled = true;
             this.comboSistemas1.Items.AddRange(new object[] {
             "Sistema de los Servidores Públicos Sancionados",
@@ -594,7 +645,7 @@
             // 
             this.comboEstatus1.Enabled = false;
             this.comboEstatus1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboEstatus1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.comboEstatus1.ForeColor = System.Drawing.Color.Black;
             this.comboEstatus1.FormattingEnabled = true;
             this.comboEstatus1.Items.AddRange(new object[] {
             "Vigente",
@@ -610,7 +661,7 @@
             this.comboProveedor1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboProveedor1.Enabled = false;
             this.comboProveedor1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboProveedor1.ForeColor = System.Drawing.Color.Gray;
+            this.comboProveedor1.ForeColor = System.Drawing.Color.Black;
             this.comboProveedor1.FormattingEnabled = true;
             this.comboProveedor1.Location = new System.Drawing.Point(404, 259);
             this.comboProveedor1.Name = "comboProveedor1";
@@ -623,11 +674,11 @@
             this.textUserName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textUserName.BackColor = System.Drawing.SystemColors.Control;
             this.textUserName.BorderColor = System.Drawing.Color.DimGray;
-            this.textUserName.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textUserName.BorderFocusColor = System.Drawing.Color.IndianRed;
             this.textUserName.BorderSize = 2;
             this.textUserName.Enabled = false;
             this.textUserName.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textUserName.ForeColor = System.Drawing.Color.Gray;
+            this.textUserName.ForeColor = System.Drawing.Color.Black;
             this.textUserName.Location = new System.Drawing.Point(808, 172);
             this.textUserName.Multiline = false;
             this.textUserName.Name = "textUserName";
@@ -643,11 +694,11 @@
             this.textLada.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textLada.BackColor = System.Drawing.SystemColors.Control;
             this.textLada.BorderColor = System.Drawing.Color.DimGray;
-            this.textLada.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textLada.BorderFocusColor = System.Drawing.Color.IndianRed;
             this.textLada.BorderSize = 2;
             this.textLada.Enabled = false;
             this.textLada.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textLada.ForeColor = System.Drawing.Color.Gray;
+            this.textLada.ForeColor = System.Drawing.Color.Black;
             this.textLada.Location = new System.Drawing.Point(609, 172);
             this.textLada.Multiline = false;
             this.textLada.Name = "textLada";
@@ -663,11 +714,11 @@
             this.textNum.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textNum.BackColor = System.Drawing.SystemColors.Control;
             this.textNum.BorderColor = System.Drawing.Color.DimGray;
-            this.textNum.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textNum.BorderFocusColor = System.Drawing.Color.IndianRed;
             this.textNum.BorderSize = 2;
             this.textNum.Enabled = false;
             this.textNum.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textNum.ForeColor = System.Drawing.Color.Gray;
+            this.textNum.ForeColor = System.Drawing.Color.Black;
             this.textNum.Location = new System.Drawing.Point(404, 172);
             this.textNum.Multiline = false;
             this.textNum.Name = "textNum";
@@ -683,11 +734,11 @@
             this.textCorreoE.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textCorreoE.BackColor = System.Drawing.SystemColors.Control;
             this.textCorreoE.BorderColor = System.Drawing.Color.DimGray;
-            this.textCorreoE.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textCorreoE.BorderFocusColor = System.Drawing.Color.IndianRed;
             this.textCorreoE.BorderSize = 2;
             this.textCorreoE.Enabled = false;
             this.textCorreoE.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textCorreoE.ForeColor = System.Drawing.Color.Gray;
+            this.textCorreoE.ForeColor = System.Drawing.Color.Black;
             this.textCorreoE.Location = new System.Drawing.Point(195, 172);
             this.textCorreoE.Multiline = false;
             this.textCorreoE.Name = "textCorreoE";
@@ -703,11 +754,11 @@
             this.textCargo1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textCargo1.BackColor = System.Drawing.SystemColors.Control;
             this.textCargo1.BorderColor = System.Drawing.Color.DimGray;
-            this.textCargo1.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textCargo1.BorderFocusColor = System.Drawing.Color.IndianRed;
             this.textCargo1.BorderSize = 2;
             this.textCargo1.Enabled = false;
             this.textCargo1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textCargo1.ForeColor = System.Drawing.Color.Gray;
+            this.textCargo1.ForeColor = System.Drawing.Color.Black;
             this.textCargo1.Location = new System.Drawing.Point(808, 85);
             this.textCargo1.Multiline = false;
             this.textCargo1.Name = "textCargo1";
@@ -723,11 +774,11 @@
             this.textSegundoApellido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textSegundoApellido.BackColor = System.Drawing.SystemColors.Control;
             this.textSegundoApellido.BorderColor = System.Drawing.Color.DimGray;
-            this.textSegundoApellido.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textSegundoApellido.BorderFocusColor = System.Drawing.Color.IndianRed;
             this.textSegundoApellido.BorderSize = 2;
             this.textSegundoApellido.Enabled = false;
             this.textSegundoApellido.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textSegundoApellido.ForeColor = System.Drawing.Color.Gray;
+            this.textSegundoApellido.ForeColor = System.Drawing.Color.Black;
             this.textSegundoApellido.Location = new System.Drawing.Point(609, 85);
             this.textSegundoApellido.Multiline = false;
             this.textSegundoApellido.Name = "textSegundoApellido";
@@ -743,11 +794,11 @@
             this.textPrimerApellido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textPrimerApellido.BackColor = System.Drawing.SystemColors.Control;
             this.textPrimerApellido.BorderColor = System.Drawing.Color.DimGray;
-            this.textPrimerApellido.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textPrimerApellido.BorderFocusColor = System.Drawing.Color.IndianRed;
             this.textPrimerApellido.BorderSize = 2;
             this.textPrimerApellido.Enabled = false;
             this.textPrimerApellido.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textPrimerApellido.ForeColor = System.Drawing.Color.Gray;
+            this.textPrimerApellido.ForeColor = System.Drawing.Color.Black;
             this.textPrimerApellido.Location = new System.Drawing.Point(404, 85);
             this.textPrimerApellido.Multiline = false;
             this.textPrimerApellido.Name = "textPrimerApellido";
@@ -763,11 +814,11 @@
             this.textNombres.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textNombres.BackColor = System.Drawing.SystemColors.Control;
             this.textNombres.BorderColor = System.Drawing.Color.DimGray;
-            this.textNombres.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textNombres.BorderFocusColor = System.Drawing.Color.IndianRed;
             this.textNombres.BorderSize = 2;
             this.textNombres.Enabled = false;
             this.textNombres.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textNombres.ForeColor = System.Drawing.Color.Gray;
+            this.textNombres.ForeColor = System.Drawing.Color.Black;
             this.textNombres.Location = new System.Drawing.Point(195, 85);
             this.textNombres.Multiline = false;
             this.textNombres.Name = "textNombres";
@@ -866,5 +917,9 @@
         private Label label9;
         private Panel panel4;
         private ErrorProvider errorProvider1;
+        public DateTimePicker fechaActualizacion;
+        public DateTimePicker fecha_Alta;
+        private Label label11;
+        private Label label10;
     }
 }
