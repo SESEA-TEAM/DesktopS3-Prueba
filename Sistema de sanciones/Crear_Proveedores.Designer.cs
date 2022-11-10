@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textProveedor = new Sistema_de_sanciones.Templates.TextBox();
-            this.buttonEntrar = new System.Windows.Forms.Button();
             this.Guardar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboSistema = new System.Windows.Forms.ComboBox();
@@ -70,21 +69,6 @@
             this.textProveedor.Enter += new System.EventHandler(this.textBox1_Enter);
             this.textProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             this.textProveedor.Leave += new System.EventHandler(this.textBox1_Leave);
-            // 
-            // buttonEntrar
-            // 
-            this.buttonEntrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonEntrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.buttonEntrar.FlatAppearance.BorderSize = 0;
-            this.buttonEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEntrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonEntrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonEntrar.Location = new System.Drawing.Point(751, 279);
-            this.buttonEntrar.Name = "buttonEntrar";
-            this.buttonEntrar.Size = new System.Drawing.Size(126, 35);
-            this.buttonEntrar.TabIndex = 15;
-            this.buttonEntrar.Text = "CANCELAR";
-            this.buttonEntrar.UseVisualStyleBackColor = false;
             // 
             // Guardar
             // 
@@ -140,7 +124,6 @@
             this.Controls.Add(this.comboSistema);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Guardar);
-            this.Controls.Add(this.buttonEntrar);
             this.Controls.Add(this.textProveedor);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -156,7 +139,6 @@
 
         private Label label1;
         private Templates.TextBox textProveedor;
-        private Button buttonEntrar;
         private Button Guardar;
         public Label label2;
         private ComboBox comboSistema;
