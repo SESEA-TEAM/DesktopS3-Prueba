@@ -318,11 +318,23 @@ namespace Sistema_de_sanciones
                 modeloListaProveedores user = (modeloListaProveedores)comboProveedor.SelectedItem;
                 int us = Convert.ToInt32(user.id);
                 objp.InsertarUsuario(txtNombres.Texts, textPApellido.Texts, textSApellido.Texts, textCargo.Texts, textCorreo.Texts, textTelefono.Texts, textExtension.Texts, textUser.Texts,comboSistemas.SelectedItem.ToString(), us);
-                objp.IngresarContrasena(textContraseña.Texts);
+                //objp.IngresarContrasena(textContraseña.Texts);
+
+
+                string cadenaEncriptada = Encrypt.GetSHA256(textContraseña.Texts.Trim());
+                var comando = new SqlCommand();
+                comando.Connection = ConexionBD.AbrirConexion();
+                string cadena = "insert into contrasena(contrasena) values ('" + cadenaEncriptada + "')";
+                comando.CommandText = cadena;
+                comando.ExecuteNonQuery();
+                ConexionBD.CerrarConexion();
+
+
+
                 MessageBox.Show("Registro Insertado");
                 limpiar();
                 errorProvider1.Clear();
-            }
+            }   
             
         }
 
