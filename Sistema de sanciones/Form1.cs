@@ -2,10 +2,11 @@ namespace Sistema_de_sanciones
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1(string nombre)
         {
             InitializeComponent();
             customDesing();
+            lblMensajeAdmin.Text = nombre;
         }
 
         private void customDesing()
@@ -81,6 +82,13 @@ namespace Sistema_de_sanciones
         private void button1_Click(object sender, EventArgs e)
         {
             loadform(new ReporteBitacora());
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Login inicioSesion = new Login();
+            inicioSesion.Show();
+            Close();
         }
     }
 }

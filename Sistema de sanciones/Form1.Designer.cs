@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panelMenuProv = new System.Windows.Forms.Panel();
             this.buttonListarProveedor = new System.Windows.Forms.Button();
@@ -40,15 +42,25 @@
             this.buttonUsuarios = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblMensajeAdmin = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelMenuProv.SuspendLayout();
             this.panelMenuUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.mainPanel.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.White;
+            this.panelMenu.Controls.Add(this.btnCerrarSesion);
             this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.panelMenuProv);
             this.panelMenu.Controls.Add(this.buttonProveedores);
@@ -58,8 +70,24 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(160, 801);
+            this.panelMenu.Size = new System.Drawing.Size(160, 749);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(22, 702);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(115, 35);
+            this.btnCerrarSesion.TabIndex = 22;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // button1
             // 
@@ -205,18 +233,87 @@
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.tabControl1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mainPanel.Location = new System.Drawing.Point(160, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1174, 801);
+            this.mainPanel.Size = new System.Drawing.Size(1174, 749);
             this.mainPanel.TabIndex = 1;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(-4, -25);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1186, 782);
+            this.tabControl1.TabIndex = 2;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.lblMensajeAdmin);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1178, 754);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Inicio";
+            // 
+            // lblMensajeAdmin
+            // 
+            this.lblMensajeAdmin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMensajeAdmin.AutoSize = true;
+            this.lblMensajeAdmin.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMensajeAdmin.ForeColor = System.Drawing.Color.Black;
+            this.lblMensajeAdmin.Location = new System.Drawing.Point(674, 246);
+            this.lblMensajeAdmin.Name = "lblMensajeAdmin";
+            this.lblMensajeAdmin.Size = new System.Drawing.Size(0, 24);
+            this.lblMensajeAdmin.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(412, 357);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(462, 286);
+            this.label4.TabIndex = 10;
+            this.label4.Text = resources.GetString("label4.Text");
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
+            this.label5.Location = new System.Drawing.Point(490, 246);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(153, 24);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Administrador";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
+            this.label1.Location = new System.Drawing.Point(527, 182);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 32);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Bienvenido ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 801);
+            this.ClientSize = new System.Drawing.Size(1334, 749);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panelMenu);
             this.Name = "Form1";
@@ -226,6 +323,10 @@
             this.panelMenuProv.ResumeLayout(false);
             this.panelMenuUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.mainPanel.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -239,10 +340,17 @@
         private Button buttonCrearUsuario;
         private Button buttonUsuarios;
         private PictureBox pictureBox1;
-        private Panel mainPanel;
         private Panel panelMenuProv;
         private Button buttonListarProveedor;
         private Button buttonCrearProveedor;
         private Button button1;
+        private Panel mainPanel;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private Label lblMensajeAdmin;
+        private Label label4;
+        private Label label5;
+        private Label label1;
+        private Button btnCerrarSesion;
     }
 }

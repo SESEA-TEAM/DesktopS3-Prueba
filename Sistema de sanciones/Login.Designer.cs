@@ -31,9 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new Sistema_de_sanciones.Templates.TextBox();
+            this.textUsuario = new Sistema_de_sanciones.Templates.TextBox();
             this.buttonEntrar = new System.Windows.Forms.Button();
-            this.textBox2 = new Sistema_de_sanciones.Templates.TextBox();
+            this.textContrasena = new Sistema_de_sanciones.Templates.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,26 +72,26 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Iniciar sesión";
             // 
-            // textBox1
+            // textUsuario
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox1.BorderSize = 2;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(448, 423);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Multiline = false;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox1.PasswordChar = false;
-            this.textBox1.Size = new System.Drawing.Size(266, 31);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.Texts = "Nombre de usuario*";
-            this.textBox1.UnderlinedStyle = true;
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.textUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textUsuario.BackColor = System.Drawing.SystemColors.Control;
+            this.textUsuario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.textUsuario.BorderFocusColor = System.Drawing.Color.DarkRed;
+            this.textUsuario.BorderSize = 2;
+            this.textUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textUsuario.Location = new System.Drawing.Point(448, 423);
+            this.textUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textUsuario.Multiline = false;
+            this.textUsuario.Name = "textUsuario";
+            this.textUsuario.Padding = new System.Windows.Forms.Padding(7);
+            this.textUsuario.PasswordChar = false;
+            this.textUsuario.Size = new System.Drawing.Size(266, 31);
+            this.textUsuario.TabIndex = 12;
+            this.textUsuario.Texts = "Nombre de usuario*";
+            this.textUsuario.UnderlinedStyle = true;
+            this.textUsuario.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textUsuario.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // buttonEntrar
             // 
@@ -109,34 +109,34 @@
             this.buttonEntrar.UseVisualStyleBackColor = false;
             this.buttonEntrar.Click += new System.EventHandler(this.buttonEntrar_Click);
             // 
-            // textBox2
+            // textContrasena
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox2.BorderSize = 2;
-            this.textBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(448, 491);
-            this.textBox2.Multiline = false;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox2.PasswordChar = true;
-            this.textBox2.Size = new System.Drawing.Size(266, 31);
-            this.textBox2.TabIndex = 15;
-            this.textBox2.Texts = "Contraseña*";
-            this.textBox2.UnderlinedStyle = true;
-            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
-            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave_1);
+            this.textContrasena.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textContrasena.BackColor = System.Drawing.SystemColors.Control;
+            this.textContrasena.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.textContrasena.BorderFocusColor = System.Drawing.Color.DarkRed;
+            this.textContrasena.BorderSize = 2;
+            this.textContrasena.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textContrasena.Location = new System.Drawing.Point(448, 491);
+            this.textContrasena.Multiline = false;
+            this.textContrasena.Name = "textContrasena";
+            this.textContrasena.Padding = new System.Windows.Forms.Padding(7);
+            this.textContrasena.PasswordChar = true;
+            this.textContrasena.Size = new System.Drawing.Size(266, 31);
+            this.textContrasena.TabIndex = 15;
+            this.textContrasena.Texts = "Contraseña*";
+            this.textContrasena.UnderlinedStyle = true;
+            this.textContrasena.Enter += new System.EventHandler(this.textBox2_Enter);
+            this.textContrasena.Leave += new System.EventHandler(this.textBox2_Leave_1);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1158, 762);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(1158, 749);
+            this.Controls.Add(this.textContrasena);
             this.Controls.Add(this.buttonEntrar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -154,8 +154,8 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Label label2;
-        private Templates.TextBox textBox1;
-        private Button buttonEntrar;
-        private Templates.TextBox textBox2;
+        public Button buttonEntrar;
+        private Templates.TextBox textUsuario;
+        private Templates.TextBox textContrasena;
     }
 }

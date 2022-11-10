@@ -12,10 +12,11 @@ namespace Sistema_de_sanciones
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        public Form2(string nombre)
         {
             InitializeComponent();
             customDesing();
+            lblMensajeCap.Text = nombre;
         }
         private void customDesing()
         {
@@ -91,6 +92,11 @@ namespace Sistema_de_sanciones
             loadform(new Datos_SPS());
         }
 
-        
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Login inicioSesion = new Login();
+            inicioSesion.Show();
+            this.Hide();
+        }
     }
 }

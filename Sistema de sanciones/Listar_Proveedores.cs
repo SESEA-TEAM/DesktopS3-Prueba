@@ -35,11 +35,11 @@ namespace Sistema_de_sanciones
 
             dataGridView1.DataSource = dsTabla;
             dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].Width = 251;
-            dataGridView1.Columns[2].Width = 250;
-            dataGridView1.Columns[3].Width = 80;
-            dataGridView1.Columns[4].Width = 200;
-            dataGridView1.Columns[5].Width = 120;
+            dataGridView1.Columns[1].Width = 305;
+            dataGridView1.Columns[2].Visible = false;
+            dataGridView1.Columns[3].Width = 305;
+            dataGridView1.Columns[4].Width = 305;
+            dataGridView1.Columns[5].Visible = false;
 
 
         }
@@ -77,6 +77,14 @@ namespace Sistema_de_sanciones
             {
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
+
+                    id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                    textProveedorVer.Texts = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    comboSistemaVer.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    comboEstatusVer.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    dateFechaAltaVer.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    dateFechaActualizacionVer.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+
                     tabControl1.SelectedTab = VerProveedor;
 
 
@@ -301,8 +309,9 @@ namespace Sistema_de_sanciones
         {
             proveedores.textBoxEvent.textKeyPress(e);
         }
-       
-
+        
+   
+        
     }
 }
 
