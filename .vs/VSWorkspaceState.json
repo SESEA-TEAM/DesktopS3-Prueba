@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Sistema de sanciones"
+    "\\Sistema de sanciones",
+    "\\Sistema de sanciones\\Controladores"
   ],
-  "SelectedNode": "\\Sistema de sanciones\\Listar_Usuarios.cs",
+  "SelectedNode": "\\Sistema de sanciones\\Controladores\\controladorListaUsusarios.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -8,7 +8,7 @@ namespace Sistema_de_sanciones.Modelo
 {
     public class modeloSPS
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string fechaC { get; set; }
         public String expediente { get; set; }
         public String autoridadSancionadora { get; set; }   
@@ -20,15 +20,15 @@ namespace Sistema_de_sanciones.Modelo
         public String segundoApellidoSPS { get; set; }
         public String puestoSPS { get; set; }
         public String nivelSPS { get; set; }
-        public int generoSPS { get; set; }
-        public int tipoFalta { get; set; }
+        public int? generoSPS { get; set; }
+        public int? tipoFalta { get; set; }
         public String observaciones { get; set; }
         public String claveInstitucionDependencia { get; set; }
         public String nombreInstitucionDependencia { get; set; }
         public String siglasInstitucionDependencia { get; set; }
-        public float montoMulta { get; set; }
-        public int monedaMulta { get; set; }
-        public string fechaResolucion { get; set; }
+        public float? montoMulta { get; set; }
+        public int? monedaMulta { get; set; }
+        public String fechaResolucion { get; set; }
         public String urlResolucion { get; set ; }
         public String plazoInhabilitacion { get; set; }
         public String fechaInicialInhabilitacion { get; set; }
