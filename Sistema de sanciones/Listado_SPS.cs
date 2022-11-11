@@ -1,5 +1,5 @@
 using Sistema_de_sanciones;
-using Sistema_de_sanciones.Controlador;
+using Sistema_de_sanciones.Controladores;
 using Sistema_de_sanciones.Modelo;
 using System.Data;
 using System.Data.SqlClient;
@@ -11,7 +11,7 @@ namespace WinFormsApp1
     {
         //Declaramos nuestras variables, objs sera el nombre con el que nos referiremos al controlador SPS, dsTable sera el nombre de nuestro dataset para 
         //visualizar los datos en el dataGridView, y las variables EX, ISD, NM, PA y SA seran nuestros valores de entrada.
-        ControladorSPS objs = new ControladorSPS();
+        controladorSPS objs = new controladorSPS();
         DataSet dsTable;
         int ContadorTotal;
         String? FA = null;
@@ -33,6 +33,7 @@ namespace WinFormsApp1
             botonAnterior.Enabled = false;
             botonSiguiente.Enabled = false;
             botonFinal.Enabled = false;
+            listarTipoSancion();
             //CargarDB();
             //List<string> lista = new List<string>();
             //lista.Add("Tipo Sancion");
@@ -47,7 +48,7 @@ namespace WinFormsApp1
         {
             //La primera linea sirve para indicarle a nuestro comboBox la ubicacion donde este debera tomar los valores, en este caso del
             //controladorListaTipoSancion, mientras que la segunda linea sera para indicarle cual valor de la tabla desplegara, en este caso es valor.
-            comboBox1.DataSource = new ControladorListaTipoSancion().obtenerTipoSancion();
+            comboBox1.DataSource = new controladorTipoSancion().obtenerListaSanciones();
             comboBox1.ValueMember = "valor";
 
         }
@@ -58,21 +59,21 @@ namespace WinFormsApp1
         //entonces el programa hara la consulta y buscara todos los resultados que coincidan con los parametros indicados.
         private void CargarDB()
         {
-            if (Convert.ToString(dateTimePicker1.Text) == "2000-01-01")
+            if (dateTimePicker1.Text == "2000-01-01")
             {
-
+                FA = null;
             }
             else
             {
-                FA = Convert.ToString(dateTimePicker1.Text);
+                FA = dateTimePicker1.Text;
             }
-            if (Convert.ToString(dateTimePicker2.Text) == "2000-01-01")
+            if (dateTimePicker2.Text == "2000-01-01")
             {
-
+                IH = null;
             }
             else
             {
-                IH = Convert.ToString(dateTimePicker2.Text);
+                IH = dateTimePicker2.Text;
             }
             if (textExpediente.Texts == "Expediente")
             {
@@ -114,13 +115,14 @@ namespace WinFormsApp1
             {
                 SA = textSA.Texts;
             }
-            if (comboBox1.Text == "Tipo Sancion")
+            modeloTipoSancion TipoS = (modeloTipoSancion)comboBox1.SelectedItem;
+            if (TipoS.id == 0)
             {
-
+                TP = null;
             }
             else
             {
-                TP = comboBox1.Text;
+                TP = Convert.ToString(TipoS.valor);
             }
 
             //Los valores objs.Inicio2 y Final2 seran nuestros contadores, que nos serviran para navegar entre las distintas paginas del dataGridView.
@@ -128,7 +130,7 @@ namespace WinFormsApp1
             //los mismos parametros de busqueda que utilizamos en la busqueda de registros en especificos
             objs.Inicio2 = 1;
 
-            ContadorTotal = objs.UltimoBarraListadoSPS(EX, ISD, NM, PA, SA, FA, IH);
+            ContadorTotal = objs.UltimoBarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
 
             if (ContadorTotal <= 10)
             {
@@ -150,7 +152,7 @@ namespace WinFormsApp1
             //procedimiento BarraListadoSPS el cual declaramos en el controladorSPS y es el encargado de realizar la consulta, mientras que la segunda linea
             //carga los datos de la consulta en nuestro dataGridView.
 
-            dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, FA, IH);
+            dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
 
             botonPrimero.Enabled = false;
@@ -173,8 +175,8 @@ namespace WinFormsApp1
             //La siguiente linea es nuestro contador de total de registros, en este almacenaremos en un valor el numero de registros totales dentro de nuestra
             //base de datos, pues este valor sera de mucha importancia para indicarle al programa cuando debera de desabilitar los botones para ir al siguiente
             //registro y el anterior, todo esto a traves del metodo UltimoBarraListadoSPS, el cual definimos en nuestro controlador.
-            //ContadorTotal = objs.UltimoBarraListadoSPS(EX, ISD, NM, PA, SA, FA, IH);
-            //ContadorTotal = objs.UltimoBarraListadoSPS(EX, ISD, NM, PA, SA, FA, IH);
+            //ContadorTotal = objs.UltimoBarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
+            //ContadorTotal = objs.UltimoBarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
             botonPrimero.Enabled = false;
             botonAnterior.Enabled = false;
 
@@ -264,7 +266,7 @@ namespace WinFormsApp1
             
             botonSiguiente.Enabled = true;
             dsTable.Clear();
-            dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, FA, IH);
+            dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
             botonAnterior.Enabled = false;
 
@@ -284,7 +286,7 @@ namespace WinFormsApp1
                 botonAnterior.Enabled=false;
             }
             dsTable.Clear();
-            dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, FA, IH);
+            dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
             label9.Text = "Registros: " + objs.Inicio2 + " - " + (objs.Final2 - 1) + " de: " + ContadorTotal.ToString();
         }
@@ -303,7 +305,7 @@ namespace WinFormsApp1
                 botonAnterior.Enabled = true;
                 
                 dsTable.Clear();
-                dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, FA, IH);
+                dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
                 dataGridView1.DataSource = dsTable.Tables[1];
                 label9.Text = "Registros: " + objs.Inicio2 + " - " + ContadorTotal + " de: " + ContadorTotal.ToString();
             }
@@ -317,7 +319,7 @@ namespace WinFormsApp1
 
                 botonAnterior.Enabled = true;
                 dsTable.Clear();
-                dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, FA, IH);
+                dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
                 dataGridView1.DataSource = dsTable.Tables[1];
 
                 label9.Text = "Registros: " + objs.Inicio2 + " - " + (objs.Final2 - 1) + " de: " + ContadorTotal.ToString();
@@ -339,7 +341,7 @@ namespace WinFormsApp1
                 objs.Inicio2 = ContadorTotal - (ContadorTotal % 10) + 1 - 10;
                 objs.Final2 = objs.Inicio2 + 10;
                 dsTable.Clear();
-                dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, FA, IH);
+                dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
                 dataGridView1.DataSource = dsTable.Tables[1];
                 botonPrimero.Enabled = true;
                 botonAnterior.Enabled = true;
@@ -350,7 +352,7 @@ namespace WinFormsApp1
                 objs.Inicio2 = ContadorTotal - (ContadorTotal % 10) + 1;
                 objs.Final2 = objs.Inicio2 + 10;
                 dsTable.Clear();
-                dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, FA, IH);
+                dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
                 dataGridView1.DataSource = dsTable.Tables[1];
                 botonPrimero.Enabled = true;
                 botonAnterior.Enabled = true;

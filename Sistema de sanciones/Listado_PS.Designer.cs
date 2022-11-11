@@ -31,13 +31,16 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.botonBuscar = new System.Windows.Forms.Button();
             this.botonLimpiar = new System.Windows.Forms.Button();
-            this.textBox6 = new Sistema_de_sanciones.Templates.TextBox();
-            this.textBox5 = new Sistema_de_sanciones.Templates.TextBox();
-            this.textBox3 = new Sistema_de_sanciones.Templates.TextBox();
+            this.textBox7 = new Sistema_de_sanciones.Templates.TextBox();
+            this.textNombre = new Sistema_de_sanciones.Templates.TextBox();
+            this.textISD = new Sistema_de_sanciones.Templates.TextBox();
+            this.textExpediente = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox1 = new Sistema_de_sanciones.Templates.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -55,9 +58,6 @@
             this.botonSiguiente = new System.Windows.Forms.Button();
             this.botonUltimo = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox7 = new Sistema_de_sanciones.Templates.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -90,14 +90,14 @@
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.botonBuscar);
             this.panel1.Controls.Add(this.botonLimpiar);
             this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textNombre);
+            this.panel1.Controls.Add(this.textISD);
+            this.panel1.Controls.Add(this.textExpediente);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.ForeColor = System.Drawing.Color.Black;
@@ -105,6 +105,38 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1174, 209);
             this.panel1.TabIndex = 5;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(24, 68);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(264, 23);
+            this.dateTimePicker2.TabIndex = 7;
+            this.dateTimePicker2.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(600, 118);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(264, 23);
+            this.dateTimePicker1.TabIndex = 7;
+            this.dateTimePicker1.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(24, 117);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(264, 24);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -116,17 +148,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(264, 24);
             this.comboBox2.TabIndex = 6;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(24, 117);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(264, 24);
-            this.comboBox1.TabIndex = 5;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // botonBuscar
             // 
@@ -140,6 +162,7 @@
             this.botonBuscar.TabIndex = 3;
             this.botonBuscar.Text = "BUSCAR";
             this.botonBuscar.UseVisualStyleBackColor = false;
+            this.botonBuscar.Click += new System.EventHandler(this.botonBuscar_Click);
             // 
             // botonLimpiar
             // 
@@ -153,60 +176,80 @@
             this.botonLimpiar.TabIndex = 3;
             this.botonLimpiar.Text = "LIMPIAR";
             this.botonLimpiar.UseVisualStyleBackColor = false;
+            this.botonLimpiar.Click += new System.EventHandler(this.botonLimpiar_Click);
             // 
-            // textBox6
+            // textBox7
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox6.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox6.BorderSize = 2;
-            this.textBox6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox6.Location = new System.Drawing.Point(888, 60);
-            this.textBox6.Multiline = false;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox6.PasswordChar = false;
-            this.textBox6.Size = new System.Drawing.Size(264, 31);
-            this.textBox6.TabIndex = 1;
-            this.textBox6.Texts = "Nombre/Razón social";
-            this.textBox6.UnderlinedStyle = true;
+            this.textBox7.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.textBox7.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textBox7.BorderSize = 2;
+            this.textBox7.Enabled = false;
+            this.textBox7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox7.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.textBox7.Location = new System.Drawing.Point(600, 92);
+            this.textBox7.Multiline = false;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Padding = new System.Windows.Forms.Padding(7);
+            this.textBox7.PasswordChar = false;
+            this.textBox7.Size = new System.Drawing.Size(264, 31);
+            this.textBox7.TabIndex = 1;
+            this.textBox7.Texts = "Inhabilitación fecha final";
+            this.textBox7.UnderlinedStyle = true;
             // 
-            // textBox5
+            // textNombre
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox5.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox5.BorderSize = 2;
-            this.textBox5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox5.Location = new System.Drawing.Point(600, 60);
-            this.textBox5.Multiline = false;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox5.PasswordChar = false;
-            this.textBox5.Size = new System.Drawing.Size(264, 31);
-            this.textBox5.TabIndex = 1;
-            this.textBox5.Texts = "Institución / Dependencia";
-            this.textBox5.UnderlinedStyle = true;
+            this.textNombre.BackColor = System.Drawing.SystemColors.Control;
+            this.textNombre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.textNombre.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textNombre.BorderSize = 2;
+            this.textNombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textNombre.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.textNombre.Location = new System.Drawing.Point(888, 60);
+            this.textNombre.Multiline = false;
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Padding = new System.Windows.Forms.Padding(7);
+            this.textNombre.PasswordChar = false;
+            this.textNombre.Size = new System.Drawing.Size(264, 31);
+            this.textNombre.TabIndex = 1;
+            this.textNombre.Texts = "Nombre/Razón social";
+            this.textNombre.UnderlinedStyle = true;
             // 
-            // textBox3
+            // textISD
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox3.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox3.BorderSize = 2;
-            this.textBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox3.Location = new System.Drawing.Point(312, 60);
-            this.textBox3.Multiline = false;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox3.PasswordChar = false;
-            this.textBox3.Size = new System.Drawing.Size(264, 31);
-            this.textBox3.TabIndex = 1;
-            this.textBox3.Texts = "Expediente";
-            this.textBox3.UnderlinedStyle = true;
+            this.textISD.BackColor = System.Drawing.SystemColors.Control;
+            this.textISD.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.textISD.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textISD.BorderSize = 2;
+            this.textISD.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textISD.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.textISD.Location = new System.Drawing.Point(600, 60);
+            this.textISD.Multiline = false;
+            this.textISD.Name = "textISD";
+            this.textISD.Padding = new System.Windows.Forms.Padding(7);
+            this.textISD.PasswordChar = false;
+            this.textISD.Size = new System.Drawing.Size(264, 31);
+            this.textISD.TabIndex = 1;
+            this.textISD.Texts = "Institución / Dependencia";
+            this.textISD.UnderlinedStyle = true;
+            // 
+            // textExpediente
+            // 
+            this.textExpediente.BackColor = System.Drawing.SystemColors.Control;
+            this.textExpediente.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.textExpediente.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textExpediente.BorderSize = 2;
+            this.textExpediente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textExpediente.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.textExpediente.Location = new System.Drawing.Point(312, 60);
+            this.textExpediente.Multiline = false;
+            this.textExpediente.Name = "textExpediente";
+            this.textExpediente.Padding = new System.Windows.Forms.Padding(7);
+            this.textExpediente.PasswordChar = false;
+            this.textExpediente.Size = new System.Drawing.Size(264, 31);
+            this.textExpediente.TabIndex = 1;
+            this.textExpediente.Texts = "Expediente";
+            this.textExpediente.UnderlinedStyle = true;
             // 
             // textBox1
             // 
@@ -416,45 +459,6 @@
             this.label10.TabIndex = 8;
             this.label10.Text = "Registros:";
             // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox7.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox7.BorderSize = 2;
-            this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox7.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox7.Location = new System.Drawing.Point(600, 92);
-            this.textBox7.Multiline = false;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox7.PasswordChar = false;
-            this.textBox7.Size = new System.Drawing.Size(264, 31);
-            this.textBox7.TabIndex = 1;
-            this.textBox7.Texts = "Inhabilitación fecha final";
-            this.textBox7.UnderlinedStyle = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(600, 118);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(264, 23);
-            this.dateTimePicker1.TabIndex = 7;
-            this.dateTimePicker1.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(24, 68);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(264, 23);
-            this.dateTimePicker2.TabIndex = 7;
-            this.dateTimePicker2.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            // 
             // Listado_PS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -493,9 +497,9 @@
         private Panel panel1;
         private Button botonBuscar;
         private Button botonLimpiar;
-        private Templates.TextBox textBox6;
-        private Templates.TextBox textBox5;
-        private Templates.TextBox textBox3;
+        private Templates.TextBox textNombre;
+        private Templates.TextBox textISD;
+        private Templates.TextBox textExpediente;
         private Templates.TextBox textBox1;
         private Label label2;
         private Panel panel2;
@@ -508,7 +512,6 @@
         private Label label4;
         private Label label9;
         private ComboBox comboBox2;
-        private ComboBox comboBox1;
         private DataGridView dataGridView1;
         private Button botonPrimero;
         private Button botonAnterior;
@@ -518,5 +521,6 @@
         private DateTimePicker dateTimePicker1;
         private Templates.TextBox textBox7;
         private DateTimePicker dateTimePicker2;
+        private ComboBox comboBox1;
     }
 }

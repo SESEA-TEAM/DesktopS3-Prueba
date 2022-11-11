@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1;
 
 namespace Sistema_de_sanciones
 {
@@ -69,12 +70,12 @@ namespace Sistema_de_sanciones
 
         private void buttonPublicos_Click(object sender, EventArgs e)
         {
-            loadform(new Datos_PS());
+            loadform(new FormListadoSPS());
         }
 
         private void buttonParticular_Click(object sender, EventArgs e)
         {
-            loadform(new Datos_SPS());
+            loadform(new Listado_PS());
         }
 
         private void buttonCapturar_Click(object sender, EventArgs e)
