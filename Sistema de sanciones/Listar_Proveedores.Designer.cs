@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -114,7 +114,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Location = new System.Drawing.Point(4, 60);
+            this.panel1.Location = new System.Drawing.Point(4, 58);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(321, 25);
             this.panel1.TabIndex = 4;
@@ -227,13 +227,13 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1174, 334);
@@ -302,7 +302,8 @@
             this.comboSistema.Items.AddRange(new object[] {
             "Sistema de los Servidores Públicos Sancionados",
             "Sistema de los Particulares Sancionados",
-            "Sistema de los Particulares Sancionados, Sistema de los Particulares Sancionados"});
+            "Sistema de los Servidores Públicos Sancionados, Sistema de los Particulares Sanci" +
+                "onados"});
             this.comboSistema.Location = new System.Drawing.Point(516, 106);
             this.comboSistema.Name = "comboSistema";
             this.comboSistema.Size = new System.Drawing.Size(524, 24);
@@ -468,7 +469,7 @@
             this.textProveedorVer.Location = new System.Drawing.Point(110, 92);
             this.textProveedorVer.Multiline = false;
             this.textProveedorVer.Name = "textProveedorVer";
-            this.textProveedorVer.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textProveedorVer.Padding = new System.Windows.Forms.Padding(7);
             this.textProveedorVer.PasswordChar = false;
             this.textProveedorVer.Size = new System.Drawing.Size(266, 31);
             this.textProveedorVer.TabIndex = 43;
@@ -495,10 +496,6 @@
             this.comboSistemaVer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboSistemaVer.ForeColor = System.Drawing.Color.Black;
             this.comboSistemaVer.FormattingEnabled = true;
-            this.comboSistemaVer.Items.AddRange(new object[] {
-            "Sistema de los Servidores Públicos Sancionados",
-            "Sistema de los Particulares Sancionados",
-            "Sistema de los Particulares Sancionados, Sistema de los Particulares Sancionados"});
             this.comboSistemaVer.Location = new System.Drawing.Point(524, 99);
             this.comboSistemaVer.Name = "comboSistemaVer";
             this.comboSistemaVer.Size = new System.Drawing.Size(524, 24);

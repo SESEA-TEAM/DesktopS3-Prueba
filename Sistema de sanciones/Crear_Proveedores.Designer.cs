@@ -105,7 +105,8 @@
             this.comboSistema.Items.AddRange(new object[] {
             "Sistema de los Servidores Públicos Sancionados",
             "Sistema de los Particulares Sancionados",
-            "Sistema de los Particulares Sancionados, Sistema de los Particulares Sancionados"});
+            "Sistema de los Servidores Públicos Sancionados, Sistema de los Particulares Sanci" +
+                "onados"});
             this.comboSistema.Location = new System.Drawing.Point(488, 124);
             this.comboSistema.Name = "comboSistema";
             this.comboSistema.Size = new System.Drawing.Size(524, 24);

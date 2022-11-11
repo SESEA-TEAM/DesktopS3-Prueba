@@ -111,7 +111,7 @@
             // 
             // panel4
             // 
-            this.panel4.Location = new System.Drawing.Point(-2, 60);
+            this.panel4.Location = new System.Drawing.Point(-2, 61);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1179, 29);
             this.panel4.TabIndex = 23;
@@ -306,7 +306,8 @@
             this.comboSistemas.Items.AddRange(new object[] {
             "Sistema de los Servidores Públicos Sancionados",
             "Sistema de los Particulares Sancionados",
-            "Sistema de los Particulares Sancionados, Sistema de los Particulares Sancionados"});
+            "Sistema de los Servidores Públicos Sancionados, Sistema de los Particulares Sanci" +
+                "onados"});
             this.comboSistemas.Location = new System.Drawing.Point(602, 264);
             this.comboSistemas.Name = "comboSistemas";
             this.comboSistemas.Size = new System.Drawing.Size(372, 24);
