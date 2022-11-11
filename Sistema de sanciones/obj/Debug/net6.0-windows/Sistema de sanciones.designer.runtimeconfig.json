@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Invitado2022\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Invitado2022\\.nuget\\packages"
+      "C:\\Users\\radge\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\radge\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
