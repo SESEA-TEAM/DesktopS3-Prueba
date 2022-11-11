@@ -1,5 +1,6 @@
 ﻿using Sistema_de_sanciones.ConexionBD;
 using Sistema_de_sanciones.Controladores;
+using Sistema_de_sanciones.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,6 +32,7 @@ namespace Sistema_de_sanciones
         {
             InitializeComponent();
             listarProveedor();
+            listarPerfil();
         }
 
         private void Crear_Usuarios_Load(object sender, EventArgs e)
@@ -302,6 +304,14 @@ namespace Sistema_de_sanciones
             comboProveedor.ValueMember = "proveedor";
         }
 
+
+        private void listarPerfil()
+        {
+            comboPerfil.DataSource = new Controlador_Usuario().obtenerPerfil();
+            comboPerfil.ValueMember = "cargo";
+        }
+
+
         private void button3_Click(object sender, EventArgs e)
         {
             string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
@@ -317,17 +327,20 @@ namespace Sistema_de_sanciones
             {
                 modeloListaProveedores user = (modeloListaProveedores)comboProveedor.SelectedItem;
                 int us = Convert.ToInt32(user.id);
-                objp.InsertarUsuario(txtNombres.Texts, textPApellido.Texts, textSApellido.Texts, textCargo.Texts, textCorreo.Texts, textTelefono.Texts, textExtension.Texts, textUser.Texts,comboSistemas.SelectedItem.ToString(), us);
+
+                modeloPerfil perfil = (modeloPerfil)comboPerfil.SelectedItem;
+                int sus = Convert.ToInt32(perfil.id);
+
+                string cadenaEncriptada = Encrypt.GetSHA256(textContraseña.Texts.Trim());
+
+                objp.InsertarUsuario(txtNombres.Texts, textPApellido.Texts, textSApellido.Texts, textCargo.Texts, textCorreo.Texts, 
+                    textTelefono.Texts, textExtension.Texts, textUser.Texts,comboSistemas.SelectedItem.ToString(), us, sus, cadenaEncriptada);
+                
+                
                 //objp.IngresarContrasena(textContraseña.Texts);
 
 
-                string cadenaEncriptada = Encrypt.GetSHA256(textContraseña.Texts.Trim());
-                var comando = new SqlCommand();
-                comando.Connection = ConexionBD.AbrirConexion();
-                string cadena = "insert into contrasena(contrasena) values ('" + cadenaEncriptada + "')";
-                comando.CommandText = cadena;
-                comando.ExecuteNonQuery();
-                ConexionBD.CerrarConexion();
+
 
 
 

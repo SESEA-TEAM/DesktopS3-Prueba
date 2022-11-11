@@ -45,6 +45,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.textContraseña = new Sistema_de_sanciones.Templates.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboPerfil = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -332,11 +333,25 @@
             this.label2.TabIndex = 63;
             this.label2.Text = "Ingresa Contraseña*";
             // 
+            // comboPerfil
+            // 
+            this.comboPerfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboPerfil.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPerfil.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboPerfil.ForeColor = System.Drawing.Color.Gray;
+            this.comboPerfil.FormattingEnabled = true;
+            this.comboPerfil.Location = new System.Drawing.Point(184, 393);
+            this.comboPerfil.Name = "comboPerfil";
+            this.comboPerfil.Size = new System.Drawing.Size(173, 24);
+            this.comboPerfil.TabIndex = 64;
+            // 
             // Crear_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 801);
+            this.Controls.Add(this.comboPerfil);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textContraseña);
             this.Controls.Add(this.comboSistemas);
@@ -379,5 +394,6 @@
         private ErrorProvider errorProvider1;
         private Templates.TextBox textContraseña;
         private Label label2;
+        private ComboBox comboPerfil;
     }
 }

@@ -42,7 +42,8 @@ namespace Sistema_de_sanciones.Controladores
             return Tabla;
         }
 
-        public void InsertarUsuario(string nombre, string apellidoUno, string apellidoDos, string cargo, string correoElectronico, string telefono, string extension, string usuario, string sistema, int proveedorDatos)
+        public void InsertarUsuario(string nombre, string apellidoUno, string apellidoDos, string cargo, string correoElectronico, 
+            string telefono, string extension, string usuario, string sistema, int proveedorDatos, int perfil, string contrasena)
         {
 
             SqlCommand comando = new SqlCommand("insertar_usuario");
@@ -58,6 +59,8 @@ namespace Sistema_de_sanciones.Controladores
             comando.Parameters.AddWithValue("@Usuario", usuario);
             comando.Parameters.AddWithValue("@Sistemas", sistema);
             comando.Parameters.AddWithValue("@ProveedorDatos", proveedorDatos);
+            comando.Parameters.AddWithValue("@Perfil", perfil);
+            comando.Parameters.AddWithValue("@Contraseña", contrasena);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             ConexionBD.CerrarConexion();
@@ -135,6 +138,35 @@ namespace Sistema_de_sanciones.Controladores
             {
                 MessageBox.Show("Error: " + ex.ToString());
                 return oListaUsuarios;
+            }
+        }
+
+        public List<modeloPerfil> obtenerPerfil()
+        {
+            List<modeloPerfil> oPerfil = new List<modeloPerfil>();
+            try
+            {
+                SqlCommand comando = new SqlCommand("cargarComboPerfil");
+                comando.Connection = ConexionBD.AbrirConexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandTimeout = 600;
+
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    oPerfil.Add(new modeloPerfil
+                    {
+                        id = Convert.ToInt32(dr["id"]),
+                        cargo = Convert.ToString(dr["cargo"])
+                    });
+                }
+                dr.Close();
+                return oPerfil;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+                return oPerfil;
             }
         }
 
