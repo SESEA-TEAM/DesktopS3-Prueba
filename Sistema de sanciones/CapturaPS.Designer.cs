@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox11 = new Sistema_de_sanciones.Templates.TextBox();
@@ -44,13 +47,19 @@
             this.textBox19 = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox20 = new Sistema_de_sanciones.Templates.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox14 = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox13 = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox6 = new Sistema_de_sanciones.Templates.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -109,6 +118,20 @@
             this.textBox40 = new Sistema_de_sanciones.Templates.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idxd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionxd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.URL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
@@ -120,15 +143,20 @@
             this.textBox46 = new Sistema_de_sanciones.Templates.TextBox();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel9.SuspendLayout();
             this.panelTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -185,6 +213,8 @@
             this.textBox11.TabIndex = 36;
             this.textBox11.Texts = "Observaciones";
             this.textBox11.UnderlinedStyle = true;
+            this.textBox11.Enter += new System.EventHandler(this.textBox11_Enter);
+            this.textBox11.Leave += new System.EventHandler(this.textBox11_Leave);
             // 
             // textBox10
             // 
@@ -205,6 +235,8 @@
             this.textBox10.TabIndex = 35;
             this.textBox10.Texts = "Clave";
             this.textBox10.UnderlinedStyle = true;
+            this.textBox10.Enter += new System.EventHandler(this.textBox10_Enter);
+            this.textBox10.Leave += new System.EventHandler(this.textBox10_Leave);
             // 
             // textBox9
             // 
@@ -225,6 +257,8 @@
             this.textBox9.TabIndex = 34;
             this.textBox9.Texts = "Siglas";
             this.textBox9.UnderlinedStyle = true;
+            this.textBox9.Enter += new System.EventHandler(this.textBox9_Enter);
+            this.textBox9.Leave += new System.EventHandler(this.textBox9_Leave);
             // 
             // textBox7
             // 
@@ -245,6 +279,8 @@
             this.textBox7.TabIndex = 33;
             this.textBox7.Texts = "Nombre(s)*";
             this.textBox7.UnderlinedStyle = true;
+            this.textBox7.Enter += new System.EventHandler(this.textBox7_Enter);
+            this.textBox7.Leave += new System.EventHandler(this.textBox7_Leave);
             // 
             // label6
             // 
@@ -289,6 +325,8 @@
             this.textBox8.TabIndex = 30;
             this.textBox8.Texts = "Acto";
             this.textBox8.UnderlinedStyle = true;
+            this.textBox8.Enter += new System.EventHandler(this.textBox8_Enter);
+            this.textBox8.Leave += new System.EventHandler(this.textBox8_Leave);
             // 
             // textBox12
             // 
@@ -307,9 +345,11 @@
             this.textBox12.PasswordChar = false;
             this.textBox12.Size = new System.Drawing.Size(545, 31);
             this.textBox12.TabIndex = 29;
-            this.textBox12.Texts = "Tipo falta *";
+            this.textBox12.Texts = "Tipo falta*";
             this.textBox12.UnderlinedStyle = true;
             this.textBox12.Load += new System.EventHandler(this.textBox12_Load);
+            this.textBox12.Enter += new System.EventHandler(this.textBox12_Enter);
+            this.textBox12.Leave += new System.EventHandler(this.textBox12_Leave);
             // 
             // textBox16
             // 
@@ -330,6 +370,8 @@
             this.textBox16.TabIndex = 28;
             this.textBox16.Texts = "Objeto contrato";
             this.textBox16.UnderlinedStyle = true;
+            this.textBox16.Enter += new System.EventHandler(this.textBox16_Enter);
+            this.textBox16.Leave += new System.EventHandler(this.textBox16_Leave);
             // 
             // textBox17
             // 
@@ -350,7 +392,8 @@
             this.textBox17.TabIndex = 27;
             this.textBox17.Texts = "Causa, motivo o hechos*";
             this.textBox17.UnderlinedStyle = true;
-            this.textBox17.Load += new System.EventHandler(this.textBox17_Load);
+            this.textBox17.Enter += new System.EventHandler(this.textBox17_Enter);
+            this.textBox17.Leave += new System.EventHandler(this.textBox17_Leave);
             // 
             // textBox18
             // 
@@ -371,6 +414,8 @@
             this.textBox18.TabIndex = 26;
             this.textBox18.Texts = "RFC";
             this.textBox18.UnderlinedStyle = true;
+            this.textBox18.Enter += new System.EventHandler(this.textBox18_Enter);
+            this.textBox18.Leave += new System.EventHandler(this.textBox18_Leave);
             // 
             // textBox19
             // 
@@ -389,8 +434,10 @@
             this.textBox19.PasswordChar = false;
             this.textBox19.Size = new System.Drawing.Size(550, 31);
             this.textBox19.TabIndex = 25;
-            this.textBox19.Texts = "Nombre(s)/Razón Social";
+            this.textBox19.Texts = "Nombre(s)/Razón Social*";
             this.textBox19.UnderlinedStyle = true;
+            this.textBox19.Enter += new System.EventHandler(this.textBox19_Enter);
+            this.textBox19.Leave += new System.EventHandler(this.textBox19_Leave);
             // 
             // textBox20
             // 
@@ -411,16 +458,21 @@
             this.textBox20.TabIndex = 24;
             this.textBox20.Texts = "Expediente";
             this.textBox20.UnderlinedStyle = true;
+            this.textBox20.Enter += new System.EventHandler(this.textBox20_Enter);
+            this.textBox20.Leave += new System.EventHandler(this.textBox20_Leave);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dateTimePicker4);
+            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.textBox14);
             this.panel1.Controls.Add(this.textBox13);
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.textBox1);
@@ -442,8 +494,93 @@
             this.panel1.Size = new System.Drawing.Size(1174, 853);
             this.panel1.TabIndex = 8;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(586, 349);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(264, 22);
+            this.dateTimePicker2.TabIndex = 81;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(305, 349);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(264, 22);
+            this.dateTimePicker1.TabIndex = 81;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker4.Location = new System.Drawing.Point(867, 109);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(266, 22);
+            this.dateTimePicker4.TabIndex = 81;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersVisible = false;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Tipo,
+            this.Descripcion});
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(24, 710);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1106, 114);
+            this.dataGridView1.TabIndex = 79;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.comboBox2.FormattingEnabled = true;
@@ -451,10 +588,11 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(350, 24);
             this.comboBox2.TabIndex = 78;
-            this.comboBox2.Text = "Tipo de sanción*";
+            this.comboBox2.SelectedValueChanged += new System.EventHandler(this.comboBox2_SelectedValueChanged);
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.comboBox1.FormattingEnabled = true;
@@ -462,7 +600,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(264, 24);
             this.comboBox1.TabIndex = 78;
-            this.comboBox1.Text = "Moneda";
             // 
             // textBox14
             // 
@@ -471,9 +608,10 @@
             this.textBox14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox14.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox14.BorderSize = 2;
+            this.textBox14.Enabled = false;
             this.textBox14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox14.Location = new System.Drawing.Point(867, 100);
+            this.textBox14.Location = new System.Drawing.Point(867, 85);
             this.textBox14.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox14.Multiline = false;
             this.textBox14.Name = "textBox14";
@@ -483,6 +621,8 @@
             this.textBox14.TabIndex = 77;
             this.textBox14.Texts = "Fecha de resolución";
             this.textBox14.UnderlinedStyle = true;
+            this.textBox14.Enter += new System.EventHandler(this.textBox14_Enter);
+            this.textBox14.Leave += new System.EventHandler(this.textBox14_Leave);
             // 
             // textBox13
             // 
@@ -503,6 +643,8 @@
             this.textBox13.TabIndex = 76;
             this.textBox13.Texts = "URL";
             this.textBox13.UnderlinedStyle = true;
+            this.textBox13.Enter += new System.EventHandler(this.textBox13_Enter);
+            this.textBox13.Leave += new System.EventHandler(this.textBox13_Leave);
             // 
             // textBox6
             // 
@@ -523,6 +665,8 @@
             this.textBox6.TabIndex = 75;
             this.textBox6.Texts = "Sentido";
             this.textBox6.UnderlinedStyle = true;
+            this.textBox6.Enter += new System.EventHandler(this.textBox6_Enter);
+            this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
             // 
             // button2
             // 
@@ -537,19 +681,6 @@
             this.button2.Text = "AGREGAR TIPO DE SANCIÓN";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 710);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1106, 114);
-            this.tableLayoutPanel1.TabIndex = 73;
             // 
             // panel3
             // 
@@ -614,6 +745,8 @@
             this.textBox1.TabIndex = 70;
             this.textBox1.Texts = "Descripción";
             this.textBox1.UnderlinedStyle = true;
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // label11
             // 
@@ -646,6 +779,8 @@
             this.textBox24.TabIndex = 67;
             this.textBox24.Texts = "Monto";
             this.textBox24.UnderlinedStyle = true;
+            this.textBox24.Enter += new System.EventHandler(this.textBox24_Enter);
+            this.textBox24.Leave += new System.EventHandler(this.textBox24_Leave);
             // 
             // label10
             // 
@@ -666,9 +801,10 @@
             this.textBox21.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox21.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox21.BorderSize = 2;
+            this.textBox21.Enabled = false;
             this.textBox21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox21.Location = new System.Drawing.Point(586, 340);
+            this.textBox21.Location = new System.Drawing.Point(586, 325);
             this.textBox21.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox21.Multiline = false;
             this.textBox21.Name = "textBox21";
@@ -678,6 +814,8 @@
             this.textBox21.TabIndex = 64;
             this.textBox21.Texts = "Fecha final";
             this.textBox21.UnderlinedStyle = true;
+            this.textBox21.Enter += new System.EventHandler(this.textBox21_Enter);
+            this.textBox21.Leave += new System.EventHandler(this.textBox21_Leave);
             // 
             // textBox22
             // 
@@ -686,9 +824,10 @@
             this.textBox22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox22.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox22.BorderSize = 2;
+            this.textBox22.Enabled = false;
             this.textBox22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox22.Location = new System.Drawing.Point(305, 340);
+            this.textBox22.Location = new System.Drawing.Point(305, 325);
             this.textBox22.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox22.Multiline = false;
             this.textBox22.Name = "textBox22";
@@ -698,6 +837,8 @@
             this.textBox22.TabIndex = 63;
             this.textBox22.Texts = "Fecha inicial";
             this.textBox22.UnderlinedStyle = true;
+            this.textBox22.Enter += new System.EventHandler(this.textBox22_Enter);
+            this.textBox22.Leave += new System.EventHandler(this.textBox22_Leave);
             // 
             // textBox23
             // 
@@ -718,6 +859,8 @@
             this.textBox23.TabIndex = 62;
             this.textBox23.Texts = "Plazo";
             this.textBox23.UnderlinedStyle = true;
+            this.textBox23.Enter += new System.EventHandler(this.textBox23_Enter);
+            this.textBox23.Leave += new System.EventHandler(this.textBox23_Leave);
             // 
             // label9
             // 
@@ -750,6 +893,8 @@
             this.textBox2.TabIndex = 60;
             this.textBox2.Texts = "Segundo apellido";
             this.textBox2.UnderlinedStyle = true;
+            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // textBox3
             // 
@@ -770,6 +915,8 @@
             this.textBox3.TabIndex = 59;
             this.textBox3.Texts = "Primer apellido*";
             this.textBox3.UnderlinedStyle = true;
+            this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
+            this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
             // textBox4
             // 
@@ -790,6 +937,8 @@
             this.textBox4.TabIndex = 58;
             this.textBox4.Texts = "Nombre(s)*";
             this.textBox4.UnderlinedStyle = true;
+            this.textBox4.Enter += new System.EventHandler(this.textBox4_Enter);
+            this.textBox4.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // label8
             // 
@@ -822,6 +971,8 @@
             this.textBox5.TabIndex = 53;
             this.textBox5.Texts = "Autoridad sancionadora*";
             this.textBox5.UnderlinedStyle = true;
+            this.textBox5.Enter += new System.EventHandler(this.textBox5_Enter);
+            this.textBox5.Leave += new System.EventHandler(this.textBox5_Leave);
             // 
             // label7
             // 
@@ -875,9 +1026,12 @@
             this.textBox15.TabIndex = 59;
             this.textBox15.Texts = "CURP";
             this.textBox15.UnderlinedStyle = true;
+            this.textBox15.Enter += new System.EventHandler(this.textBox15_Enter);
+            this.textBox15.Leave += new System.EventHandler(this.textBox15_Leave);
             // 
             // comboBox9
             // 
+            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.comboBox9.FormattingEnabled = true;
@@ -885,7 +1039,7 @@
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(264, 24);
             this.comboBox9.TabIndex = 78;
-            this.comboBox9.Text = "Tipo persona*";
+            this.comboBox9.SelectedValueChanged += new System.EventHandler(this.comboBox9_SelectedValueChanged);
             // 
             // textBox27
             // 
@@ -906,6 +1060,8 @@
             this.textBox27.TabIndex = 58;
             this.textBox27.Texts = "Segundo apellido";
             this.textBox27.UnderlinedStyle = true;
+            this.textBox27.Enter += new System.EventHandler(this.textBox27_Enter);
+            this.textBox27.Leave += new System.EventHandler(this.textBox27_Leave);
             // 
             // textBox32
             // 
@@ -927,6 +1083,8 @@
             this.textBox32.Texts = "Primer apellido";
             this.textBox32.UnderlinedStyle = true;
             this.textBox32.Load += new System.EventHandler(this.textBox32_Load);
+            this.textBox32.Enter += new System.EventHandler(this.textBox32_Enter);
+            this.textBox32.Leave += new System.EventHandler(this.textBox32_Leave);
             // 
             // label18
             // 
@@ -959,6 +1117,8 @@
             this.textBox35.TabIndex = 51;
             this.textBox35.Texts = "Nombre(s)";
             this.textBox35.UnderlinedStyle = true;
+            this.textBox35.Enter += new System.EventHandler(this.textBox35_Enter);
+            this.textBox35.Leave += new System.EventHandler(this.textBox35_Leave);
             // 
             // label17
             // 
@@ -991,6 +1151,8 @@
             this.textBox28.TabIndex = 49;
             this.textBox28.Texts = "CURP";
             this.textBox28.UnderlinedStyle = true;
+            this.textBox28.Enter += new System.EventHandler(this.textBox28_Enter);
+            this.textBox28.Leave += new System.EventHandler(this.textBox28_Leave);
             // 
             // textBox29
             // 
@@ -1011,6 +1173,8 @@
             this.textBox29.TabIndex = 48;
             this.textBox29.Texts = "Segundo apellido";
             this.textBox29.UnderlinedStyle = true;
+            this.textBox29.Enter += new System.EventHandler(this.textBox29_Enter);
+            this.textBox29.Leave += new System.EventHandler(this.textBox29_Leave);
             // 
             // textBox30
             // 
@@ -1031,6 +1195,8 @@
             this.textBox30.TabIndex = 47;
             this.textBox30.Texts = "Primer apellido";
             this.textBox30.UnderlinedStyle = true;
+            this.textBox30.Enter += new System.EventHandler(this.textBox30_Enter);
+            this.textBox30.Leave += new System.EventHandler(this.textBox30_Leave);
             // 
             // textBox31
             // 
@@ -1051,6 +1217,8 @@
             this.textBox31.TabIndex = 46;
             this.textBox31.Texts = "Nombre(s)";
             this.textBox31.UnderlinedStyle = true;
+            this.textBox31.Enter += new System.EventHandler(this.textBox31_Enter);
+            this.textBox31.Leave += new System.EventHandler(this.textBox31_Leave);
             // 
             // textBox25
             // 
@@ -1071,6 +1239,8 @@
             this.textBox25.TabIndex = 45;
             this.textBox25.Texts = "Objeto social";
             this.textBox25.UnderlinedStyle = true;
+            this.textBox25.Enter += new System.EventHandler(this.textBox25_Enter);
+            this.textBox25.Leave += new System.EventHandler(this.textBox25_Leave);
             // 
             // textBox26
             // 
@@ -1091,6 +1261,8 @@
             this.textBox26.TabIndex = 44;
             this.textBox26.Texts = "Teléfono";
             this.textBox26.UnderlinedStyle = true;
+            this.textBox26.Enter += new System.EventHandler(this.textBox26_Enter);
+            this.textBox26.Leave += new System.EventHandler(this.textBox26_Leave);
             // 
             // label15
             // 
@@ -1119,6 +1291,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
+            this.radioButton3.Checked = true;
             this.radioButton3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.radioButton3.Location = new System.Drawing.Point(195, 88);
@@ -1128,6 +1301,7 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Ninguno";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -1138,9 +1312,9 @@
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(84, 20);
             this.radioButton2.TabIndex = 44;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Extranjero";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -1151,9 +1325,9 @@
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(67, 20);
             this.radioButton1.TabIndex = 43;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "México";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label20
             // 
@@ -1196,6 +1370,7 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.comboBox4.FormattingEnabled = true;
@@ -1203,10 +1378,11 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(545, 24);
             this.comboBox4.TabIndex = 78;
-            this.comboBox4.Text = "Municipio";
+            this.comboBox4.SelectedValueChanged += new System.EventHandler(this.comboBox4_SelectedValueChanged);
             // 
             // comboBox6
             // 
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.comboBox6.FormattingEnabled = true;
@@ -1214,10 +1390,10 @@
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(545, 24);
             this.comboBox6.TabIndex = 78;
-            this.comboBox6.Text = "Vialidad";
             // 
             // comboBox5
             // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.comboBox5.FormattingEnabled = true;
@@ -1225,10 +1401,11 @@
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(545, 24);
             this.comboBox5.TabIndex = 78;
-            this.comboBox5.Text = "Localidad";
+            this.comboBox5.SelectedValueChanged += new System.EventHandler(this.comboBox5_SelectedValueChanged);
             // 
             // comboBox3
             // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.comboBox3.FormattingEnabled = true;
@@ -1236,7 +1413,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(545, 24);
             this.comboBox3.TabIndex = 78;
-            this.comboBox3.Text = "Entidad federativa";
+            this.comboBox3.SelectedValueChanged += new System.EventHandler(this.comboBox3_SelectedValueChanged);
             // 
             // textBox36
             // 
@@ -1257,6 +1434,8 @@
             this.textBox36.TabIndex = 56;
             this.textBox36.Texts = "Número interior";
             this.textBox36.UnderlinedStyle = true;
+            this.textBox36.Enter += new System.EventHandler(this.textBox36_Enter);
+            this.textBox36.Leave += new System.EventHandler(this.textBox36_Leave);
             // 
             // textBox33
             // 
@@ -1278,6 +1457,8 @@
             this.textBox33.Texts = "Número exterior";
             this.textBox33.UnderlinedStyle = true;
             this.textBox33.Load += new System.EventHandler(this.textBox33_Load);
+            this.textBox33.Enter += new System.EventHandler(this.textBox33_Enter);
+            this.textBox33.Leave += new System.EventHandler(this.textBox33_Leave);
             // 
             // textBox34
             // 
@@ -1298,6 +1479,8 @@
             this.textBox34.TabIndex = 54;
             this.textBox34.Texts = "Código Postal";
             this.textBox34.UnderlinedStyle = true;
+            this.textBox34.Enter += new System.EventHandler(this.textBox34_Enter);
+            this.textBox34.Leave += new System.EventHandler(this.textBox34_Leave);
             // 
             // label2
             // 
@@ -1321,7 +1504,7 @@
             this.panel7.Controls.Add(this.textBox39);
             this.panel7.Controls.Add(this.textBox40);
             this.panel7.Controls.Add(this.label4);
-            this.panel7.Location = new System.Drawing.Point(0, 2047);
+            this.panel7.Location = new System.Drawing.Point(0, 1821);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1174, 210);
             this.panel7.TabIndex = 12;
@@ -1345,6 +1528,8 @@
             this.textBox42.TabIndex = 57;
             this.textBox42.Texts = "Número interior";
             this.textBox42.UnderlinedStyle = true;
+            this.textBox42.Enter += new System.EventHandler(this.textBox42_Enter);
+            this.textBox42.Leave += new System.EventHandler(this.textBox42_Leave);
             // 
             // textBox41
             // 
@@ -1365,9 +1550,12 @@
             this.textBox41.TabIndex = 56;
             this.textBox41.Texts = "Número exterior";
             this.textBox41.UnderlinedStyle = true;
+            this.textBox41.Enter += new System.EventHandler(this.textBox41_Enter);
+            this.textBox41.Leave += new System.EventHandler(this.textBox41_Leave);
             // 
             // comboBox7
             // 
+            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.comboBox7.FormattingEnabled = true;
@@ -1375,7 +1563,7 @@
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(545, 24);
             this.comboBox7.TabIndex = 78;
-            this.comboBox7.Text = "País";
+            this.comboBox7.Enter += new System.EventHandler(this.comboBox7_Enter);
             // 
             // textBox37
             // 
@@ -1396,6 +1584,8 @@
             this.textBox37.TabIndex = 55;
             this.textBox37.Texts = "Código Postal";
             this.textBox37.UnderlinedStyle = true;
+            this.textBox37.Enter += new System.EventHandler(this.textBox37_Enter);
+            this.textBox37.Leave += new System.EventHandler(this.textBox37_Leave);
             // 
             // textBox38
             // 
@@ -1416,6 +1606,8 @@
             this.textBox38.TabIndex = 50;
             this.textBox38.Texts = "Estado/Provincia";
             this.textBox38.UnderlinedStyle = true;
+            this.textBox38.Enter += new System.EventHandler(this.textBox38_Enter);
+            this.textBox38.Leave += new System.EventHandler(this.textBox38_Leave);
             // 
             // textBox39
             // 
@@ -1436,6 +1628,8 @@
             this.textBox39.TabIndex = 49;
             this.textBox39.Texts = "Ciudad/Localidad";
             this.textBox39.UnderlinedStyle = true;
+            this.textBox39.Enter += new System.EventHandler(this.textBox39_Enter);
+            this.textBox39.Leave += new System.EventHandler(this.textBox39_Leave);
             // 
             // textBox40
             // 
@@ -1456,6 +1650,8 @@
             this.textBox40.TabIndex = 48;
             this.textBox40.Texts = "Calle";
             this.textBox40.UnderlinedStyle = true;
+            this.textBox40.Enter += new System.EventHandler(this.textBox40_Enter);
+            this.textBox40.Leave += new System.EventHandler(this.textBox40_Leave);
             // 
             // label4
             // 
@@ -1471,6 +1667,9 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.dataGridView2);
+            this.panel8.Controls.Add(this.dateTimePicker3);
+            this.panel8.Controls.Add(this.panel9);
             this.panel8.Controls.Add(this.button4);
             this.panel8.Controls.Add(this.button3);
             this.panel8.Controls.Add(this.comboBox8);
@@ -1480,10 +1679,163 @@
             this.panel8.Controls.Add(this.textBox45);
             this.panel8.Controls.Add(this.label5);
             this.panel8.Controls.Add(this.textBox46);
-            this.panel8.Location = new System.Drawing.Point(0, 2263);
+            this.panel8.Location = new System.Drawing.Point(0, 1821);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1174, 228);
+            this.panel8.Size = new System.Drawing.Size(1174, 442);
             this.panel8.TabIndex = 13;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.ColumnHeadersVisible = false;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idxd,
+            this.Titulo,
+            this.dataGridViewTextBoxColumn2,
+            this.descripcionxd,
+            this.URL,
+            this.Fecha});
+            this.dataGridView2.EnableHeadersVisualStyles = false;
+            this.dataGridView2.Location = new System.Drawing.Point(24, 254);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(1106, 114);
+            this.dataGridView2.TabIndex = 79;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            this.dataGridView2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView2_CellPainting);
+            // 
+            // idxd
+            // 
+            this.idxd.HeaderText = "ID";
+            this.idxd.Name = "idxd";
+            this.idxd.ReadOnly = true;
+            this.idxd.Visible = false;
+            // 
+            // Titulo
+            // 
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.Name = "Titulo";
+            this.Titulo.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tipo";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // descripcionxd
+            // 
+            this.descripcionxd.HeaderText = "Descripción";
+            this.descripcionxd.Name = "descripcionxd";
+            this.descripcionxd.ReadOnly = true;
+            // 
+            // URL
+            // 
+            this.URL.HeaderText = "URL";
+            this.URL.Name = "URL";
+            this.URL.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker3.Location = new System.Drawing.Point(402, 119);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(350, 22);
+            this.dateTimePicker3.TabIndex = 82;
+            this.dateTimePicker3.Enter += new System.EventHandler(this.dateTimePicker3_Enter);
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.panel9.Controls.Add(this.label21);
+            this.panel9.Controls.Add(this.label22);
+            this.panel9.Controls.Add(this.label23);
+            this.panel9.Controls.Add(this.label24);
+            this.panel9.Controls.Add(this.label25);
+            this.panel9.Location = new System.Drawing.Point(24, 191);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1106, 57);
+            this.panel9.TabIndex = 80;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.SystemColors.Control;
+            this.label21.Location = new System.Drawing.Point(841, 22);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(46, 16);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Fecha";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label22.ForeColor = System.Drawing.SystemColors.Control;
+            this.label22.Location = new System.Drawing.Point(614, 22);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(33, 16);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "URL";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label23.ForeColor = System.Drawing.SystemColors.Control;
+            this.label23.Location = new System.Drawing.Point(178, 22);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(35, 16);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Tipo";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label24.ForeColor = System.Drawing.SystemColors.Control;
+            this.label24.Location = new System.Drawing.Point(23, 22);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(43, 16);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Título";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label25.ForeColor = System.Drawing.SystemColors.Control;
+            this.label25.Location = new System.Drawing.Point(369, 22);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(81, 16);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Descripción";
             // 
             // button4
             // 
@@ -1491,12 +1843,13 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(1030, 180);
+            this.button4.Location = new System.Drawing.Point(1030, 400);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 28);
             this.button4.TabIndex = 13;
             this.button4.Text = "GUARDAR";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -1504,7 +1857,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(890, 180);
+            this.button3.Location = new System.Drawing.Point(890, 400);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 14;
@@ -1513,6 +1866,7 @@
             // 
             // comboBox8
             // 
+            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.comboBox8.FormattingEnabled = true;
@@ -1520,7 +1874,7 @@
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(350, 24);
             this.comboBox8.TabIndex = 78;
-            this.comboBox8.Text = "Tipo de documento";
+            this.comboBox8.SelectedValueChanged += new System.EventHandler(this.comboBox8_SelectedValueChanged);
             // 
             // textBox43
             // 
@@ -1528,9 +1882,10 @@
             this.textBox43.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox43.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox43.BorderSize = 2;
+            this.textBox43.Enabled = false;
             this.textBox43.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox43.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox43.Location = new System.Drawing.Point(402, 110);
+            this.textBox43.Location = new System.Drawing.Point(402, 95);
             this.textBox43.Multiline = false;
             this.textBox43.Name = "textBox43";
             this.textBox43.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
@@ -1540,6 +1895,8 @@
             this.textBox43.Texts = "Fecha*";
             this.textBox43.UnderlinedStyle = true;
             this.textBox43.Load += new System.EventHandler(this.textBox43_Load);
+            this.textBox43.Enter += new System.EventHandler(this.textBox43_Enter);
+            this.textBox43.Leave += new System.EventHandler(this.textBox43_Leave);
             // 
             // textBox44
             // 
@@ -1547,17 +1904,19 @@
             this.textBox44.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox44.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox44.BorderSize = 2;
-            this.textBox44.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox44.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox44.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox44.Location = new System.Drawing.Point(24, 110);
+            this.textBox44.Location = new System.Drawing.Point(21, 110);
             this.textBox44.Multiline = false;
             this.textBox44.Name = "textBox44";
-            this.textBox44.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBox44.Padding = new System.Windows.Forms.Padding(7);
             this.textBox44.PasswordChar = false;
-            this.textBox44.Size = new System.Drawing.Size(350, 31);
+            this.textBox44.Size = new System.Drawing.Size(353, 31);
             this.textBox44.TabIndex = 7;
             this.textBox44.Texts = "URL*";
             this.textBox44.UnderlinedStyle = true;
+            this.textBox44.Enter += new System.EventHandler(this.textBox44_Enter);
+            this.textBox44.Leave += new System.EventHandler(this.textBox44_Leave);
             // 
             // button1
             // 
@@ -1571,6 +1930,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "AGREGAR DOCUMENTO";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox45
             // 
@@ -1587,8 +1947,10 @@
             this.textBox45.PasswordChar = false;
             this.textBox45.Size = new System.Drawing.Size(350, 31);
             this.textBox45.TabIndex = 8;
-            this.textBox45.Texts = "Titulo*";
+            this.textBox45.Texts = "Título*";
             this.textBox45.UnderlinedStyle = true;
+            this.textBox45.Enter += new System.EventHandler(this.textBox45_Enter);
+            this.textBox45.Leave += new System.EventHandler(this.textBox45_Leave);
             // 
             // label5
             // 
@@ -1618,6 +1980,8 @@
             this.textBox46.TabIndex = 9;
             this.textBox46.Texts = "Descripción*";
             this.textBox46.UnderlinedStyle = true;
+            this.textBox46.Enter += new System.EventHandler(this.textBox46_Enter);
+            this.textBox46.Leave += new System.EventHandler(this.textBox46_Leave);
             // 
             // panelTitulo
             // 
@@ -1642,6 +2006,10 @@
             this.label16.TabIndex = 2;
             this.label16.Text = "S3";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // CapturaPS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
@@ -1649,21 +2017,23 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1174, 801);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelTitulo);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
             this.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CapturaPS";
             this.Text = "CapturaPS";
+            this.Load += new System.EventHandler(this.CapturaPS_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -1676,8 +2046,12 @@
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1704,7 +2078,6 @@
         private Templates.TextBox textBox13;
         private Templates.TextBox textBox6;
         private Button button2;
-        private TableLayoutPanel tableLayoutPanel1;
         private Panel panel3;
         private Label label14;
         private Label label13;
@@ -1776,5 +2149,27 @@
         private ComboBox comboBox7;
         private ComboBox comboBox8;
         private ComboBox comboBox9;
+        private ErrorProvider errorProvider1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Tipo;
+        private DataGridViewTextBoxColumn Descripcion;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn idxd;
+        private DataGridViewTextBoxColumn Titulo;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn descripcionxd;
+        private DataGridViewTextBoxColumn URL;
+        private DataGridViewTextBoxColumn Fecha;
+        private Panel panel9;
+        private Label label21;
+        private Label label22;
+        private Label label23;
+        private Label label24;
+        private Label label25;
+        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker4;
+        private DateTimePicker dateTimePicker3;
     }
 }

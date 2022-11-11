@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Sistema de sanciones",
-    "\\Sistema de sanciones\\Controladores"
+    "\\Sistema de sanciones\\Controladores",
+    "\\Sistema de sanciones\\Modelo"
   ],
-  "SelectedNode": "\\Sistema de sanciones\\Controladores\\controladorListaUsusarios.cs",
+  "SelectedNode": "\\Sistema de sanciones\\Modelo\\modeloSPS.cs",
   "PreviewInSolutionExplorer": false
 }
