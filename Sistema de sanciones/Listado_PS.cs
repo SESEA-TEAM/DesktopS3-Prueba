@@ -1,15 +1,19 @@
 ﻿using Sistema_de_sanciones.Controladores;
-using Sistema_de_sanciones.Modelo;
+using Sistema_de_sanciones.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
+using Sistema_de_sanciones.Modelo;
+//using static System.Net.Mime.MediaTypeNames;
 
 namespace Sistema_de_sanciones
 {
@@ -142,6 +146,33 @@ namespace Sistema_de_sanciones
 
             dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
+            dataGridView1.Columns[0].Visible = false; //Desactiva la columna ID
+            dataGridView1.Columns[1].Width = 120; //Desactiva la columna ID
+            dataGridView1.Columns[2].Width = 275;     //Se asigna tamaño a la columna Nombre Completo
+            dataGridView1.Columns[3].Width = 275; //Desactiva la columna Nombre
+            dataGridView1.Columns[4].Width = 75; //Desactiva la columna Primer Apellido
+            dataGridView1.Columns[5].Width = 300; //Desactiva la columna Primer Apellido
+
+            DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
+            Ver.HeaderText = "Ver";
+            Ver.Name = "Ver";
+            Ver.Width = 43;
+            Ver.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(Ver);
+
+            DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
+            btnclm.HeaderText = "Eliminar";
+            btnclm.Name = "Eliminar";
+            btnclm.Width = 43;
+            btnclm.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(btnclm);
+
+            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
+            editar.HeaderText = "Editar";
+            editar.Name = "Editar";
+            editar.Width = 43;
+            editar.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(editar);
 
 
             botonAnterior.Enabled = false;
@@ -151,13 +182,26 @@ namespace Sistema_de_sanciones
         }
         private void limpiarBusqueda()
         {
-
+            dateTimePicker1.Text = "2000-01-01";
+            dateTimePicker2.Text = "2000-01-01";
+            textExpediente.Texts = "Expediente";
+            textISD.Texts = "Institución / Dependencia";
+            textNombre.Texts = "Nombre/Razón social";
+            comboBox1.Text = "Tipo Persona";
+            comboBox2.Text = "Tipo Sancion";
+            FA = null;
+            EX = null;
+            ISD = null;
+            NM = null;
+            TP = null;
+            TS = null;
+            IH = null;
 
         }
 
         private void Listado_PS_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void botonBuscar_Click(object sender, EventArgs e)
@@ -284,26 +328,68 @@ namespace Sistema_de_sanciones
 
         private void botonLimpiar_Click(object sender, EventArgs e)
         {
-            dateTimePicker1.Text = "2000-01-01";
-            dateTimePicker2.Text = "2000-01-01";
-            textExpediente.Texts = "Expediente";
-            textISD.Texts = "Institución / Dependencia";
-            textNombre.Texts = "Nombre/Razón social";
-            comboBox1.Text = "Tipo Persona";
-            comboBox2.Text = "Tipo Sancion";
-            FA = null;
-            EX = null;
-            ISD = null;
-            NM = null;
-            TP = null;
-            TS = null;
-            IH = null;
+            limpiarBusqueda();
 
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == 6)
+            {
+                Image someImage = Properties.Resources.abajo;
+
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.abajo.Width;
+                var h = Properties.Resources.abajo.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+            if (e.ColumnIndex == 7)
+            {
+                Image someImage = Properties.Resources.basura;
+
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.basura.Width;
+                var h = Properties.Resources.basura.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+
+
+            if (e.ColumnIndex == 8)
+            {
+                Image someImage = Properties.Resources.lapiz;
+
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.lapiz.Width;
+                var h = Properties.Resources.lapiz.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
         }
     }
 }

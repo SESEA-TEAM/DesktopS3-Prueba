@@ -154,6 +154,12 @@ namespace WinFormsApp1
 
             dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
+            dataGridView1.Columns[0].Visible = false; //Desactiva la columna ID
+            dataGridView1.Columns[1].Width = 120; //Desactiva la columna ID
+            dataGridView1.Columns[2].Width = 300;     //Se asigna tamaño a la columna Nombre Completo
+            dataGridView1.Columns[3].Width = 300; //Desactiva la columna Nombre
+            dataGridView1.Columns[4].Width = 270; //Desactiva la columna Primer Apellido
+            //dataGridView1.Columns[5].Width = 250; //Desactiva la columna Primer Apellido
 
             botonPrimero.Enabled = false;
             botonAnterior.Enabled = false;
