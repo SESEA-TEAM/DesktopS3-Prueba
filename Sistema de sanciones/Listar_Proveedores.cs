@@ -24,7 +24,16 @@ namespace Sistema_de_sanciones
         {
             InitializeComponent();
             CargarDG();
-         
+            List<string> sistema = new List<string>();
+            sistema.Add("Sistema de los Servidores Públicos Sancionados");
+            sistema.Add("Sistema de los Particulares Sancionados");
+            sistema.Add("Sistema de los Servidores Públicos Sancionados, Sistema de los Particulares Sancionados");
+            comboSistema.DataSource = sistema;
+
+            List<string> estatus = new List<string>();
+            estatus.Add("Vigente");
+            estatus.Add("No vigente");
+            comboEstatus.DataSource = estatus;
 
         }
         

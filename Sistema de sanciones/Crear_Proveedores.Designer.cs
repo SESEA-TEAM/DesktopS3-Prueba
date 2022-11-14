@@ -99,6 +99,7 @@
             // 
             // comboSistema
             // 
+            this.comboSistema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboSistema.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboSistema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.comboSistema.FormattingEnabled = true;
@@ -109,9 +110,8 @@
                 "onados"});
             this.comboSistema.Location = new System.Drawing.Point(488, 124);
             this.comboSistema.Name = "comboSistema";
-            this.comboSistema.Size = new System.Drawing.Size(524, 24);
+            this.comboSistema.Size = new System.Drawing.Size(579, 24);
             this.comboSistema.TabIndex = 26;
-            this.comboSistema.Text = "Sistemas aplicable*";
             // 
             // errorProvider1
             // 

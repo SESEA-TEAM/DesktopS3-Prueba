@@ -44,9 +44,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.EditarProveedor = new System.Windows.Forms.TabPage();
-            this.textProveedor = new Sistema_de_sanciones.Templates.TextBox();
             this.comboEstatus = new System.Windows.Forms.ComboBox();
             this.comboSistema = new System.Windows.Forms.ComboBox();
+            this.textProveedor = new Sistema_de_sanciones.Templates.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -114,7 +114,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Location = new System.Drawing.Point(4, 58);
+            this.panel1.Location = new System.Drawing.Point(8, 58);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(321, 25);
             this.panel1.TabIndex = 4;
@@ -244,9 +244,9 @@
             // EditarProveedor
             // 
             this.EditarProveedor.BackColor = System.Drawing.SystemColors.Control;
-            this.EditarProveedor.Controls.Add(this.textProveedor);
             this.EditarProveedor.Controls.Add(this.comboEstatus);
             this.EditarProveedor.Controls.Add(this.comboSistema);
+            this.EditarProveedor.Controls.Add(this.textProveedor);
             this.EditarProveedor.Controls.Add(this.label10);
             this.EditarProveedor.Controls.Add(this.label11);
             this.EditarProveedor.Controls.Add(this.label12);
@@ -258,6 +258,33 @@
             this.EditarProveedor.Size = new System.Drawing.Size(1162, 484);
             this.EditarProveedor.TabIndex = 1;
             this.EditarProveedor.Text = "Editar Proveedor";
+            // 
+            // comboEstatus
+            // 
+            this.comboEstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboEstatus.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboEstatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.comboEstatus.FormattingEnabled = true;
+            this.comboEstatus.Location = new System.Drawing.Point(102, 209);
+            this.comboEstatus.Name = "comboEstatus";
+            this.comboEstatus.Size = new System.Drawing.Size(172, 24);
+            this.comboEstatus.TabIndex = 40;
+            // 
+            // comboSistema
+            // 
+            this.comboSistema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboSistema.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboSistema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.comboSistema.FormattingEnabled = true;
+            this.comboSistema.Items.AddRange(new object[] {
+            "Sistema de los Servidores Públicos Sancionados",
+            "Sistema de los Particulares Sancionados",
+            "Sistema de los Servidores Públicos Sancionados, Sistema de los Particulares Sanci" +
+                "onados"});
+            this.comboSistema.Location = new System.Drawing.Point(478, 115);
+            this.comboSistema.Name = "comboSistema";
+            this.comboSistema.Size = new System.Drawing.Size(579, 24);
+            this.comboSistema.TabIndex = 39;
             // 
             // textProveedor
             // 
@@ -279,36 +306,6 @@
             this.textProveedor.Enter += new System.EventHandler(this.textProveedor_Enter);
             this.textProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textProveedor_KeyPress);
             this.textProveedor.Leave += new System.EventHandler(this.textProveedor_Leave);
-            // 
-            // comboEstatus
-            // 
-            this.comboEstatus.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboEstatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.comboEstatus.FormattingEnabled = true;
-            this.comboEstatus.Items.AddRange(new object[] {
-            "Vigente",
-            "No vigente"});
-            this.comboEstatus.Location = new System.Drawing.Point(102, 206);
-            this.comboEstatus.Name = "comboEstatus";
-            this.comboEstatus.Size = new System.Drawing.Size(172, 24);
-            this.comboEstatus.TabIndex = 37;
-            this.comboEstatus.Text = "Seleccionar Estatus*";
-            // 
-            // comboSistema
-            // 
-            this.comboSistema.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboSistema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.comboSistema.FormattingEnabled = true;
-            this.comboSistema.Items.AddRange(new object[] {
-            "Sistema de los Servidores Públicos Sancionados",
-            "Sistema de los Particulares Sancionados",
-            "Sistema de los Servidores Públicos Sancionados, Sistema de los Particulares Sanci" +
-                "onados"});
-            this.comboSistema.Location = new System.Drawing.Point(516, 106);
-            this.comboSistema.Name = "comboSistema";
-            this.comboSistema.Size = new System.Drawing.Size(524, 24);
-            this.comboSistema.TabIndex = 36;
-            this.comboSistema.Text = "Sistemas aplicable*";
             // 
             // label10
             // 
@@ -496,9 +493,9 @@
             this.comboSistemaVer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboSistemaVer.ForeColor = System.Drawing.Color.Black;
             this.comboSistemaVer.FormattingEnabled = true;
-            this.comboSistemaVer.Location = new System.Drawing.Point(524, 99);
+            this.comboSistemaVer.Location = new System.Drawing.Point(488, 99);
             this.comboSistemaVer.Name = "comboSistemaVer";
-            this.comboSistemaVer.Size = new System.Drawing.Size(524, 24);
+            this.comboSistemaVer.Size = new System.Drawing.Size(560, 24);
             this.comboSistemaVer.TabIndex = 41;
             // 
             // label6
@@ -594,8 +591,6 @@
         private TabPage ListaProveedor;
         private DataGridView dataGridView1;
         private TabPage EditarProveedor;
-        public ComboBox comboEstatus;
-        public ComboBox comboSistema;
         public Label label10;
         public Label label11;
         private Label label12;
@@ -618,10 +613,12 @@
         public Label label16;
         private Templates.TextBox textProveedorVer;
         public ComboBox comboEstatusVer;
-        public ComboBox comboSistemaVer;
         public Label label6;
         public Label label15;
         private DateTimePicker dateFechaActualizacionVer;
         private DateTimePicker dateFechaAltaVer;
+        private ComboBox comboSistema;
+        public ComboBox comboSistemaVer;
+        private ComboBox comboEstatus;
     }
 }
