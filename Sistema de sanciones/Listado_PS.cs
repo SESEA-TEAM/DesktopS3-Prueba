@@ -46,7 +46,7 @@ namespace Sistema_de_sanciones
             lista.Add("Moral");
             comboBox1.DataSource = lista;
             listarTipoSancion();
-            //CargarDB();
+            IniciarDB();
         }
 
         //listarTipoSancion sera nuestro metodo para los valores de nuestra tabla tipoSancion dentro de un comboBox
@@ -59,24 +59,61 @@ namespace Sistema_de_sanciones
 
         }
 
+        private void IniciarDB()
+        {
+            objs.Inicio2 = 1;
+
+            ContadorTotal = objs.UltimoBarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
+
+            if (ContadorTotal <= 10)
+            {
+                botonPrimero.Enabled = false;
+                botonAnterior.Enabled = false;
+                botonSiguiente.Enabled = false;
+                botonUltimo.Enabled = false;
+                objs.Final2 = ContadorTotal;
+            }
+            else
+            {
+                objs.Final2 = 10;
+                botonSiguiente.Enabled = true;
+                botonUltimo.Enabled = true;
+            }
+
+            dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
+            dataGridView1.DataSource = dsTable.Tables[1];
+            dataGridView1.Columns[0].Width = 41; //Desactiva la columna ID
+            dataGridView1.Columns[1].Visible = false; //Desactiva la columna ID
+            dataGridView1.Columns[2].Width = 135; //Desactiva la columna ID
+            dataGridView1.Columns[3].Width = 290;     //Se asigna tamaño a la columna Nombre Completo
+            dataGridView1.Columns[4].Width = 278; //Desactiva la columna Nombre
+            dataGridView1.Columns[5].Width = 75; //Desactiva la columna Primer Apellido
+            dataGridView1.Columns[6].Width = 255; //Desactiva la columna Primer Apellido
+
+            botonPrimero.Enabled = false;
+            botonAnterior.Enabled = false;
+
+            label10.Text = "Registros: " + objs.Inicio2 + " - " + (objs.Final2) + " de: " + ContadorTotal.ToString();
+        }
+
         private void CargarDB()
         {
 
-            if (Convert.ToString(dateTimePicker1.Text) == "2000-01-01")
+            if (dateTimePicker1.Text == "2000-01-01")
             {
                 FA = null;
             }
             else
             {
-                FA = Convert.ToString(dateTimePicker1.Text);
+                FA = dateTimePicker1.Text;
             }
-            if (Convert.ToString(dateTimePicker2.Text) == "2000-01-01")
+            if (dateTimePicker2.Text == "2000-01-01")
             {
                 IH = null;
             }
             else
             {
-                IH = Convert.ToString(dateTimePicker2.Text);
+                IH = dateTimePicker2.Text;
             }
             if (textExpediente.Texts == "Expediente")
             {
@@ -121,7 +158,7 @@ namespace Sistema_de_sanciones
             {
                 TS = Convert.ToString(TipoS.valor);
             }
-            
+           
 
 
 
@@ -146,33 +183,13 @@ namespace Sistema_de_sanciones
 
             dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
-            dataGridView1.Columns[0].Visible = false; //Desactiva la columna ID
-            dataGridView1.Columns[1].Width = 120; //Desactiva la columna ID
-            dataGridView1.Columns[2].Width = 275;     //Se asigna tamaño a la columna Nombre Completo
-            dataGridView1.Columns[3].Width = 275; //Desactiva la columna Nombre
-            dataGridView1.Columns[4].Width = 75; //Desactiva la columna Primer Apellido
-            dataGridView1.Columns[5].Width = 300; //Desactiva la columna Primer Apellido
-
-            DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
-            Ver.HeaderText = "Ver";
-            Ver.Name = "Ver";
-            Ver.Width = 43;
-            Ver.FlatStyle = FlatStyle.Flat;
-            dataGridView1.Columns.Add(Ver);
-
-            DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
-            btnclm.HeaderText = "Eliminar";
-            btnclm.Name = "Eliminar";
-            btnclm.Width = 43;
-            btnclm.FlatStyle = FlatStyle.Flat;
-            dataGridView1.Columns.Add(btnclm);
-
-            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
-            editar.HeaderText = "Editar";
-            editar.Name = "Editar";
-            editar.Width = 43;
-            editar.FlatStyle = FlatStyle.Flat;
-            dataGridView1.Columns.Add(editar);
+            dataGridView1.Columns[0].Width = 41; //Desactiva la columna ID
+            dataGridView1.Columns[1].Visible = false; //Desactiva la columna ID
+            dataGridView1.Columns[2].Width = 135; //Desactiva la columna ID
+            dataGridView1.Columns[3].Width = 290;     //Se asigna tamaño a la columna Nombre Completo
+            dataGridView1.Columns[4].Width = 278; //Desactiva la columna Nombre
+            dataGridView1.Columns[5].Width = 75; //Desactiva la columna Primer Apellido
+            dataGridView1.Columns[6].Width = 255; //Desactiva la columna Primer Apellido
 
 
             botonAnterior.Enabled = false;
@@ -201,16 +218,53 @@ namespace Sistema_de_sanciones
 
         private void Listado_PS_Load(object sender, EventArgs e)
         {
-            
+            DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
+            Ver.HeaderText = "Ver";
+            Ver.Name = "Ver";
+            Ver.Width = 50;
+            Ver.FlatStyle = FlatStyle.Flat;
+            Ver.UseColumnTextForButtonValue = true;
+            dataGridView1.Columns.Add(Ver);
+            //this.dataGridView1.Columns["Ver"].Frozen = true;
+
+            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
+            editar.HeaderText = "Editar";
+            editar.Name = "Editar";
+            editar.Width = 50;
+            editar.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(editar);
         }
+
+        private void CargarBotones()
+        {
+            DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
+            Ver.HeaderText = "Ver";
+            Ver.Name = "Ver";
+            Ver.Width = 50;
+            Ver.FlatStyle = FlatStyle.Flat;
+            Ver.UseColumnTextForButtonValue = true;
+            dataGridView1.Columns.Add(Ver);
+            //this.dataGridView1.Columns["Ver"].Frozen = true;
+
+            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
+            editar.HeaderText = "Editar";
+            editar.Name = "Editar";
+            editar.Width = 50;
+            editar.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(editar);
+            //this.dataGridView1.Columns["Editar"].Frozen = true;
+        }
+
 
         private void botonBuscar_Click(object sender, EventArgs e)
         {
             objs.Inicio2 = 1;
             objs.Final2 = 10;
             //Cargamos nuevamente el metodo CargarDB y ponemos los datos dentro de nuestro dataGridView.
+            dataGridView1.Columns.Remove("Ver");
+            dataGridView1.Columns.Remove("Editar");
             CargarDB();
-            dataGridView1.DataSource = dsTable.Tables[1];
+            CargarBotones();
 
             //La siguiente linea es nuestro contador de total de registros, en este almacenaremos en un valor el numero de registros totales dentro de nuestra
             //base de datos, pues este valor sera de mucha importancia para indicarle al programa cuando debera de desabilitar los botones para ir al siguiente
@@ -240,9 +294,13 @@ namespace Sistema_de_sanciones
             }
 
             botonSiguiente.Enabled = true;
+            dataGridView1.Columns.Remove("Ver");
+            dataGridView1.Columns.Remove("Editar");
             dsTable.Clear();
             dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
+            CargarBotones();
+
             botonAnterior.Enabled = false;
 
             label10.Text = "Registros: " + objs.Inicio2 + " - " + (objs.Final2) + " de: " + ContadorTotal.ToString();
@@ -258,9 +316,13 @@ namespace Sistema_de_sanciones
             {
                 botonAnterior.Enabled = false;
             }
+            dataGridView1.Columns.Remove("Ver");
+            dataGridView1.Columns.Remove("Editar");
             dsTable.Clear();
             dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
+            CargarBotones();
+
             label10.Text = "Registros: " + objs.Inicio2 + " - " + (objs.Final2 - 1) + " de: " + ContadorTotal.ToString();
         }
 
@@ -275,9 +337,13 @@ namespace Sistema_de_sanciones
                 botonPrimero.Enabled = true;
                 botonAnterior.Enabled = true;
 
+                dataGridView1.Columns.Remove("Ver");
+                dataGridView1.Columns.Remove("Editar");
                 dsTable.Clear();
                 dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
                 dataGridView1.DataSource = dsTable.Tables[1];
+                CargarBotones();
+
                 label10.Text = "Registros: " + objs.Inicio2 + " - " + ContadorTotal + " de: " + ContadorTotal.ToString();
             }
             else
@@ -289,9 +355,12 @@ namespace Sistema_de_sanciones
                 botonPrimero.Enabled = true;
 
                 botonAnterior.Enabled = true;
+                dataGridView1.Columns.Remove("Ver");
+                dataGridView1.Columns.Remove("Editar");
                 dsTable.Clear();
                 dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
                 dataGridView1.DataSource = dsTable.Tables[1];
+                CargarBotones();
 
                 label10.Text = "Registros: " + objs.Inicio2 + " - " + (objs.Final2 - 1) + " de: " + ContadorTotal.ToString();
             }
@@ -305,9 +374,14 @@ namespace Sistema_de_sanciones
             {
                 objs.Inicio2 = ContadorTotal - (ContadorTotal % 10) + 1 - 10;
                 objs.Final2 = objs.Inicio2 + 10;
+
+                dataGridView1.Columns.Remove("Ver");
+                dataGridView1.Columns.Remove("Editar");
                 dsTable.Clear();
                 dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
                 dataGridView1.DataSource = dsTable.Tables[1];
+                CargarBotones();
+
                 botonPrimero.Enabled = true;
                 botonAnterior.Enabled = true;
                 botonSiguiente.Enabled = false;
@@ -316,9 +390,14 @@ namespace Sistema_de_sanciones
             {
                 objs.Inicio2 = ContadorTotal - (ContadorTotal % 10) + 1;
                 objs.Final2 = objs.Inicio2 + 10;
+
+                dataGridView1.Columns.Remove("Ver");
+                dataGridView1.Columns.Remove("Editar");
                 dsTable.Clear();
                 dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
                 dataGridView1.DataSource = dsTable.Tables[1];
+                CargarBotones();
+
                 botonPrimero.Enabled = true;
                 botonAnterior.Enabled = true;
                 botonSiguiente.Enabled = false;
@@ -349,7 +428,7 @@ namespace Sistema_de_sanciones
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 7)
             {
                 Image someImage = Properties.Resources.abajo;
 
@@ -362,20 +441,6 @@ namespace Sistema_de_sanciones
                 e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
-            if (e.ColumnIndex == 7)
-            {
-                Image someImage = Properties.Resources.basura;
-
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                var w = Properties.Resources.basura.Width;
-                var h = Properties.Resources.basura.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-
-                e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
-                e.Handled = true;
-            }
-
 
             if (e.ColumnIndex == 8)
             {

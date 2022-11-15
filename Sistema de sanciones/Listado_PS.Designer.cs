@@ -304,6 +304,7 @@
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Location = new System.Drawing.Point(0, 98);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -350,7 +351,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(1081, 18);
+            this.label8.Location = new System.Drawing.Point(1085, 18);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 16);
             this.label8.TabIndex = 0;
@@ -361,7 +362,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(668, 18);
+            this.label9.Location = new System.Drawing.Point(740, 18);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 16);
             this.label9.TabIndex = 0;
@@ -372,7 +373,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(859, 18);
+            this.label7.Location = new System.Drawing.Point(905, 18);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 16);
             this.label7.TabIndex = 0;
@@ -383,7 +384,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(481, 14);
+            this.label6.Location = new System.Drawing.Point(555, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 32);
             this.label6.TabIndex = 0;
@@ -396,7 +397,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(183, 18);
+            this.label5.Location = new System.Drawing.Point(258, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(145, 16);
             this.label5.TabIndex = 0;
@@ -407,7 +408,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(24, 18);
+            this.label4.Location = new System.Drawing.Point(82, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 16);
             this.label4.TabIndex = 0;
