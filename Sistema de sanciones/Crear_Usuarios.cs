@@ -26,8 +26,6 @@ namespace Sistema_de_sanciones
         private SqlDataReader LeerFilas;
         private Usuarios usuarios = new Usuarios();
 
-
-
         public Crear_Usuarios()
         {
             InitializeComponent();
@@ -177,11 +175,6 @@ namespace Sistema_de_sanciones
             }
         }
 
-        private void textCorreo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
         private void textTelefono_Enter(object sender, EventArgs e)
         {
             if (textTelefono.Texts == "Número de teléfono *")
@@ -290,13 +283,12 @@ namespace Sistema_de_sanciones
             //Limpiar Contraseña y aplica color del texto
             textContraseña.Texts = "";
             textContraseña.ForeColor = Color.Gray;
+            //Limpiar tetxBox Confirmar Contraseña y aplica color al texto
+            textConfirmarContra.Texts = "";
+            textConfirmarContra.ForeColor = Color.Gray;
 
-            comboProveedor.Text = "  Proveedor de Datos *";
-            comboSistemas.Text = "Selecciona los sistemas aplicables";
+            comboProveedor.Text = "Proveedor";
         }
-
-
-
 
         private void listarProveedor()
         {
@@ -311,7 +303,6 @@ namespace Sistema_de_sanciones
             comboPerfil.ValueMember = "cargo";
         }
 
-
         private void button3_Click(object sender, EventArgs e)
         {
             string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
@@ -319,9 +310,23 @@ namespace Sistema_de_sanciones
 
             if (!isEmailValid || txtNombres.Texts == "Nombres *" || textPApellido.Texts == "Primer Apellido *" ||
                             textCargo.Texts == "Cargo *" || textCorreo.Texts == "Correo eléctronico *" ||
-                            textTelefono.Texts == "Número de télefono *" || textUser.Texts == "Nombre de Usuario *" || comboProveedor.Text == "Proveedor" || comboSistemas.Text == "Selecciona los sistemas aplicables *" || textContraseña.Texts == "")
+                            textTelefono.Texts == "Número de télefono *" || textUser.Texts == "Nombre de Usuario *" || comboProveedor.Text == "Proveedor" || textContraseña.Texts == "" || textConfirmarContra.Texts == "" )
             {
                 MessageBox.Show("Hay datos que aun no se han proporcionado");
+            }
+            else if (textTelefono.Texts.Length < 10 || textTelefono.Texts.Length > 10)
+            {
+                errorProvider1.SetError(textTelefono, "El número de telefono debe de tener 10 Digitos");
+            }
+            else if (!usuarios.textBoxEvent.validadContrasena(textContraseña.Texts) || !usuarios.textBoxEvent.validadContrasena(textConfirmarContra.Texts))
+            {
+                errorProvider1.SetError(textContraseña, "Ingrese una contraseña valida");
+                errorProvider1.SetError(textConfirmarContra, "Ingrese una contraseña valida");
+            }
+            else if (!textContraseña.Texts.Equals(textConfirmarContra.Texts))
+            {
+                errorProvider1.SetError(textContraseña, "Las contraseña no coinciden");
+                errorProvider1.SetError(textConfirmarContra, "Las contraseña no coinciden");
             }
             else
             {
@@ -332,21 +337,13 @@ namespace Sistema_de_sanciones
                 int sus = Convert.ToInt32(perfil.id);
 
                 string cadenaEncriptada = Encrypt.GetSHA256(textContraseña.Texts.Trim());
-
-                objp.InsertarUsuario(txtNombres.Texts, textPApellido.Texts, textSApellido.Texts, textCargo.Texts, textCorreo.Texts, 
-                    textTelefono.Texts, textExtension.Texts, textUser.Texts,comboSistemas.SelectedItem.ToString(), us, sus, cadenaEncriptada);
-                
-                
-                //objp.IngresarContrasena(textContraseña.Texts);
-
-
-
-
-
+                objp.InsertarUsuario(txtNombres.Texts, textPApellido.Texts, textSApellido.Texts, textCargo.Texts, textCorreo.Texts,
+                textTelefono.Texts, textExtension.Texts, textUser.Texts, us, sus, cadenaEncriptada);
 
                 MessageBox.Show("Registro Insertado");
                 limpiar();
-                errorProvider1.Clear();
+                pbOcultar.ResetText();
+;                errorProvider1.Clear();
             }   
             
         }
@@ -355,5 +352,31 @@ namespace Sistema_de_sanciones
         {
             this.Close();
         }
+
+        private void pbMostrar_Click(object sender, EventArgs e)
+        {
+            pbOcultar.BringToFront();
+            textContraseña.PasswordChar = false;
+        }
+
+        private void pbOcultar_Click(object sender, EventArgs e)
+        {
+            pbMostrar.BringToFront();
+            textContraseña.PasswordChar = true;
+        }
+
+        private void pbMostrar1_Click(object sender, EventArgs e)
+        {
+            pbOcultar1.BringToFront();
+            textConfirmarContra.PasswordChar = false;
+        }
+
+        private void pbOcultar1_Click(object sender, EventArgs e)
+        {
+            pbMostrar1.BringToFront();
+            textConfirmarContra.PasswordChar = true;
+        }
+
+
     }
 }

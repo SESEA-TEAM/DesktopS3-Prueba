@@ -45,7 +45,6 @@
             this.EditarUsuarios = new System.Windows.Forms.TabPage();
             this.buttonCancelar_Mod = new System.Windows.Forms.Button();
             this.buttonGuardar_Mod = new System.Windows.Forms.Button();
-            this.comboSistemas = new System.Windows.Forms.ComboBox();
             this.comboEstatus = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboProveedor = new System.Windows.Forms.ComboBox();
@@ -64,7 +63,6 @@
             this.fechaActualizacion = new System.Windows.Forms.DateTimePicker();
             this.fecha_Alta = new System.Windows.Forms.DateTimePicker();
             this.buttonCancelar_Ver = new System.Windows.Forms.Button();
-            this.comboSistemas1 = new System.Windows.Forms.ComboBox();
             this.comboEstatus1 = new System.Windows.Forms.ComboBox();
             this.comboProveedor1 = new System.Windows.Forms.ComboBox();
             this.textUserName = new Sistema_de_sanciones.Templates.TextBox();
@@ -111,7 +109,7 @@
             // 
             // panel4
             // 
-            this.panel4.Location = new System.Drawing.Point(-2, 61);
+            this.panel4.Location = new System.Drawing.Point(-2, 58);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1179, 29);
             this.panel4.TabIndex = 23;
@@ -126,9 +124,9 @@
             this.panelAcciones.Controls.Add(this.label4);
             this.panelAcciones.Controls.Add(this.label3);
             this.panelAcciones.Controls.Add(this.label2);
-            this.panelAcciones.Location = new System.Drawing.Point(0, 0);
+            this.panelAcciones.Location = new System.Drawing.Point(-6, 0);
             this.panelAcciones.Name = "panelAcciones";
-            this.panelAcciones.Size = new System.Drawing.Size(1170, 36);
+            this.panelAcciones.Size = new System.Drawing.Size(1176, 36);
             this.panelAcciones.TabIndex = 5;
             // 
             // label5
@@ -244,7 +242,6 @@
             this.EditarUsuarios.BackColor = System.Drawing.SystemColors.Control;
             this.EditarUsuarios.Controls.Add(this.buttonCancelar_Mod);
             this.EditarUsuarios.Controls.Add(this.buttonGuardar_Mod);
-            this.EditarUsuarios.Controls.Add(this.comboSistemas);
             this.EditarUsuarios.Controls.Add(this.comboEstatus);
             this.EditarUsuarios.Controls.Add(this.label1);
             this.EditarUsuarios.Controls.Add(this.comboProveedor);
@@ -275,7 +272,7 @@
             this.buttonCancelar_Mod.Location = new System.Drawing.Point(698, 350);
             this.buttonCancelar_Mod.Name = "buttonCancelar_Mod";
             this.buttonCancelar_Mod.Size = new System.Drawing.Size(126, 35);
-            this.buttonCancelar_Mod.TabIndex = 67;
+            this.buttonCancelar_Mod.TabIndex = 66;
             this.buttonCancelar_Mod.Text = "CANCELAR";
             this.buttonCancelar_Mod.UseVisualStyleBackColor = false;
             this.buttonCancelar_Mod.Click += new System.EventHandler(this.buttonCancelar_Mod_Click);
@@ -291,32 +288,15 @@
             this.buttonGuardar_Mod.Location = new System.Drawing.Point(859, 350);
             this.buttonGuardar_Mod.Name = "buttonGuardar_Mod";
             this.buttonGuardar_Mod.Size = new System.Drawing.Size(115, 35);
-            this.buttonGuardar_Mod.TabIndex = 66;
+            this.buttonGuardar_Mod.TabIndex = 67;
             this.buttonGuardar_Mod.Text = "GUARDAR";
             this.buttonGuardar_Mod.UseVisualStyleBackColor = false;
             this.buttonGuardar_Mod.Click += new System.EventHandler(this.buttonGuardar_Mod_Click);
             // 
-            // comboSistemas
-            // 
-            this.comboSistemas.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboSistemas.BackColor = System.Drawing.SystemColors.Control;
-            this.comboSistemas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboSistemas.ForeColor = System.Drawing.Color.Black;
-            this.comboSistemas.FormattingEnabled = true;
-            this.comboSistemas.Items.AddRange(new object[] {
-            "Sistema de los Servidores Públicos Sancionados",
-            "Sistema de los Particulares Sancionados",
-            "Sistema de los Servidores Públicos Sancionados, Sistema de los Particulares Sanci" +
-                "onados"});
-            this.comboSistemas.Location = new System.Drawing.Point(602, 264);
-            this.comboSistemas.Name = "comboSistemas";
-            this.comboSistemas.Size = new System.Drawing.Size(372, 24);
-            this.comboSistemas.TabIndex = 64;
-            this.comboSistemas.Text = "Selecciona los sistemas aplicables *";
-            // 
             // comboEstatus
             // 
             this.comboEstatus.BackColor = System.Drawing.SystemColors.Control;
+            this.comboEstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboEstatus.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboEstatus.ForeColor = System.Drawing.Color.Black;
             this.comboEstatus.FormattingEnabled = true;
@@ -326,8 +306,7 @@
             this.comboEstatus.Location = new System.Drawing.Point(188, 264);
             this.comboEstatus.Name = "comboEstatus";
             this.comboEstatus.Size = new System.Drawing.Size(173, 24);
-            this.comboEstatus.TabIndex = 63;
-            this.comboEstatus.Text = "Seleccionar Estatus*";
+            this.comboEstatus.TabIndex = 61;
             // 
             // label1
             // 
@@ -344,14 +323,14 @@
             // 
             this.comboProveedor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboProveedor.BackColor = System.Drawing.SystemColors.Control;
+            this.comboProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboProveedor.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboProveedor.ForeColor = System.Drawing.Color.Black;
             this.comboProveedor.FormattingEnabled = true;
             this.comboProveedor.Location = new System.Drawing.Point(397, 264);
             this.comboProveedor.Name = "comboProveedor";
             this.comboProveedor.Size = new System.Drawing.Size(173, 24);
-            this.comboProveedor.TabIndex = 61;
-            this.comboProveedor.Text = "  Proveedor de Datos *";
+            this.comboProveedor.TabIndex = 64;
             // 
             // textUser
             // 
@@ -548,7 +527,6 @@
             this.VerUsuario.Controls.Add(this.fechaActualizacion);
             this.VerUsuario.Controls.Add(this.fecha_Alta);
             this.VerUsuario.Controls.Add(this.buttonCancelar_Ver);
-            this.VerUsuario.Controls.Add(this.comboSistemas1);
             this.VerUsuario.Controls.Add(this.comboEstatus1);
             this.VerUsuario.Controls.Add(this.comboProveedor1);
             this.VerUsuario.Controls.Add(this.textUserName);
@@ -625,23 +603,6 @@
             this.buttonCancelar_Ver.Text = "CANCELAR";
             this.buttonCancelar_Ver.UseVisualStyleBackColor = false;
             this.buttonCancelar_Ver.Click += new System.EventHandler(this.buttonCancelar_Ver_Click);
-            // 
-            // comboSistemas1
-            // 
-            this.comboSistemas1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboSistemas1.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboSistemas1.Enabled = false;
-            this.comboSistemas1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboSistemas1.ForeColor = System.Drawing.Color.Black;
-            this.comboSistemas1.FormattingEnabled = true;
-            this.comboSistemas1.Items.AddRange(new object[] {
-            "Sistema de los Servidores Públicos Sancionados",
-            "Sistema de los Particulares Sancionados"});
-            this.comboSistemas1.Location = new System.Drawing.Point(609, 259);
-            this.comboSistemas1.Name = "comboSistemas1";
-            this.comboSistemas1.Size = new System.Drawing.Size(372, 24);
-            this.comboSistemas1.TabIndex = 74;
-            this.comboSistemas1.Text = "Selecciona los sistemas aplicables *";
             // 
             // comboEstatus1
             // 
@@ -905,7 +866,6 @@
         private Button buttonCancelar_Mod;
         private Button buttonGuardar_Mod;
         private Button buttonCancelar_Ver;
-        public ComboBox comboSistemas1;
         public ComboBox comboEstatus1;
         public ComboBox comboProveedor1;
         public Templates.TextBox textUserName;

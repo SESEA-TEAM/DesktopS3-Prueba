@@ -128,7 +128,6 @@ namespace Sistema_de_sanciones
                     comboProveedor.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                     textTelefono.Texts = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                     textExtension.Texts = dataGridView1.CurrentRow.Cells[10].Value.ToString();
-                    comboSistemas.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
                     comboEstatus.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
 
                     tabControl1.SelectedTab = EditarUsuarios;
@@ -153,7 +152,6 @@ namespace Sistema_de_sanciones
                     comboProveedor1.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                     textNum.Texts = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                     textLada.Texts = dataGridView1.CurrentRow.Cells[10].Value.ToString();
-                    comboSistemas1.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
                     comboEstatus1.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
 
                     fecha_Alta.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
@@ -469,7 +467,6 @@ namespace Sistema_de_sanciones
             textUser.ForeColor = Color.Gray;
 
             comboProveedor.Text = "  Proveedor de Datos *";
-            comboSistemas.Text = "Selecciona los sistemas aplicables";
         }
 
 
@@ -493,24 +490,29 @@ namespace Sistema_de_sanciones
             textUser.ForeColor = Color.Black;
         }
 
+
         private void buttonGuardar_Mod_Click(object sender, EventArgs e)
         {
-
             string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
             bool isEmailValid = Regex.IsMatch(textCorreo.Texts, emailPattern);
 
             if (!isEmailValid || txtNombres.Texts == "Nombres *" || textPApellido.Texts == "Primer Apellido *" ||
                             textCargo.Texts == "Cargo *" || textCorreo.Texts == "Correo eléctronico *" ||
-                            textTelefono.Texts == "Número de télefono *" || textUser.Texts == "Nombre de Usuario *" || comboProveedor.Text == "Proveedor" || comboSistemas.Text == "Selecciona los sistemas aplicables *")
+                            textTelefono.Texts == "Número de télefono *" || textUser.Texts == "Nombre de Usuario *" || comboProveedor.Text == "Proveedor")
             {
                 MessageBox.Show("Hay datos que aun no se han proporcionado");
+            }
+            else if (textTelefono.Texts.Length < 10 || textTelefono.Texts.Length > 10)
+            {
+                errorProvider1.SetError(textTelefono, "El número de telefono debe de tener 10 Digitos");
             }
             else
             {
                 modeloListaProveedores user = (modeloListaProveedores)comboProveedor.SelectedItem;
                 int us = Convert.ToInt32(user.id);
 
-                objp.EditarUsuario(Convert.ToInt32(id), txtNombres.Texts, textPApellido.Texts, textSApellido.Texts, textCargo.Texts, textCorreo.Texts, textTelefono.Texts, textExtension.Texts, textUser.Texts, comboSistemas.SelectedItem.ToString(), us, comboEstatus.SelectedItem.ToString());
+                objp.EditarUsuario(Convert.ToInt32(id), txtNombres.Texts, textPApellido.Texts, textSApellido.Texts, textCargo.Texts, textCorreo.Texts, 
+                    textTelefono.Texts, textExtension.Texts, textUser.Texts, us, comboEstatus.SelectedItem.ToString());
                 MessageBox.Show("Registro Insertado");
                 tabControl1.SelectedTab = ListaUsuario;
 

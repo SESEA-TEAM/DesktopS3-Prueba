@@ -38,5 +38,35 @@ namespace Sistema_de_sanciones.Controladores
             }
         }
 
+        public bool validadContrasena(string contrasena)
+        {
+            bool mayuscula = false, minuscula = false, numero = false, caraespecial = false;
+            for(int i = 0; i < contrasena.Length; i++)
+            {
+                if(Char.IsUpper(contrasena, i))
+                {
+                    mayuscula = true;
+                }
+                else if (Char.IsLower(contrasena, i))
+                {
+                    minuscula = true;
+                }
+                else if(Char.IsDigit(contrasena, i))
+                {
+                    numero = true;
+                }
+                else
+                {
+                    caraespecial = true;
+                }
+            }
+
+            if(mayuscula && minuscula && numero && caraespecial && contrasena.Length >= 8)
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }
