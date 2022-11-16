@@ -20,6 +20,7 @@ namespace Sistema_de_sanciones
         Controlador_Usuario objp = new Controlador_Usuario(); //Se genera un nuevo objeto a la clae Control Usuario
         DataTable dsTabla; //Representa una tabla de datos en memoria.
         private Usuarios usuarios = new Usuarios();
+        int ContadorTotal;
 
 
         private int id;
@@ -33,12 +34,32 @@ namespace Sistema_de_sanciones
         public Listar_Usuarios()
         {
             InitializeComponent();
+            ContadorTotal = objp.UltimoBarraListadoUsuarios();
             CargarDG(); //Se cargan los datos de los Usuarios registrados.
 
         }
 
         private void CargarDG()
         {
+            objp.Inicio2 = 1;
+
+            
+
+            if (ContadorTotal <= 10)
+            {
+                botonPrimero.Enabled = false;
+                botonAnterior.Enabled = false;
+                botonSiguiente.Enabled = false;
+                botonUltimo.Enabled = false;
+                objp.Final2 = ContadorTotal;
+            }
+            else
+            {
+                objp.Final2 = 10;
+                botonSiguiente.Enabled = true;
+                botonUltimo.Enabled = true;
+            }
+
             dsTabla = objp.Seleccionar_Datos_User(); //La tabla se recarga con el procedimiento almacenado Seleccionar_Datos_User.
 
             dataGridView1.DataSource = dsTabla;
@@ -59,11 +80,42 @@ namespace Sistema_de_sanciones
             dataGridView1.Columns[13].Visible = false; //Desactiva columna fecha alta
             dataGridView1.Columns[14].Visible = false; //Desactiva columna fecha actualización
 
-
-
             listarProveedor();
 
+            botonPrimero.Enabled = false;
+            botonAnterior.Enabled = false;
+
+            label12.Text = "Registros: " + objp.Inicio2 + " - " + (objp.Final2) + " de: " + ContadorTotal.ToString();
         }
+
+        private void CargarBotones()
+        {
+            DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
+            Ver.HeaderText = "Ver";
+            Ver.Name = "Ver";
+            Ver.Width = 90;
+            Ver.FlatStyle = FlatStyle.Flat;
+            Ver.UseColumnTextForButtonValue = true;
+            dataGridView1.Columns.Add(Ver);
+            //this.dataGridView1.Columns["Ver"].Frozen = true;
+
+            DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
+            btnclm.HeaderText = "Eliminar";
+            btnclm.Name = "Eliminar";
+            btnclm.Width = 90;
+            btnclm.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(btnclm);
+            //this.dataGridView1.Columns["btnclm"].Frozen = true;
+
+            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
+            editar.HeaderText = "Editar";
+            editar.Name = "Editar";
+            editar.Width = 90;
+            editar.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(editar);
+            //this.dataGridView1.Columns["Editar"].Frozen = true;
+        }
+
         //
         private void Listar_Usuarios_Load(object sender, EventArgs e)
         {
@@ -128,6 +180,7 @@ namespace Sistema_de_sanciones
                     comboProveedor.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                     textTelefono.Texts = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                     textExtension.Texts = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                    comboSistemas.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
                     comboEstatus.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
 
                     tabControl1.SelectedTab = EditarUsuarios;
@@ -152,6 +205,7 @@ namespace Sistema_de_sanciones
                     comboProveedor1.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                     textNum.Texts = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                     textLada.Texts = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                    comboSistemas1.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
                     comboEstatus1.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
 
                     fecha_Alta.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
@@ -467,6 +521,7 @@ namespace Sistema_de_sanciones
             textUser.ForeColor = Color.Gray;
 
             comboProveedor.Text = "  Proveedor de Datos *";
+            comboSistemas.Text = "Selecciona los sistemas aplicables";
         }
 
 
@@ -490,29 +545,24 @@ namespace Sistema_de_sanciones
             textUser.ForeColor = Color.Black;
         }
 
-
         private void buttonGuardar_Mod_Click(object sender, EventArgs e)
         {
+
             string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
             bool isEmailValid = Regex.IsMatch(textCorreo.Texts, emailPattern);
 
             if (!isEmailValid || txtNombres.Texts == "Nombres *" || textPApellido.Texts == "Primer Apellido *" ||
                             textCargo.Texts == "Cargo *" || textCorreo.Texts == "Correo eléctronico *" ||
-                            textTelefono.Texts == "Número de télefono *" || textUser.Texts == "Nombre de Usuario *" || comboProveedor.Text == "Proveedor")
+                            textTelefono.Texts == "Número de télefono *" || textUser.Texts == "Nombre de Usuario *" || comboProveedor.Text == "Proveedor" || comboSistemas.Text == "Selecciona los sistemas aplicables *")
             {
                 MessageBox.Show("Hay datos que aun no se han proporcionado");
-            }
-            else if (textTelefono.Texts.Length < 10 || textTelefono.Texts.Length > 10)
-            {
-                errorProvider1.SetError(textTelefono, "El número de telefono debe de tener 10 Digitos");
             }
             else
             {
                 modeloListaProveedores user = (modeloListaProveedores)comboProveedor.SelectedItem;
                 int us = Convert.ToInt32(user.id);
 
-                objp.EditarUsuario(Convert.ToInt32(id), txtNombres.Texts, textPApellido.Texts, textSApellido.Texts, textCargo.Texts, textCorreo.Texts, 
-                    textTelefono.Texts, textExtension.Texts, textUser.Texts, us, comboEstatus.SelectedItem.ToString());
+                objp.EditarUsuario(Convert.ToInt32(id), txtNombres.Texts, textPApellido.Texts, textSApellido.Texts, textCargo.Texts, textCorreo.Texts, textTelefono.Texts, textExtension.Texts, textUser.Texts, comboSistemas.SelectedItem.ToString(), us, comboEstatus.SelectedItem.ToString());
                 MessageBox.Show("Registro Insertado");
                 tabControl1.SelectedTab = ListaUsuario;
 
@@ -552,6 +602,130 @@ namespace Sistema_de_sanciones
             tabControl1.SelectedTab = ListaUsuario;
         }
 
+        private void botonPrimero_Click(object sender, EventArgs e)
+        {
+            objp.Inicio2 = 1;
 
+            if (ContadorTotal < 10)
+            {
+                botonPrimero.Enabled = false;
+                botonAnterior.Enabled = false;
+                botonSiguiente.Enabled = false;
+                objp.Final2 = ContadorTotal;
+            }
+            else
+            {
+                objp.Final2 = 10;
+            }
+
+            botonSiguiente.Enabled = true;
+            dataGridView1.Columns.Remove("Ver");
+            dataGridView1.Columns.Remove("Eliminar");
+            dataGridView1.Columns.Remove("Editar");
+            dsTabla.Clear();
+            dsTabla = objp.Seleccionar_Datos_User();
+            dataGridView1.DataSource = dsTabla;
+            CargarBotones();
+
+            botonAnterior.Enabled = false;
+
+            label12.Text = "Registros: " + objp.Inicio2 + " - " + (objp.Final2) + " de: " + ContadorTotal.ToString();
+        }
+
+        private void botonAnterior_Click(object sender, EventArgs e)
+        {
+            objp.Inicio2 = objp.Inicio2 - 10;
+            objp.Final2 = objp.Inicio2 + 10;
+            botonSiguiente.Enabled = true;
+            if (objp.Inicio2 <= 1)
+            {
+                botonAnterior.Enabled = false;
+            }
+            dataGridView1.Columns.Remove("Ver");
+            dataGridView1.Columns.Remove("Eliminar");
+            dataGridView1.Columns.Remove("Editar");
+            dsTabla.Clear();
+            dsTabla = objp.Seleccionar_Datos_User();
+            dataGridView1.DataSource = dsTabla;
+            CargarBotones();
+
+            label12.Text = "Registros: " + objp.Inicio2 + " - " + (objp.Final2 - 1) + " de: " + ContadorTotal.ToString();
+        }
+
+        private void botonSiguiente_Click(object sender, EventArgs e)
+        {
+            objp.Inicio2 = objp.Inicio2 + 10;
+            objp.Final2 = objp.Inicio2 + 10;
+            if (objp.Final2 >= ContadorTotal)
+            {
+
+                botonSiguiente.Enabled = false;
+                botonPrimero.Enabled = true;
+                botonAnterior.Enabled = true;
+                dataGridView1.Columns.Remove("Ver");
+                dataGridView1.Columns.Remove("Eliminar");
+                dataGridView1.Columns.Remove("Editar");
+                dsTabla.Clear();
+                dsTabla = objp.Seleccionar_Datos_User();
+                dataGridView1.DataSource = dsTabla;
+                CargarBotones();
+                label12.Text = "Registros: " + objp.Inicio2 + " - " + ContadorTotal + " de: " + ContadorTotal.ToString();
+            }
+            else
+            {
+
+                objp.Final2 = objp.Inicio2 + 10;
+
+                botonPrimero.Enabled = true;
+                botonAnterior.Enabled = true;
+                dataGridView1.Columns.Remove("Ver");
+                dataGridView1.Columns.Remove("Eliminar");
+                dataGridView1.Columns.Remove("Editar");
+                dsTabla.Clear();
+                dsTabla = objp.Seleccionar_Datos_User();
+                dataGridView1.DataSource = dsTabla;
+                CargarBotones();
+                label12.Text = "Registros: " + objp.Inicio2 + " - " + (objp.Final2 - 1) + " de: " + ContadorTotal.ToString();
+            }
+        }
+
+        private void botonUltimo_Click(object sender, EventArgs e)
+        {
+            if (ContadorTotal % 10 == 0)
+            {
+                objp.Inicio2 = ContadorTotal - (ContadorTotal % 10) + 1 - 10;
+                objp.Final2 = objp.Inicio2 + 10;
+
+                dataGridView1.Columns.Remove("Ver");
+                dataGridView1.Columns.Remove("Eliminar");
+                dataGridView1.Columns.Remove("Editar");
+                dsTabla.Clear();
+                dsTabla = objp.Seleccionar_Datos_User();
+                dataGridView1.DataSource = dsTabla;
+                CargarBotones();
+
+                botonPrimero.Enabled = true;
+                botonAnterior.Enabled = true;
+                botonSiguiente.Enabled = false;
+            }
+            else
+            {
+                objp.Inicio2 = ContadorTotal - (ContadorTotal % 10) + 1;
+                objp.Final2 = objp.Inicio2 + 10;
+
+                dataGridView1.Columns.Remove("Ver");
+                dataGridView1.Columns.Remove("Eliminar");
+                dataGridView1.Columns.Remove("Editar");
+                dsTabla.Clear();
+                dsTabla = objp.Seleccionar_Datos_User();
+                dataGridView1.DataSource = dsTabla;
+                CargarBotones();
+
+                botonPrimero.Enabled = true;
+                botonAnterior.Enabled = true;
+                botonSiguiente.Enabled = false;
+            }
+            label12.Text = "Registros: " + objp.Inicio2 + " - " + ContadorTotal + " de: " + ContadorTotal.ToString();
+        }
     }
 }

@@ -16,6 +16,14 @@ namespace Sistema_de_sanciones.Controladores
         private Conexion ConexionBD = new Conexion(); //Mando a llamar a la conexion a la base de datos.
         private SqlDataReader LeerFilas; //Permite renderizar los datos de la BD.
 
+        private int inicio2;
+        private int final2;
+        private int total;
+
+        public int Inicio2 { get => inicio2; set => inicio2 = value; }
+        public int Final2 { get => final2; set => final2 = value; }
+        public int Total { get => total; set => total = value; }
+
         public DataTable ControladorUsuario()
         {
             DataTable Tabla = new DataTable();
@@ -33,6 +41,8 @@ namespace Sistema_de_sanciones.Controladores
         {
             DataTable Tabla = new DataTable();
             SqlCommand comando = new SqlCommand("seleccionar_datosUser");
+            comando.Parameters.AddWithValue("@InicioTablaListadoUSR", Inicio2);
+            comando.Parameters.AddWithValue("@FinalTablaListadoUSR", Final2);
             comando.Connection = ConexionBD.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
             LeerFilas = comando.ExecuteReader();
@@ -43,7 +53,7 @@ namespace Sistema_de_sanciones.Controladores
         }
 
         public void InsertarUsuario(string nombre, string apellidoUno, string apellidoDos, string cargo, string correoElectronico, 
-            string telefono, string extension, string usuario, int proveedorDatos, int perfil, string contrasena)
+            string telefono, string extension, string usuario, string sistema, int proveedorDatos, int perfil, string contrasena)
         {
 
             SqlCommand comando = new SqlCommand("insertar_usuario");
@@ -57,6 +67,7 @@ namespace Sistema_de_sanciones.Controladores
             comando.Parameters.AddWithValue("@Telefono", telefono);
             comando.Parameters.AddWithValue("@Extension", extension);
             comando.Parameters.AddWithValue("@Usuario", usuario);
+            comando.Parameters.AddWithValue("@Sistemas", sistema);
             comando.Parameters.AddWithValue("@ProveedorDatos", proveedorDatos);
             comando.Parameters.AddWithValue("@Perfil", perfil);
             comando.Parameters.AddWithValue("@Contraseña", contrasena);
@@ -65,8 +76,7 @@ namespace Sistema_de_sanciones.Controladores
             ConexionBD.CerrarConexion();
         }
 
-        public void EditarUsuario(int id, string nombre, string apellidoUno, string apellidoDos, string cargo, string correoElectronico, string telefono, string extension, 
-            string usuario, int proveedorDatos, string estatus)
+        public void EditarUsuario(int id, string nombre, string apellidoUno, string apellidoDos, string cargo, string correoElectronico, string telefono, string extension, string usuario, string sistema, int proveedorDatos, string estatus)
         {
             SqlCommand comando = new SqlCommand("Editar_usuario");
             comando.Connection = ConexionBD.AbrirConexion();
@@ -80,6 +90,7 @@ namespace Sistema_de_sanciones.Controladores
             comando.Parameters.AddWithValue("@Telefono", telefono);
             comando.Parameters.AddWithValue("@Extension", extension);
             comando.Parameters.AddWithValue("@Usuario", usuario);
+            comando.Parameters.AddWithValue("@Sistemas", sistema);
             comando.Parameters.AddWithValue("@ProveedorDatos", proveedorDatos);
             comando.Parameters.AddWithValue("@Estatus", estatus);
             comando.ExecuteNonQuery();
@@ -166,6 +177,38 @@ namespace Sistema_de_sanciones.Controladores
             {
                 MessageBox.Show("Error: " + ex.ToString());
                 return oPerfil;
+            }
+        }
+
+        public int UltimoBarraListadoUsuarios()
+        {
+            try
+            {
+
+                SqlCommand comando = new SqlCommand("UltimoBarraListadoUsuarios");
+                comando.CommandType = CommandType.StoredProcedure;
+                SqlParameter retorno = new SqlParameter();
+
+
+                comando.Connection = ConexionBD.AbrirConexion();
+
+                var returnParameter = comando.Parameters.Add("@Total", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.Output;
+
+
+                comando.ExecuteNonQuery();
+                comando.Dispose();
+
+                var result = returnParameter.Value;
+                comando.Connection = ConexionBD.CerrarConexion();
+                return Convert.ToInt32(result);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Error: " + Ex.ToString());
+
+                ConexionBD.CerrarConexionSPS();
+                return 0;
             }
         }
 
