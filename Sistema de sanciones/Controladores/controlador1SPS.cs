@@ -60,6 +60,80 @@ namespace Sistema_de_sanciones.Controladores
 
         }
 
+        public modeloSPS CsdsdargarSPS(int id)
+        {
+            modeloSPS sps = new modeloSPS();
+            try
+            {
+                SqlCommand comando = new SqlCommand("VisualizarSPS");
+                comando.Connection = ConexionBD.AbrirConexionSPS();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandTimeout = 600;
+                comando.Parameters.AddWithValue("@id", id);
+
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    sps.Id = id;
+                    sps.ultimaActualizacion = Convert.ToString(dr["ultimaActualizacion"]);
+                    sps.expediente = Convert.ToString(dr["expediente"]);
+                    sps.autoridadSancionadora = Convert.ToString(dr["autoridadSancionadora"]);
+                    sps.causaMotivoHechos = Convert.ToString(dr["causaMotivoHecho"]);
+                    if (!(dr["observaciones"] is DBNull))
+                        sps.observaciones = Convert.ToString(dr["observaciones"]);;
+
+                    sps.curpSPS = Convert.ToString(dr["CURP"]);
+                    sps.rfcSPS = Convert.ToString(dr["RFC"]);
+                    sps.nombreSPS = Convert.ToString(dr["nombre"]);
+                    sps.primerApellidoSPS = Convert.ToString(dr["primerApellido"]);
+                    if (!(dr["segundoApellido"] is DBNull))
+                        sps.segundoApellidoSPS = Convert.ToString(dr["segundoApellido"]);
+                    if (!(dr["genero"] is DBNull))
+                        sps.genero = Convert.ToString(dr["genero"]);
+                    sps.puestoSPS = Convert.ToString(dr["puesto"]);
+                    if (!(dr["nivel"] is DBNull))
+                        sps.nivelSPS = Convert.ToString(dr["nivel"]);
+
+                    if (!(dr["clave"] is DBNull))
+                        sps.claveInstitucionDependencia = Convert.ToString(dr["clave"]);
+                    sps.nombreInstitucionDependencia = Convert.ToString(dr["nombreISD"]);
+                    if (!(dr["siglas"] is DBNull))
+                        sps.siglasInstitucionDependencia = Convert.ToString(dr["siglas"]);
+
+                    if (!(dr["fechaResolucion"] is DBNull))
+                        sps.fechaResolucion = Convert.ToString(dr["fechaResolucion"]);
+                    if (!(dr["url"] is DBNull))
+                        sps.urlResolucion = Convert.ToString(dr["url"]);
+
+                    if (!(dr["plazo"] is DBNull))
+                        sps.plazoInhabilitacion = Convert.ToString(dr["plazo"]);
+                    if (!(dr["fechaInicial"] is DBNull))
+                        sps.fechaInicialInhabilitacion = Convert.ToString(dr["fechaInicial"]);
+                    if (!(dr["fechaFinal"] is DBNull))
+                        sps.fechaFinalInhabilitacion = Convert.ToString(dr["fechaFinal"]);
+
+                    if (!(dr["monto"] is DBNull))
+                        sps.montoMulta = float.Parse(Convert.ToString(dr["monto"]));
+                    if (!(dr["moneda"] is DBNull))
+                        sps.moneda = Convert.ToString(dr["moneda"]);
+                    
+                    if (!(dr["falta"] is DBNull))
+                        sps.falta = Convert.ToString(dr["falta"]);
+                    if (!(dr["descripcionFalta"] is DBNull))
+                        sps.descripcionFalta = Convert.ToString(dr["descripcionFalta"]);
+                    
+
+                }
+                dr.Close();
+                return sps;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+                return sps;
+            }
+        }
+
         //metodo para registrar una sancion, este se manda a llamar varias veces, puesto que a un registro de servidor sancionado se le puede ligar mas de 1 sancion
         public void guardarSancionSPS(int idSancion, String descripcionSancion)
         {
@@ -105,6 +179,79 @@ namespace Sistema_de_sanciones.Controladores
                 MessageBox.Show("Error: " + ex.ToString());
                 ConexionBD.CerrarConexionSPS();
             }
+        }
+
+        public List<modeloTipoSancion> obtenerSancionesSPS(int id)
+        {
+            int i = 0;
+            List<modeloTipoSancion> oListaSanciones = new List<modeloTipoSancion>();
+            try
+            {
+                SqlCommand comando = new SqlCommand("VisualizarSancionesSPS");
+                comando.Connection = ConexionBD.AbrirConexionSPS();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandTimeout = 600;
+                comando.Parameters.AddWithValue("@id", id);
+
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    oListaSanciones.Add(new modeloTipoSancion
+                    {
+                        
+                        valor = Convert.ToString(dr["valor"]),
+                        descripcion = Convert.ToString(dr["descripcionSancion"])
+                    });
+                    i++;
+                }
+                dr.Close();
+                return oListaSanciones;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+                return oListaSanciones;
+            }
+
+
+        }
+
+        public List<modeloTipoDocumento> obtenerDocumentosSPS(int id)
+        {
+            int i = 0;
+            List<modeloTipoDocumento> oListaDocumentos = new List<modeloTipoDocumento>();
+            try
+            {
+                SqlCommand comando = new SqlCommand("VisualizarDocumentosSPS");
+                comando.Connection = ConexionBD.AbrirConexionSPS();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandTimeout = 600;
+                comando.Parameters.AddWithValue("@id", id);
+
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    oListaDocumentos.Add(new modeloTipoDocumento
+                    {
+                        
+                        tipoDocumento = Convert.ToString(dr["tipoDocumento"]),
+                        tituloDocumento = Convert.ToString(dr["titulo"]),
+                        fechaDocumento = Convert.ToString(dr["fecha"]),
+                        urlDocumento = Convert.ToString(dr["url"]),
+                        descripcionDocumento = Convert.ToString(dr["descripcion"])
+                    });
+                    i++;
+                }
+                dr.Close();
+                return oListaDocumentos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+                return oListaDocumentos;
+            }
+
+
         }
     }
 }

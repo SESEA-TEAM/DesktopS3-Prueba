@@ -20,14 +20,17 @@ namespace Sistema_de_sanciones.Modelo
         public String segundoApellidoSPS { get; set; }
         public String puestoSPS { get; set; }
         public String nivelSPS { get; set; }
+        public String genero { get; set; }
         public int? generoSPS { get; set; }
         public int? tipoFalta { get; set; }
+        public String falta { get; set; }
         public String observaciones { get; set; }
         public String claveInstitucionDependencia { get; set; }
         public String nombreInstitucionDependencia { get; set; }
         public String siglasInstitucionDependencia { get; set; }
         public float? montoMulta { get; set; }
         public int? monedaMulta { get; set; }
+        public String moneda { get; set; }
         public String fechaResolucion { get; set; }
         public String urlResolucion { get; set ; }
         public String plazoInhabilitacion { get; set; }

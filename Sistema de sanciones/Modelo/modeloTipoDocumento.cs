@@ -9,6 +9,10 @@ namespace Sistema_de_sanciones.Modelo
     public class modeloTipoDocumento
     {
         public int Id { get; set; }
-        public string tipoDocumento { get; set; }
+        public String tipoDocumento { get; set; }
+        public String tituloDocumento { get; set; }
+        public String fechaDocumento { get; set; }
+        public String urlDocumento { get; set; }
+        public String descripcionDocumento { get; set; }
     }
 }

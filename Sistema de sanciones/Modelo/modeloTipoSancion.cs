@@ -10,5 +10,6 @@ namespace Sistema_de_sanciones.Modelo
     {
         public int id { get; set; }
         public string valor { get; set; }
+        public string descripcion { get; set; }
     }
 }
