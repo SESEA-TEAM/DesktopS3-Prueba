@@ -309,7 +309,7 @@
             this.Titulo.HeaderText = "Titulo";
             this.Titulo.Name = "Titulo";
             this.Titulo.ReadOnly = true;
-            this.Titulo.Width = 195;
+            this.Titulo.Width = 205;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -323,21 +323,21 @@
             this.descripcionxd.HeaderText = "Descripción";
             this.descripcionxd.Name = "descripcionxd";
             this.descripcionxd.ReadOnly = true;
-            this.descripcionxd.Width = 250;
+            this.descripcionxd.Width = 260;
             // 
             // URL
             // 
             this.URL.HeaderText = "URL";
             this.URL.Name = "URL";
             this.URL.ReadOnly = true;
-            this.URL.Width = 272;
+            this.URL.Width = 282;
             // 
             // Fecha
             // 
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 180;
+            this.Fecha.Width = 150;
             // 
             // label35
             // 
@@ -368,7 +368,7 @@
             this.label75.AutoSize = true;
             this.label75.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label75.ForeColor = System.Drawing.SystemColors.Control;
-            this.label75.Location = new System.Drawing.Point(995, 22);
+            this.label75.Location = new System.Drawing.Point(1015, 22);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(43, 16);
             this.label75.TabIndex = 0;
@@ -379,7 +379,7 @@
             this.label74.AutoSize = true;
             this.label74.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label74.ForeColor = System.Drawing.SystemColors.Control;
-            this.label74.Location = new System.Drawing.Point(781, 22);
+            this.label74.Location = new System.Drawing.Point(807, 22);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(32, 16);
             this.label74.TabIndex = 0;
@@ -390,7 +390,7 @@
             this.label72.AutoSize = true;
             this.label72.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label72.ForeColor = System.Drawing.SystemColors.Control;
-            this.label72.Location = new System.Drawing.Point(80, 22);
+            this.label72.Location = new System.Drawing.Point(85, 22);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(38, 16);
             this.label72.TabIndex = 0;
@@ -401,7 +401,7 @@
             this.label76.AutoSize = true;
             this.label76.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label76.ForeColor = System.Drawing.SystemColors.Control;
-            this.label76.Location = new System.Drawing.Point(255, 22);
+            this.label76.Location = new System.Drawing.Point(270, 22);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(99, 16);
             this.label76.TabIndex = 1;
@@ -412,7 +412,7 @@
             this.label73.AutoSize = true;
             this.label73.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label73.ForeColor = System.Drawing.SystemColors.Control;
-            this.label73.Location = new System.Drawing.Point(505, 22);
+            this.label73.Location = new System.Drawing.Point(520, 22);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(75, 16);
             this.label73.TabIndex = 1;
@@ -1096,7 +1096,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label1.Location = new System.Drawing.Point(148, -343);
+            this.label1.Location = new System.Drawing.Point(108, -343);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(378, 38);
             this.label1.TabIndex = 7;

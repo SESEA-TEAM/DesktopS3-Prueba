@@ -71,7 +71,7 @@ namespace Sistema_de_sanciones
             mps = conSPS.CsdsdargarSPS(idSPS);
 
             labelExpediente.Text = mps.expediente;
-            labelFEAC.Text = mps.ultimaActualizacion;
+            labelFEAC.Text = (mps.ultimaActualizacion.Remove(10, 15));
             labelAUSA.Text = mps.autoridadSancionadora;
             labelCMH.Text = mps.causaMotivoHechos;
 
@@ -105,7 +105,7 @@ namespace Sistema_de_sanciones
             }
             else
             {
-                labelFI.Text = mps.fechaInicialInhabilitacion;
+                labelFI.Text = mps.fechaInicialInhabilitacion.Remove(10, 15);
             }
             if (mps.fechaFinalInhabilitacion == null)
             {
@@ -113,10 +113,8 @@ namespace Sistema_de_sanciones
             }
             else
             {
-                labelFF.Text = mps.fechaFinalInhabilitacion;
+                labelFF.Text = mps.fechaFinalInhabilitacion.Remove(10, 15);
             }
-            
-
             if (mps.observaciones == null)
             {
                 labelOBS.Text = "DNC";
@@ -164,7 +162,7 @@ namespace Sistema_de_sanciones
             }
             else
             {
-                labelFERE.Text = mps.fechaResolucion;
+                labelFERE.Text = mps.fechaResolucion.Remove(10, 15);
             }
 
             if (mps.urlResolucion == null)
@@ -220,7 +218,7 @@ namespace Sistema_de_sanciones
             listaDocsSPS = conSPS.obtenerDocumentosSPS(idSPS);
             for (var i = 0; i < listaDocsSPS.Count; i++)
             {
-              dataGridView2.Rows.Add(listaDocsSPS[i].tituloDocumento, listaDocsSPS[i].tipoDocumento, listaDocsSPS[i].descripcionDocumento, listaDocsSPS[i].urlDocumento, listaDocsSPS[i].fechaDocumento);
+              dataGridView2.Rows.Add(listaDocsSPS[i].tituloDocumento, listaDocsSPS[i].tipoDocumento, listaDocsSPS[i].descripcionDocumento, listaDocsSPS[i].urlDocumento, listaDocsSPS[i].fechaDocumento.Remove(10, 15));
 
             }
 
