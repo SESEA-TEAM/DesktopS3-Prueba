@@ -309,7 +309,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 311);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1174, 433);
+            this.panel2.Size = new System.Drawing.Size(1174, 352);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -337,7 +337,7 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1174, 332);
+            this.dataGridView1.Size = new System.Drawing.Size(1174, 252);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -439,7 +439,7 @@
             this.botonPrimero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonPrimero.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.botonPrimero.ForeColor = System.Drawing.SystemColors.Control;
-            this.botonPrimero.Location = new System.Drawing.Point(713, 750);
+            this.botonPrimero.Location = new System.Drawing.Point(713, 673);
             this.botonPrimero.Name = "botonPrimero";
             this.botonPrimero.Size = new System.Drawing.Size(100, 28);
             this.botonPrimero.TabIndex = 4;
@@ -453,7 +453,7 @@
             this.botonAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonAnterior.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.botonAnterior.ForeColor = System.Drawing.SystemColors.Control;
-            this.botonAnterior.Location = new System.Drawing.Point(822, 750);
+            this.botonAnterior.Location = new System.Drawing.Point(822, 673);
             this.botonAnterior.Name = "botonAnterior";
             this.botonAnterior.Size = new System.Drawing.Size(100, 28);
             this.botonAnterior.TabIndex = 4;
@@ -467,7 +467,7 @@
             this.botonSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonSiguiente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.botonSiguiente.ForeColor = System.Drawing.SystemColors.Control;
-            this.botonSiguiente.Location = new System.Drawing.Point(931, 750);
+            this.botonSiguiente.Location = new System.Drawing.Point(931, 673);
             this.botonSiguiente.Name = "botonSiguiente";
             this.botonSiguiente.Size = new System.Drawing.Size(100, 28);
             this.botonSiguiente.TabIndex = 4;
@@ -481,7 +481,7 @@
             this.botonFinal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonFinal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.botonFinal.ForeColor = System.Drawing.SystemColors.Control;
-            this.botonFinal.Location = new System.Drawing.Point(1040, 750);
+            this.botonFinal.Location = new System.Drawing.Point(1040, 673);
             this.botonFinal.Name = "botonFinal";
             this.botonFinal.Size = new System.Drawing.Size(100, 28);
             this.botonFinal.TabIndex = 4;
@@ -494,7 +494,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.label9.Location = new System.Drawing.Point(514, 756);
+            this.label9.Location = new System.Drawing.Point(514, 679);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 16);
             this.label9.TabIndex = 5;
@@ -505,7 +505,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1174, 801);
+            this.ClientSize = new System.Drawing.Size(1174, 708);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.botonFinal);
             this.Controls.Add(this.botonSiguiente);
