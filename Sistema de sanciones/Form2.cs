@@ -70,12 +70,17 @@ namespace Sistema_de_sanciones
 
         private void buttonPublicos_Click(object sender, EventArgs e)
         {
-            loadform(new FormListadoSPS());
+            loadform(new FormListadoSPS(this));
+        }
+
+        public void ListaSPS()
+        {
+            loadform(new FormListadoSPS(this));
         }
 
         private void buttonParticular_Click(object sender, EventArgs e)
         {
-            loadform(new Listado_PS());
+            loadform(new Listado_PS(this));
         }
 
         private void buttonCapturar_Click(object sender, EventArgs e)
@@ -98,6 +103,16 @@ namespace Sistema_de_sanciones
             Login inicioSesion = new Login();
             inicioSesion.Show();
             this.Hide();
+        }
+
+        public void visualizarSPS(int id)
+        {
+            loadform(new Datos_SPS(this, id));
+        }
+
+        public void visualizarPS(int id)
+        {
+            loadform(new Datos_PS(this, id));
         }
     }
 }
