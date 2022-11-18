@@ -78,6 +78,11 @@ namespace Sistema_de_sanciones
             loadform(new FormListadoSPS(this));
         }
 
+        public void ListaPS()
+        {
+            loadform(new Listado_PS(this));
+        }
+
         private void buttonParticular_Click(object sender, EventArgs e)
         {
             loadform(new Listado_PS(this));

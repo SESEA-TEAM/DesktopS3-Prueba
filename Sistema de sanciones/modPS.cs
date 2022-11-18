@@ -55,6 +55,8 @@ namespace Sistema_de_sanciones
             lista.Add("Moral");
             comboBox9.DataSource = lista;
             cargarDatos();
+
+            form2Handler = form2;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -1020,6 +1022,8 @@ namespace Sistema_de_sanciones
             if (modificar())
             {
                 MessageBox.Show("La modificacion se ha realizado con exito");
+                this.Close();
+                form2Handler.ListaPS();
             }
         }
 
@@ -1271,6 +1275,13 @@ namespace Sistema_de_sanciones
             comboBox7.ValueMember = "name";
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            form2Handler.ListaPS();
+        }
+
         private void CargarDG()
         {
 
