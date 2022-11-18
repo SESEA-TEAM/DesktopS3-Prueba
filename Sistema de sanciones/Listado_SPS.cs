@@ -24,9 +24,10 @@ namespace WinFormsApp1
         String? SA = null;
         String? IH = null;
         String? TP = null;
-        
 
-        public FormListadoSPS()
+        private Form2 form2Handler;
+
+        public FormListadoSPS(Form2 form2)
         {
             InitializeComponent();
             dateTimePicker1.Value = new DateTime(2000, 01, 01);
@@ -37,6 +38,8 @@ namespace WinFormsApp1
             botonFinal.Enabled = false;
             listarTipoSancion();
             IniciarDB();
+
+            form2Handler = form2;
 
         }
 
@@ -313,15 +316,8 @@ namespace WinFormsApp1
                
         }
 
- 
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void textBox8_Load(object sender, EventArgs e)
@@ -511,6 +507,18 @@ namespace WinFormsApp1
                 e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
                 
                 e.Handled = true;
+            }
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Ver")
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    //Form2.modificarSPS();
+                    form2Handler.visualizarSPS(Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString()));
+                    //textExpediente.Texts = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                }
             }
         }
 
