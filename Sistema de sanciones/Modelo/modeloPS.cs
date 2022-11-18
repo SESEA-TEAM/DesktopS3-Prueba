@@ -20,7 +20,7 @@ namespace Sistema_de_sanciones.Modelo
         public String nombreRazonSocial { get; set; }
         public String objetoSocial { get; set; }
         public String tipoPersona { get; set; }
-        public int? telefono { get; set; }
+        public String telefono { get; set; }
         public String calle { get; set; }
         public String ciudadLocalidad { get; set; }
         public String estadoProvincia { get; set; }
@@ -32,12 +32,18 @@ namespace Sistema_de_sanciones.Modelo
         public int? municipio { get; set; }
         public int? localidad { get; set; }
         public int? vialidad { get; set; }
+        public String paisV { get; set; }
+        public String entidadFederativaV { get; set; }
+        public String municipioV { get; set; }
+        public String localidadV { get; set; }
+        public String vialidadV { get; set; }
         public String codigoPostalMX { get; set; }
         public String numeroInteriorMX { get; set; }
         public String numeroExteriorMX { get; set; }
         public int? paisMX { get; set; }
         public float? monto { get; set; }
         public int? moneda { get; set; }
+        public String moneda2 { get; set; }
         public String claveInstitucionDependencia { get; set; }
         public String nombreInstitucionDependencia { get; set; }
         public String siglasInstitucionDependencia { get; set; }
@@ -58,6 +64,9 @@ namespace Sistema_de_sanciones.Modelo
         public String plazoInhabilitacion { get; set; }
         public String fechaInicialInhabilitacion { get; set; }
         public String fechaFinalInhabilitacion { get; set; }
+        public String ultimaActualizacion { get; set; }
+        public bool? domMX { get; set; }
+        public bool? domEX { get; set; }
 
     }
 }
