@@ -129,6 +129,7 @@ namespace Sistema_de_sanciones.Controladores
             }
             catch (Exception ex)
             {
+                ConexionBD.CerrarConexionSPS();
                 MessageBox.Show("Error: " + ex.ToString());
                 return sps;
             }

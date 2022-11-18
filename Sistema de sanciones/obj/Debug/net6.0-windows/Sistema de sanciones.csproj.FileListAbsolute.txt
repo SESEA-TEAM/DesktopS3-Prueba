@@ -144,8 +144,6 @@ C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Home.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listado_PS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Login.resources
-C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.ModificarPS.resources
-C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Modificar_SPS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.ReporteBitacora.resources
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
@@ -165,7 +163,6 @@ C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Captura_SPS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Form2.resources
-C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Modificar_PS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.csproj.CopyComplete
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.csproj.AssemblyReference.cache
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CapturaPS.resources
@@ -281,3 +278,4 @@ C:\Users\Invitado2022\Documents\GitHub\Nueva carpeta\DesktopS3-Prueba\Sistema de
 C:\Users\Invitado2022\Documents\GitHub\Nueva carpeta\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.genruntimeconfig.cache
 C:\Users\Invitado2022\Documents\GitHub\Nueva carpeta\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\ref\Sistema de sanciones.dll
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.csproj.AssemblyReference.cache
+C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modPS.resources

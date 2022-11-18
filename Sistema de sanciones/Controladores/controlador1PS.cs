@@ -179,6 +179,9 @@ namespace Sistema_de_sanciones.Controladores
                     ps.rfcPS = Convert.ToString(dr["RFC"]);
                     ps.tipoFalta = Convert.ToString(dr["tipoFalta"]);
 
+                    if (!(dr["objectoContrato"] is DBNull))
+                        ps.objetoContrato = Convert.ToString(dr["objectoContrato"]);
+
                     if (!(dr["clave"] is DBNull))
                         ps.claveInstitucionDependencia = Convert.ToString(dr["clave"]);
 
@@ -223,6 +226,9 @@ namespace Sistema_de_sanciones.Controladores
                     if (!(dr["numeroInteriorEX"] is DBNull))
                         ps.numeroInteriorEX = Convert.ToString(dr["numeroInteriorEX"]);
 
+                    if (!(dr["paisEX"] is DBNull))
+                        ps.paisEX = Convert.ToInt32(dr["paisEX"]);
+
                     if (!(dr["entidadFederativaV"] is DBNull))
                         ps.entidadFederativaV = Convert.ToString(dr["entidadFederativaV"]);
 
@@ -235,6 +241,18 @@ namespace Sistema_de_sanciones.Controladores
                     if (!(dr["vialidadV"] is DBNull))
                         ps.vialidadV = Convert.ToString(dr["vialidadV"]);
 
+                    if (!(dr["entidadFederativa"] is DBNull))
+                        ps.entidadFederativa = Convert.ToInt32(dr["entidadFederativa"]);
+
+                    if (!(dr["municipio"] is DBNull))
+                        ps.municipio = Convert.ToInt32(dr["municipio"]);
+
+                    if (!(dr["localidad"] is DBNull))
+                        ps.localidad = Convert.ToInt32(dr["localidad"]);
+
+                    if (!(dr["vialidad"] is DBNull))
+                        ps.vialidad = Convert.ToInt32(dr["vialidad"]);
+
                     if (!(dr["codigoPostalMX"] is DBNull))
                         ps.codigoPostalMX = Convert.ToString(dr["codigoPostalMX"]);
 
@@ -243,6 +261,9 @@ namespace Sistema_de_sanciones.Controladores
 
                     if (!(dr["numeroInteriorMX"] is DBNull))
                         ps.numeroInteriorEX = Convert.ToString(dr["numeroInteriorMX"]);
+
+                    if (!(dr["paisMX"] is DBNull))
+                        ps.paisMX = Convert.ToInt32(dr["paisMX"]);
 
                     ps.nombreRS = Convert.ToString(dr["nombresRS"]);
                     ps.primerApellidoRS = Convert.ToString(dr["primerApellidoRS"]);
@@ -298,12 +319,18 @@ namespace Sistema_de_sanciones.Controladores
                     if (!(dr["moneda2"] is DBNull))
                         ps.moneda2 = Convert.ToString(dr["moneda2"]);
 
+                    if (!(dr["domicilioEX"] is DBNull)) { ps.domEX = true; }
+                    else { ps.domEX = false; };
+
+                    if (!(dr["domicilioMX"] is DBNull)) { ps.domMX = true; }
+                    else { ps.domMX = false; };
                 }
                 dr.Close();
                 return ps;
             }
             catch (Exception ex)
             {
+                ConexionBD.CerrarConexionPS();
                 MessageBox.Show("Error: " + ex.ToString());
                 return ps;
             }
