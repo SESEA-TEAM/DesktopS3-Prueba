@@ -124,5 +124,10 @@ namespace Sistema_de_sanciones
         {
             loadform(new modPS(this, id));
         }
+
+        public void editarSPS(int id)
+        {
+            //loadform(new )
+        }
     }
 }
