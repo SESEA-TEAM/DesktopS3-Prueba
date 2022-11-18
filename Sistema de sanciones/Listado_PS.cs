@@ -30,8 +30,8 @@ namespace Sistema_de_sanciones
         String? IH = null;
         String? TP = null;
 
-
-        public Listado_PS()
+        private Form2 form2Handler;
+        public Listado_PS(Form2 form2)
         {
             InitializeComponent();
             dateTimePicker1.Value = new DateTime(2000, 01, 01);
@@ -47,6 +47,8 @@ namespace Sistema_de_sanciones
             comboBox1.DataSource = lista;
             listarTipoSancion();
             IniciarDB();
+
+            form2Handler = form2;
         }
 
         //listarTipoSancion sera nuestro metodo para los valores de nuestra tabla tipoSancion dentro de un comboBox
@@ -423,7 +425,15 @@ namespace Sistema_de_sanciones
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Ver")
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    //Form2.modificarSPS();
+                    form2Handler.visualizarPS(Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString()));
+                    //textExpediente.Texts = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                }
+            }
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

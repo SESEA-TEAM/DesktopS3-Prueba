@@ -1266,7 +1266,7 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        modPS.telefono = Convert.ToInt32(textBox26.Texts);
+                        modPS.telefono = textBox26.Texts;
                     }
                     if (textBox25.Texts == "Objeto social")
                     {
