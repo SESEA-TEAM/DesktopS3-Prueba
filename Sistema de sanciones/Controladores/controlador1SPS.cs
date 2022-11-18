@@ -199,7 +199,7 @@ namespace Sistema_de_sanciones.Controladores
                 {
                     oListaSanciones.Add(new modeloTipoSancion
                     {
-                        
+                        id = i,
                         valor = Convert.ToString(dr["valor"]),
                         descripcion = Convert.ToString(dr["descripcionSancion"])
                     });
@@ -234,7 +234,7 @@ namespace Sistema_de_sanciones.Controladores
                 {
                     oListaDocumentos.Add(new modeloTipoDocumento
                     {
-                        
+                        Id = i,
                         tipoDocumento = Convert.ToString(dr["tipoDocumento"]),
                         tituloDocumento = Convert.ToString(dr["titulo"]),
                         fechaDocumento = Convert.ToString(dr["fecha"]),

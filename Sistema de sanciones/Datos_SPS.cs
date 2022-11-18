@@ -211,14 +211,14 @@ namespace Sistema_de_sanciones
             listaSancionesSPS = conSPS.obtenerSancionesSPS(idSPS);
             for (var i = 0; i < listaSancionesSPS.Count; i++)
             {
-              dataGridView1.Rows.Add(listaSancionesSPS[i].valor, listaSancionesSPS[i].descripcion);
+              dataGridView1.Rows.Add(listaSancionesSPS[i].id, listaSancionesSPS[i].valor, listaSancionesSPS[i].descripcion);
 
             }
             List<modeloTipoDocumento> listaDocsSPS = new List<modeloTipoDocumento>();
             listaDocsSPS = conSPS.obtenerDocumentosSPS(idSPS);
             for (var i = 0; i < listaDocsSPS.Count; i++)
             {
-              dataGridView2.Rows.Add(listaDocsSPS[i].tituloDocumento, listaDocsSPS[i].tipoDocumento, listaDocsSPS[i].descripcionDocumento, listaDocsSPS[i].urlDocumento, listaDocsSPS[i].fechaDocumento.Remove(10, 15));
+              dataGridView2.Rows.Add(listaDocsSPS[i].Id, listaDocsSPS[i].tituloDocumento, listaDocsSPS[i].tipoDocumento, listaDocsSPS[i].descripcionDocumento, listaDocsSPS[i].urlDocumento, listaDocsSPS[i].fechaDocumento.Remove(10, 15));
 
             }
 

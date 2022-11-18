@@ -98,123 +98,145 @@ namespace Sistema_de_sanciones
                 labelActo.Text = Convert.ToString(mps.acto);
             }
 
-            //campos de direccion mexico
-            if (mps.entidadFederativaV == null)
+            if (mps.paisMX == null && mps.paisEX == null)
             {
                 panel6.Visible = false;
-                labelEF.Text = "DNC";
-            }
-            else
-            {
-                labelEF.Text = mps.entidadFederativaV;
-            }
-            if (mps.municipioV == null)
-            {
-                labelMunicipio.Text = "DNC";
-            }
-            else
-            {
-                labelMunicipio.Text = mps.municipioV;
-            }
-            if (mps.localidadV == null)
-            {
-                labelLocalidad.Text = "DNC";
-            }
-            else
-            {
-                labelLocalidad.Text = mps.localidadV;
-            }
-            if (mps.vialidadV == null)
-            {
-                labelVialidad.Text = "DNC";
-            }
-            else
-            {
-                labelVialidad.Text = mps.vialidadV;
-            }
-            if (mps.codigoPostalMX == null)
-            {
-                labelCOPMX.Text = "DNC";
-            }
-            else
-            {
-                labelCOPMX.Text = mps.codigoPostalMX;
-            }
-            if (mps.numeroExteriorMX == null)
-            {
-                labelNEMX.Text = "DNC";
-            }
-            else
-            {
-                labelNEMX.Text = mps.numeroExteriorMX;
-            }
-            if (mps.numeroInteriorMX == null)
-            {
-                labelNIMX.Text = "DNC";
-            }
-            else
-            {
-                labelNIMX.Text = mps.numeroInteriorMX;
-            }
-
-            //campos de direccion extranjero
-            if (mps.paisEX == null)
-            {
+                //panel6.Top -= 200;
                 panel7.Visible = false;
-                labelPais.Text = "DNC";
+                //panel7.Top -= 200;
+                //panel4.Top += 200;
             }
             else
             {
-                labelPais.Text = mps.paisV;
+                //campos de direccion mexico
+                if (mps.paisMX == null)
+                {
+                    panel6.Visible = false;
+                }
+                else
+                {
+                    panel6.Visible = true;
+                    panel4.Top += 200;
+                    if (mps.entidadFederativaV == null)
+                    {
+                        labelEF.Text = "DNC";
+                    }
+                    else
+                    {
+                        labelEF.Text = mps.entidadFederativaV;
+                    }
+                    if (mps.municipioV == null)
+                    {
+                        labelMunicipio.Text = "DNC";
+                    }
+                    else
+                    {
+                        labelMunicipio.Text = mps.municipioV;
+                    }
+                    if (mps.localidadV == null)
+                    {
+                        labelLocalidad.Text = "DNC";
+                    }
+                    else
+                    {
+                        labelLocalidad.Text = mps.localidadV;
+                    }
+                    if (mps.vialidadV == null)
+                    {
+                        labelVialidad.Text = "DNC";
+                    }
+                    else
+                    {
+                        labelVialidad.Text = mps.vialidadV;
+                    }
+                    if (mps.codigoPostalMX == null)
+                    {
+                        labelCOPMX.Text = "DNC";
+                    }
+                    else
+                    {
+                        labelCOPMX.Text = mps.codigoPostalMX;
+                    }
+                    if (mps.numeroExteriorMX == null)
+                    {
+                        labelNEMX.Text = "DNC";
+                    }
+                    else
+                    {
+                        labelNEMX.Text = mps.numeroExteriorMX;
+                    }
+                    if (mps.numeroInteriorMX == null)
+                    {
+                        labelNIMX.Text = "DNC";
+                    }
+                    else
+                    {
+                        labelNIMX.Text = mps.numeroInteriorMX;
+                    }
+                }
+
+                //campos de direccion extranjero
+                if (mps.paisEX == null)
+                {
+                    panel7.Visible = false;
+                    labelPais.Text = "DNC";
+                }
+                else
+                {
+                    panel7.Visible = true;
+                    panel4.Top += 200;
+                    labelPais.Text = mps.paisV;
+                }
+                if (mps.calle == null)
+                {
+                    labelCalle.Text = "DNC";
+                }
+                else
+                {
+                    labelCalle.Text = mps.calle;
+                }
+                if (mps.ciudadLocalidad == null)
+                {
+                    labelCILO.Text = "DNC";
+                }
+                else
+                {
+                    labelCILO.Text = mps.ciudadLocalidad;
+                }
+                if (mps.estadoProvincia == null)
+                {
+                    labelESPR.Text = "DNC";
+                }
+                else
+                {
+                    labelESPR.Text = mps.estadoProvincia;
+                }
+                if (mps.codigoPostalEX == null)
+                {
+                    labelCOPEX.Text = "DNC";
+                }
+                else
+                {
+                    labelCOPEX.Text = mps.codigoPostalEX;
+                }
+                if (mps.numeroExteriorEX == null)
+                {
+                    labelNEEX.Text = "DNC";
+                }
+                else
+                {
+                    labelNEEX.Text = mps.numeroExteriorEX;
+                }
+                if (mps.numeroInteriorEX == null)
+                {
+                    labelNIEX.Text = "DNC";
+                }
+                else
+                {
+                    labelNIEX.Text = mps.numeroInteriorEX;
+                }
             }
-            if (mps.calle == null)
-            {
-                labelCalle.Text = "DNC";
-            }
-            else
-            {
-                labelCalle.Text = mps.calle;
-            }
-            if (mps.ciudadLocalidad == null)
-            {
-                labelCILO.Text = "DNC";
-            }
-            else
-            {
-                labelCILO.Text = mps.ciudadLocalidad;
-            }
-            if (mps.estadoProvincia == null)
-            {
-                labelESPR.Text = "DNC";
-            }
-            else
-            {
-                labelESPR.Text = mps.estadoProvincia;
-            }
-            if (mps.codigoPostalEX == null)
-            {
-                labelCOPEX.Text = "DNC";
-            }
-            else
-            {
-                labelCOPEX.Text = mps.codigoPostalEX;
-            }
-            if (mps.numeroExteriorEX == null)
-            {
-                labelNEEX.Text = "DNC";
-            }
-            else
-            {
-                labelNEEX.Text = mps.numeroExteriorEX;
-            }
-            if (mps.numeroInteriorEX == null)
-            {
-                labelNIEX.Text = "DNC";
-            }
-            else
-            {
-                labelNIEX.Text = mps.numeroInteriorEX;
-            }
+            //panel4.Visible = false;
 
             //campos de institucion dependencia
             if (mps.claveInstitucionDependencia == null)
@@ -384,20 +406,20 @@ namespace Sistema_de_sanciones
 
 
 
-            //List<modeloTipoSancion> listaSancionesSPS = new List<modeloTipoSancion>();
-            //listaSancionesSPS = conSPS.obtenerSancionesSPS(idSPS);
-            //for (var i = 0; i < listaSancionesSPS.Count; i++)
-            //{
-            //    dataGridView1.Rows.Add(listaSancionesSPS[i].valor, listaSancionesSPS[i].descripcion);
+            List<modeloTipoSancion> listaSancionesPS = new List<modeloTipoSancion>();
+            listaSancionesPS = consPS.obtenerSancionesPS(idPS);
+            for (var i = 0; i < listaSancionesPS.Count; i++)
+            {
+                dataGridView1.Rows.Add(listaSancionesPS[i].id, listaSancionesPS[i].valor, listaSancionesPS[i].descripcion);
 
-            //}
-            //List<modeloTipoDocumento> listaDocsSPS = new List<modeloTipoDocumento>();
-            //listaDocsSPS = conSPS.obtenerDocumentosSPS(idSPS);
-            //for (var i = 0; i < listaDocsSPS.Count; i++)
-            //{
-            //    dataGridView2.Rows.Add(listaDocsSPS[i].tituloDocumento, listaDocsSPS[i].tipoDocumento, listaDocsSPS[i].descripcionDocumento, listaDocsSPS[i].urlDocumento, listaDocsSPS[i].fechaDocumento.Remove(10, 15));
+            }
+            List<modeloTipoDocumento> listaDocsPS = new List<modeloTipoDocumento>();
+            listaDocsPS = consPS.obtenerDocumentosPS(idPS);
+            for (var i = 0; i < listaDocsPS.Count; i++)
+            {
+                dataGridView2.Rows.Add(listaDocsPS[i].Id, listaDocsPS[i].tituloDocumento, listaDocsPS[i].tipoDocumento, listaDocsPS[i].descripcionDocumento, listaDocsPS[i].urlDocumento, listaDocsPS[i].fechaDocumento.Remove(10, 15));
 
-            //}
+            }
 
         }
 
@@ -549,6 +571,12 @@ namespace Sistema_de_sanciones
         private void label93_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            form2Handler.ListaPS();
         }
     }
 }
