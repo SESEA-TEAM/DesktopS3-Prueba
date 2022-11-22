@@ -216,6 +216,15 @@ namespace Sistema_de_sanciones
             TS = null;
             IH = null;
 
+            dataGridView1.Columns.Remove("Ver");
+            dataGridView1.Columns.Remove("Editar");
+            IniciarDB();
+            CargarBotones();
+
+            botonPrimero.Enabled = false;
+            botonAnterior.Enabled = false;
+
+
         }
 
         private void Listado_PS_Load(object sender, EventArgs e)
@@ -431,15 +440,6 @@ namespace Sistema_de_sanciones
                 {
                     //Form2.modificarSPS();
                     form2Handler.visualizarPS(Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString()));
-                    //textExpediente.Texts = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                }
-            }
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
-            {
-                if (dataGridView1.SelectedRows.Count > 0)
-                {
-                    //Form2.modificarSPS();
-                    form2Handler.editarPS(Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString()));
                     //textExpediente.Texts = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 }
             }
