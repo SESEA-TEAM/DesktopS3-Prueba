@@ -90,12 +90,12 @@ namespace Sistema_de_sanciones
                     this.Hide();
                     if (dt.Rows[0][1].ToString() == "Administrador")
                     {
-                        new Form1(dt.Rows[0][0].ToString()).Show();
+                        new Form2(dt.Rows[0][0].ToString(),0).Show();
 
                     }
                     else if (dt.Rows[0][1].ToString() == "Capturador")
                     {
-                        new Form2(dt.Rows[0][0].ToString()).Show();
+                        new Form2(dt.Rows[0][0].ToString(),1).Show();
                     }
                 }
                 else

@@ -443,6 +443,13 @@ namespace Sistema_de_sanciones
                     //textExpediente.Texts = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 }
             }
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    form2Handler.editarPS(Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString()));
+                }
+            }
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

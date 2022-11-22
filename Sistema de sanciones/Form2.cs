@@ -13,17 +13,39 @@ namespace Sistema_de_sanciones
 {
     public partial class Form2 : Form
     {
-        public Form2(string nombre)
+        int t;
+        public Form2(string nombre, int tipo)
         {
             InitializeComponent();
             customDesing();
             lblMensajeCap.Text = nombre;
+            t= tipo;
+            tipoUser();
         }
         private void customDesing()
         {
             panelMenuUser.Visible = false;
             panelMenuProv.Visible = false;
+            panel2.Visible = false;
+            panel3.Visible = false;
+        }
 
+        private void tipoUser()
+        {
+            if (t== 0)
+            {
+                //panelMenu.Enabled = false;
+                //panelMenu.Visible= false;
+                panel1.Visible = true;
+                panel1.Enabled = true;
+            }
+            else if (t== 1)
+            {
+                panelMenu.Enabled = true;
+                panelMenu.Visible = true;
+                panel1.Visible = false;
+                panel1.Enabled= false;
+            }
         }
 
         private void hideSubMenu()
@@ -32,6 +54,10 @@ namespace Sistema_de_sanciones
                 panelMenuUser.Visible = false;
             if (panelMenuProv.Visible == true)
                 panelMenuProv.Visible = false;
+            if (panel2.Visible == true)
+                panel3.Visible = false;
+            if (panel3.Visible == true)
+                panel2.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -128,6 +154,57 @@ namespace Sistema_de_sanciones
         public void editarSPS(int id)
         {
             loadform(new modSPS(this, id));
+        }
+
+        private void buttonUsuarios_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            showSubMenu(panel3);
+        }
+
+        private void buttonCrearUsuario_Click(object sender, EventArgs e)
+        {
+            loadform(new Crear_Usuarios());
+        }
+
+        private void buttonListarUsuarios_Click(object sender, EventArgs e)
+        {
+            loadform(new Listar_Usuarios());
+        }
+
+        private void buttonProveedores_Click(object sender, EventArgs e)
+        {
+            panel3.Visible= false;
+            showSubMenu(panel2);
+        }
+
+        private void buttonCrearProveedor_Click(object sender, EventArgs e)
+        {
+            loadform(new Crear_Proveedores());
+        }
+
+        private void buttonListarProveedor_Click(object sender, EventArgs e)
+        {
+            loadform(new Listar_Proveedores());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            loadform(new ReporteBitacora());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Login inicioSesion = new Login();
+            inicioSesion.Show();
+            Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Login inicioSesion = new Login();
+            inicioSesion.Show();
+            Close();
         }
     }
 }
