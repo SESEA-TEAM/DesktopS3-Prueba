@@ -146,7 +146,9 @@
             this.textBox1.TabIndex = 1;
             this.textBox1.Texts = "Nombre(s)*";
             this.textBox1.UnderlinedStyle = true;
+            this.textBox1.Load += new System.EventHandler(this.textBox1_Load);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // textBox2
@@ -167,6 +169,7 @@
             this.textBox2.Texts = "Primer apellido*";
             this.textBox2.UnderlinedStyle = true;
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // textBox3
@@ -187,6 +190,7 @@
             this.textBox3.Texts = "Segundo apellido";
             this.textBox3.UnderlinedStyle = true;
             this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter_1);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave_1);
             // 
             // label2
@@ -216,7 +220,7 @@
             this.textBox4.PasswordChar = false;
             this.textBox4.Size = new System.Drawing.Size(264, 31);
             this.textBox4.TabIndex = 1;
-            this.textBox4.Texts = "RFC";
+            this.textBox4.Texts = "RFC*";
             this.textBox4.UnderlinedStyle = true;
             this.textBox4.Load += new System.EventHandler(this.textBox4_Load);
             this.textBox4.Enter += new System.EventHandler(this.textBox4_Enter);
@@ -237,7 +241,7 @@
             this.textBox5.PasswordChar = false;
             this.textBox5.Size = new System.Drawing.Size(264, 31);
             this.textBox5.TabIndex = 1;
-            this.textBox5.Texts = "CURP";
+            this.textBox5.Texts = "CURP*";
             this.textBox5.UnderlinedStyle = true;
             this.textBox5.Load += new System.EventHandler(this.textBox5_Load);
             this.textBox5.Enter += new System.EventHandler(this.textBox5_Enter);
@@ -261,6 +265,7 @@
             this.textBox6.Texts = "Puesto nivel";
             this.textBox6.UnderlinedStyle = true;
             this.textBox6.Enter += new System.EventHandler(this.textBox6_Enter);
+            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
             this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
             // 
             // textBox7
@@ -278,7 +283,7 @@
             this.textBox7.PasswordChar = false;
             this.textBox7.Size = new System.Drawing.Size(264, 31);
             this.textBox7.TabIndex = 1;
-            this.textBox7.Texts = "Expediente";
+            this.textBox7.Texts = "Expediente*";
             this.textBox7.UnderlinedStyle = true;
             this.textBox7.Enter += new System.EventHandler(this.textBox7_Enter);
             this.textBox7.Leave += new System.EventHandler(this.textBox7_Leave);
@@ -413,6 +418,7 @@
             this.textBox15.Texts = "Nombre*";
             this.textBox15.UnderlinedStyle = true;
             this.textBox15.Enter += new System.EventHandler(this.textBox15_Enter);
+            this.textBox15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox15_KeyPress);
             this.textBox15.Leave += new System.EventHandler(this.textBox15_Leave);
             // 
             // textBox14
@@ -433,6 +439,7 @@
             this.textBox14.Texts = "Clave";
             this.textBox14.UnderlinedStyle = true;
             this.textBox14.Enter += new System.EventHandler(this.textBox14_Enter);
+            this.textBox14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox14_KeyPress);
             this.textBox14.Leave += new System.EventHandler(this.textBox14_Leave);
             // 
             // textBox13
@@ -453,6 +460,7 @@
             this.textBox13.Texts = "Siglas";
             this.textBox13.UnderlinedStyle = true;
             this.textBox13.Enter += new System.EventHandler(this.textBox13_Enter);
+            this.textBox13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox13_KeyPress);
             this.textBox13.Leave += new System.EventHandler(this.textBox13_Leave);
             // 
             // textBox25
@@ -473,6 +481,7 @@
             this.textBox25.Texts = "Puesto nombre*";
             this.textBox25.UnderlinedStyle = true;
             this.textBox25.Enter += new System.EventHandler(this.textBox25_Enter);
+            this.textBox25.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
             this.textBox25.Leave += new System.EventHandler(this.textBox25_Leave);
             // 
             // panel2
@@ -734,6 +743,7 @@
             this.textBox21.Texts = "Monto";
             this.textBox21.UnderlinedStyle = true;
             this.textBox21.Enter += new System.EventHandler(this.textBox21_Enter);
+            this.textBox21.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox21_KeyPress);
             this.textBox21.Leave += new System.EventHandler(this.textBox21_Leave);
             // 
             // textBox19
@@ -771,7 +781,7 @@
             this.textBox16.PasswordChar = false;
             this.textBox16.Size = new System.Drawing.Size(264, 31);
             this.textBox16.TabIndex = 1;
-            this.textBox16.Texts = "Autoridad sancionadora";
+            this.textBox16.Texts = "Autoridad sancionadora*";
             this.textBox16.UnderlinedStyle = true;
             this.textBox16.Load += new System.EventHandler(this.textBox16_Load);
             this.textBox16.Enter += new System.EventHandler(this.textBox16_Enter);
