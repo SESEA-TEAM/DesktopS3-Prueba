@@ -127,7 +127,7 @@ namespace Sistema_de_sanciones
 
         public void editarSPS(int id)
         {
-            //loadform(new )
+            loadform(new modSPS(this, id));
         }
     }
 }

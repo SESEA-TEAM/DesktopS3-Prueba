@@ -225,9 +225,6 @@ D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Form2.resources
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listado_PS.resources
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\WinFormsApp1.FormListadoSPS.resources
-D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.ModificarPS.resources
-D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Modificar_PS.resources
-D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Modificar_SPS.resources
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.ReporteBitacora.resources
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.csproj.CopyComplete
 C:\Users\Invitado2022\Documents\GitHub\Nueva carpeta\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\Sistema de sanciones.exe
@@ -279,3 +276,5 @@ C:\Users\Invitado2022\Documents\GitHub\Nueva carpeta\DesktopS3-Prueba\Sistema de
 C:\Users\Invitado2022\Documents\GitHub\Nueva carpeta\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\ref\Sistema de sanciones.dll
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.csproj.AssemblyReference.cache
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modPS.resources
+D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modPS.resources
+D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modSPS.resources

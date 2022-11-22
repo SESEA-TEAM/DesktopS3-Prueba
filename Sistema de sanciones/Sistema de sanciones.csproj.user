@@ -55,6 +55,9 @@
     <Compile Update="modPS.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="modSPS.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ReporteBitacora.cs">
       <SubType>Form</SubType>
     </Compile>
