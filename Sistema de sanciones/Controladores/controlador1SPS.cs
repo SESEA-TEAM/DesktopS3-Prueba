@@ -60,6 +60,53 @@ namespace Sistema_de_sanciones.Controladores
 
         }
 
+        public bool modificarSPS(modeloSPS sps, int id)
+        {
+            try
+            {
+                SqlCommand comando = new SqlCommand("ModificarSPS");
+                comando.Connection = ConexionBD.AbrirConexionSPS();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandTimeout = 600;
+                comando.Parameters.AddWithValue("@id", id);
+                comando.Parameters.AddWithValue("@expediente", sps.expediente);
+                comando.Parameters.AddWithValue("@autoridadSancionadora", sps.autoridadSancionadora);
+                comando.Parameters.AddWithValue("@causaMotivoHecho", sps.causaMotivoHechos);
+                comando.Parameters.AddWithValue("@RFC", sps.rfcSPS);
+                comando.Parameters.AddWithValue("@CURP", sps.curpSPS);
+                comando.Parameters.AddWithValue("@nombre", sps.nombreSPS);
+                comando.Parameters.AddWithValue("@primerApellido", sps.primerApellidoSPS);
+                comando.Parameters.AddWithValue("@segundoApellido", sps.segundoApellidoSPS);
+                comando.Parameters.AddWithValue("@puesto", sps.puestoSPS);
+                comando.Parameters.AddWithValue("@nivel", sps.puestoSPS);
+                comando.Parameters.AddWithValue("@genero", sps.generoSPS);
+                comando.Parameters.AddWithValue("@tipoFalta", sps.tipoFalta);
+                comando.Parameters.AddWithValue("@observaciones", sps.observaciones);
+                comando.Parameters.AddWithValue("@claveInstitucionDependencia", sps.claveInstitucionDependencia);
+                comando.Parameters.AddWithValue("@nombreInstitucionDependencia", sps.nombreInstitucionDependencia);
+                comando.Parameters.AddWithValue("@siglasInstitucionDependencia", sps.siglasInstitucionDependencia);
+                comando.Parameters.AddWithValue("@monto", sps.montoMulta);
+                comando.Parameters.AddWithValue("@moneda", sps.monedaMulta);
+                comando.Parameters.AddWithValue("@fechaResolucion", sps.fechaResolucion);
+                comando.Parameters.AddWithValue("@urlResolucion", sps.urlResolucion);
+                comando.Parameters.AddWithValue("@plazoInhabilitacion", sps.plazoInhabilitacion);
+                comando.Parameters.AddWithValue("@fechaInicialInhabilitacion", sps.fechaInicialInhabilitacion);
+                comando.Parameters.AddWithValue("@fechaFinalInhabilitacion", sps.fechaFinalInhabilitacion);
+                comando.Parameters.AddWithValue("@descripcionFalta", sps.descripcionFalta);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                ConexionBD.CerrarConexionSPS();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+                ConexionBD.CerrarConexionSPS();
+                return false;
+            }
+
+        }
+
         public modeloSPS CsdsdargarSPS(int id)
         {
             modeloSPS sps = new modeloSPS();
