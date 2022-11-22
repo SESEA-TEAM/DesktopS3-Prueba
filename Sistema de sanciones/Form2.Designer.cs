@@ -139,7 +139,7 @@
             this.mainPanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mainPanel.Location = new System.Drawing.Point(199, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1135, 749);
+            this.mainPanel.Size = new System.Drawing.Size(1177, 749);
             this.mainPanel.TabIndex = 3;
             // 
             // tabControl1
@@ -148,7 +148,7 @@
             this.tabControl1.Location = new System.Drawing.Point(-6, -25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1160, 784);
+            this.tabControl1.Size = new System.Drawing.Size(1197, 784);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -161,7 +161,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1152, 756);
+            this.tabPage1.Size = new System.Drawing.Size(1189, 756);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Inicio";
             // 
@@ -171,7 +171,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label5.Location = new System.Drawing.Point(424, 235);
+            this.label5.Location = new System.Drawing.Point(442, 235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(218, 24);
             this.label5.TabIndex = 10;
@@ -183,7 +183,7 @@
             this.lblMensajeCap.AutoSize = true;
             this.lblMensajeCap.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblMensajeCap.ForeColor = System.Drawing.Color.Black;
-            this.lblMensajeCap.Location = new System.Drawing.Point(676, 235);
+            this.lblMensajeCap.Location = new System.Drawing.Point(694, 235);
             this.lblMensajeCap.Name = "lblMensajeCap";
             this.lblMensajeCap.Size = new System.Drawing.Size(0, 24);
             this.lblMensajeCap.TabIndex = 7;
@@ -204,7 +204,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label1.Location = new System.Drawing.Point(530, 165);
+            this.label1.Location = new System.Drawing.Point(548, 165);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 32);
             this.label1.TabIndex = 4;
@@ -313,7 +313,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 749);
+            this.ClientSize = new System.Drawing.Size(1376, 749);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panelMenu);
             this.Name = "Form2";

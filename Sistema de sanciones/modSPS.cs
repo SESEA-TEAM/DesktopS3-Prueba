@@ -766,6 +766,12 @@ namespace Sistema_de_sanciones
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            form2Handler.ListaSPS();
+        }
+
         private void comboBox5_Enter(object sender, EventArgs e)
         {
             errorProvider1.SetError(comboBox5, String.Empty);
