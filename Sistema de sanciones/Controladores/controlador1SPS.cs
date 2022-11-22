@@ -121,7 +121,12 @@ namespace Sistema_de_sanciones.Controladores
                         sps.falta = Convert.ToString(dr["falta"]);
                     if (!(dr["descripcionFalta"] is DBNull))
                         sps.descripcionFalta = Convert.ToString(dr["descripcionFalta"]);
-                    
+                    sps.tipoFalta = Convert.ToInt16(dr["idFalta"]);
+                    if (!(dr["moneda2"] is DBNull))
+                        sps.monedaMulta = Convert.ToInt32(dr["moneda2"]);
+                    if (!(dr["genero2"] is DBNull))
+                        sps.generoSPS = Convert.ToInt32(dr["genero2"]);
+
 
                 }
                 dr.Close();
@@ -253,6 +258,59 @@ namespace Sistema_de_sanciones.Controladores
             }
 
 
+        }
+
+        //metodo para registrar una sancion a la hora de editar, este se manda a llamar varias veces, puesto que a un registro de servidor sancionado se le puede ligar mas de 1 sancion
+        public bool agregarSancionSPS(int idSancion, String descripcionSancion, int id)
+        {
+            try
+            {
+                SqlCommand comando = new SqlCommand("ModificarTipoSancionSPS");
+                comando.Connection = ConexionBD.AbrirConexionSPS();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandTimeout = 600;
+                comando.Parameters.AddWithValue("@TipoSancion", idSancion);
+                comando.Parameters.AddWithValue("@descripcionSancion", descripcionSancion);
+                comando.Parameters.AddWithValue("@idSancion", id);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                ConexionBD.CerrarConexionSPS();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+                ConexionBD.CerrarConexionSPS();
+                return false;
+            }
+        }
+
+        //metodo para registrar un documento a la hora de aditar, al igual que en el de sancion, un registro de servidor sancionado puede tener varios documentos ligados
+        public bool agregarDocumentoSPS(int idTipoDoc, String titulo, String descripcionDoc, String urlDoc, String fechaDoc, int id)
+        {
+            try
+            {
+                SqlCommand comando = new SqlCommand("ModificarDocumentosSPS");
+                comando.Connection = ConexionBD.AbrirConexionSPS();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandTimeout = 600;
+                comando.Parameters.AddWithValue("@Titulo", titulo);
+                comando.Parameters.AddWithValue("@idTipoDocumento", idTipoDoc);
+                comando.Parameters.AddWithValue("@descripcion", descripcionDoc);
+                comando.Parameters.AddWithValue("@url", urlDoc);
+                comando.Parameters.AddWithValue("@fecha", fechaDoc);
+                comando.Parameters.AddWithValue("@idSancion", id);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                ConexionBD.CerrarConexionSPS();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+                ConexionBD.CerrarConexionSPS();
+                return false;
+            }
         }
     }
 }
