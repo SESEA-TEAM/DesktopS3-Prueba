@@ -20,10 +20,19 @@ namespace Sistema_de_sanciones
         String? f1, f2, f3, f4;
         int idSps;
 
+        List<modeloTipoDocumento> lDocumentos = new controladorTipoDocumento().obtenerListaDocumentos();
+        List<modeloMoneda> lMoneda = new controladorMoneda().obtenerListaMonedas();
+        List<modeloTipoSancion> lSancion = new controladorTipoSancion().obtenerListaSanciones();
+        List<modeloListaGenero> lGenero = new controladorListaGenero().obtenerListaGenero();
+        List<modeloTipoFalta> lFalta = new controladorTipoFalta().obtenerListaFaltas();
+
         private Form2 form2Handler;
         public modSPS(Form2 form2, int id)
         {
             idSps= id;
+
+
+
             InitializeComponent();
             llenarCombos();
             CargarDG();
@@ -32,6 +41,7 @@ namespace Sistema_de_sanciones
             dateTimePicker3.Value = new DateTime(2000, 01, 01);
             dateTimePicker4.Value = new DateTime(2000, 01, 01);
 
+            cargarDatos();
             form2Handler = form2;
             //modeloSPS modSPS = new modeloSPS();
             //dataGridView1.Columns.Add("ID", "ID");
@@ -68,35 +78,33 @@ namespace Sistema_de_sanciones
         //funcion para cargar la lista de usuarios al combobox
         private void llenarCombos()
         {
-            comboBox2.DataSource = new controladorListaGenero().obtenerListaGenero();
+            comboBox2.DataSource = lGenero;
             comboBox2.ValueMember = "valor";
 
-            comboBox3.DataSource = new controladorTipoFalta().obtenerListaFaltas();
+            comboBox3.DataSource = lFalta;
             comboBox3.ValueMember = "valor";
 
-            comboBox4.DataSource = new controladorMoneda().obtenerListaMonedas();
+            comboBox4.DataSource = lMoneda;
             comboBox4.ValueMember = "valor";
 
-            //5doc 6san
-            comboBox5.DataSource = new controladorTipoDocumento().obtenerListaDocumentos();
+            comboBox5.DataSource = lDocumentos;
             comboBox5.ValueMember = "tipoDocumento";
 
-            comboBox6.DataSource = new controladorTipoSancion().obtenerListaSanciones();
+            comboBox6.DataSource = lSancion;
             comboBox6.ValueMember = "valor";
-
         }
         //da formato al datagridview de sanciones
         private void CargarDG()
         {
 
-            dataGridView1.Columns[1].Width = 500;
             dataGridView1.Columns[2].Width = 500;
+            dataGridView1.Columns[3].Width = 500;
      
-            dataGridView2.Columns[1].Width = 184;
-            dataGridView2.Columns[2].Width = 186;
-            dataGridView2.Columns[3].Width = 204;
-            dataGridView2.Columns[4].Width = 239;
-            dataGridView2.Columns[5].Width = 184;
+            dataGridView2.Columns[2].Width = 184;
+            dataGridView2.Columns[3].Width = 186;
+            dataGridView2.Columns[4].Width = 204;
+            dataGridView2.Columns[5].Width = 239;
+            dataGridView2.Columns[6].Width = 184;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -115,14 +123,16 @@ namespace Sistema_de_sanciones
                 if(textBox22.Texts == "Descripción")
                 {
                     modeloTipoSancion sn = (modeloTipoSancion)comboBox6.SelectedItem;
-                    dataGridView1.Rows.Add(Convert.ToString(sn.id), comboBox6.Text);
+                    dataGridView1.Rows.Add(Convert.ToString(sn.id),"1", comboBox6.Text);
                     textBox22.Texts = "Descripción";
+                    comboBox6.SelectedItem = lSancion[0];
                 }
                 else
                 {
                     modeloTipoSancion sn = (modeloTipoSancion)comboBox6.SelectedItem;
-                    dataGridView1.Rows.Add(Convert.ToString(sn.id), comboBox6.Text, textBox22.Texts);
+                    dataGridView1.Rows.Add(Convert.ToString(sn.id),"1", comboBox6.Text, textBox22.Texts);
                     textBox22.Texts = "Descripción";
+                    comboBox6.SelectedItem = lSancion[0];
                 }
                 
             }
@@ -130,193 +140,12 @@ namespace Sistema_de_sanciones
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (textBox1.Texts == "Nombre(s)*" || textBox2.Texts== "Primer apellido*" || textBox25.Texts == "Puesto nombre*" || textBox15.Texts == "Nombre*" || textBox9.Texts == "Causa, motivo o hechos*" || comboBox3.Text == "Tipo falta")
+            if (modificar())
             {
-                MessageBox.Show("Debe completar los campos obligatorios para poder hacer el registro");
-
+                MessageBox.Show("La modificacion se ha realizado con exito");
+                this.Close();
+                form2Handler.ListaSPS();
             }
-            else
-            {
-                if (dataGridView1.Rows.Count <= 0)
-                {
-                    MessageBox.Show("Necesita asignar al menos una sanción al registro");
-                }
-                else
-                {
-                    if (dateTimePicker1.Text == "2000-01-01")
-                    {
-                        f1 = null;
-                    }
-                    else
-                    {
-                        f1 = dateTimePicker1.Text;
-                    }
-                    if (dateTimePicker2.Text == "2000-01-01")
-                    {
-                        f2 = null;
-                    }
-                    else
-                    {
-                        f2 = dateTimePicker2.Text;
-                    }
-                    if (dateTimePicker3.Text == "2000-01-01")
-                    {
-                        f3 = null;
-                    }
-                    else
-                    {
-                        f3 = dateTimePicker3.Text;
-                    }
-
-                    modeloListaGenero gn = (modeloListaGenero)comboBox2.SelectedItem;
-                    modeloTipoFalta fl = (modeloTipoFalta)comboBox3.SelectedItem;
-                    modeloMoneda mn = (modeloMoneda)comboBox4.SelectedItem;
-
-
-                    modeloSPS modSPS = new modeloSPS();
-                    if (gn.Id == 0)
-                    {
-                        
-                    }
-                    else
-                    {
-                        modSPS.generoSPS = Convert.ToInt32(gn.Id);
-                    }
-                    if (mn.Id == 0)
-                    {
-
-                    }
-                    else
-                    {
-                        modSPS.monedaMulta = Convert.ToInt32(mn.Id);
-                    }
-                    if (textBox3.Texts == "Segundo apellido")
-                    {
-
-                    }
-                    else
-                    {
-                        modSPS.segundoApellidoSPS = textBox3.Texts;
-                    }
-                    if (textBox4.Texts == "RFC")
-                    {
-
-                    }
-                    else
-                    {
-                        modSPS.rfcSPS = textBox4.Texts;
-                    }
-                    if (textBox5.Texts == "CURP")
-                    {
-
-                    }
-                    else
-                    {
-                        modSPS.curpSPS = textBox5.Texts;
-                    }
-                    if (textBox6.Texts == "Puesto nivel")
-                    {
-
-                    }
-                    else
-                    {
-                        modSPS.nivelSPS = textBox6.Texts;
-                    }
-                    if (textBox13.Texts == "Siglas")
-                    {
-
-                    }
-                    else
-                    {
-                        modSPS.siglasInstitucionDependencia = textBox13.Texts;
-                    }
-                    if (textBox14.Texts == "Clave")
-                    {
-
-                    }
-                    else
-                    {
-                        modSPS.claveInstitucionDependencia = textBox14.Texts;
-                    }
-                    if (textBox7.Texts == "Expediente")
-                    {
-
-                    }
-                    else
-                    {
-                        modSPS.expediente = textBox7.Texts;
-                    }
-                    if (textBox11.Texts == "Descripción")
-                    {
-
-                    }
-                    else
-                    {
-                        modSPS.descripcionFalta = textBox11.Texts;
-                    }
-                    if (textBox12.Texts == "Observaciones")
-                    {
-
-                    }
-                    else
-                    {
-                        modSPS.observaciones = textBox12.Texts;
-                    }
-                    if (textBox16.Texts == "Autoridad sancionadora")
-                    {
-
-                    }
-                    else
-                    {
-                        modSPS.autoridadSancionadora = textBox16.Texts;
-                    }
-                    if (textBox10.Texts == "URL")
-                    {
-
-                    }
-                    else
-                    {
-                        modSPS.urlResolucion = textBox10.Texts;
-                    }
-                    if (textBox19.Texts == "Plazo")
-                    {
-
-                    }
-                    else
-                    {
-                        modSPS.plazoInhabilitacion = textBox19.Texts;
-                    }
-                    if (textBox21.Texts == "Monto")
-                    {
-
-                    }
-                    else
-                    {
-                        modSPS.montoMulta = Convert.ToInt32(textBox21.Texts);
-                    }
-                    modSPS.nombreSPS = textBox1.Texts;
-                    modSPS.primerApellidoSPS = textBox2.Texts;
-                    modSPS.puestoSPS = textBox25.Texts;
-                    modSPS.nombreInstitucionDependencia = textBox15.Texts;
-                    modSPS.causaMotivoHechos = textBox9.Texts;
-                    modSPS.tipoFalta = fl.Id;
-                    modSPS.fechaResolucion = f2;
-                    modSPS.fechaInicialInhabilitacion = f1;
-                    modSPS.fechaFinalInhabilitacion = f3;
-                    
-                    conSPS.guardarSPS(modSPS);
-
-                    foreach (DataGridViewRow fila in dataGridView1.Rows)
-                    {
-                        conSPS.guardarSancionSPS(Convert.ToInt16(fila.Cells["ID"].Value), Convert.ToString(fila.Cells["Descripcion"].Value));
-                    }
-
-                    foreach (DataGridViewRow fila2 in dataGridView2.Rows)
-                    {
-                        conSPS.guardarDocumentoSPS(Convert.ToInt16(fila2.Cells["idxd"].Value), Convert.ToString(fila2.Cells["Titulo"].Value), Convert.ToString(fila2.Cells["descripcionxd"].Value), Convert.ToString(fila2.Cells["URL"].Value), Convert.ToString(fila2.Cells["Fecha"].Value));
-                    }
-                }
-            }           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -360,11 +189,12 @@ namespace Sistema_de_sanciones
                             else
                             {
                                 modeloTipoDocumento dc = (modeloTipoDocumento)comboBox5.SelectedItem;
-                                dataGridView2.Rows.Add(Convert.ToString(dc.Id), textBox23.Texts, comboBox5.Text, textBox29.Texts, textBox20.Texts, dateTimePicker4.Text);
+                                dataGridView2.Rows.Add(Convert.ToString(dc.Id),"1", textBox23.Texts, comboBox5.Text, textBox29.Texts, textBox20.Texts, dateTimePicker4.Text);
                                 textBox23.Texts = "Título*";
                                 textBox29.Texts = "Descripción*";
                                 textBox20.Texts = "URL*";
                                 dateTimePicker4.Value = new DateTime(2000, 01, 01);
+                                comboBox5.SelectedItem = lDocumentos[0];
                             }                            
                         }
                     }
@@ -397,7 +227,7 @@ namespace Sistema_de_sanciones
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.ColumnIndex == 3)
+            if (e.ColumnIndex == 4)
             {
                 Image someImage = Properties.Resources.basura;
 
@@ -418,15 +248,17 @@ namespace Sistema_de_sanciones
             {
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    dataGridView1.Rows.Remove(dataGridView1.CurrentRow); //Se elimina la fila seleccionada del DataGridView.
- 
+                    if (!(dataGridView1.CurrentRow.Cells["n"].Value.ToString() == "0"))
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.CurrentRow); //Se elimina la fila seleccionada del DataGridView.
+                    }
                 }
             }
         }
 
         private void dataGridView2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 7)
             {
                 Image someImage = Properties.Resources.basura;
 
@@ -447,8 +279,10 @@ namespace Sistema_de_sanciones
             {
                 if (dataGridView2.SelectedRows.Count > 0)
                 {
-                    dataGridView2.Rows.Remove(dataGridView2.CurrentRow); //Se elimina la fila seleccionada del DataGridView.
-
+                    if (!(dataGridView2.CurrentRow.Cells["n2"].Value.ToString() == "0"))
+                    {
+                        dataGridView2.Rows.Remove(dataGridView2.CurrentRow); //Se elimina la fila seleccionada del DataGridView.
+                    }
                 }
             }
         }
@@ -523,7 +357,7 @@ namespace Sistema_de_sanciones
 
         private void textBox4_Enter(object sender, EventArgs e)
         {
-            if (textBox4.Texts == "RFC")
+            if (textBox4.Texts == "RFC*")
             {
                 textBox4.Texts = "";
                 textBox4.ForeColor = Color.Black;
@@ -537,7 +371,7 @@ namespace Sistema_de_sanciones
 
         private void textBox5_Enter(object sender, EventArgs e)
         {
-            if (textBox5.Texts == "CURP")
+            if (textBox5.Texts == "CURP*")
             {
                 textBox5.Texts = "";
                 textBox5.ForeColor = Color.Black;
@@ -553,8 +387,14 @@ namespace Sistema_de_sanciones
         {
             if (textBox4.Texts == "")
             {
-                textBox4.Texts = "RFC";
+                textBox4.Texts = "RFC*";
+                errorProvider1.SetError(textBox4, "Se necesita ingresar el RFC");
                 textBox4.ForeColor = Color.Gray;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox4, String.Empty);
+
             }
         }
 
@@ -562,8 +402,14 @@ namespace Sistema_de_sanciones
         {
             if (textBox5.Texts == "")
             {
-                textBox5.Texts = "CURP";
+                textBox5.Texts = "CURP*";
+                errorProvider1.SetError(textBox5, "Se necesita ingresar la CURP");
                 textBox5.ForeColor = Color.Gray;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox5, String.Empty);
+
             }
         }
 
@@ -671,7 +517,7 @@ namespace Sistema_de_sanciones
 
         private void textBox7_Enter(object sender, EventArgs e)
         {
-            if (textBox7.Texts == "Expediente")
+            if (textBox7.Texts == "Expediente*")
             {
                 textBox7.Texts = "";
                 textBox7.ForeColor = Color.Black;
@@ -682,8 +528,14 @@ namespace Sistema_de_sanciones
         {
             if (textBox7.Texts == "")
             {
-                textBox7.Texts = "Expediente";
+                textBox7.Texts = "Expediente*";
+                errorProvider1.SetError(textBox7, "Se necesita ingresar el expediente correspondiente");
                 textBox7.ForeColor = Color.Gray;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox7, String.Empty);
+
             }
         }
 
@@ -750,14 +602,20 @@ namespace Sistema_de_sanciones
         {
             if (textBox16.Texts == "")
             {
-                textBox16.Texts = "Autoridad sancionadora";
+                textBox16.Texts = "Autoridad sancionadora*";
+                errorProvider1.SetError(textBox16, "Se necesita ingresar la autoridad sancionadora");
                 textBox16.ForeColor = Color.Gray;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox16, String.Empty);
+
             }
         }
 
         private void textBox16_Enter(object sender, EventArgs e)
         {
-            if (textBox16.Texts == "Autoridad sancionadora")
+            if (textBox16.Texts == "Autoridad sancionadora*")
             {
                 textBox16.Texts = "";
                 textBox16.ForeColor = Color.Black;
@@ -916,6 +774,340 @@ namespace Sistema_de_sanciones
         public void cargarDatos()
         {
             modeloSPS msps = new modeloSPS();
+            msps = conSPS.CsdsdargarSPS(idSps);
+
+            textBox16.Texts = msps.autoridadSancionadora;
+            textBox16.ForeColor = Color.Black;
+            textBox7.Texts = msps.expediente;
+            textBox7.ForeColor = Color.Black;
+            textBox4.Texts = msps.rfcSPS;
+            textBox4.ForeColor = Color.Black;
+            textBox5.Texts = msps.curpSPS;
+            textBox5.ForeColor = Color.Black;
+            textBox1.Texts = msps.nombreSPS;
+            textBox1.ForeColor = Color.Black;
+            textBox2.Texts = msps.primerApellidoSPS;
+            textBox2.ForeColor = Color.Black;
+            textBox25.Texts = msps.puestoSPS;
+            textBox25.ForeColor = Color.Black;
+            textBox15.Texts = msps.nombreInstitucionDependencia;
+            textBox15.ForeColor = Color.Black;
+            textBox9.Texts = msps.causaMotivoHechos;
+            textBox9.ForeColor = Color.Black;
+            comboBox3.SelectedItem = lFalta[Convert.ToInt32(msps.tipoFalta)];
+            if (msps.segundoApellidoSPS == null)
+            {
+
+            }
+            else
+            {
+                textBox3.Texts = msps.segundoApellidoSPS;
+                textBox3.ForeColor = Color.Black;
+            }
+            if (msps.nivelSPS == null)
+            {
+
+            }
+            else
+            {
+                textBox6.Texts = msps.nivelSPS;
+                textBox6.ForeColor = Color.Black;
+            }
+            if (msps.siglasInstitucionDependencia == null)
+            {
+
+            }
+            else
+            {
+                textBox13.Texts = msps.siglasInstitucionDependencia;
+                textBox13.ForeColor = Color.Black;
+            }
+            if (msps.claveInstitucionDependencia == null)
+            {
+
+            }
+            else
+            {
+                textBox14.Texts = msps.claveInstitucionDependencia;
+                textBox14.ForeColor = Color.Black;
+            }
+            if (msps.descripcionFalta == null)
+            {
+
+            }
+            else
+            {
+                textBox11.Texts = msps.descripcionFalta;
+                textBox11.ForeColor = Color.Black;
+            }
+            if (msps.observaciones == null)
+            {
+
+            }
+            else
+            {
+                textBox12.Texts = msps.observaciones;
+                textBox12.ForeColor = Color.Black;
+            }
+            if (msps.urlResolucion == null)
+            {
+
+            }
+            else
+            {
+                textBox10.Texts = msps.urlResolucion;
+                textBox10.ForeColor = Color.Black;
+            }
+            if (msps.plazoInhabilitacion == null)
+            {
+
+            }
+            else
+            {
+                textBox19.Texts = msps.plazoInhabilitacion;
+                textBox19.ForeColor = Color.Black;
+            }
+            if (msps.montoMulta == null)
+            {
+
+            }
+            else
+            {
+                textBox21.Texts = Convert.ToString(msps.montoMulta);
+                textBox21.ForeColor = Color.Black;
+            }
+            if (msps.monedaMulta == null)
+            {
+
+            }
+            else
+            {
+                comboBox4.SelectedItem = lMoneda[Convert.ToInt32(msps.monedaMulta)];
+            }
+            if (msps.generoSPS == null)
+            {
+
+            }
+            else
+            {
+                comboBox2.SelectedItem = lGenero[Convert.ToInt32(msps.generoSPS)];
+            }
+
+            List<modeloTipoSancion> listaSancionesSPS = new List<modeloTipoSancion>();
+            listaSancionesSPS = conSPS.obtenerSancionesSPS(idSps);
+            for (var i = 0; i < listaSancionesSPS.Count; i++)
+            {
+                dataGridView1.Rows.Add(listaSancionesSPS[i].id, "0", listaSancionesSPS[i].valor, listaSancionesSPS[i].descripcion);
+
+            }
+            List<modeloTipoDocumento> listaDocsSPS = new List<modeloTipoDocumento>();
+            listaDocsSPS = conSPS.obtenerDocumentosSPS(idSps);
+            for (var i = 0; i < listaDocsSPS.Count; i++)
+            {
+                dataGridView2.Rows.Add(listaDocsSPS[i].Id, "0", listaDocsSPS[i].tituloDocumento, listaDocsSPS[i].tipoDocumento, listaDocsSPS[i].descripcionDocumento, listaDocsSPS[i].urlDocumento, listaDocsSPS[i].fechaDocumento);
+
+            }
+        }
+
+        private bool modificar()
+        {
+            bool r = false;
+            if (textBox1.Texts == "Nombre(s)*" || textBox2.Texts == "Primer apellido*" || textBox25.Texts == "Puesto nombre*" || textBox15.Texts == "Nombre*" || textBox9.Texts == "Causa, motivo o hechos*" || comboBox3.Text == "Tipo falta")
+            {
+                MessageBox.Show("Debe completar los campos obligatorios para poder hacer el registro");
+
+            }
+            else
+            {
+                if (dataGridView1.Rows.Count <= 0)
+                {
+                    MessageBox.Show("Necesita asignar al menos una sanción al registro");
+                }
+                else
+                {
+                    if (dateTimePicker1.Text == "2000-01-01")
+                    {
+                        f1 = null;
+                    }
+                    else
+                    {
+                        f1 = dateTimePicker1.Text;
+                    }
+                    if (dateTimePicker2.Text == "2000-01-01")
+                    {
+                        f2 = null;
+                    }
+                    else
+                    {
+                        f2 = dateTimePicker2.Text;
+                    }
+                    if (dateTimePicker3.Text == "2000-01-01")
+                    {
+                        f3 = null;
+                    }
+                    else
+                    {
+                        f3 = dateTimePicker3.Text;
+                    }
+
+                    modeloListaGenero gn = (modeloListaGenero)comboBox2.SelectedItem;
+                    modeloTipoFalta fl = (modeloTipoFalta)comboBox3.SelectedItem;
+                    modeloMoneda mn = (modeloMoneda)comboBox4.SelectedItem;
+
+
+                    modeloSPS modSPS = new modeloSPS();
+                    if (gn.Id == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.generoSPS = Convert.ToInt32(gn.Id);
+                    }
+                    if (mn.Id == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.monedaMulta = Convert.ToInt32(mn.Id);
+                    }
+                    if (textBox3.Texts == "Segundo apellido")
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.segundoApellidoSPS = textBox3.Texts;
+                    }
+                    if (textBox4.Texts == "RFC")
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.rfcSPS = textBox4.Texts;
+                    }
+                    if (textBox5.Texts == "CURP")
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.curpSPS = textBox5.Texts;
+                    }
+                    if (textBox6.Texts == "Puesto nivel")
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.nivelSPS = textBox6.Texts;
+                    }
+                    if (textBox13.Texts == "Siglas")
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.siglasInstitucionDependencia = textBox13.Texts;
+                    }
+                    if (textBox14.Texts == "Clave")
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.claveInstitucionDependencia = textBox14.Texts;
+                    }
+                    if (textBox7.Texts == "Expediente")
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.expediente = textBox7.Texts;
+                    }
+                    if (textBox11.Texts == "Descripción")
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.descripcionFalta = textBox11.Texts;
+                    }
+                    if (textBox12.Texts == "Observaciones")
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.observaciones = textBox12.Texts;
+                    }
+                    if (textBox16.Texts == "Autoridad sancionadora")
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.autoridadSancionadora = textBox16.Texts;
+                    }
+                    if (textBox10.Texts == "URL")
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.urlResolucion = textBox10.Texts;
+                    }
+                    if (textBox19.Texts == "Plazo")
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.plazoInhabilitacion = textBox19.Texts;
+                    }
+                    if (textBox21.Texts == "Monto")
+                    {
+
+                    }
+                    else
+                    {
+                        modSPS.montoMulta = Convert.ToInt32(textBox21.Texts);
+                    }
+                    modSPS.nombreSPS = textBox1.Texts;
+                    modSPS.primerApellidoSPS = textBox2.Texts;
+                    modSPS.puestoSPS = textBox25.Texts;
+                    modSPS.nombreInstitucionDependencia = textBox15.Texts;
+                    modSPS.causaMotivoHechos = textBox9.Texts;
+                    modSPS.tipoFalta = fl.Id;
+                    modSPS.fechaResolucion = f2;
+                    modSPS.fechaInicialInhabilitacion = f1;
+                    modSPS.fechaFinalInhabilitacion = f3;
+
+                    if (conSPS.modificarSPS(modSPS, idSps)) { r = true; } else { r = false; }
+
+                    foreach (DataGridViewRow fila in dataGridView1.Rows)
+                    {
+                        if (!(fila.Cells["n"].Value.ToString() == "0"))
+                        {
+                            if (conSPS.agregarSancionSPS(Convert.ToInt16(fila.Cells["ID"].Value), Convert.ToString(fila.Cells["Descripcion"].Value), idSps)) { r = true; } else { r = false; }
+                        }
+
+                    }
+
+                    foreach (DataGridViewRow fila2 in dataGridView2.Rows)
+                    {
+                        if (!(fila2.Cells["n2"].Value.ToString() == "0"))
+                        {
+                            if (conSPS.agregarDocumentoSPS(Convert.ToInt16(fila2.Cells["idxd"].Value), Convert.ToString(fila2.Cells["Titulo"].Value), Convert.ToString(fila2.Cells["descripcionxd"].Value), Convert.ToString(fila2.Cells["URL"].Value), Convert.ToString(fila2.Cells["Fecha"].Value), idSps)) { r = true; } else { r = false; }
+                        }
+
+                    }
+                }
+            }
+            return r;
         }
     }
 }

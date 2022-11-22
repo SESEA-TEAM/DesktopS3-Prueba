@@ -56,9 +56,6 @@
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -81,12 +78,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.idxd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionxd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.URL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -104,6 +95,17 @@
             this.textBox29 = new Sistema_de_sanciones.Templates.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.idxd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.n2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionxd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.URL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.n = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -216,7 +218,7 @@
             this.textBox4.PasswordChar = false;
             this.textBox4.Size = new System.Drawing.Size(264, 31);
             this.textBox4.TabIndex = 1;
-            this.textBox4.Texts = "RFC";
+            this.textBox4.Texts = "RFC*";
             this.textBox4.UnderlinedStyle = true;
             this.textBox4.Load += new System.EventHandler(this.textBox4_Load);
             this.textBox4.Enter += new System.EventHandler(this.textBox4_Enter);
@@ -237,7 +239,7 @@
             this.textBox5.PasswordChar = false;
             this.textBox5.Size = new System.Drawing.Size(264, 31);
             this.textBox5.TabIndex = 1;
-            this.textBox5.Texts = "CURP";
+            this.textBox5.Texts = "CURP*";
             this.textBox5.UnderlinedStyle = true;
             this.textBox5.Load += new System.EventHandler(this.textBox5_Load);
             this.textBox5.Enter += new System.EventHandler(this.textBox5_Enter);
@@ -278,7 +280,7 @@
             this.textBox7.PasswordChar = false;
             this.textBox7.Size = new System.Drawing.Size(264, 31);
             this.textBox7.TabIndex = 1;
-            this.textBox7.Texts = "Expediente";
+            this.textBox7.Texts = "Expediente*";
             this.textBox7.UnderlinedStyle = true;
             this.textBox7.Enter += new System.EventHandler(this.textBox7_Enter);
             this.textBox7.Leave += new System.EventHandler(this.textBox7_Leave);
@@ -552,6 +554,7 @@
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
+            this.n,
             this.Tipo,
             this.Descripcion});
             this.dataGridView1.EnableHeadersVisualStyles = false;
@@ -575,25 +578,6 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             this.dataGridView1.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView1_Paint);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
             // 
             // comboBox6
             // 
@@ -771,7 +755,7 @@
             this.textBox16.PasswordChar = false;
             this.textBox16.Size = new System.Drawing.Size(264, 31);
             this.textBox16.TabIndex = 1;
-            this.textBox16.Texts = "Autoridad sancionadora";
+            this.textBox16.Texts = "Autoridad sancionadora*";
             this.textBox16.UnderlinedStyle = true;
             this.textBox16.Load += new System.EventHandler(this.textBox16_Load);
             this.textBox16.Enter += new System.EventHandler(this.textBox16_Enter);
@@ -918,6 +902,7 @@
             this.dataGridView2.ColumnHeadersVisible = false;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idxd,
+            this.n2,
             this.Titulo,
             this.dataGridViewTextBoxColumn2,
             this.descripcionxd,
@@ -941,43 +926,6 @@
             this.dataGridView2.TabIndex = 11;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView2_CellPainting);
-            // 
-            // idxd
-            // 
-            this.idxd.HeaderText = "ID";
-            this.idxd.Name = "idxd";
-            this.idxd.ReadOnly = true;
-            this.idxd.Visible = false;
-            // 
-            // Titulo
-            // 
-            this.Titulo.HeaderText = "Titulo";
-            this.Titulo.Name = "Titulo";
-            this.Titulo.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tipo";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // descripcionxd
-            // 
-            this.descripcionxd.HeaderText = "Descripción";
-            this.descripcionxd.Name = "descripcionxd";
-            this.descripcionxd.ReadOnly = true;
-            // 
-            // URL
-            // 
-            this.URL.HeaderText = "URL";
-            this.URL.Name = "URL";
-            this.URL.ReadOnly = true;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
             // 
             // panel6
             // 
@@ -1205,6 +1153,76 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // idxd
+            // 
+            this.idxd.HeaderText = "ID";
+            this.idxd.Name = "idxd";
+            this.idxd.ReadOnly = true;
+            this.idxd.Visible = false;
+            // 
+            // n2
+            // 
+            this.n2.HeaderText = "n";
+            this.n2.Name = "n2";
+            this.n2.ReadOnly = true;
+            this.n2.Visible = false;
+            // 
+            // Titulo
+            // 
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.Name = "Titulo";
+            this.Titulo.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tipo";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // descripcionxd
+            // 
+            this.descripcionxd.HeaderText = "Descripción";
+            this.descripcionxd.Name = "descripcionxd";
+            this.descripcionxd.ReadOnly = true;
+            // 
+            // URL
+            // 
+            this.URL.HeaderText = "URL";
+            this.URL.Name = "URL";
+            this.URL.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // n
+            // 
+            this.n.HeaderText = "n";
+            this.n.Name = "n";
+            this.n.ReadOnly = true;
+            this.n.Visible = false;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
             // modSPS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1300,18 +1318,20 @@
         private Label label11;
         private Label label13;
         private DateTimePicker dateTimePicker4;
+        private ErrorProvider errorProvider1;
+        private Label label16;
+        private Label label15;
+        private Label label14;
         private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn n;
         private DataGridViewTextBoxColumn Tipo;
         private DataGridViewTextBoxColumn Descripcion;
         private DataGridViewTextBoxColumn idxd;
+        private DataGridViewTextBoxColumn n2;
         private DataGridViewTextBoxColumn Titulo;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn descripcionxd;
         private DataGridViewTextBoxColumn URL;
         private DataGridViewTextBoxColumn Fecha;
-        private ErrorProvider errorProvider1;
-        private Label label16;
-        private Label label15;
-        private Label label14;
     }
 }
