@@ -166,7 +166,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.label1.Font = new System.Drawing.Font("Arial", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(394, 9);
+            this.label1.Location = new System.Drawing.Point(402, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(365, 42);
             this.label1.TabIndex = 1;
@@ -191,7 +191,7 @@
             this.panel2.Controls.Add(this.textBox20);
             this.panel2.Location = new System.Drawing.Point(0, 70);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1158, 390);
+            this.panel2.Size = new System.Drawing.Size(1174, 390);
             this.panel2.TabIndex = 7;
             // 
             // textBox11
@@ -203,7 +203,7 @@
             this.textBox11.BorderSize = 2;
             this.textBox11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox11.Location = new System.Drawing.Point(16, 330);
+            this.textBox11.Location = new System.Drawing.Point(24, 330);
             this.textBox11.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox11.Multiline = false;
             this.textBox11.Name = "textBox11";
@@ -225,7 +225,7 @@
             this.textBox10.BorderSize = 2;
             this.textBox10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox10.Location = new System.Drawing.Point(859, 280);
+            this.textBox10.Location = new System.Drawing.Point(867, 280);
             this.textBox10.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox10.Multiline = false;
             this.textBox10.Name = "textBox10";
@@ -247,7 +247,7 @@
             this.textBox9.BorderSize = 2;
             this.textBox9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox9.Location = new System.Drawing.Point(578, 280);
+            this.textBox9.Location = new System.Drawing.Point(586, 280);
             this.textBox9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox9.Multiline = false;
             this.textBox9.Name = "textBox9";
@@ -258,6 +258,7 @@
             this.textBox9.Texts = "Siglas";
             this.textBox9.UnderlinedStyle = true;
             this.textBox9.Enter += new System.EventHandler(this.textBox9_Enter);
+            this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox9_KeyPress);
             this.textBox9.Leave += new System.EventHandler(this.textBox9_Leave);
             // 
             // textBox7
@@ -269,7 +270,7 @@
             this.textBox7.BorderSize = 2;
             this.textBox7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox7.Location = new System.Drawing.Point(16, 280);
+            this.textBox7.Location = new System.Drawing.Point(24, 280);
             this.textBox7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox7.Multiline = false;
             this.textBox7.Name = "textBox7";
@@ -288,7 +289,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(16, 240);
+            this.label6.Location = new System.Drawing.Point(24, 240);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(168, 16);
             this.label6.TabIndex = 32;
@@ -300,7 +301,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label3.Location = new System.Drawing.Point(512, 20);
+            this.label3.Location = new System.Drawing.Point(520, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 19);
             this.label3.TabIndex = 31;
@@ -315,7 +316,7 @@
             this.textBox8.BorderSize = 2;
             this.textBox8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox8.Location = new System.Drawing.Point(578, 110);
+            this.textBox8.Location = new System.Drawing.Point(586, 110);
             this.textBox8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox8.Multiline = false;
             this.textBox8.Name = "textBox8";
@@ -337,7 +338,7 @@
             this.textBox12.BorderSize = 2;
             this.textBox12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox12.Location = new System.Drawing.Point(578, 160);
+            this.textBox12.Location = new System.Drawing.Point(586, 160);
             this.textBox12.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox12.Multiline = false;
             this.textBox12.Name = "textBox12";
@@ -349,6 +350,7 @@
             this.textBox12.UnderlinedStyle = true;
             this.textBox12.Load += new System.EventHandler(this.textBox12_Load);
             this.textBox12.Enter += new System.EventHandler(this.textBox12_Enter);
+            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox12_KeyPress);
             this.textBox12.Leave += new System.EventHandler(this.textBox12_Leave);
             // 
             // textBox16
@@ -360,7 +362,7 @@
             this.textBox16.BorderSize = 2;
             this.textBox16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox16.Location = new System.Drawing.Point(16, 160);
+            this.textBox16.Location = new System.Drawing.Point(24, 160);
             this.textBox16.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox16.Multiline = false;
             this.textBox16.Name = "textBox16";
@@ -371,6 +373,7 @@
             this.textBox16.Texts = "Objeto contrato";
             this.textBox16.UnderlinedStyle = true;
             this.textBox16.Enter += new System.EventHandler(this.textBox16_Enter);
+            this.textBox16.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox16_KeyPress);
             this.textBox16.Leave += new System.EventHandler(this.textBox16_Leave);
             // 
             // textBox17
@@ -382,7 +385,7 @@
             this.textBox17.BorderSize = 2;
             this.textBox17.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox17.Location = new System.Drawing.Point(16, 110);
+            this.textBox17.Location = new System.Drawing.Point(24, 110);
             this.textBox17.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox17.Multiline = false;
             this.textBox17.Name = "textBox17";
@@ -404,7 +407,7 @@
             this.textBox18.BorderSize = 2;
             this.textBox18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox18.Location = new System.Drawing.Point(859, 60);
+            this.textBox18.Location = new System.Drawing.Point(867, 60);
             this.textBox18.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox18.Multiline = false;
             this.textBox18.Name = "textBox18";
@@ -412,7 +415,7 @@
             this.textBox18.PasswordChar = false;
             this.textBox18.Size = new System.Drawing.Size(264, 31);
             this.textBox18.TabIndex = 26;
-            this.textBox18.Texts = "RFC";
+            this.textBox18.Texts = "RFC*";
             this.textBox18.UnderlinedStyle = true;
             this.textBox18.Enter += new System.EventHandler(this.textBox18_Enter);
             this.textBox18.Leave += new System.EventHandler(this.textBox18_Leave);
@@ -426,7 +429,7 @@
             this.textBox19.BorderSize = 2;
             this.textBox19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox19.Location = new System.Drawing.Point(297, 59);
+            this.textBox19.Location = new System.Drawing.Point(305, 59);
             this.textBox19.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox19.Multiline = false;
             this.textBox19.Name = "textBox19";
@@ -448,7 +451,7 @@
             this.textBox20.BorderSize = 2;
             this.textBox20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox20.Location = new System.Drawing.Point(16, 60);
+            this.textBox20.Location = new System.Drawing.Point(24, 60);
             this.textBox20.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox20.Multiline = false;
             this.textBox20.Name = "textBox20";
@@ -456,7 +459,7 @@
             this.textBox20.PasswordChar = false;
             this.textBox20.Size = new System.Drawing.Size(264, 31);
             this.textBox20.TabIndex = 24;
-            this.textBox20.Texts = "Expediente";
+            this.textBox20.Texts = "Expediente*";
             this.textBox20.UnderlinedStyle = true;
             this.textBox20.Enter += new System.EventHandler(this.textBox20_Enter);
             this.textBox20.Leave += new System.EventHandler(this.textBox20_Leave);
@@ -491,7 +494,7 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(0, 466);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1158, 853);
+            this.panel1.Size = new System.Drawing.Size(1174, 853);
             this.panel1.TabIndex = 8;
             // 
             // dateTimePicker2
@@ -666,6 +669,7 @@
             this.textBox6.Texts = "Sentido";
             this.textBox6.UnderlinedStyle = true;
             this.textBox6.Enter += new System.EventHandler(this.textBox6_Enter);
+            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
             this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
             // 
             // button2
@@ -780,6 +784,7 @@
             this.textBox24.Texts = "Monto";
             this.textBox24.UnderlinedStyle = true;
             this.textBox24.Enter += new System.EventHandler(this.textBox24_Enter);
+            this.textBox24.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox24_KeyPress);
             this.textBox24.Leave += new System.EventHandler(this.textBox24_Leave);
             // 
             // label10
@@ -894,6 +899,7 @@
             this.textBox2.Texts = "Segundo apellido";
             this.textBox2.UnderlinedStyle = true;
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // textBox3
@@ -916,6 +922,7 @@
             this.textBox3.Texts = "Primer apellido*";
             this.textBox3.UnderlinedStyle = true;
             this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
             // textBox4
@@ -938,6 +945,7 @@
             this.textBox4.Texts = "Nombre(s)*";
             this.textBox4.UnderlinedStyle = true;
             this.textBox4.Enter += new System.EventHandler(this.textBox4_Enter);
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             this.textBox4.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // label8
@@ -972,6 +980,7 @@
             this.textBox5.Texts = "Autoridad sancionadora*";
             this.textBox5.UnderlinedStyle = true;
             this.textBox5.Enter += new System.EventHandler(this.textBox5_Enter);
+            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             this.textBox5.Leave += new System.EventHandler(this.textBox5_Leave);
             // 
             // label7
@@ -1004,7 +1013,7 @@
             this.panel4.Controls.Add(this.label15);
             this.panel4.Location = new System.Drawing.Point(0, 1325);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1158, 360);
+            this.panel4.Size = new System.Drawing.Size(1174, 360);
             this.panel4.TabIndex = 9;
             // 
             // textBox15
@@ -1016,7 +1025,7 @@
             this.textBox15.BorderSize = 2;
             this.textBox15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox15.Location = new System.Drawing.Point(859, 300);
+            this.textBox15.Location = new System.Drawing.Point(867, 300);
             this.textBox15.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox15.Multiline = false;
             this.textBox15.Name = "textBox15";
@@ -1050,7 +1059,7 @@
             this.textBox27.BorderSize = 2;
             this.textBox27.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox27.Location = new System.Drawing.Point(578, 300);
+            this.textBox27.Location = new System.Drawing.Point(586, 300);
             this.textBox27.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox27.Multiline = false;
             this.textBox27.Name = "textBox27";
@@ -1061,6 +1070,7 @@
             this.textBox27.Texts = "Segundo apellido";
             this.textBox27.UnderlinedStyle = true;
             this.textBox27.Enter += new System.EventHandler(this.textBox27_Enter);
+            this.textBox27.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox27_KeyPress);
             this.textBox27.Leave += new System.EventHandler(this.textBox27_Leave);
             // 
             // textBox32
@@ -1072,7 +1082,7 @@
             this.textBox32.BorderSize = 2;
             this.textBox32.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox32.Location = new System.Drawing.Point(297, 300);
+            this.textBox32.Location = new System.Drawing.Point(305, 300);
             this.textBox32.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox32.Multiline = false;
             this.textBox32.Name = "textBox32";
@@ -1084,6 +1094,7 @@
             this.textBox32.UnderlinedStyle = true;
             this.textBox32.Load += new System.EventHandler(this.textBox32_Load);
             this.textBox32.Enter += new System.EventHandler(this.textBox32_Enter);
+            this.textBox32.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox32_KeyPress);
             this.textBox32.Leave += new System.EventHandler(this.textBox32_Leave);
             // 
             // label18
@@ -1092,7 +1103,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(16, 260);
+            this.label18.Location = new System.Drawing.Point(24, 260);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(113, 16);
             this.label18.TabIndex = 55;
@@ -1107,7 +1118,7 @@
             this.textBox35.BorderSize = 2;
             this.textBox35.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox35.Location = new System.Drawing.Point(16, 300);
+            this.textBox35.Location = new System.Drawing.Point(24, 300);
             this.textBox35.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox35.Multiline = false;
             this.textBox35.Name = "textBox35";
@@ -1118,6 +1129,7 @@
             this.textBox35.Texts = "Nombre(s)";
             this.textBox35.UnderlinedStyle = true;
             this.textBox35.Enter += new System.EventHandler(this.textBox35_Enter);
+            this.textBox35.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox35_KeyPress);
             this.textBox35.Leave += new System.EventHandler(this.textBox35_Leave);
             // 
             // label17
@@ -1126,7 +1138,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(16, 140);
+            this.label17.Location = new System.Drawing.Point(24, 140);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(110, 16);
             this.label17.TabIndex = 50;
@@ -1141,7 +1153,7 @@
             this.textBox28.BorderSize = 2;
             this.textBox28.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox28.Location = new System.Drawing.Point(859, 180);
+            this.textBox28.Location = new System.Drawing.Point(867, 180);
             this.textBox28.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox28.Multiline = false;
             this.textBox28.Name = "textBox28";
@@ -1163,7 +1175,7 @@
             this.textBox29.BorderSize = 2;
             this.textBox29.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox29.Location = new System.Drawing.Point(578, 180);
+            this.textBox29.Location = new System.Drawing.Point(586, 180);
             this.textBox29.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox29.Multiline = false;
             this.textBox29.Name = "textBox29";
@@ -1174,6 +1186,7 @@
             this.textBox29.Texts = "Segundo apellido";
             this.textBox29.UnderlinedStyle = true;
             this.textBox29.Enter += new System.EventHandler(this.textBox29_Enter);
+            this.textBox29.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox29_KeyPress);
             this.textBox29.Leave += new System.EventHandler(this.textBox29_Leave);
             // 
             // textBox30
@@ -1185,7 +1198,7 @@
             this.textBox30.BorderSize = 2;
             this.textBox30.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox30.Location = new System.Drawing.Point(297, 180);
+            this.textBox30.Location = new System.Drawing.Point(305, 180);
             this.textBox30.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox30.Multiline = false;
             this.textBox30.Name = "textBox30";
@@ -1196,6 +1209,7 @@
             this.textBox30.Texts = "Primer apellido";
             this.textBox30.UnderlinedStyle = true;
             this.textBox30.Enter += new System.EventHandler(this.textBox30_Enter);
+            this.textBox30.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox30_KeyPress);
             this.textBox30.Leave += new System.EventHandler(this.textBox30_Leave);
             // 
             // textBox31
@@ -1207,7 +1221,7 @@
             this.textBox31.BorderSize = 2;
             this.textBox31.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox31.Location = new System.Drawing.Point(16, 180);
+            this.textBox31.Location = new System.Drawing.Point(24, 180);
             this.textBox31.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox31.Multiline = false;
             this.textBox31.Name = "textBox31";
@@ -1218,6 +1232,7 @@
             this.textBox31.Texts = "Nombre(s)";
             this.textBox31.UnderlinedStyle = true;
             this.textBox31.Enter += new System.EventHandler(this.textBox31_Enter);
+            this.textBox31.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox31_KeyPress);
             this.textBox31.Leave += new System.EventHandler(this.textBox31_Leave);
             // 
             // textBox25
@@ -1229,7 +1244,7 @@
             this.textBox25.BorderSize = 2;
             this.textBox25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox25.Location = new System.Drawing.Point(578, 60);
+            this.textBox25.Location = new System.Drawing.Point(586, 60);
             this.textBox25.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox25.Multiline = false;
             this.textBox25.Name = "textBox25";
@@ -1240,6 +1255,7 @@
             this.textBox25.Texts = "Objeto social";
             this.textBox25.UnderlinedStyle = true;
             this.textBox25.Enter += new System.EventHandler(this.textBox25_Enter);
+            this.textBox25.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox25_KeyPress);
             this.textBox25.Leave += new System.EventHandler(this.textBox25_Leave);
             // 
             // textBox26
@@ -1251,7 +1267,7 @@
             this.textBox26.BorderSize = 2;
             this.textBox26.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox26.Location = new System.Drawing.Point(297, 60);
+            this.textBox26.Location = new System.Drawing.Point(305, 60);
             this.textBox26.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox26.Multiline = false;
             this.textBox26.Name = "textBox26";
@@ -1262,6 +1278,7 @@
             this.textBox26.Texts = "Teléfono";
             this.textBox26.UnderlinedStyle = true;
             this.textBox26.Enter += new System.EventHandler(this.textBox26_Enter);
+            this.textBox26.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox26_KeyPress);
             this.textBox26.Leave += new System.EventHandler(this.textBox26_Leave);
             // 
             // label15
@@ -1270,7 +1287,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label15.Location = new System.Drawing.Point(474, 20);
+            this.label15.Location = new System.Drawing.Point(482, 20);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(251, 19);
             this.label15.TabIndex = 43;
@@ -1285,7 +1302,7 @@
             this.panel5.Controls.Add(this.label19);
             this.panel5.Location = new System.Drawing.Point(0, 1691);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1158, 124);
+            this.panel5.Size = new System.Drawing.Size(1174, 124);
             this.panel5.TabIndex = 10;
             // 
             // radioButton3
@@ -1335,7 +1352,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.label20.Location = new System.Drawing.Point(16, 60);
+            this.label20.Location = new System.Drawing.Point(24, 60);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(293, 16);
             this.label20.TabIndex = 42;
@@ -1347,7 +1364,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label19.Location = new System.Drawing.Point(559, 20);
+            this.label19.Location = new System.Drawing.Point(567, 20);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(80, 19);
             this.label19.TabIndex = 41;
@@ -1365,7 +1382,7 @@
             this.panel6.Controls.Add(this.label2);
             this.panel6.Location = new System.Drawing.Point(0, 1821);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1158, 220);
+            this.panel6.Size = new System.Drawing.Size(1174, 220);
             this.panel6.TabIndex = 11;
             // 
             // comboBox4
@@ -1424,7 +1441,7 @@
             this.textBox36.BorderSize = 2;
             this.textBox36.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox36.Location = new System.Drawing.Point(772, 160);
+            this.textBox36.Location = new System.Drawing.Point(780, 160);
             this.textBox36.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox36.Multiline = false;
             this.textBox36.Name = "textBox36";
@@ -1435,6 +1452,7 @@
             this.textBox36.Texts = "Número interior";
             this.textBox36.UnderlinedStyle = true;
             this.textBox36.Enter += new System.EventHandler(this.textBox36_Enter);
+            this.textBox36.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox36_KeyPress);
             this.textBox36.Leave += new System.EventHandler(this.textBox36_Leave);
             // 
             // textBox33
@@ -1446,7 +1464,7 @@
             this.textBox33.BorderSize = 2;
             this.textBox33.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox33.Location = new System.Drawing.Point(394, 160);
+            this.textBox33.Location = new System.Drawing.Point(402, 160);
             this.textBox33.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox33.Multiline = false;
             this.textBox33.Name = "textBox33";
@@ -1458,6 +1476,7 @@
             this.textBox33.UnderlinedStyle = true;
             this.textBox33.Load += new System.EventHandler(this.textBox33_Load);
             this.textBox33.Enter += new System.EventHandler(this.textBox33_Enter);
+            this.textBox33.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox33_KeyPress);
             this.textBox33.Leave += new System.EventHandler(this.textBox33_Leave);
             // 
             // textBox34
@@ -1469,7 +1488,7 @@
             this.textBox34.BorderSize = 2;
             this.textBox34.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox34.Location = new System.Drawing.Point(20, 160);
+            this.textBox34.Location = new System.Drawing.Point(28, 160);
             this.textBox34.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox34.Multiline = false;
             this.textBox34.Name = "textBox34";
@@ -1480,6 +1499,7 @@
             this.textBox34.Texts = "Código Postal";
             this.textBox34.UnderlinedStyle = true;
             this.textBox34.Enter += new System.EventHandler(this.textBox34_Enter);
+            this.textBox34.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox34_KeyPress);
             this.textBox34.Leave += new System.EventHandler(this.textBox34_Leave);
             // 
             // label2
@@ -1488,7 +1508,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(16, 20);
+            this.label2.Location = new System.Drawing.Point(24, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 16);
             this.label2.TabIndex = 42;
@@ -1506,7 +1526,7 @@
             this.panel7.Controls.Add(this.label4);
             this.panel7.Location = new System.Drawing.Point(0, 1821);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1158, 210);
+            this.panel7.Size = new System.Drawing.Size(1174, 210);
             this.panel7.TabIndex = 12;
             // 
             // textBox42
@@ -1518,7 +1538,7 @@
             this.textBox42.BorderSize = 2;
             this.textBox42.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox42.Location = new System.Drawing.Point(772, 110);
+            this.textBox42.Location = new System.Drawing.Point(780, 110);
             this.textBox42.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox42.Multiline = false;
             this.textBox42.Name = "textBox42";
@@ -1529,6 +1549,7 @@
             this.textBox42.Texts = "Número interior";
             this.textBox42.UnderlinedStyle = true;
             this.textBox42.Enter += new System.EventHandler(this.textBox42_Enter);
+            this.textBox42.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox42_KeyPress);
             this.textBox42.Leave += new System.EventHandler(this.textBox42_Leave);
             // 
             // textBox41
@@ -1540,7 +1561,7 @@
             this.textBox41.BorderSize = 2;
             this.textBox41.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox41.Location = new System.Drawing.Point(394, 110);
+            this.textBox41.Location = new System.Drawing.Point(402, 110);
             this.textBox41.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox41.Multiline = false;
             this.textBox41.Name = "textBox41";
@@ -1551,6 +1572,7 @@
             this.textBox41.Texts = "Número exterior";
             this.textBox41.UnderlinedStyle = true;
             this.textBox41.Enter += new System.EventHandler(this.textBox41_Enter);
+            this.textBox41.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox41_KeyPress);
             this.textBox41.Leave += new System.EventHandler(this.textBox41_Leave);
             // 
             // comboBox7
@@ -1574,7 +1596,7 @@
             this.textBox37.BorderSize = 2;
             this.textBox37.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox37.Location = new System.Drawing.Point(16, 110);
+            this.textBox37.Location = new System.Drawing.Point(24, 110);
             this.textBox37.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox37.Multiline = false;
             this.textBox37.Name = "textBox37";
@@ -1585,6 +1607,7 @@
             this.textBox37.Texts = "Código Postal";
             this.textBox37.UnderlinedStyle = true;
             this.textBox37.Enter += new System.EventHandler(this.textBox37_Enter);
+            this.textBox37.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox37_KeyPress);
             this.textBox37.Leave += new System.EventHandler(this.textBox37_Leave);
             // 
             // textBox38
@@ -1596,7 +1619,7 @@
             this.textBox38.BorderSize = 2;
             this.textBox38.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox38.Location = new System.Drawing.Point(772, 60);
+            this.textBox38.Location = new System.Drawing.Point(780, 60);
             this.textBox38.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox38.Multiline = false;
             this.textBox38.Name = "textBox38";
@@ -1618,7 +1641,7 @@
             this.textBox39.BorderSize = 2;
             this.textBox39.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox39.Location = new System.Drawing.Point(394, 60);
+            this.textBox39.Location = new System.Drawing.Point(402, 60);
             this.textBox39.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox39.Multiline = false;
             this.textBox39.Name = "textBox39";
@@ -1640,7 +1663,7 @@
             this.textBox40.BorderSize = 2;
             this.textBox40.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.textBox40.Location = new System.Drawing.Point(16, 60);
+            this.textBox40.Location = new System.Drawing.Point(24, 60);
             this.textBox40.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox40.Multiline = false;
             this.textBox40.Name = "textBox40";
@@ -1659,7 +1682,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(16, 20);
+            this.label4.Location = new System.Drawing.Point(24, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(137, 16);
             this.label4.TabIndex = 43;
@@ -1681,7 +1704,7 @@
             this.panel8.Controls.Add(this.textBox46);
             this.panel8.Location = new System.Drawing.Point(0, 1821);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1158, 442);
+            this.panel8.Size = new System.Drawing.Size(1174, 442);
             this.panel8.TabIndex = 13;
             // 
             // dataGridView2
@@ -1991,7 +2014,7 @@
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(1158, 57);
+            this.panelTitulo.Size = new System.Drawing.Size(1174, 57);
             this.panelTitulo.TabIndex = 14;
             // 
             // label16
@@ -2000,7 +2023,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(1370, -61);
+            this.label16.Location = new System.Drawing.Point(1378, -61);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(23, 16);
             this.label16.TabIndex = 2;
