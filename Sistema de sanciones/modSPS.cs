@@ -910,7 +910,11 @@ namespace Sistema_de_sanciones
             listaDocsSPS = conSPS.obtenerDocumentosSPS(idSps);
             for (var i = 0; i < listaDocsSPS.Count; i++)
             {
-                dataGridView2.Rows.Add(listaDocsSPS[i].Id, "0", listaDocsSPS[i].tituloDocumento, listaDocsSPS[i].tipoDocumento, listaDocsSPS[i].descripcionDocumento, listaDocsSPS[i].urlDocumento, listaDocsSPS[i].fechaDocumento);
+                String a = (listaDocsSPS[i].fechaDocumento).Remove(10, 15).Remove(0, 6);
+                String m = (listaDocsSPS[i].fechaDocumento).Remove(5, 20).Remove(0, 3);
+                String d = (listaDocsSPS[i].fechaDocumento).Remove(2, 23);
+                String f = a + "-" + m + "-" + d;
+                dataGridView2.Rows.Add(listaDocsSPS[i].Id, "0", listaDocsSPS[i].tituloDocumento, listaDocsSPS[i].tipoDocumento, listaDocsSPS[i].descripcionDocumento, listaDocsSPS[i].urlDocumento, f);
 
             }
         }

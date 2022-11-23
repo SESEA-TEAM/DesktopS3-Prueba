@@ -501,7 +501,7 @@
             this.dateTimePicker2.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(586, 349);
+            this.dateTimePicker2.Location = new System.Drawing.Point(578, 349);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(264, 22);
             this.dateTimePicker2.TabIndex = 81;
@@ -511,7 +511,7 @@
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(305, 349);
+            this.dateTimePicker1.Location = new System.Drawing.Point(297, 349);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(264, 22);
             this.dateTimePicker1.TabIndex = 81;
@@ -709,7 +709,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(575, 14);
+            this.label14.Location = new System.Drawing.Point(710, 22);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(75, 16);
             this.label14.TabIndex = 1;
@@ -720,7 +720,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(32, 14);
+            this.label13.Location = new System.Drawing.Point(199, 22);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(98, 16);
             this.label13.TabIndex = 0;
@@ -1728,6 +1728,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(1106, 114);
             this.dataGridView2.TabIndex = 79;
@@ -1807,7 +1808,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label21.ForeColor = System.Drawing.SystemColors.Control;
-            this.label21.Location = new System.Drawing.Point(841, 22);
+            this.label21.Location = new System.Drawing.Point(879, 22);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(46, 16);
             this.label21.TabIndex = 4;
@@ -1818,7 +1819,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label22.ForeColor = System.Drawing.SystemColors.Control;
-            this.label22.Location = new System.Drawing.Point(614, 22);
+            this.label22.Location = new System.Drawing.Point(676, 22);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(33, 16);
             this.label22.TabIndex = 3;
@@ -1829,7 +1830,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label23.ForeColor = System.Drawing.SystemColors.Control;
-            this.label23.Location = new System.Drawing.Point(178, 22);
+            this.label23.Location = new System.Drawing.Point(253, 22);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(35, 16);
             this.label23.TabIndex = 2;
@@ -1840,7 +1841,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label24.ForeColor = System.Drawing.SystemColors.Control;
-            this.label24.Location = new System.Drawing.Point(23, 22);
+            this.label24.Location = new System.Drawing.Point(70, 22);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(43, 16);
             this.label24.TabIndex = 0;
@@ -1851,7 +1852,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label25.ForeColor = System.Drawing.SystemColors.Control;
-            this.label25.Location = new System.Drawing.Point(369, 22);
+            this.label25.Location = new System.Drawing.Point(436, 22);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(81, 16);
             this.label25.TabIndex = 1;
@@ -2183,6 +2184,10 @@
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker4;
         private DateTimePicker dateTimePicker3;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn n;
+        private DataGridViewTextBoxColumn Tipo;
+        private DataGridViewTextBoxColumn Descripcion;
         private DataGridViewTextBoxColumn idxd;
         private DataGridViewTextBoxColumn n2;
         private DataGridViewTextBoxColumn Titulo;
@@ -2190,9 +2195,5 @@
         private DataGridViewTextBoxColumn descripcionxd;
         private DataGridViewTextBoxColumn URL;
         private DataGridViewTextBoxColumn Fecha;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn n;
-        private DataGridViewTextBoxColumn Tipo;
-        private DataGridViewTextBoxColumn Descripcion;
     }
 }

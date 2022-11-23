@@ -1060,14 +1060,14 @@ namespace Sistema_de_sanciones
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "quitar";
             Ver.Name = "quitar";
-            Ver.Width = 86;
+            Ver.Width = 108;
             Ver.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(Ver);
             //dataGridView2.Columns.Add(Ver);
             DataGridViewButtonColumn Ver2 = new DataGridViewButtonColumn();
             Ver2.HeaderText = "quitar";
             Ver2.Name = "quitar";
-            Ver2.Width = 86;
+            Ver2.Width = 109;
             Ver2.FlatStyle = FlatStyle.Flat;
             dataGridView2.Columns.Add(Ver2);
         }
@@ -1698,7 +1698,11 @@ namespace Sistema_de_sanciones
             listaDocsPS = conPS.obtenerDocumentosPS(idPs);
             for (var i = 0; i < listaDocsPS.Count; i++)
             {
-                dataGridView2.Rows.Add(listaDocsPS[i].Id, "0", listaDocsPS[i].tituloDocumento, listaDocsPS[i].tipoDocumento, listaDocsPS[i].descripcionDocumento, listaDocsPS[i].urlDocumento, listaDocsPS[i].fechaDocumento);
+                String a = (listaDocsPS[i].fechaDocumento).Remove(10, 15).Remove(0, 6);
+                String m = (listaDocsPS[i].fechaDocumento).Remove(5, 20).Remove(0, 3);
+                String d = (listaDocsPS[i].fechaDocumento).Remove(2, 23);
+                String f = a + "-" + m + "-" + d;
+                dataGridView2.Rows.Add(listaDocsPS[i].Id, "0", listaDocsPS[i].tituloDocumento, listaDocsPS[i].tipoDocumento, listaDocsPS[i].descripcionDocumento, listaDocsPS[i].urlDocumento, f);
 
             }
 
