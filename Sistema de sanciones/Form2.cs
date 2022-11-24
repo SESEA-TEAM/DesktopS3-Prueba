@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Sistema_de_sanciones.ConexionBD;
+using Sistema_de_sanciones.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,11 +14,16 @@ using WinFormsApp1;
 
 namespace Sistema_de_sanciones
 {
+    
     public partial class Form2 : Form
+     
     {
+        logout log = new logout();
         private Login logHandler;
         int t;
-        public Form2(Login log, string nombre, int tipo)
+        int idper;
+        private Conexion ConexionBD = new Conexion();
+        public Form2(Login log, string nombre, int tipo, int id)
         {
             InitializeComponent();
             customDesing();
@@ -23,6 +31,7 @@ namespace Sistema_de_sanciones
             t= tipo;
             tipoUser();
             logHandler = log;
+            idper= id;
         }
         private void customDesing()
         {
@@ -133,8 +142,10 @@ namespace Sistema_de_sanciones
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            Login inicioSesion = new Login();
-            inicioSesion.Show();
+            log.logoutx(idper);
+            //Login inicioSesion = new Login();
+            //inicioSesion.Show();
+            logHandler.Show();
             this.Hide();
         }
 
@@ -197,20 +208,26 @@ namespace Sistema_de_sanciones
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Login inicioSesion = new Login();
-            inicioSesion.Show();
-            Close();
+            log.logoutx(idper);
+            //Login inicioSesion = new Login();
+            //inicioSesion.Show();
+            logHandler.Show();
+            this.Hide();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Login inicioSesion = new Login();
-            inicioSesion.Show();
-            Close();
+            log.logoutx(idper);
+            //Login inicioSesion = new Login();
+            //inicioSesion.Show();
+            logHandler.Show();
+            this.Hide();
         }
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
+
+            log.logoutx(idper);
             logHandler.Close();
         }
     }
