@@ -44,14 +44,14 @@ namespace Sistema_de_sanciones.Controladores
 
         public void aCSV (DataGridView dg, string ar)
         {
-            //test to see if the DataGridView has any rows
+            //prueba que el datagrid no este vacio
             if (dg.RowCount > 0)
             {
                 string value = "";
                 DataGridViewRow dr = new DataGridViewRow();
                 StreamWriter swOut = new StreamWriter(ar);
 
-                //write header rows to csv
+                //escribe el encabezado de las columnas
                 for (int i = 0; i <= dg.Columns.Count - 1; i++)
                 {
                     if (i > 0)

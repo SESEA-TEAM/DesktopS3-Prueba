@@ -13,14 +13,16 @@ namespace Sistema_de_sanciones
 {
     public partial class Form2 : Form
     {
+        private Login logHandler;
         int t;
-        public Form2(string nombre, int tipo)
+        public Form2(Login log, string nombre, int tipo)
         {
             InitializeComponent();
             customDesing();
             lblMensajeCap.Text = nombre;
             t= tipo;
             tipoUser();
+            logHandler = log;
         }
         private void customDesing()
         {
@@ -205,6 +207,11 @@ namespace Sistema_de_sanciones
             Login inicioSesion = new Login();
             inicioSesion.Show();
             Close();
+        }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            logHandler.Close();
         }
     }
 }

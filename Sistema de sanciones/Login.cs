@@ -69,7 +69,6 @@ namespace Sistema_de_sanciones
             }
         }
 
-
         public void logear(string usuario, string contrasena)
 
         {
@@ -88,14 +87,15 @@ namespace Sistema_de_sanciones
                 if (dt.Rows.Count == 1)
                 {
                     this.Hide();
+                    //this.Close();
                     if (dt.Rows[0][1].ToString() == "Administrador")
                     {
-                        new Form2(dt.Rows[0][0].ToString(),0).Show();
+                        new Form2(this,dt.Rows[0][0].ToString(),0).Show();
 
                     }
                     else if (dt.Rows[0][1].ToString() == "Capturador")
                     {
-                        new Form2(dt.Rows[0][0].ToString(),1).Show();
+                        new Form2(this,dt.Rows[0][0].ToString(),1).Show();
                     }
                 }
                 else
