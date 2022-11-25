@@ -49,6 +49,7 @@ namespace Sistema_de_sanciones
                 //panelMenu.Visible= false;
                 panel1.Visible = true;
                 panel1.Enabled = true;
+                label5.Text = "Administrador";
             }
             else if (t== 1)
             {
@@ -56,6 +57,7 @@ namespace Sistema_de_sanciones
                 panelMenu.Visible = true;
                 panel1.Visible = false;
                 panel1.Enabled= false;
+                label5.Text = "Capturador de datos";
             }
         }
 

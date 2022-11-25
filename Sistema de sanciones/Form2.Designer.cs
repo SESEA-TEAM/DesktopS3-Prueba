@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.buttonAdministrador = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonParticular = new System.Windows.Forms.Button();
@@ -39,7 +38,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.lblMensajeCap = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -59,6 +57,7 @@
             this.buttonCapturarPublicos = new System.Windows.Forms.Button();
             this.buttonCaptura = new System.Windows.Forms.Button();
             this.panelMenuUser = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainPanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -70,6 +69,7 @@
             this.panelMenu.SuspendLayout();
             this.panelMenuProv.SuspendLayout();
             this.panelMenuUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAdministrador
@@ -169,9 +169,9 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.pictureBox3);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.lblMensajeCap);
-            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
@@ -186,7 +186,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label5.Location = new System.Drawing.Point(442, 235);
+            this.label5.Location = new System.Drawing.Point(524, 122);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(218, 24);
             this.label5.TabIndex = 10;
@@ -203,23 +203,13 @@
             this.lblMensajeCap.Size = new System.Drawing.Size(0, 24);
             this.lblMensajeCap.TabIndex = 7;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(375, 335);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(455, 264);
-            this.label3.TabIndex = 6;
-            this.label3.Text = resources.GetString("label3.Text");
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label1.Location = new System.Drawing.Point(548, 165);
+            this.label1.Location = new System.Drawing.Point(548, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 32);
             this.label1.TabIndex = 4;
@@ -481,6 +471,16 @@
             this.panelMenuUser.Size = new System.Drawing.Size(199, 78);
             this.panelMenuUser.TabIndex = 3;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Sistema_de_sanciones.Properties.Resources.Logo_SEA390X194_Mesa_de_trabajo_1_Mesa_de_trabajo_1;
+            this.pictureBox3.Location = new System.Drawing.Point(270, 237);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(657, 331);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -503,6 +503,7 @@
             this.panelMenu.ResumeLayout(false);
             this.panelMenuProv.ResumeLayout(false);
             this.panelMenuUser.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -523,7 +524,6 @@
         private Button buttonCaptura;
         private TabControl tabControl1;
         private TabPage tabPage1;
-        private Label label3;
         private Label label2;
         private Label label1;
         private Label lblMensajeCap;
@@ -540,5 +540,6 @@
         private Button buttonUsuarios;
         private PictureBox pictureBox2;
         private Button btnCerrarSesion;
+        private PictureBox pictureBox3;
     }
 }
