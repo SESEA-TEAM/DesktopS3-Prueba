@@ -9,6 +9,7 @@ using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography.Pkcs;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,6 +20,7 @@ namespace Sistema_de_sanciones
         String? f1, f2, f3, f4;
         controlador1PS conPS = new controlador1PS();
         int idPs;
+        private Particular ParticularS = new Particular();
 
         //estas listas las puedo llenar desde un inicio con sus valores
         List<modeloTipoDocumento> lDocumentos = new controladorTipoDocumento().obtenerListaDocumentosPS();
@@ -180,7 +182,19 @@ namespace Sistema_de_sanciones
             }
             else
             {
-                errorProvider1.SetError(textBox18, String.Empty);
+                textBox18.ForeColor = Color.Black;
+                Regex RFC = new Regex(@"^([A-ZÑ&]{4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$");
+
+                Match match = RFC.Match(textBox18.Texts);
+
+                if (match.Success)
+                {
+                    errorProvider1.SetError(textBox18, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox18, "Se necesita ingresar un RFC válido");
+                }
 
             }
         }
@@ -405,6 +419,21 @@ namespace Sistema_de_sanciones
                 textBox13.Texts = "URL";
                 textBox13.ForeColor = Color.Gray;
             }
+            else
+            {
+                Regex URLS = new Regex(@"^https?:\/\/[\w\-]+(\.[\w\-]+)+[#?]?.*$");
+
+                Match match = URLS.Match(textBox13.Texts);
+
+                if (match.Success)
+                {
+                    errorProvider1.SetError(textBox13, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox13, "Ingrese un URL válido");
+                }
+            }
         }
 
         private void textBox14_Enter(object sender, EventArgs e)
@@ -468,8 +497,18 @@ namespace Sistema_de_sanciones
             }
             else
             {
-                errorProvider1.SetError(textBox3, String.Empty);
+                textBox3.ForeColor = Color.Black;
+                Regex apellidoP = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
+                Match matchP = apellidoP.Match(textBox3.Texts);
 
+                if (matchP.Success)
+                {
+                    errorProvider1.SetError(textBox3, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox3, "Se necesita un apellido válido");
+                }
             }
         }
 
@@ -488,6 +527,21 @@ namespace Sistema_de_sanciones
             {
                 textBox2.Texts = "Segundo apellido";
                 textBox2.ForeColor = Color.Gray;
+            }
+            else
+            {
+                textBox2.ForeColor = Color.Black;
+                Regex apellidoM = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
+                Match matchM = apellidoM.Match(textBox2.Texts);
+
+                if (matchM.Success)
+                {
+                    errorProvider1.SetError(textBox2, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox2, "Se necesita un apellido válido");
+                }
             }
         }
 
@@ -597,6 +651,21 @@ namespace Sistema_de_sanciones
                 textBox26.Texts = "Teléfono";
                 textBox26.ForeColor = Color.Gray;
             }
+            else
+            {
+                textBox26.ForeColor = Color.Black;
+                Regex telefono = new Regex(@"^\d{10}$");
+                Match matchT = telefono.Match(textBox26.Texts);
+
+                if (matchT.Success)
+                {
+                    errorProvider1.SetError(textBox26, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox26, "Se necesita un teléfono válido");
+                }
+            }
         }
 
         private void textBox25_Enter(object sender, EventArgs e)
@@ -633,6 +702,21 @@ namespace Sistema_de_sanciones
                 textBox31.Texts = "Nombre(s)";
                 textBox31.ForeColor = Color.Gray;
             }
+            else
+            {
+                textBox31.ForeColor = Color.Black;
+                Regex nombre = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
+                Match matchN = nombre.Match(textBox31.Texts);
+
+                if (matchN.Success)
+                {
+                    errorProvider1.SetError(textBox31, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox31, "Se necesita un nombre válido");
+                }
+            }
         }
 
         private void textBox30_Enter(object sender, EventArgs e)
@@ -650,6 +734,21 @@ namespace Sistema_de_sanciones
             {
                 textBox30.Texts = "Primer apellido";
                 textBox30.ForeColor = Color.Gray;
+            }
+            else
+            {
+                textBox30.ForeColor = Color.Black;
+                Regex apellidoP = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
+                Match matchP = apellidoP.Match(textBox30.Texts);
+
+                if (matchP.Success)
+                {
+                    errorProvider1.SetError(textBox30, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox30, "Se necesita un apellido válido");
+                }
             }
         }
 
@@ -669,6 +768,21 @@ namespace Sistema_de_sanciones
                 textBox29.Texts = "Segundo apellido";
                 textBox29.ForeColor = Color.Gray;
             }
+            else
+            {
+                textBox29.ForeColor = Color.Black;
+                Regex apellidoM = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
+                Match matchM = apellidoM.Match(textBox29.Texts);
+
+                if (matchM.Success)
+                {
+                    errorProvider1.SetError(textBox29, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox29, "Se necesita un apellido válido");
+                }
+            }
         }
 
         private void textBox28_Enter(object sender, EventArgs e)
@@ -687,6 +801,22 @@ namespace Sistema_de_sanciones
                 textBox28.Texts = "CURP";
                 textBox28.ForeColor = Color.Gray;
             }
+            else
+            {
+                textBox28.ForeColor = Color.Black;
+                Regex CURP = new Regex(@"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$");
+
+                Match match = CURP.Match(textBox28.Texts);
+
+                if (match.Success)
+                {
+                    errorProvider1.SetError(textBox28, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox28, "Se necesita ingresar un CURP válido");
+                }
+            }
         }
 
         private void textBox35_Enter(object sender, EventArgs e)
@@ -695,6 +825,21 @@ namespace Sistema_de_sanciones
             {
                 textBox35.Texts = "";
                 textBox35.ForeColor = Color.Black;
+            }
+            else
+            {
+                textBox35.ForeColor = Color.Black;
+                Regex nombre = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
+                Match matchN = nombre.Match(textBox35.Texts);
+
+                if (matchN.Success)
+                {
+                    errorProvider1.SetError(textBox35, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox35, "Se necesita un nombre válido");
+                }
             }
         }
 
@@ -723,6 +868,21 @@ namespace Sistema_de_sanciones
                 textBox32.Texts = "Primer apellido";
                 textBox32.ForeColor = Color.Gray;
             }
+            else
+            {
+                textBox32.ForeColor = Color.Black;
+                Regex apellidoP = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
+                Match matchP = apellidoP.Match(textBox32.Texts);
+
+                if (matchP.Success)
+                {
+                    errorProvider1.SetError(textBox32, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox32, "Se necesita un apellido válido");
+                }
+            }
         }
 
         private void textBox27_Enter(object sender, EventArgs e)
@@ -741,6 +901,21 @@ namespace Sistema_de_sanciones
                 textBox27.Texts = "Segundo apellido";
                 textBox27.ForeColor = Color.Gray;
             }
+            else
+            {
+                textBox27.ForeColor = Color.Black;
+                Regex apellidoM = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
+                Match matchM = apellidoM.Match(textBox27.Texts);
+
+                if (matchM.Success)
+                {
+                    errorProvider1.SetError(textBox27, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox27, "Se necesita un apellido válido");
+                }
+            }
         }
 
         private void textBox15_Enter(object sender, EventArgs e)
@@ -758,6 +933,22 @@ namespace Sistema_de_sanciones
             {
                 textBox15.Texts = "CURP";
                 textBox15.ForeColor = Color.Gray;
+            }
+            else
+            {
+                textBox15.ForeColor = Color.Black;
+                Regex CURP = new Regex(@"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$");
+
+                Match match = CURP.Match(textBox15.Texts);
+
+                if (match.Success)
+                {
+                    errorProvider1.SetError(textBox15, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox15, "Se necesita ingresar un CURP válido");
+                }
             }
         }
 
@@ -889,6 +1080,22 @@ namespace Sistema_de_sanciones
             {
                 textBox34.Texts = "Código Postal";
                 textBox34.ForeColor = Color.Gray;
+            }
+            else
+            {
+                textBox34.ForeColor = Color.Black;
+                Regex ZIPC = new Regex(@"^[0-9]{5}(?:-[0-9]{4})?$");
+
+                Match match = ZIPC.Match(textBox34.Texts);
+
+                if (match.Success)
+                {
+                    errorProvider1.SetError(textBox34, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox34, "Se necesita ingresar un código postal válido");
+                }
             }
         }
 
@@ -1193,6 +1400,8 @@ namespace Sistema_de_sanciones
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Regex URLS = new Regex(@"^https?:\/\/[\w\-]+(\.[\w\-]+)+[#?]?.*$");
+            Match match = URLS.Match(textBox44.Texts);
             if (dateTimePicker3.Text == "2000-01-01")
             {
                 f4 = null;
@@ -1222,6 +1431,10 @@ namespace Sistema_de_sanciones
                         if (textBox44.Texts == "URL*")
                         {
                             errorProvider1.SetError(textBox44, "Se necesita introducir el URL del documento");
+                        }
+                        else if (!match.Success)
+                        {
+                            errorProvider1.SetError(textBox44, "Ingrese un URL válido");
                         }
                         else
                         {
@@ -1280,6 +1493,106 @@ namespace Sistema_de_sanciones
         {
             this.Close();
             form2Handler.ListaPS();
+        }
+
+        private void textBox12_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.textKeyPress(e);
+        }
+
+        private void textBox9_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.textKeyPress(e);
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.textKeyPress(e);
+        }
+
+        private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.textKeyPress(e);
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.textKeyPress(e);
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.textKeyPress(e);
+        }
+
+        private void textBox24_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.validarNumeros(e);
+        }
+
+        private void textBox26_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.validarNumeros(e);
+        }
+
+        private void textBox31_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.validarNumeros(e);
+        }
+
+        private void textBox30_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.validarNumeros(e);
+        }
+
+        private void textBox29_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.validarNumeros(e);
+        }
+
+        private void textBox35_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.validarNumeros(e);
+        }
+
+        private void textBox32_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.validarNumeros(e);
+        }
+
+        private void textBox27_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.validarNumeros(e);
+        }
+
+        private void textBox37_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.validarNumeros(e);
+        }
+
+        private void textBox41_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.validarNumeros(e);
+        }
+
+        private void textBox42_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.validarNumeros(e);
+        }
+
+        private void textBox34_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.validarNumeros(e);
+        }
+
+        private void textBox33_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.validarNumeros(e);
+        }
+
+        private void textBox36_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ParticularS.textBoxEvent.validarNumeros(e);
         }
 
         private void CargarDG()
@@ -1710,11 +2023,25 @@ namespace Sistema_de_sanciones
 
         private bool modificar()
         {
-            bool r = false;
-            if (textBox17.Texts == "Causa, motivo o hechos*" || textBox12.Texts == "Tipo falta*" || textBox7.Texts == "Nombre(s)*" || textBox5.Texts == "Autoridad sancionadora*" || textBox4.Texts == "Nombre(s)*" || textBox3.Texts == "Primer apellido*" || comboBox9.Text == "Tipo persona*" || textBox19.Texts == "Nombre(s)/Razón Social*" || textBox18.Texts == "RFC*" || textBox20.Texts == "Expediente*")
+            Regex ZIPC = new Regex(@"^[0-9]{5}(?:-[0-9]{4})?$");
+            Match matchZIPMX = ZIPC.Match(textBox34.Texts);
+            Regex RFC = new Regex(@"^([A-ZÑ&]{4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$");
+            Match matchRFC = RFC.Match(textBox18.Texts);
+            Regex nombre = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
+            Match matchN = nombre.Match(textBox4.Texts);
+            Regex apellidoP = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
+            Match matchP = apellidoP.Match(textBox3.Texts);
+            Regex apellidoM = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
+            Match matchM = apellidoM.Match(textBox2.Texts);
+            Regex CURP = new Regex(@"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$");
+            Match matchC = CURP.Match(textBox28.Texts);
+            Regex URLS = new Regex(@"^https?:\/\/[\w\-]+(\.[\w\-]+)+[#?]?.*$");
+            Match matchU = URLS.Match(textBox13.Texts);
+            bool r = true;
+            if (textBox17.Texts == "Causa, motivo o hechos*" || textBox18.Texts == "RFC*" || textBox20.Texts == "Expediente*" || textBox12.Texts == "Tipo falta*" || textBox7.Texts == "Nombre(s)*" || textBox5.Texts == "Autoridad sancionadora*" || textBox4.Texts == "Nombre(s)*" || textBox3.Texts == "Primer apellido*" || comboBox9.Text == "Tipo persona*" || textBox19.Texts == "Nombre(s)/Razón Social*")
             {
                 MessageBox.Show("Debe completar los campos obligatorios para poder hacer el registro");
-
+                r = false;
             }
             else
             {
@@ -1724,6 +2051,34 @@ namespace Sistema_de_sanciones
                 }
                 else
                 {
+                    if (matchRFC.Success)
+                    {
+                        errorProvider1.SetError(textBox18, String.Empty);
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textBox18, "Se necesita un RFC válido");
+                        r = false;
+                    }
+                    if (matchN.Success)
+                    {
+                        errorProvider1.SetError(textBox4, String.Empty);
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textBox4, "Se necesita un nombre válido");
+                        r = false;
+                    }
+                    if (matchP.Success)
+                    {
+                        errorProvider1.SetError(textBox3, String.Empty);
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textBox3, "Se necesita un apellido válido");
+                        r = false;
+                    }
+
                     if (dateTimePicker4.Text == "2000-01-01")
                     {
                         f1 = null;
@@ -1797,13 +2152,22 @@ namespace Sistema_de_sanciones
                         {
                             modPS.vialidad = Convert.ToInt32(v.id);
                         }
-                        if (textBox34.Texts == "Código postal")
+                        if (textBox34.Texts == "Código Postal")
                         {
 
                         }
                         else
                         {
-                            modPS.codigoPostalMX = textBox34.Texts;
+                            if (matchZIPMX.Success)
+                            {
+                                modPS.codigoPostalMX = textBox34.Texts;
+                                errorProvider1.SetError(textBox34, String.Empty);
+                            }
+                            else
+                            {
+                                errorProvider1.SetError(textBox34, "Se necesita un código postal válido");
+                                r = false;
+                            }
                         }
                         if (textBox33.Texts == "Número exterior")
                         {
@@ -1962,7 +2326,16 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        modPS.urlResolucion = textBox13.Texts;
+                        if (matchU.Success)
+                        {
+                            modPS.urlResolucion = textBox13.Texts;
+                            errorProvider1.SetError(textBox13, String.Empty);
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(textBox13, "Se necesita un URL válido");
+                            r = false;
+                        }
                     }
                     if (textBox2.Texts == "Segundo apellido")
                     {
@@ -1978,7 +2351,16 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        modPS.plazoInhabilitacion = textBox23.Texts;
+                        if (matchM.Success)
+                        {
+                            modPS.plazoInhabilitacion = textBox23.Texts;
+                            errorProvider1.SetError(textBox23, String.Empty);
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(textBox23, "Se necesita un apellido válido");
+                            r = false;
+                        }
                     }
                     if (textBox24.Texts == "Monto")
                     {
@@ -2010,7 +2392,16 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        modPS.nombresDG = textBox31.Texts;
+                        if (matchN.Success)
+                        {
+                            modPS.nombresDG = textBox31.Texts;
+                            errorProvider1.SetError(textBox31, String.Empty);
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(textBox31, "Se necesita un nombre válido");
+                            r = false;
+                        }
                     }
                     if (textBox30.Texts == "Primer apellido")
                     {
@@ -2018,7 +2409,16 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        modPS.primerApellidoDG = textBox30.Texts;
+                        if (matchP.Success)
+                        {
+                            modPS.primerApellidoDG = textBox30.Texts;
+                            errorProvider1.SetError(textBox30, String.Empty);
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(textBox30, "Se necesita un apellido válido");
+                            r = false;
+                        }
                     }
                     if (textBox29.Texts == "Segundo apellido")
                     {
@@ -2026,7 +2426,16 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        modPS.segundoApellidoDG = textBox29.Texts;
+                        if (matchM.Success)
+                        {
+                            modPS.segundoApellidoDG = textBox29.Texts;
+                            errorProvider1.SetError(textBox29, String.Empty);
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(textBox29, "Se necesita un apellido válido");
+                            r = false;
+                        }
                     }
                     if (textBox28.Texts == "CURP")
                     {
@@ -2034,7 +2443,16 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        modPS.curpDG = textBox28.Texts;
+                        if (matchC.Success)
+                        {
+                            modPS.curpDG = textBox28.Texts;
+                            errorProvider1.SetError(textBox28, String.Empty);
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(textBox28, "Se necesita un CURP válido");
+                            r = false;
+                        }
                     }
                     if (textBox35.Texts == "Nombre(s)")
                     {
@@ -2042,7 +2460,16 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        modPS.nombresAL = textBox35.Texts;
+                        if (matchN.Success)
+                        {
+                            modPS.nombresAL = textBox35.Texts;
+                            errorProvider1.SetError(textBox35, String.Empty);
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(textBox35, "Se necesita un nombre válido");
+                            r = false;
+                        }
                     }
                     if (textBox32.Texts == "Primer apellido")
                     {
@@ -2050,7 +2477,16 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        modPS.primerApellidoAL = textBox32.Texts;
+                        if (matchP.Success)
+                        {
+                            modPS.primerApellidoAL = textBox32.Texts;
+                            errorProvider1.SetError(textBox32, String.Empty);
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(textBox32, "Se necesita un apellido válido");
+                            r = false;
+                        }
                     }
                     if (textBox27.Texts == "Segundo apellido")
                     {
@@ -2058,7 +2494,16 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        modPS.segundoApellidoAL = textBox27.Texts;
+                        if (matchM.Success)
+                        {
+                            modPS.segundoApellidoAL = textBox27.Texts;
+                            errorProvider1.SetError(textBox27, String.Empty);
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(textBox27, "Se necesita un apellido válido");
+                            r = false;
+                        }
                     }
                     if (textBox15.Texts == "CURP")
                     {
@@ -2066,8 +2511,18 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        modPS.curpAL = textBox15.Texts;
+                        if (matchC.Success)
+                        {
+                            modPS.curpAL = textBox15.Texts;
+                            errorProvider1.SetError(textBox15, String.Empty);
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(textBox15, "Se necesita un CURP válido");
+                            r = false;
+                        }
                     }
+
                     modPS.causaMotivoHechos = textBox17.Texts;
                     modPS.tipoFalta = textBox12.Texts;
                     modPS.nombreInstitucionDependencia = textBox7.Texts;
@@ -2076,31 +2531,44 @@ namespace Sistema_de_sanciones
                     modPS.primerApellidoRS = textBox3.Texts;
                     modPS.tipoPersona = comboBox9.Text;
                     modPS.nombreRazonSocial = textBox19.Texts;
+                    modPS.expediente = textBox20.Texts;
+                    modPS.rfcPS = textBox18.Texts;
 
                     modPS.fechaResolucion = f1;
                     modPS.fechaInicialInhabilitacion = f2;
                     modPS.fechaFinalInhabilitacion = f3;
 
-                    if (conPS.modificarPS(modPS, idPs)){ r = true ; } else { r = false ; }
-
-                    foreach (DataGridViewRow fila in dataGridView1.Rows)
+                   
+                        
+                    if (r == true)
                     {
-                        if (!(fila.Cells["n"].Value.ToString() == "0"))
-                        {
-                            if (conPS.agregarSancionPS(Convert.ToInt16(fila.Cells["ID"].Value), Convert.ToString(fila.Cells["Descripcion"].Value), idPs)){ r = true; } else { r = false ; }
-                        }
+                        if (conPS.modificarPS(modPS, idPs))
+                        { 
+                            r = true;
+                            foreach (DataGridViewRow fila in dataGridView1.Rows)
+                            {
+                                if (!(fila.Cells["n"].Value.ToString() == "0"))
+                                {
+                                    if (conPS.agregarSancionPS(Convert.ToInt16(fila.Cells["ID"].Value), Convert.ToString(fila.Cells["Descripcion"].Value), idPs)) { r = true; } else { r = false; }
+                                }
 
+                            }
+
+                            foreach (DataGridViewRow fila2 in dataGridView2.Rows)
+                            {
+                                if (!(fila2.Cells["n2"].Value.ToString() == "0"))
+                                {
+                                    if (conPS.agregarDocumentoPS(Convert.ToInt16(fila2.Cells["idxd"].Value), Convert.ToString(fila2.Cells["Titulo"].Value), Convert.ToString(fila2.Cells["descripcionxd"].Value), Convert.ToString(fila2.Cells["URL"].Value), Convert.ToString(fila2.Cells["Fecha"].Value), idPs)) { r = true; } else { r = false; }
+                                }
+
+                            }
+                        } 
+                        else { r = false ; }
                     }
-
-                    foreach (DataGridViewRow fila2 in dataGridView2.Rows)
+                    else
                     {
-                        if (!(fila2.Cells["n2"].Value.ToString() == "0"))
-                        {
-                            if (conPS.agregarDocumentoPS(Convert.ToInt16(fila2.Cells["idxd"].Value), Convert.ToString(fila2.Cells["Titulo"].Value), Convert.ToString(fila2.Cells["descripcionxd"].Value), Convert.ToString(fila2.Cells["URL"].Value), Convert.ToString(fila2.Cells["Fecha"].Value), idPs)) { r = true; } else { r = false; }
-                        }
-
+                        MessageBox.Show("Debe completar los campos obligatorios para poder hacer el registro");
                     }
-
                 }
             }
             return r;
