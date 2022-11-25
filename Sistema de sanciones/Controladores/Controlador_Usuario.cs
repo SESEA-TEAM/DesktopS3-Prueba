@@ -75,7 +75,9 @@ namespace Sistema_de_sanciones.Controladores
             ConexionBD.CerrarConexion();
         }
 
-        public void EditarUsuario(int id, string nombre, string apellidoUno, string apellidoDos, string cargo, string correoElectronico, string telefono, string extension, string usuario, string sistema, int proveedorDatos, string estatus)
+        public void EditarUsuario(int id, string nombre, string apellidoUno, string apellidoDos, string cargo, 
+            string correoElectronico, string telefono, string extension, string usuario, int proveedorDatos, 
+            string estatus)
         {
             SqlCommand comando = new SqlCommand("Editar_usuario");
             comando.Connection = ConexionBD.AbrirConexion();
@@ -89,7 +91,6 @@ namespace Sistema_de_sanciones.Controladores
             comando.Parameters.AddWithValue("@Telefono", telefono);
             comando.Parameters.AddWithValue("@Extension", extension);
             comando.Parameters.AddWithValue("@Usuario", usuario);
-            comando.Parameters.AddWithValue("@Sistemas", sistema);
             comando.Parameters.AddWithValue("@ProveedorDatos", proveedorDatos);
             comando.Parameters.AddWithValue("@Estatus", estatus);
             comando.ExecuteNonQuery();

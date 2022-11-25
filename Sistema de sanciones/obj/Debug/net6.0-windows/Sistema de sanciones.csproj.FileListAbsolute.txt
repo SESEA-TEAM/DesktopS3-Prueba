@@ -320,3 +320,48 @@ C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\ref\Sistema de sanciones.dll
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.pdb
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.genruntimeconfig.cache
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\Sistema de sanciones.exe
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\Sistema de sanciones.deps.json
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\Sistema de sanciones.runtimeconfig.json
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\Sistema de sanciones.dll
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\Sistema de sanciones.pdb
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.csproj.AssemblyReference.cache
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CapturaPS.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Captura_SPS.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CargaMasiva.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Crear_Proveedores.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Crear_Usuarios.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Datos_PS.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Datos_SPS.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Editar_Proveedor.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Editar_Usuarios.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Form2.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Home.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listado_PS.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\WinFormsApp1.FormListadoSPS.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listar_Proveedores.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listar_Usuarios.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Login.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modPS.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modSPS.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Properties.Resources.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.ReporteBitacora.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Templates.RjComboBox.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Templates.TextBox.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.csproj.GenerateResource.cache
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.AssemblyInfoInputs.cache
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.AssemblyInfo.cs
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.csproj.CoreCompileInputs.cache
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.csproj.CopyComplete
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.dll
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\refint\Sistema de sanciones.dll
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.pdb
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.genruntimeconfig.cache
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\ref\Sistema de sanciones.dll
