@@ -74,7 +74,6 @@ C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Crear_Proveedores.resources
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Crear_Usuarios.resources
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Editar_Proveedor.resources
-C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Form1.resources
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Home.resources
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listar_Proveedores.resources
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listar_Usuarios.resources
@@ -92,7 +91,6 @@ C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.pdb
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.genruntimeconfig.cache
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\ref\Sistema de sanciones.dll
-C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listado_SPS.resources
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\Sistema de sanciones.exe
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\Sistema de sanciones.deps.json
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\Sistema de sanciones.runtimeconfig.json
@@ -365,3 +363,24 @@ C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\
 C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.pdb
 C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.genruntimeconfig.cache
 C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\ref\Sistema de sanciones.dll
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CapturaPS.resources
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Captura_SPS.resources
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CargaMasiva.resources
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Datos_PS.resources
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Datos_SPS.resources
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Editar_Usuarios.resources
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Form2.resources
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listado_PS.resources
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\WinFormsApp1.FormListadoSPS.resources
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modPS.resources
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modSPS.resources
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.ReporteBitacora.resources
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.dll
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.DataSet.dll
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.csproj.CopyComplete
