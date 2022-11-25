@@ -384,3 +384,5 @@ C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\cacam\OneDrive\Documentos\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.csproj.CopyComplete
+C:\Users\Invitado2022\Documents\GitHub\Nueva carpeta\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.dll
+C:\Users\Invitado2022\Documents\GitHub\Nueva carpeta\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.DataSet.dll

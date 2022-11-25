@@ -65,18 +65,18 @@ namespace Sistema_de_sanciones
             dataGridView1.DataSource = dsTabla;
             
             dataGridView1.Columns[0].Visible = false; //Desactiva la columna ID
-            dataGridView1.Columns[1].Width = 270;     //Se asigna tamaño a la columna Nombre Completo
-            dataGridView1.Columns[2].Visible = false; //Desactiva la columna Nombre
-            dataGridView1.Columns[3].Visible = false; //Desactiva la columna Primer Apellido
-            dataGridView1.Columns[4].Visible = false; //Desactiva la columna Segundo Apellido
-            dataGridView1.Columns[5].Visible = false; //Desactiva la columna Cargo
-            dataGridView1.Columns[6].Width = 200;     //Se le asigna tamaño a la columna Usuario
-            dataGridView1.Columns[7].Width = 200;     //Se le asigna tamaño a la columna correo
-            dataGridView1.Columns[8].Width = 230;     //Se le asigna tamaño a la columna Proveedor
-            dataGridView1.Columns[9].Visible = false; //Desactiva la columna Teléfono
-            dataGridView1.Columns[10].Visible = false; //Desactiva la columna Extensión
-            dataGridView1.Columns[11].Visible = false; //Desactiva la columna ComboSistemas
-            dataGridView1.Columns[12].Visible = false; //Desactiva la columna Sistemas
+            dataGridView1.Columns[1].Visible = false; //Desactiva la columna IDUsuario
+            dataGridView1.Columns[2].Width = 270;     //Se asigna tamaño a la columna Nombre Completo
+            dataGridView1.Columns[3].Visible = false; //Desactiva la columna Nombre
+            dataGridView1.Columns[4].Visible = false; //Desactiva la columna Primer Apellido
+            dataGridView1.Columns[5].Visible = false; //Desactiva la columna Segundo Apellido
+            dataGridView1.Columns[6].Visible = false; //Desactiva la columna Cargo
+            dataGridView1.Columns[7].Width = 200;     //Se le asigna tamaño a la columna Usuario
+            dataGridView1.Columns[8].Width = 200;     //Se le asigna tamaño a la columna correo
+            dataGridView1.Columns[9].Width = 230;     //Se le asigna tamaño a la columna Proveedor
+            dataGridView1.Columns[10].Visible = false; //Desactiva la columna Teléfono
+            dataGridView1.Columns[11].Visible = false; //Desactiva la columna Extensión
+            dataGridView1.Columns[12].Visible = false; //Desactiva la columna ComboSistemas
             dataGridView1.Columns[13].Visible = false; //Desactiva columna fecha alta
             dataGridView1.Columns[14].Visible = false; //Desactiva columna fecha actualización
 
@@ -154,7 +154,7 @@ namespace Sistema_de_sanciones
                     DialogResult resut = MessageBox.Show("Esta seguro de eliminar el registro?", "Warning", MessageBoxButtons.YesNo);
                     if (resut == DialogResult.Yes)
                     {
-                        objp.EliminarUsuario(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value)); //Manda a llamar le procedimiento almacenado Eliminar Usuario.
+                        objp.EliminarUsuario(Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value)); //Manda a llamar le procedimiento almacenado Eliminar Usuario.
                         dataGridView1.Rows.Remove(dataGridView1.CurrentRow); //Se elimina la fila seleccionada del DataGridView.
                         MessageBox.Show("Registro Eliminado"); //Muestra el siguiente mensaje.
                     }
@@ -170,16 +170,16 @@ namespace Sistema_de_sanciones
                 if (dataGridView1.SelectedRows.Count > 0) //Si hay mas de 0 filas entonces procedera a ejecutar el siguiente codigo.
                 {
                     //Manda a llamar todos los datos del Usuario a la otra pantalla para proceder a su correspondiente edición
-                    id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                    txtNombres.Texts = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    textPApellido.Texts = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    textSApellido.Texts = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    textCargo.Texts = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                    textUser.Texts = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    textCorreo.Texts = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                    comboProveedor.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                    textTelefono.Texts = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                    textExtension.Texts = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                    id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
+                    txtNombres.Texts = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    textPApellido.Texts = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    textSApellido.Texts = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    textCargo.Texts = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                    textUser.Texts = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                    textCorreo.Texts = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                    comboProveedor.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                    textTelefono.Texts = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                    textExtension.Texts = dataGridView1.CurrentRow.Cells[11].Value.ToString();
                     comboEstatus.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
 
                     tabControl1.SelectedTab = EditarUsuarios;
@@ -194,20 +194,20 @@ namespace Sistema_de_sanciones
                 {
                     //Manda a llamar todos los datos del Usuario a la otra pantalla para proceder a su correspondiente edición
 
-                    id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                    textNombres.Texts = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    textPrimerApellido.Texts = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    textSegundoApellido.Texts = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    textCargo1.Texts = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                    textUserName.Texts = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                    textCorreoE.Texts = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                    comboProveedor1.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                    textNum.Texts = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                    textLada.Texts = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                    id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
+                    textNombres.Texts = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    textPrimerApellido.Texts = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    textSegundoApellido.Texts = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    textCargo1.Texts = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                    textUserName.Texts = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                    textCorreoE.Texts = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                    comboProveedor1.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                    textNum.Texts = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                    textLada.Texts = dataGridView1.CurrentRow.Cells[11].Value.ToString();
                     comboEstatus1.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
 
-                    fecha_Alta.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
-                    fechaActualizacion.Text = dataGridView1.CurrentRow.Cells[14].Value.ToString();
+                    fecha_Alta.Text = dataGridView1.CurrentRow.Cells[14].Value.ToString();
+                    fechaActualizacion.Text = dataGridView1.CurrentRow.Cells[15].Value.ToString();
 
                     tabControl1.SelectedTab = VerUsuario;
 
