@@ -370,6 +370,7 @@
             // 
             // pbMostrar
             // 
+            this.pbMostrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pbMostrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbMostrar.Image = global::Sistema_de_sanciones.Properties.Resources.ojo;
             this.pbMostrar.Location = new System.Drawing.Point(323, 311);
@@ -382,6 +383,7 @@
             // 
             // pbOcultar
             // 
+            this.pbOcultar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pbOcultar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbOcultar.Image = global::Sistema_de_sanciones.Properties.Resources.ojo_cruzado;
             this.pbOcultar.Location = new System.Drawing.Point(323, 311);
@@ -394,6 +396,7 @@
             // 
             // pbMostrar1
             // 
+            this.pbMostrar1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pbMostrar1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbMostrar1.Image = global::Sistema_de_sanciones.Properties.Resources.ojo;
             this.pbMostrar1.Location = new System.Drawing.Point(530, 311);
@@ -406,6 +409,7 @@
             // 
             // pbOcultar1
             // 
+            this.pbOcultar1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pbOcultar1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbOcultar1.Image = global::Sistema_de_sanciones.Properties.Resources.ojo_cruzado;
             this.pbOcultar1.Location = new System.Drawing.Point(530, 311);
