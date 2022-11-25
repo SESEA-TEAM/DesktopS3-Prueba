@@ -1267,7 +1267,7 @@ namespace Sistema_de_sanciones
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "quitar";
             Ver.Name = "quitar";
-            Ver.Width = 108;
+            Ver.Width = 106;
             Ver.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(Ver);
             //dataGridView2.Columns.Add(Ver);

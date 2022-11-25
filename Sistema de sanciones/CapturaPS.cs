@@ -1769,14 +1769,14 @@ namespace Sistema_de_sanciones
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "quitar";
             Ver.Name = "quitar";
-            Ver.Width = 86;
+            Ver.Width = 106;
             Ver.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(Ver);
             //dataGridView2.Columns.Add(Ver);
             DataGridViewButtonColumn Ver2 = new DataGridViewButtonColumn();
             Ver2.HeaderText = "quitar";
             Ver2.Name = "quitar";
-            Ver2.Width = 86;
+            Ver2.Width = 109;
             Ver2.FlatStyle = FlatStyle.Flat;
             dataGridView2.Columns.Add(Ver2);
         }
