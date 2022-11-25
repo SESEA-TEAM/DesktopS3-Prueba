@@ -856,7 +856,7 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        MessageBox.Show("no puedes guardar manito, tienes campos con errores");
+                        MessageBox.Show("no puedes guardar, tienes campos con errores");
                     }
                 }
 
