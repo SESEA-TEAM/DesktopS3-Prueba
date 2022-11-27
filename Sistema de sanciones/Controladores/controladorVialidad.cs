@@ -24,7 +24,6 @@ namespace Sistema_de_sanciones.Controladores
                 comando.Connection = ConexionBD.AbrirConexionPS();
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandTimeout = 600;
-                comando.Parameters.AddWithValue("@id", localidad);
 
                 SqlDataReader dr = comando.ExecuteReader();
                 while (dr.Read())
