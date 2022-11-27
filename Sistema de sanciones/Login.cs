@@ -114,7 +114,15 @@ namespace Sistema_de_sanciones
 
             }
         }
+        private void limpiar()
+        {
+            textUsuario.Texts = "Nombre de usuario*";
+            textUsuario.ForeColor = Color.Black;
 
+            textContrasena.Texts = "Contraseña*";
+            textContrasena.ForeColor = Color.Black;
+
+        }
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
 
@@ -123,8 +131,9 @@ namespace Sistema_de_sanciones
             // string valor = Encrypt.GetSHA256(textContrasena.Texts);
             // objp.logear(textUsuario.Texts, Encrypt.GetSHA256(textContrasena.Texts.Trim()));
             logear(textUsuario.Texts, Encrypt.GetSHA256(textContrasena.Texts.Trim()));
+            limpiar();
 
-           
+
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Sistema_de_sanciones
             if (textProveedor.Texts == "Proveedor*")
             {
                 textProveedor.Texts = "";
-                textProveedor.ForeColor = Color.Gray;
+                textProveedor.ForeColor = Color.Black;
 
             }
         }
@@ -46,7 +46,7 @@ namespace Sistema_de_sanciones
             {
                 textProveedor.Texts = "Proveedor*";
                 errorProvider1.SetError(textProveedor, "Se necesita ingresar un proveedor");
-                textProveedor.ForeColor = Color.Gray;
+                textProveedor.ForeColor = Color.Black;
             }
             else
             {
@@ -63,7 +63,7 @@ namespace Sistema_de_sanciones
         private void limpiar()
         {
             textProveedor.Texts = "Proveedor*";
-            textProveedor.ForeColor = Color.Gray;
+            textProveedor.ForeColor = Color.Black;
 
             comboSistema.Text = "Selecciona los sistemas aplicables*";
           
