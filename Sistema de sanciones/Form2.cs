@@ -144,11 +144,19 @@ namespace Sistema_de_sanciones
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            log.logoutx(idper);
+            DialogResult resut = MessageBox.Show("¿Esta seguro de cerrar sesión?", "Warning", MessageBoxButtons.YesNo);
+            if (resut == DialogResult.Yes)
+            {
+                log.logoutx(idper);
             //Login inicioSesion = new Login();
             //inicioSesion.Show();
             logHandler.Show();
             this.Hide();
+            }
+            else if (resut == DialogResult.No)
+            {
+                return;
+            }
         }
 
         public void visualizarSPS(int id)
