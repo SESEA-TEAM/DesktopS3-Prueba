@@ -254,7 +254,7 @@ namespace Sistema_de_sanciones
             {
 
                 objp.EditarProveedor(id, textProveedor.Texts, comboSistema.SelectedItem.ToString(), comboEstatus.SelectedItem.ToString());
-                MessageBox.Show("Registro Insertado");
+                MessageBox.Show("Registro modificado");
                 tabControl1.SelectedTab = ListaProveedor;
 
                 this.Controls.Clear();

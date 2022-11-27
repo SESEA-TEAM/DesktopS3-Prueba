@@ -114,7 +114,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Location = new System.Drawing.Point(8, 58);
+            this.panel1.Location = new System.Drawing.Point(7, 58);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(321, 25);
             this.panel1.TabIndex = 4;
@@ -217,9 +217,11 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.EnableHeadersVisualStyles = false;
@@ -265,6 +267,9 @@
             this.comboEstatus.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboEstatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.comboEstatus.FormattingEnabled = true;
+            this.comboEstatus.Items.AddRange(new object[] {
+            "Vigente",
+            "No vigente"});
             this.comboEstatus.Location = new System.Drawing.Point(102, 209);
             this.comboEstatus.Name = "comboEstatus";
             this.comboEstatus.Size = new System.Drawing.Size(172, 24);
