@@ -43,11 +43,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(309, 119);
+            this.label1.Location = new System.Drawing.Point(353, 119);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(545, 37);
+            this.label1.Size = new System.Drawing.Size(470, 37);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Sistema de carga de datos S2 Y S3";
+            this.label1.Text = "Sistema de carga de datos S3";
             // 
             // pictureBox1
             // 
