@@ -1113,7 +1113,16 @@ namespace Sistema_de_sanciones
 
         private void button3_Click(object sender, EventArgs e)
         {
-            form2Handler.ListaSPS();
+            DialogResult resut = MessageBox.Show("¿Desea cancelar esta operación? Si cancela se perderán todos los datos que ha ingresado", "Cancelar registro", MessageBoxButtons.YesNo);
+            if (resut == DialogResult.Yes)
+            {
+
+                form2Handler.ListaSPS();
+
+            }
+            else if (resut == DialogResult.No)
+            {
+            }
         }
 
         private void textBox20_Enter(object sender, EventArgs e)

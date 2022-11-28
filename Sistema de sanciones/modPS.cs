@@ -1491,8 +1491,17 @@ namespace Sistema_de_sanciones
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
-            form2Handler.ListaPS();
+            DialogResult resut = MessageBox.Show("¿Desea cancelar esta operación? Si cancela se perderán todos los datos que ha ingresado", "Cancelar modificación", MessageBoxButtons.YesNo);
+            if (resut == DialogResult.Yes)
+            {
+
+                this.Close();
+                form2Handler.ListaPS();
+
+            }
+            else if (resut == DialogResult.No)
+            {
+            }  
         }
 
         private void textBox12_KeyPress(object sender, KeyPressEventArgs e)
