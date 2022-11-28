@@ -170,17 +170,12 @@ C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Datos_SPS.resources
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Editar_Proveedor.resources
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Editar_Usuarios.resources
-C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Form1.resources
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Form2.resources
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Home.resources
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listado_PS.resources
-C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\WinFormsApp1.Form1.resources
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listar_Proveedores.resources
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listar_Usuarios.resources
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Login.resources
-C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.ModificarPS.resources
-C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Modificar_PS.resources
-C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Modificar_SPS.resources
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Properties.Resources.resources
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.ReporteBitacora.resources
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Templates.RjComboBox.resources
@@ -390,3 +385,8 @@ C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.DataSet.dll
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.dll
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.DataSet.dll
+C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.dll
+C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.DataSet.dll
+C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\WinFormsApp1.FormListadoSPS.resources
+C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modPS.resources
+C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modSPS.resources

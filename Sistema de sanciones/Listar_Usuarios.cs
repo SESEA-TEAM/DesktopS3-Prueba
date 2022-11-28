@@ -206,8 +206,8 @@ namespace Sistema_de_sanciones
                     textLada.Texts = dataGridView1.CurrentRow.Cells[11].Value.ToString();
                     comboEstatus1.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
 
-                    fecha_Alta.Text = dataGridView1.CurrentRow.Cells[14].Value.ToString();
-                    fechaActualizacion.Text = dataGridView1.CurrentRow.Cells[15].Value.ToString();
+                    fecha_Alta.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
+                    fechaActualizacion.Text = dataGridView1.CurrentRow.Cells[14].Value.ToString();
 
                     tabControl1.SelectedTab = VerUsuario;
 

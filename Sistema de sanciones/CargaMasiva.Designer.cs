@@ -46,6 +46,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.panelPS = new System.Windows.Forms.Panel();
+            this.btnGuardarSPS = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.MostrarPS = new System.Windows.Forms.Button();
             this.panelTitulo.SuspendLayout();
@@ -87,7 +88,7 @@
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonGuardar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonGuardar.Location = new System.Drawing.Point(871, 610);
+            this.buttonGuardar.Location = new System.Drawing.Point(853, 405);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(100, 28);
             this.buttonGuardar.TabIndex = 28;
@@ -200,9 +201,10 @@
             // 
             this.panelSPS.Controls.Add(this.label4);
             this.panelSPS.Controls.Add(this.dataGridView1);
+            this.panelSPS.Controls.Add(this.buttonGuardar);
             this.panelSPS.Location = new System.Drawing.Point(0, 220);
             this.panelSPS.Name = "panelSPS";
-            this.panelSPS.Size = new System.Drawing.Size(1174, 384);
+            this.panelSPS.Size = new System.Drawing.Size(1174, 494);
             this.panelSPS.TabIndex = 40;
             // 
             // label4
@@ -236,12 +238,29 @@
             // 
             // panelPS
             // 
+            this.panelPS.Controls.Add(this.btnGuardarSPS);
             this.panelPS.Controls.Add(this.label3);
             this.panelPS.Controls.Add(this.dataGridView2);
             this.panelPS.Location = new System.Drawing.Point(0, 220);
             this.panelPS.Name = "panelPS";
-            this.panelPS.Size = new System.Drawing.Size(1168, 378);
+            this.panelPS.Size = new System.Drawing.Size(1168, 494);
             this.panelPS.TabIndex = 41;
+            // 
+            // btnGuardarSPS
+            // 
+            this.btnGuardarSPS.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnGuardarSPS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.btnGuardarSPS.FlatAppearance.BorderSize = 0;
+            this.btnGuardarSPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarSPS.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGuardarSPS.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnGuardarSPS.Location = new System.Drawing.Point(853, 405);
+            this.btnGuardarSPS.Name = "btnGuardarSPS";
+            this.btnGuardarSPS.Size = new System.Drawing.Size(100, 28);
+            this.btnGuardarSPS.TabIndex = 43;
+            this.btnGuardarSPS.Text = "GUARDAR";
+            this.btnGuardarSPS.UseVisualStyleBackColor = false;
+            this.btnGuardarSPS.Click += new System.EventHandler(this.btnGuardarSPS_Click);
             // 
             // dataGridView2
             // 
@@ -266,7 +285,7 @@
             this.MostrarPS.Name = "MostrarPS";
             this.MostrarPS.Size = new System.Drawing.Size(95, 30);
             this.MostrarPS.TabIndex = 42;
-            this.MostrarPS.Text = "Mostrar PS";
+            this.MostrarPS.Text = "Mostrar";
             this.MostrarPS.UseVisualStyleBackColor = false;
             this.MostrarPS.Click += new System.EventHandler(this.MostrarPS_Click);
             // 
@@ -281,7 +300,6 @@
             this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.buttonSeleccionar);
             this.Controls.Add(this.btnMostar);
             this.Controls.Add(this.MostrarPS);
@@ -324,5 +342,6 @@
         private DataGridView dataGridView2;
         private Label label4;
         private Button MostrarPS;
+        private Button btnGuardarSPS;
     }
 }
