@@ -128,12 +128,6 @@
             this.URL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
@@ -146,6 +140,12 @@
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -156,9 +156,9 @@
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.panel9.SuspendLayout();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -1709,9 +1709,9 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.panel9);
             this.panel8.Controls.Add(this.dataGridView2);
             this.panel8.Controls.Add(this.dateTimePicker3);
-            this.panel8.Controls.Add(this.panel9);
             this.panel8.Controls.Add(this.button4);
             this.panel8.Controls.Add(this.button3);
             this.panel8.Controls.Add(this.comboBox8);
@@ -1819,74 +1819,6 @@
             this.dateTimePicker3.Size = new System.Drawing.Size(350, 22);
             this.dateTimePicker3.TabIndex = 82;
             this.dateTimePicker3.Enter += new System.EventHandler(this.dateTimePicker3_Enter);
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.panel9.Controls.Add(this.label21);
-            this.panel9.Controls.Add(this.label22);
-            this.panel9.Controls.Add(this.label23);
-            this.panel9.Controls.Add(this.label24);
-            this.panel9.Controls.Add(this.label25);
-            this.panel9.Location = new System.Drawing.Point(24, 191);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1106, 57);
-            this.panel9.TabIndex = 80;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label21.ForeColor = System.Drawing.SystemColors.Control;
-            this.label21.Location = new System.Drawing.Point(879, 22);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(46, 16);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "Fecha";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label22.ForeColor = System.Drawing.SystemColors.Control;
-            this.label22.Location = new System.Drawing.Point(676, 22);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(33, 16);
-            this.label22.TabIndex = 3;
-            this.label22.Text = "URL";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label23.ForeColor = System.Drawing.SystemColors.Control;
-            this.label23.Location = new System.Drawing.Point(253, 22);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(35, 16);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "Tipo";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label24.ForeColor = System.Drawing.SystemColors.Control;
-            this.label24.Location = new System.Drawing.Point(70, 22);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(43, 16);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Título";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label25.ForeColor = System.Drawing.SystemColors.Control;
-            this.label25.Location = new System.Drawing.Point(436, 22);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(81, 16);
-            this.label25.TabIndex = 1;
-            this.label25.Text = "Descripción";
             // 
             // button4
             // 
@@ -2062,6 +1994,74 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.panel9.Controls.Add(this.label21);
+            this.panel9.Controls.Add(this.label22);
+            this.panel9.Controls.Add(this.label23);
+            this.panel9.Controls.Add(this.label24);
+            this.panel9.Controls.Add(this.label25);
+            this.panel9.Location = new System.Drawing.Point(24, 191);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1106, 57);
+            this.panel9.TabIndex = 83;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(889, 22);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(46, 16);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Fecha";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(685, 22);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(33, 16);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "URL";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(253, 22);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(35, 16);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Tipo";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(70, 22);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(43, 16);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Título";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(433, 22);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(81, 16);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Descripción";
+            // 
             // modPS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
@@ -2099,11 +2099,11 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2204,12 +2204,6 @@
         private ErrorProvider errorProvider1;
         private DataGridView dataGridView1;
         private DataGridView dataGridView2;
-        private Panel panel9;
-        private Label label21;
-        private Label label22;
-        private Label label23;
-        private Label label24;
-        private Label label25;
         private DateTimePicker dateTimePicker2;
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker4;
@@ -2225,5 +2219,11 @@
         private DataGridViewTextBoxColumn descripcionxd;
         private DataGridViewTextBoxColumn URL;
         private DataGridViewTextBoxColumn Fecha;
+        private Panel panel9;
+        private Label label21;
+        private Label label22;
+        private Label label23;
+        private Label label24;
+        private Label label25;
     }
 }

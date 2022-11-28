@@ -788,6 +788,7 @@
             this.textBox16.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox16.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox16.BorderSize = 2;
+            this.textBox16.Enabled = false;
             this.textBox16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox16.Location = new System.Drawing.Point(24, 230);
@@ -938,7 +939,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(879, 22);
+            this.label21.Location = new System.Drawing.Point(889, 22);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(46, 16);
             this.label21.TabIndex = 4;
@@ -949,7 +950,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(676, 22);
+            this.label22.Location = new System.Drawing.Point(685, 22);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(33, 16);
             this.label22.TabIndex = 3;
@@ -982,7 +983,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(436, 22);
+            this.label25.Location = new System.Drawing.Point(433, 22);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(81, 16);
             this.label25.TabIndex = 1;
@@ -1031,6 +1032,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(1106, 114);
             this.dataGridView2.TabIndex = 11;

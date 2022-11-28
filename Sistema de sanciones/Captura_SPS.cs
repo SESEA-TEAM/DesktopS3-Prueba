@@ -88,14 +88,18 @@ namespace Sistema_de_sanciones
         private void CargarDG()
         {
 
-            dataGridView1.Columns[1].Width = 500;
-            dataGridView1.Columns[2].Width = 500;
-     
-            dataGridView2.Columns[1].Width = 184;
-            dataGridView2.Columns[2].Width = 186;
-            dataGridView2.Columns[3].Width = 204;
-            dataGridView2.Columns[4].Width = 239;
-            dataGridView2.Columns[5].Width = 184;
+            int p = panel3.Width;
+
+            dataGridView1.Columns[1].Width = (Convert.ToInt32(p * 0.46));
+            dataGridView1.Columns[2].Width = (Convert.ToInt32(p * 0.45));
+
+            int p2 = panel9.Width;
+
+            dataGridView2.Columns[1].Width = (Convert.ToInt32(p2 * 0.16));
+            dataGridView2.Columns[2].Width = Convert.ToInt32(p2 * 0.16);
+            dataGridView2.Columns[3].Width = Convert.ToInt32(p2 * 0.21);
+            dataGridView2.Columns[4].Width = Convert.ToInt32(p2 * 0.22);
+            dataGridView2.Columns[5].Width = Convert.ToInt32(p2 * 0.16);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -105,7 +109,7 @@ namespace Sistema_de_sanciones
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(comboBox6.Text == "Tipo Sanción")
+            if (comboBox6.Text == "Tipo Sanción")
             {
                 errorProvider1.SetError(comboBox6, "Se necesita seleccionar un tipo de sanción");
             }  

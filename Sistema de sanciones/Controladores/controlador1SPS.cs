@@ -78,7 +78,7 @@ namespace Sistema_de_sanciones.Controladores
                 comando.Parameters.AddWithValue("@primerApellido", sps.primerApellidoSPS);
                 comando.Parameters.AddWithValue("@segundoApellido", sps.segundoApellidoSPS);
                 comando.Parameters.AddWithValue("@puesto", sps.puestoSPS);
-                comando.Parameters.AddWithValue("@nivel", sps.puestoSPS);
+                comando.Parameters.AddWithValue("@nivel", sps.nivelSPS);
                 comando.Parameters.AddWithValue("@genero", sps.generoSPS);
                 comando.Parameters.AddWithValue("@tipoFalta", sps.tipoFalta);
                 comando.Parameters.AddWithValue("@observaciones", sps.observaciones);

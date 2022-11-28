@@ -2084,14 +2084,18 @@ namespace Sistema_de_sanciones
         private void CargarDG()
         {
 
-            dataGridView1.Columns[1].Width = 500;
-            dataGridView1.Columns[2].Width = 500;
+            int p = panel3.Width;
 
-            dataGridView2.Columns[1].Width = 184;
-            dataGridView2.Columns[2].Width = 186;
-            dataGridView2.Columns[3].Width = 204;
-            dataGridView2.Columns[4].Width = 239;
-            dataGridView2.Columns[5].Width = 184;
+            dataGridView1.Columns[1].Width = (Convert.ToInt32(p * 0.46));
+            dataGridView1.Columns[2].Width = (Convert.ToInt32(p * 0.45));
+
+            int p2 = panel9.Width;
+
+            dataGridView2.Columns[1].Width = (Convert.ToInt32(p2 * 0.16));
+            dataGridView2.Columns[2].Width = Convert.ToInt32(p2 * 0.16);
+            dataGridView2.Columns[3].Width = Convert.ToInt32(p2 * 0.21);
+            dataGridView2.Columns[4].Width = Convert.ToInt32(p2 * 0.22);
+            dataGridView2.Columns[5].Width = Convert.ToInt32(p2 * 0.16);
         }
     }
 }

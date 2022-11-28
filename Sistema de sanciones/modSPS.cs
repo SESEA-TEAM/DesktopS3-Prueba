@@ -102,12 +102,14 @@ namespace Sistema_de_sanciones
 
             dataGridView1.Columns[2].Width = (Convert.ToInt32(p * 0.46));
             dataGridView1.Columns[3].Width = (Convert.ToInt32(p * 0.45));
+
+            int p2 = panel9.Width;
      
-            dataGridView2.Columns[2].Width = 184;
-            dataGridView2.Columns[3].Width = 186;
-            dataGridView2.Columns[4].Width = 204;
-            dataGridView2.Columns[5].Width = 239;
-            dataGridView2.Columns[6].Width = 184;
+            dataGridView2.Columns[2].Width = (Convert.ToInt32(p2 * 0.16));
+            dataGridView2.Columns[3].Width = Convert.ToInt32(p2 * 0.16);
+            dataGridView2.Columns[4].Width = Convert.ToInt32(p2 * 0.21);
+            dataGridView2.Columns[5].Width = Convert.ToInt32(p2 * 0.22);
+            dataGridView2.Columns[6].Width = Convert.ToInt32(p2 * 0.16);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
