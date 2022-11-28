@@ -319,6 +319,9 @@ namespace Sistema_de_sanciones.Controladores
                     if (!(dr["moneda2"] is DBNull))
                         ps.moneda2 = Convert.ToString(dr["moneda2"]);
 
+                    if (!(dr["moneda"] is DBNull))
+                        ps.moneda = Convert.ToInt32(dr["moneda"]);
+
                     if (!(dr["domicilioEX"] is DBNull)) { ps.domEX = true; }
                     else { ps.domEX = false; };
 
