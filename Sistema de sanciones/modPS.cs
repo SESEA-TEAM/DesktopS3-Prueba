@@ -1618,9 +1618,13 @@ namespace Sistema_de_sanciones
             mps = conPS.CsdsdargarPS(idPs);
 
             textBox20.Texts = mps.expediente;
+            textBox20.ForeColor = Color.Black;
             textBox19.Texts = mps.nombreRazonSocial;
+            textBox19.ForeColor = Color.Black;
             textBox18.Texts = mps.rfcPS;
+            textBox18.ForeColor = Color.Black;
             textBox17.Texts = mps.causaMotivoHechos;
+            textBox17.ForeColor = Color.Black;
             if (mps.acto == null)
             {
 
@@ -1628,6 +1632,7 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox8.Texts = mps.acto;
+                textBox8.ForeColor = Color.Black;
             }
             if (mps.objetoContrato == null)
             {
@@ -1636,9 +1641,12 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox16.Texts = mps.objetoContrato;
+                textBox16.ForeColor = Color.Black;
             }
             textBox12.Texts = mps.tipoFalta;
+            textBox12.ForeColor = Color.Black;
             textBox7.Texts = mps.nombreInstitucionDependencia;
+            textBox7.ForeColor = Color.Black;
             if (mps.siglasInstitucionDependencia == null)
             {
 
@@ -1646,6 +1654,7 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox9.Texts = mps.siglasInstitucionDependencia;
+                textBox9.ForeColor = Color.Black;
             }
             if (mps.claveInstitucionDependencia == null)
             {
@@ -1654,6 +1663,7 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox10.Texts = mps.claveInstitucionDependencia;
+                textBox10.ForeColor = Color.Black;
             }
             if (mps.observaciones == null)
             {
@@ -1662,8 +1672,10 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox11.Texts = mps.observaciones;
+                textBox11.ForeColor = Color.Black;
             }
             textBox5.Texts = mps.autoridadSancionadora;
+            textBox5.ForeColor = Color.Black;
             if (mps.sentidoResolucion == null)
             {
 
@@ -1671,6 +1683,7 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox6.Texts = mps.sentidoResolucion;
+                textBox6.ForeColor = Color.Black;
             }
             if (mps.urlResolucion == null)
             {
@@ -1679,6 +1692,7 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox13.Texts = mps.urlResolucion;
+                textBox13.ForeColor = Color.Black;
             }
             if (mps.fechaResolucion == null)
             {
@@ -1707,7 +1721,9 @@ namespace Sistema_de_sanciones
                 textBox14.ForeColor = Color.Black;  
             }
             textBox4.Texts = mps.nombreRS;
+            textBox4.ForeColor = Color.Black;
             textBox3.Texts = mps.primerApellidoRS;
+            textBox3.ForeColor = Color.Black;
             if (mps.segundoApellidoRS == null)
             {
 
@@ -1749,6 +1765,7 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox24.Texts = Convert.ToString(mps.monto);
+                textBox24.ForeColor = Color.Black;
             }
             if (mps.moneda == null)
             {
