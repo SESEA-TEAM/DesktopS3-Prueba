@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DarkFrostMoe\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj": {}
+    "C:\\Users\\Invitado2022\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DarkFrostMoe\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj": {
+    "C:\\Users\\Invitado2022\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DarkFrostMoe\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
+        "projectUniqueName": "C:\\Users\\Invitado2022\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
         "projectName": "Sistema de sanciones",
-        "projectPath": "C:\\Users\\DarkFrostMoe\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
-        "packagesPath": "C:\\Users\\DarkFrostMoe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DarkFrostMoe\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\obj\\",
+        "projectPath": "C:\\Users\\Invitado2022\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
+        "packagesPath": "C:\\Users\\Invitado2022\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Invitado2022\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DarkFrostMoe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Invitado2022\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,7 +72,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

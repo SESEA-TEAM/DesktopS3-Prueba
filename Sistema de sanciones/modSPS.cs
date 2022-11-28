@@ -98,9 +98,10 @@ namespace Sistema_de_sanciones
         //da formato al datagridview de sanciones
         private void CargarDG()
         {
+            int p = panel3.Width;
 
-            dataGridView1.Columns[2].Width = 500;
-            dataGridView1.Columns[3].Width = 500;
+            dataGridView1.Columns[2].Width = (Convert.ToInt32(p * 0.46));
+            dataGridView1.Columns[3].Width = (Convert.ToInt32(p * 0.45));
      
             dataGridView2.Columns[2].Width = 184;
             dataGridView2.Columns[3].Width = 186;
