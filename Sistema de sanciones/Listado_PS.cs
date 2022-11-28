@@ -84,13 +84,13 @@ namespace Sistema_de_sanciones
             int p = panel3.Width;
             dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
-            dataGridView1.Columns[0].Width = 41; //Desactiva la columna ID
+            dataGridView1.Columns[0].Width = Convert.ToInt32(p*0.035); //Desactiva la columna ID
             dataGridView1.Columns[1].Visible = false; //Desactiva la columna ID
-            dataGridView1.Columns[2].Width = 135; //Desactiva la columna ID
-            dataGridView1.Columns[3].Width = 290;     //Se asigna tamaño a la columna Nombre Completo
-            dataGridView1.Columns[4].Width = 278; //Desactiva la columna Nombre
-            dataGridView1.Columns[5].Width = 75; //Desactiva la columna Primer Apellido
-            dataGridView1.Columns[6].Width = 255; //Desactiva la columna Primer Apellido
+            dataGridView1.Columns[2].Width = Convert.ToInt32(p*0.115); //Desactiva la columna ID
+            dataGridView1.Columns[3].Width = Convert.ToInt32(p*0.247);     //Se asigna tamaño a la columna Nombre Completo
+            dataGridView1.Columns[4].Width = Convert.ToInt32(p*0.236); //Desactiva la columna Nombre
+            dataGridView1.Columns[5].Width = Convert.ToInt32(p*0.064); //Desactiva la columna Primer Apellido
+            dataGridView1.Columns[6].Width = Convert.ToInt32(p*0.217); //Desactiva la columna Primer Apellido
 
             botonPrimero.Enabled = false;
             botonAnterior.Enabled = false;

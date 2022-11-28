@@ -78,15 +78,15 @@ namespace WinFormsApp1
             //Las siguientes dos lineas son las que se encargar de cargar los datos de nuestra base de datos al dataGridView, el primero es la llamada al
             //procedimiento BarraListadoSPS el cual declaramos en el controladorSPS y es el encargado de realizar la consulta, mientras que la segunda linea
             //carga los datos de la consulta en nuestro dataGridView.
-
+            int p = panel3.Width;
             dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
-            dataGridView1.Columns[0].Width = 41; //Desactiva la columna ID
+            dataGridView1.Columns[0].Width = Convert.ToInt32(p*0.035); //Desactiva la columna ID
             dataGridView1.Columns[1].Visible = false; //Desactiva la columna ID
-            dataGridView1.Columns[2].Width = 170;     //Se asigna tamaño a la columna Nombre Completo
-            dataGridView1.Columns[3].Width = 335; //Desactiva la columna Nombre
-            dataGridView1.Columns[4].Width = 263; //Desactiva la columna Primer Apellido
-            dataGridView1.Columns[5].Width = 263; //Desactiva la columna Primer Apellido
+            dataGridView1.Columns[2].Width = Convert.ToInt32(p*0.145);     //Se asigna tamaño a la columna Nombre Completo
+            dataGridView1.Columns[3].Width = Convert.ToInt32(p*0.285); //Desactiva la columna Nombre
+            dataGridView1.Columns[4].Width = Convert.ToInt32(p*0.224); //Desactiva la columna Primer Apellido
+            dataGridView1.Columns[5].Width = Convert.ToInt32(p * 0.224); //Desactiva la columna Primer Apellido
 
             botonPrimero.Enabled = false;
             botonAnterior.Enabled = false;
