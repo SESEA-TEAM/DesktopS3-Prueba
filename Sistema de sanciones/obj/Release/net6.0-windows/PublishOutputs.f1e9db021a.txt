@@ -1,0 +1,13 @@
+D:\Sistema de sanciones.exe
+D:\Sistema de sanciones.dll
+D:\Sistema de sanciones.deps.json
+D:\Sistema de sanciones.runtimeconfig.json
+D:\Sistema de sanciones.pdb
+D:\ExcelDataReader.dll
+D:\ExcelDataReader.DataSet.dll
+D:\System.Data.SqlClient.dll
+D:\runtimes\win-arm64\native\sni.dll
+D:\runtimes\win-x64\native\sni.dll
+D:\runtimes\win-x86\native\sni.dll
+D:\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
