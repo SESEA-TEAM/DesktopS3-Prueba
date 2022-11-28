@@ -21,7 +21,8 @@ namespace Sistema_de_sanciones
         controlador1SPS conSPS = new controlador1SPS();
         String? f1, f2, f3, f4;
         private ServidorPublico ServidorP = new ServidorPublico();
-        public Captura_SPS()
+        private Form2 form2Handler;
+        public Captura_SPS(Form2 form2)
         {
             InitializeComponent();
             llenarCombos();
@@ -30,8 +31,8 @@ namespace Sistema_de_sanciones
             dateTimePicker2.Value = new DateTime(2000, 01, 01);
             dateTimePicker3.Value = new DateTime(2000, 01, 01);
             dateTimePicker4.Value = new DateTime(2000, 01, 01);
-            
 
+            form2Handler = form2;
             //modeloSPS modSPS = new modeloSPS();
             //dataGridView1.Columns.Add("ID", "ID");
             //dataGridView1.Columns.Add("Tipo","Tipo");
@@ -378,6 +379,7 @@ namespace Sistema_de_sanciones
             if (guardar())
             {
                 MessageBox.Show("Se ha realizado el registro con exito");
+                form2Handler.ListaSPS();
             }
         }
 
@@ -1107,6 +1109,11 @@ namespace Sistema_de_sanciones
         private void textBox21_KeyPress(object sender, KeyPressEventArgs e)
         {
             ServidorP.textBoxEvent.validarNumeros(e);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            form2Handler.ListaSPS();
         }
 
         private void textBox20_Enter(object sender, EventArgs e)

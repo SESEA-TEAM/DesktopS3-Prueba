@@ -134,12 +134,12 @@ namespace Sistema_de_sanciones
 
         private void buttonCapturarPublicos_Click(object sender, EventArgs e)
         {
-            loadform(new Captura_SPS());
+            loadform(new Captura_SPS(this));
         }
 
         private void buttonCapturarParticulares_Click(object sender, EventArgs e)
         {
-            loadform(new CapturaPS());
+            loadform(new CapturaPS(this));
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)

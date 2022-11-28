@@ -19,7 +19,8 @@ namespace Sistema_de_sanciones
         String? f1, f2, f3, f4;
         controlador1PS conPS = new controlador1PS();
         private Particular ParticularS = new Particular();
-        public CapturaPS()
+        private Form2 form2Handler;
+        public CapturaPS(Form2 form2)
         {
             InitializeComponent();
             llenarCombos();
@@ -35,6 +36,7 @@ namespace Sistema_de_sanciones
             lista.Add("Física");
             lista.Add("Moral");
             comboBox9.DataSource = lista;
+            form2Handler = form2;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -1733,6 +1735,7 @@ namespace Sistema_de_sanciones
             if (guardar())
             {
                 MessageBox.Show("Se ha realizado el registro con exito");
+                form2Handler.ListaPS();
             }
         }
 
@@ -1995,6 +1998,11 @@ namespace Sistema_de_sanciones
         private void textBox36_KeyPress(object sender, KeyPressEventArgs e)
         {
             ParticularS.textBoxEvent.validarNumeros(e);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            form2Handler.ListaPS();
         }
 
         private void button1_Click(object sender, EventArgs e)
