@@ -5,10 +5,14 @@
       "ExcelDataReader/3.6.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/ExcelDataReader.dll": {}
+          "lib/netstandard2.0/ExcelDataReader.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/ExcelDataReader.dll": {}
+          "lib/netstandard2.0/ExcelDataReader.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "ExcelDataReader.DataSet/3.6.0": {
@@ -17,10 +21,14 @@
           "ExcelDataReader": "3.6.0"
         },
         "compile": {
-          "lib/netstandard2.0/ExcelDataReader.DataSet.dll": {}
+          "lib/netstandard2.0/ExcelDataReader.DataSet.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/ExcelDataReader.DataSet.dll": {}
+          "lib/netstandard2.0/ExcelDataReader.DataSet.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {
@@ -39,10 +47,14 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {}
+          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
@@ -98,10 +110,14 @@
           "runtime.native.System.Data.SqlClient.sni": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp2.1/System.Data.SqlClient.dll": {}
+          "ref/netcoreapp2.1/System.Data.SqlClient.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {}
+          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll": {
@@ -121,10 +137,14 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.AccessControl.dll": {}
+          "lib/netstandard2.0/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll": {
@@ -136,10 +156,14 @@
       "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
@@ -520,23 +544,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\radge\\.nuget\\packages\\": {}
+    "C:\\Users\\cacam\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
+      "projectUniqueName": "C:\\Users\\cacam\\OneDrive\\Documentos\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
       "projectName": "Sistema de sanciones",
-      "projectPath": "D:\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
-      "packagesPath": "C:\\Users\\radge\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\obj\\",
+      "projectPath": "C:\\Users\\cacam\\OneDrive\\Documentos\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
+      "packagesPath": "C:\\Users\\cacam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cacam\\OneDrive\\Documentos\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\radge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cacam\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows7.0"
+        "net6.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -577,7 +601,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -589,7 +614,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
