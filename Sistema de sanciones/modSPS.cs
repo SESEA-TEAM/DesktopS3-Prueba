@@ -1058,6 +1058,30 @@ namespace Sistema_de_sanciones
             {
                 comboBox2.SelectedItem = lGenero[Convert.ToInt32(msps.generoSPS)];
             }
+            if (msps.fechaInicialInhabilitacion == null)
+            {
+
+            }
+            else
+            {
+                dateTimePicker1.Value = DateTime.Parse(msps.fechaInicialInhabilitacion);
+            }
+            if (msps.fechaFinalInhabilitacion == null)
+            {
+
+            }
+            else
+            {
+                dateTimePicker3.Value = DateTime.Parse(msps.fechaFinalInhabilitacion);
+            }
+            if (msps.fechaResolucion == null)
+            {
+
+            }
+            else
+            {
+                dateTimePicker2.Value = DateTime.Parse(msps.fechaResolucion);
+            }
 
             List<modeloTipoSancion> listaSancionesSPS = new List<modeloTipoSancion>();
             listaSancionesSPS = conSPS.obtenerSancionesSPS(idSps);

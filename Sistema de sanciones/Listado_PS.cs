@@ -81,7 +81,7 @@ namespace Sistema_de_sanciones
                 botonSiguiente.Enabled = true;
                 botonUltimo.Enabled = true;
             }
-
+            int p = panel3.Width;
             dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
             dataGridView1.Columns[0].Width = 41; //Desactiva la columna ID
