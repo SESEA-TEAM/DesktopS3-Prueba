@@ -1904,7 +1904,12 @@ namespace Sistema_de_sanciones
                 }
                 else
                 {
-                    comboBox4.SelectedItem = lMunicipio[Convert.ToInt32(mps.municipio)];
+                    
+                    //lMunicipio = new controladorMunicipio().obtenerListaMunicipio(Convert.ToInt32(mps.entidadFederativa));
+                    //comboBox4.DataSource = lMunicipio;
+                    //comboBox4.ValueMember = "name";
+                    //MessageBox.Show("" + lMunicipio[1].name);
+                    comboBox4.SelectedItem = lMunicipio[obtenerMunicipioPos(Convert.ToInt32(mps.municipio), Convert.ToInt32(mps.entidadFederativa))];
                 }
                 if (mps.localidad == null)
                 {
@@ -1912,7 +1917,7 @@ namespace Sistema_de_sanciones
                 }
                 else
                 {
-                    comboBox5.SelectedItem = lLocalidad[Convert.ToInt32(mps.localidad)];
+                    comboBox5.SelectedItem = lLocalidad[obtenerLocalidadPos(Convert.ToInt32(mps.localidad), Convert.ToInt32(mps.municipio))];
                 }
                 if (mps.vialidad == null)
                 {
@@ -2602,6 +2607,18 @@ namespace Sistema_de_sanciones
                 }
             }
             return r;
+        }
+        private int obtenerMunicipioPos(int municipio, int entidades)
+        {
+            List<modeloMunicipio> lMunicipio = new controladorMunicipio().obtenerListaMunicipio(entidades);
+            int pos = lMunicipio.FindIndex(x => x.id == municipio);
+            return pos;
+        }
+        private int obtenerLocalidadPos(int localidad, int municipio)
+        {
+            List<modeloLocalidad> lLocalidad = new controladorLocalidad().obtenerListaLocalidad(municipio);
+            int pos = lLocalidad.FindIndex(x => x.id == localidad);
+            return pos;
         }
     }
 }
