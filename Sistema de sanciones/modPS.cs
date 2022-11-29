@@ -825,6 +825,15 @@ namespace Sistema_de_sanciones
             {
                 textBox35.Texts = "";
                 textBox35.ForeColor = Color.Black;
+            }         
+        }
+
+        private void textBox35_Leave(object sender, EventArgs e)
+        {
+            if (textBox35.Texts == "")
+            {
+                textBox35.Texts = "Nombre(s)";
+                textBox35.ForeColor = Color.Gray;
             }
             else
             {
@@ -840,15 +849,6 @@ namespace Sistema_de_sanciones
                 {
                     errorProvider1.SetError(textBox35, "Se necesita un nombre válido");
                 }
-            }
-        }
-
-        private void textBox35_Leave(object sender, EventArgs e)
-        {
-            if (textBox35.Texts == "")
-            {
-                textBox35.Texts = "Nombre(s)";
-                textBox35.ForeColor = Color.Gray;
             }
         }
 
@@ -2378,25 +2378,27 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        modPS.segundoApellidoRS = textBox2.Texts;
+                        if (matchM.Success)
+                        {
+                            modPS.segundoApellidoRS = textBox2.Texts;
+                            errorProvider1.SetError(textBox2, String.Empty);
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(textBox2, "Se necesita un apellido válido");
+                            r = false;
+                        }
+                        
                     }
                     if (textBox23.Texts == "Plazo")
                     {
 
                     }
                     else
-                    {
-                        if (matchM.Success)
-                        {
-                            modPS.plazoInhabilitacion = textBox23.Texts;
-                            errorProvider1.SetError(textBox23, String.Empty);
-                        }
-                        else
-                        {
-                            errorProvider1.SetError(textBox23, "Se necesita un apellido válido");
-                            r = false;
-                        }
+                    {                        
+                        modPS.plazoInhabilitacion = textBox23.Texts;
                     }
+                    
                     if (textBox24.Texts == "Monto")
                     {
 
