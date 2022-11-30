@@ -433,9 +433,9 @@
             this.label17.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.Location = new System.Drawing.Point(752, 174);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(140, 16);
+            this.label17.Size = new System.Drawing.Size(145, 16);
             this.label17.TabIndex = 47;
-            this.label17.Text = "Fecha actialización";
+            this.label17.Text = "Fecha actualización";
             // 
             // label16
             // 
