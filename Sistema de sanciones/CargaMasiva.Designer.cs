@@ -41,12 +41,10 @@
             this.cboHojas = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelSPS = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.panelPS = new System.Windows.Forms.Panel();
-            this.btnGuardarSPS = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnGuardarSPS = new System.Windows.Forms.Button();
             this.MostrarPS = new System.Windows.Forms.Button();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -186,22 +184,12 @@
             // 
             // panelSPS
             // 
-            this.panelSPS.Controls.Add(this.label4);
             this.panelSPS.Controls.Add(this.dataGridView1);
             this.panelSPS.Controls.Add(this.buttonGuardar);
             this.panelSPS.Location = new System.Drawing.Point(0, 220);
             this.panelSPS.Name = "panelSPS";
             this.panelSPS.Size = new System.Drawing.Size(1174, 422);
             this.panelSPS.TabIndex = 40;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(588, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 15);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "PANEL PS";
             // 
             // dataGridView1
             // 
@@ -216,24 +204,27 @@
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellLeave);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(546, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 15);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "PANEL CARGA SPS";
-            // 
             // panelPS
             // 
-            this.panelPS.Controls.Add(this.btnGuardarSPS);
-            this.panelPS.Controls.Add(this.label3);
             this.panelPS.Controls.Add(this.dataGridView2);
+            this.panelPS.Controls.Add(this.btnGuardarSPS);
             this.panelPS.Location = new System.Drawing.Point(0, 220);
             this.panelPS.Name = "panelPS";
             this.panelPS.Size = new System.Drawing.Size(1168, 422);
             this.panelPS.TabIndex = 41;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(27, 25);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(1118, 356);
+            this.dataGridView2.TabIndex = 38;
+            this.dataGridView2.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellLeave);
             // 
             // btnGuardarSPS
             // 
@@ -249,19 +240,6 @@
             this.btnGuardarSPS.Text = "GUARDAR";
             this.btnGuardarSPS.UseVisualStyleBackColor = false;
             this.btnGuardarSPS.Click += new System.EventHandler(this.btnGuardarSPS_Click);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(27, 25);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(1118, 356);
-            this.dataGridView2.TabIndex = 38;
-            this.dataGridView2.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellLeave);
             // 
             // MostrarPS
             // 
@@ -282,8 +260,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1174, 788);
+            this.Controls.Add(this.panelSPS);
+            this.Controls.Add(this.btnMostar);
             this.Controls.Add(this.cboHojas);
             this.Controls.Add(this.txtRuta);
             this.Controls.Add(this.comboSistema);
@@ -291,9 +272,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSeleccionar);
             this.Controls.Add(this.MostrarPS);
-            this.Controls.Add(this.btnMostar);
             this.Controls.Add(this.panelPS);
-            this.Controls.Add(this.panelSPS);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CargaMasiva";
             this.Text = "CargaMasiva";
@@ -301,10 +280,8 @@
             this.panelTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panelSPS.ResumeLayout(false);
-            this.panelSPS.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelPS.ResumeLayout(false);
-            this.panelPS.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -325,10 +302,8 @@
         private ErrorProvider errorProvider1;
         private Panel panelSPS;
         private DataGridView dataGridView1;
-        private Label label3;
         private Panel panelPS;
         private DataGridView dataGridView2;
-        private Label label4;
         private Button MostrarPS;
         private Button btnGuardarSPS;
     }

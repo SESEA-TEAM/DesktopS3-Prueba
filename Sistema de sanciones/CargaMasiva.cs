@@ -226,143 +226,143 @@ namespace Sistema_de_sanciones
 
                 if (!valExpediente)
                 {
-                    fila1.Cells[0].ErrorText = "Expediente Invalido";
+                    fila1.Cells[0].ErrorText = "Expediente Inválido";
                     Resultado = false;
                 }
 
 
                 if (!valNombres)
                 {
-                    fila1.Cells[1].ErrorText = "Nombre Invalido";
+                    fila1.Cells[1].ErrorText = "Nombre Inválido";
                     Resultado = false;
                 }
                 if (!valRFCs)
                 {
-                    fila1.Cells[2].ErrorText = "RFC Invalido";
+                    fila1.Cells[2].ErrorText = "RFC Inválido";
                     Resultado = false;
                 }
                 if (!valCausaMotivoHecho)
                 {
-                    fila1.Cells[3].ErrorText = "Causa Motivo y Hecho Invalido";
+                    fila1.Cells[3].ErrorText = "Causa Motivo y Hecho Inválido";
                     Resultado = false;
                 }
                 if (!valActo)
                 {
-                    fila1.Cells[4].ErrorText = "Acto Invalido";
+                    fila1.Cells[4].ErrorText = "Acto Inválido";
                     Resultado = false;
                 }
 
                 if (!valObjContrato)
                 {
-                    fila1.Cells[5].ErrorText = "Objeto Contratante Invalido";
+                    fila1.Cells[5].ErrorText = "Objeto Contratante Inválido";
                     Resultado = false;
                 }
                 if (!valTipoFalta)
                 {
-                    fila1.Cells[6].ErrorText = "Tipo de Falta Invalida";
+                    fila1.Cells[6].ErrorText = "Tipo de Falta Inválida";
                     Resultado = false;
                 }
                 if (!valNombreInsDep)
                 {
-                    fila1.Cells[7].ErrorText = "Nombre de la Institución o Dependencia Invalida";
+                    fila1.Cells[7].ErrorText = "Nombre de la Institución o Dependencia Inválida";
                     Resultado = false;
                 }
                 if (!valSiglas)
                 {
-                    fila1.Cells[8].ErrorText = "Siglas Invalidas";
+                    fila1.Cells[8].ErrorText = "Siglas Inválidas";
                     Resultado = false;
                 }
                 if (!valClave)
                 {
-                    fila1.Cells[9].ErrorText = "Clave Invalida";
+                    fila1.Cells[9].ErrorText = "Clave Inválida";
                     Resultado = false;
                 }
                 if (!Observacion)
                 {
-                    fila1.Cells[10].ErrorText = "Observacion Invalida";
+                    fila1.Cells[10].ErrorText = "Observación Inválida";
                     Resultado = false;
                 }
 
                 if (!valAutSancionadora)
                 {
-                    fila1.Cells[11].ErrorText = "Autoridad Sancionada Invalida";
+                    fila1.Cells[11].ErrorText = "Autoridad Sancionada Inválida";
                     Resultado = false;
                 }
                 if (!valSentido)
                 {
-                    fila1.Cells[12].ErrorText = "Sentido de Resolución Invalida";
+                    fila1.Cells[12].ErrorText = "Sentido de Resolución Inválida";
                     Resultado = false;
                 }
                 if (!valURL)
                 {
-                    fila1.Cells[13].ErrorText = "URL Invalida";
+                    fila1.Cells[13].ErrorText = "URL Inválida";
                     Resultado = false;
                 }
                 if (!valFechaResolucion)
                 {
-                    fila1.Cells[14].ErrorText = "Fecha de Resolución Invalida";
+                    fila1.Cells[14].ErrorText = "Fecha de Resolución Inválida";
                     Resultado = false;
                 }
                 if (!valNombreRespSocial)
                 {
-                    fila1.Cells[15].ErrorText = "Nombre del Responsable Social Invalido";
+                    fila1.Cells[15].ErrorText = "Nombre del Responsable Social Inválido";
                     Resultado = false;
                 }
                 if (!valApellidoUnoResp)
                 {
-                    fila1.Cells[16].ErrorText = "Primer Apellido Invalido";
+                    fila1.Cells[16].ErrorText = "Primer Apellido Inválido";
                     Resultado = false;
                 }
                 if (!valApellidoDosResp)
                 {
-                    fila1.Cells[17].ErrorText = "Segundo Apellido Invalido";
+                    fila1.Cells[17].ErrorText = "Segundo Apellido Inválido";
                     Resultado = false;
                 }
                 if (!valPlazo)
                 {
-                    fila1.Cells[18].ErrorText = "Plazo Invalido";
+                    fila1.Cells[18].ErrorText = "Plazo Inválido";
                     Resultado = false;
                 }
                 if (!valFechaInicial)
                 {
-                    fila1.Cells[19].ErrorText = "Fecha Inicial Invalida";
+                    fila1.Cells[19].ErrorText = "Fecha Inicial Inválida";
                     Resultado = false;
                 }
 
                 if (!valFechaFinal)
                 {
-                    fila1.Cells[20].ErrorText = "Fecha Final Invalida";
+                    fila1.Cells[20].ErrorText = "Fecha Final Inválida";
                     Resultado = false;
                 }
                 if (!valMonto)
                 {
-                    fila1.Cells[21].ErrorText = "Monto Invalido";
+                    fila1.Cells[21].ErrorText = "Monto Inválido";
                     Resultado = false;
                 }
                 if (!valMoneda)
                 {
-                    fila1.Cells[22].ErrorText = "Moneda Invalida";
+                    fila1.Cells[22].ErrorText = "Moneda Inválida";
                     Resultado = false;
                 }
                 if (!valTipoSancion)
                 {
-                    fila1.Cells[23].ErrorText = "Tipo de sanción Invalida";
+                    fila1.Cells[23].ErrorText = "Tipo de sanción Inválida";
                     Resultado = false;
                 }
 
                 if (!valDescripcion)
                 {
-                    fila1.Cells[24].ErrorText = "Descripción Invalida";
+                    fila1.Cells[24].ErrorText = "Descripción Inválida";
                     Resultado = false;
                 }
                 if (!valTipoPersona)
                 {
-                    fila1.Cells[25].ErrorText = "Tipo de Persona Invalida";
+                    fila1.Cells[25].ErrorText = "Tipo de Persona Inválida";
                     Resultado = false;
                 }
                 if (!valTelefono)
                 {
-                    fila1.Cells[26].ErrorText = "Teléfono Invalido";
+                    fila1.Cells[26].ErrorText = "Teléfono Inválido";
                     Resultado = false;
                 }
 
@@ -502,7 +502,7 @@ namespace Sistema_de_sanciones
                 if (!valPais)
                 {
 
-                    fila1.Cells[49].ErrorText = "Pais inválido";
+                    fila1.Cells[49].ErrorText = "País inválido";
                     Resultado = false;
                 }
                 if (!valtitulo)
@@ -560,7 +560,7 @@ namespace Sistema_de_sanciones
                 }
                 else
                 {
-                    fila1.Cells[23].ErrorText = "No corresponde alcatálogo Tipo Sanción";
+                    fila1.Cells[23].ErrorText = "No corresponde al catálogo Tipo Sanción";
                     Resultado = false;
                 }
 
@@ -741,144 +741,144 @@ namespace Sistema_de_sanciones
 
                 if (!valNombre)
                 {
-                    fila1.Cells[0].ErrorText = "Nombre invalido";
+                    fila1.Cells[0].ErrorText = "Nombre inválido";
                     Resultado = false;
                 }
 
                 if (!valApellido)
                 {
-                    fila1.Cells[1].ErrorText = "Primer Apellido invalido";
+                    fila1.Cells[1].ErrorText = "Primer Apellido inválido";
                     Resultado = false;
                 }
                 if (!valapellidoDos)
                 {
-                    fila1.Cells[2].ErrorText = "Segundo Apellido invalido";
+                    fila1.Cells[2].ErrorText = "Segundo Apellido inválido";
                     Resultado = false;
                 }
                 if (!valGenero)
                 {
-                    fila1.Cells[3].ErrorText = "Genero invalido";
+                    fila1.Cells[3].ErrorText = "Género inválido";
                     Resultado = false;
                 }
                 if (!valRFC)
                 {
-                    fila1.Cells[4].ErrorText = "RFC invalido";
+                    fila1.Cells[4].ErrorText = "RFC inválido";
                     Resultado = false;
                 }
                 if (!valCURP)
                 {
-                    fila1.Cells[5].ErrorText = "CURP invalido";
+                    fila1.Cells[5].ErrorText = "CURP inválido";
                     Resultado = false;
                 }
                 if (!valPuestoNombre)
                 {
-                    fila1.Cells[6].ErrorText = "Puesto nombre invalido";
+                    fila1.Cells[6].ErrorText = "Puesto nombre inválido";
                     Resultado = false;
                 }
                 if (!valPuestoNivel)
                 {
-                    fila1.Cells[7].ErrorText = "Puesto nombre invalido";
+                    fila1.Cells[7].ErrorText = "Puesto nombre inválido";
                     Resultado = false;
                 }
                 if (!valNombreInsDep)
                 {
-                    fila1.Cells[8].ErrorText = "Puesto nombre invalido";
+                    fila1.Cells[8].ErrorText = "Puesto nombre inválido";
                     Resultado = false;
                 }
                 if (!valSiglas)
                 {
-                    fila1.Cells[9].ErrorText = "Puesto nombre invalido";
+                    fila1.Cells[9].ErrorText = "Puesto nombre inválido";
                     Resultado = false;
                 }
                 if (!valClave)
                 {
-                    fila1.Cells[10].ErrorText = "Puesto nombre invalido";
+                    fila1.Cells[10].ErrorText = "Puesto nombre inválido";
                     Resultado = false;
                 }
                 if (!valExpediente)
                 {
-                    fila1.Cells[11].ErrorText = "Puesto nombre invalido";
+                    fila1.Cells[11].ErrorText = "Puesto nombre inválido";
                     Resultado = false;
                 }
                 if (!valTipoFalta)
                 {
-                    fila1.Cells[12].ErrorText = "Puesto nombre invalido";
+                    fila1.Cells[12].ErrorText = "Puesto nombre inválido";
                     Resultado = false;
                 }
                 if (!valDescFalta)
                 {
-                    fila1.Cells[13].ErrorText = "Puesto nombre invalido";
+                    fila1.Cells[13].ErrorText = "Puesto nombre inválido";
                     Resultado = false;
                 }
 
                 if (!valCausaMotivoHecho)
                 {
-                    fila1.Cells[14].ErrorText = "Causa Motivo o Hecho invalida";
+                    fila1.Cells[14].ErrorText = "Causa Motivo o Hecho inválida";
                     Resultado = false;
                 }
                 if (!valObservaciones)
                 {
-                    fila1.Cells[15].ErrorText = "Observación invalida";
+                    fila1.Cells[15].ErrorText = "Observación inválida";
                     Resultado = false;
                 }
                 if (!valAutSancionada)
                 {
-                    fila1.Cells[16].ErrorText = "Autoridad Sancionada invalida";
+                    fila1.Cells[16].ErrorText = "Autoridad Sancionada inválida";
                     Resultado = false;
                 }
                 if (!valFechResolucion)
                 {
-                    fila1.Cells[17].ErrorText = "Fecha invalida";
+                    fila1.Cells[17].ErrorText = "Fecha inválida";
                     Resultado = false;
                 }
                 if (!valURL)
                 {
-                    fila1.Cells[18].ErrorText = "URL invalido";
+                    fila1.Cells[18].ErrorText = "URL inválido";
                     Resultado = false;
                 }
                 if (!valPlazo)
                 {
-                    fila1.Cells[19].ErrorText = "Plazo invalido";
+                    fila1.Cells[19].ErrorText = "Plazo inválido";
                     Resultado = false;
                 }
                 if (!valFechInicial)
                 {
-                    fila1.Cells[20].ErrorText = "FechInicial invalida";
+                    fila1.Cells[20].ErrorText = "Fecha Inicial inválida";
                     Resultado = false;
                 }
                 if (!valFechFinal)
                 {
-                    fila1.Cells[21].ErrorText = "Fech Final invalida";
+                    fila1.Cells[21].ErrorText = "Fecha Final inválida";
                     Resultado = false;
                 }
                 if (!valMonto)
                 {
-                    fila1.Cells[22].ErrorText = "Monto invalido";
+                    fila1.Cells[22].ErrorText = "Monto inválido";
                     Resultado = false;
                 }
                 if (!valMoneda)
                 {
-                    fila1.Cells[23].ErrorText = "Moneda invalida";
+                    fila1.Cells[23].ErrorText = "Moneda inválida";
                     Resultado = false;
                 }
                 if (!valTSancion)
                 {
-                    fila1.Cells[24].ErrorText = "Tipo Sanción invalido";
+                    fila1.Cells[24].ErrorText = "Tipo Sanción inválido";
                     Resultado = false;
                 }
                 if (!valDescSancion)
                 {
-                    fila1.Cells[25].ErrorText = "Descripción de Sanción invalida";
+                    fila1.Cells[25].ErrorText = "Descripción de Sanción inválida";
                     Resultado = false;
                 }
                 if (!valTitulo)
                 {
-                    fila1.Cells[26].ErrorText = "Titulo invalido";
+                    fila1.Cells[26].ErrorText = "Título inválido";
                     Resultado = false;
                 }
                 if (!valTipoDocumento)
                 {
-                    fila1.Cells[27].ErrorText = "Tipo de Documento invalido";
+                    fila1.Cells[27].ErrorText = "Tipo de Documento inválido";
                     Resultado = false;
                 }
                 if (!valDescDocumento)
@@ -888,12 +888,12 @@ namespace Sistema_de_sanciones
                 }
                 if (!valDocURL)
                 {
-                    fila1.Cells[29].ErrorText = "URL invalida";
+                    fila1.Cells[29].ErrorText = "URL inválida";
                     Resultado = false;
                 }
                 if (!valFecha)
                 {
-                    fila1.Cells[30].ErrorText = "Fecha invalida";
+                    fila1.Cells[30].ErrorText = "Fecha inválida";
                     Resultado = false;
                 }
 
@@ -903,7 +903,7 @@ namespace Sistema_de_sanciones
                 }
                 else
                 {
-                    fila1.Cells[12].ErrorText = "No corresponde al catalogo Genero";
+                    fila1.Cells[12].ErrorText = "No corresponde al catálogo Género";
                     Resultado = false;
                 }
 
@@ -921,7 +921,7 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        fila1.Cells[23].ErrorText = "No corresponde la catalogo Moneda";
+                        fila1.Cells[23].ErrorText = "No corresponde la catálogo Moneda";
                         Resultado = false;
                     }
 
@@ -934,7 +934,7 @@ namespace Sistema_de_sanciones
                 }
                 else
                 {
-                    fila1.Cells[12].ErrorText = "No corresponde al catalogo Tipo Falta";
+                    fila1.Cells[12].ErrorText = "No corresponde al catálogo Tipo Falta";
                     Resultado = false;
                 }
 
@@ -950,7 +950,7 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        fila1.Cells[24].ErrorText = "No corresponde al catalogo Tipo Sanción";
+                        fila1.Cells[24].ErrorText = "No corresponde al catálogo Tipo Sanción";
                         Resultado = false;
                     }
                 }
@@ -968,7 +968,7 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
-                        fila1.Cells[27].ErrorText = "No corresponde al catalogo Tipo Documento";
+                        fila1.Cells[27].ErrorText = "No corresponde al catálogo Tipo Documento";
                         Resultado = false;
                     }
                 }
@@ -1448,7 +1448,7 @@ namespace Sistema_de_sanciones
             }
             else
             {
-                MessageBox.Show("No hay ningun registro");
+                MessageBox.Show("No hay ningún registro");
             }
             //if (validarCamposSPS())
             //{
@@ -1718,7 +1718,7 @@ namespace Sistema_de_sanciones
             }
             else
             {
-                MessageBox.Show("No existe ningun registro");
+                MessageBox.Show("No existe ningún registro");
             }
         }
 
@@ -1731,7 +1731,7 @@ namespace Sistema_de_sanciones
                 {
                     if (dataGridView1.SelectedRows.Count > 0)
                     {
-                        DialogResult resut = MessageBox.Show("Esta seguro de eliminar el registro?", "Warning", MessageBoxButtons.YesNo);
+                        DialogResult resut = MessageBox.Show("¿Está seguro de eliminar el registro?", "Warning", MessageBoxButtons.YesNo);
                         if (resut == DialogResult.Yes)
                         {
 
