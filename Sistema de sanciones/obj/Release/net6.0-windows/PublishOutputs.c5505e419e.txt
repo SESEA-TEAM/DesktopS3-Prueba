@@ -1,0 +1,13 @@
+C:\Users\Invitado2022\Desktop\Nueva carpeta\Sistema de sanciones.exe
+C:\Users\Invitado2022\Desktop\Nueva carpeta\Sistema de sanciones.dll
+C:\Users\Invitado2022\Desktop\Nueva carpeta\Sistema de sanciones.deps.json
+C:\Users\Invitado2022\Desktop\Nueva carpeta\Sistema de sanciones.runtimeconfig.json
+C:\Users\Invitado2022\Desktop\Nueva carpeta\Sistema de sanciones.pdb
+C:\Users\Invitado2022\Desktop\Nueva carpeta\ExcelDataReader.dll
+C:\Users\Invitado2022\Desktop\Nueva carpeta\ExcelDataReader.DataSet.dll
+C:\Users\Invitado2022\Desktop\Nueva carpeta\System.Data.SqlClient.dll
+C:\Users\Invitado2022\Desktop\Nueva carpeta\runtimes\win-arm64\native\sni.dll
+C:\Users\Invitado2022\Desktop\Nueva carpeta\runtimes\win-x64\native\sni.dll
+C:\Users\Invitado2022\Desktop\Nueva carpeta\runtimes\win-x86\native\sni.dll
+C:\Users\Invitado2022\Desktop\Nueva carpeta\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Invitado2022\Desktop\Nueva carpeta\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
