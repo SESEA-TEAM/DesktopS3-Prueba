@@ -250,7 +250,7 @@ namespace Sistema_de_sanciones
             if (textProveedor.Texts == "Proveedor*" )
             {
                 
-                MessageBox.Show("Hay datos que aun no se han proporcionado");
+                MessageBox.Show("Hay datos que aún no se han proporcionado");
             }
             else
             {
