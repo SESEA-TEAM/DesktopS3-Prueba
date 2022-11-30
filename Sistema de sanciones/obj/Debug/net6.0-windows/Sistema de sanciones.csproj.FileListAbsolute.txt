@@ -131,7 +131,6 @@ C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Modificar_SPS.resources
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.ReporteBitacora.resources
 C:\Users\Invitado2022\source\repos\DesktopS3-main\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Editar_Usuarios.resources
-C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CapturaPS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CargaMasiva.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Datos_PS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Datos_SPS.resources
@@ -262,7 +261,6 @@ C:\Users\Invitado2022\Documents\GitHub\Nueva carpeta\DesktopS3-Prueba\Sistema de
 C:\Users\Invitado2022\Documents\GitHub\Nueva carpeta\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.genruntimeconfig.cache
 C:\Users\Invitado2022\Documents\GitHub\Nueva carpeta\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\ref\Sistema de sanciones.dll
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.csproj.AssemblyReference.cache
-C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modPS.resources
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modPS.resources
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modSPS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modSPS.resources
