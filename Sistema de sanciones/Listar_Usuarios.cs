@@ -155,7 +155,7 @@ namespace Sistema_de_sanciones
 
                 if (dataGridView1.SelectedRows.Count > 0) //Si hay mas de 0 filas entonces procedera a ejecutar el siguiente codigo.
                 {
-                    DialogResult resut = MessageBox.Show("Esta seguro de eliminar el registro?", "Warning", MessageBoxButtons.YesNo);
+                    DialogResult resut = MessageBox.Show("¿Está seguro de eliminar el registro?", "Warning", MessageBoxButtons.YesNo);
                     if (resut == DialogResult.Yes)
                     {
                         objp.EliminarUsuario(Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value)); //Manda a llamar le procedimiento almacenado Eliminar Usuario.
