@@ -93,7 +93,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(891, -21);
+            this.label8.Location = new System.Drawing.Point(889, -21);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(23, 16);
             this.label8.TabIndex = 2;
@@ -101,7 +101,6 @@
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
@@ -114,7 +113,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Location = new System.Drawing.Point(7, 58);
+            this.panel1.Location = new System.Drawing.Point(-2, 59);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(321, 25);
             this.panel1.TabIndex = 4;
@@ -124,10 +123,10 @@
             this.tabControl1.Controls.Add(this.ListaProveedor);
             this.tabControl1.Controls.Add(this.EditarProveedor);
             this.tabControl1.Controls.Add(this.VerProveedor);
-            this.tabControl1.Location = new System.Drawing.Point(4, 60);
+            this.tabControl1.Location = new System.Drawing.Point(0, 60);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1170, 512);
+            this.tabControl1.Size = new System.Drawing.Size(1174, 512);
             this.tabControl1.TabIndex = 21;
             // 
             // ListaProveedor
@@ -139,13 +138,12 @@
             this.ListaProveedor.Location = new System.Drawing.Point(4, 24);
             this.ListaProveedor.Name = "ListaProveedor";
             this.ListaProveedor.Padding = new System.Windows.Forms.Padding(3);
-            this.ListaProveedor.Size = new System.Drawing.Size(1162, 484);
+            this.ListaProveedor.Size = new System.Drawing.Size(1166, 484);
             this.ListaProveedor.TabIndex = 0;
             this.ListaProveedor.Text = "Lista Proveedor";
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
@@ -157,7 +155,6 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label9);
@@ -166,7 +163,7 @@
             this.panel2.Controls.Add(this.label14);
             this.panel2.Location = new System.Drawing.Point(0, 42);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1159, 36);
+            this.panel2.Size = new System.Drawing.Size(1163, 36);
             this.panel2.TabIndex = 27;
             // 
             // label9
@@ -174,7 +171,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(992, -4);
+            this.label9.Location = new System.Drawing.Point(992, 5);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 16);
             this.label9.TabIndex = 12;
@@ -185,7 +182,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(722, 0);
+            this.label3.Location = new System.Drawing.Point(722, 6);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 16);
             this.label3.TabIndex = 10;
@@ -196,7 +193,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(429, 0);
+            this.label5.Location = new System.Drawing.Point(429, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 16);
             this.label5.TabIndex = 9;
@@ -207,7 +204,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(109, 0);
+            this.label14.Location = new System.Drawing.Point(109, 6);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(73, 16);
             this.label14.TabIndex = 7;
@@ -225,7 +222,8 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 79);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 79);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -238,7 +236,7 @@
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1174, 334);
+            this.dataGridView1.Size = new System.Drawing.Size(1177, 334);
             this.dataGridView1.TabIndex = 21;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
@@ -257,7 +255,7 @@
             this.EditarProveedor.Location = new System.Drawing.Point(4, 24);
             this.EditarProveedor.Name = "EditarProveedor";
             this.EditarProveedor.Padding = new System.Windows.Forms.Padding(3);
-            this.EditarProveedor.Size = new System.Drawing.Size(1162, 484);
+            this.EditarProveedor.Size = new System.Drawing.Size(1166, 484);
             this.EditarProveedor.TabIndex = 1;
             this.EditarProveedor.Text = "Editar Proveedor";
             // 
@@ -293,7 +291,6 @@
             // 
             // textProveedor
             // 
-            this.textProveedor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textProveedor.BackColor = System.Drawing.SystemColors.Control;
             this.textProveedor.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textProveedor.BorderFocusColor = System.Drawing.Color.IndianRed;
@@ -314,7 +311,6 @@
             // 
             // label10
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(516, 87);
@@ -325,7 +321,6 @@
             // 
             // label11
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.Location = new System.Drawing.Point(102, 181);
@@ -336,7 +331,6 @@
             // 
             // label12
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.Firebrick;
@@ -348,7 +342,6 @@
             // 
             // Guardar
             // 
-            this.Guardar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.Guardar.FlatAppearance.BorderSize = 0;
             this.Guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -365,7 +358,6 @@
             // 
             // btnCancelarEditar
             // 
-            this.btnCancelarEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCancelarEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.btnCancelarEditar.FlatAppearance.BorderSize = 0;
             this.btnCancelarEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -397,7 +389,7 @@
             this.VerProveedor.Location = new System.Drawing.Point(4, 24);
             this.VerProveedor.Name = "VerProveedor";
             this.VerProveedor.Padding = new System.Windows.Forms.Padding(3);
-            this.VerProveedor.Size = new System.Drawing.Size(1162, 484);
+            this.VerProveedor.Size = new System.Drawing.Size(1166, 484);
             this.VerProveedor.TabIndex = 2;
             this.VerProveedor.Text = "Ver Proveedor";
             // 
@@ -427,7 +419,6 @@
             // 
             // label18
             // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label18.Location = new System.Drawing.Point(110, 80);
@@ -438,18 +429,16 @@
             // 
             // label17
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.Location = new System.Drawing.Point(752, 174);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(140, 16);
+            this.label17.Size = new System.Drawing.Size(145, 16);
             this.label17.TabIndex = 47;
-            this.label17.Text = "Fecha actialización";
+            this.label17.Text = "Fecha actualización";
             // 
             // label16
             // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.Location = new System.Drawing.Point(399, 180);
@@ -460,7 +449,6 @@
             // 
             // textProveedorVer
             // 
-            this.textProveedorVer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textProveedorVer.BackColor = System.Drawing.SystemColors.Control;
             this.textProveedorVer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textProveedorVer.BorderFocusColor = System.Drawing.Color.IndianRed;
@@ -505,7 +493,6 @@
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(524, 80);
@@ -516,7 +503,6 @@
             // 
             // label15
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.Location = new System.Drawing.Point(110, 174);
@@ -527,7 +513,6 @@
             // 
             // btnVerProveedor
             // 
-            this.btnVerProveedor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnVerProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.btnVerProveedor.FlatAppearance.BorderSize = 0;
             this.btnVerProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -543,7 +528,6 @@
             // 
             // label13
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.Firebrick;

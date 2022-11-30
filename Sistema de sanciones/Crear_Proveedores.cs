@@ -78,7 +78,7 @@ namespace Sistema_de_sanciones
             if(textProveedor.Texts == "Proveedor*" || comboSistema.Text == "Selecciona los sistemas aplicables*")
             {
                 errorProvider1.SetError(comboSistema, "Selecciona los sistemas aplicables");
-                MessageBox.Show("Hay datos que aun no se han proporcionado");   
+                MessageBox.Show("Hay datos que aún no se han proporcionado");   
             }
             else
             {
