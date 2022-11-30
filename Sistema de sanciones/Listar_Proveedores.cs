@@ -104,7 +104,7 @@ namespace Sistema_de_sanciones
             {
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    DialogResult resut = MessageBox.Show("Esta seguro de eliminar el registro?", "Warning", MessageBoxButtons.YesNo);
+                    DialogResult resut = MessageBox.Show("¿Está seguro de eliminar el registro?", "Warning", MessageBoxButtons.YesNo);
                     if (resut == DialogResult.Yes)
                     {
                         objp.EliminarProveedor(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
