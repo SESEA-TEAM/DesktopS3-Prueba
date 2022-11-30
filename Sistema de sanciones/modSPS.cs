@@ -216,17 +216,19 @@ namespace Sistema_de_sanciones
 
         private void modSPS_Load(object sender, EventArgs e)
         {
+            int p = panel3.Width;
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "quitar";
             Ver.Name = "quitar";
-            Ver.Width = 106;
+            Ver.Width = Convert.ToInt32(p * 0.095);
             Ver.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(Ver);
             //dataGridView2.Columns.Add(Ver);
+            int p2 = panel9.Width;
             DataGridViewButtonColumn Ver2 = new DataGridViewButtonColumn();
             Ver2.HeaderText = "quitar";
             Ver2.Name = "quitar";
-            Ver2.Width = 109;
+            Ver2.Width = Convert.ToInt32(p2 * 0.095);
             Ver2.FlatStyle = FlatStyle.Flat;
             dataGridView2.Columns.Add(Ver2);
         }

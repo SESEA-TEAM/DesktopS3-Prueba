@@ -392,3 +392,5 @@ C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modSPS.resources
 C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.dll
 C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.DataSet.dll
+C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CapPS.resources
+C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modiPS.resources

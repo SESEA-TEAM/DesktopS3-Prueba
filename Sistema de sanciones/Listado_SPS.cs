@@ -189,23 +189,22 @@ namespace WinFormsApp1
                 }
 
 
-                //Las siguientes dos lineas son las que se encargar de cargar los datos de nuestra base de datos al dataGridView, el primero es la llamada al
-                //procedimiento BarraListadoSPS el cual declaramos en el controladorSPS y es el encargado de realizar la consulta, mientras que la segunda linea
-                //carga los datos de la consulta en nuestro dataGridView.
-
-                dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
-                dataGridView1.DataSource = dsTable.Tables[1];
-                dataGridView1.Columns[0].Width = 41; //Desactiva la columna ID
-                dataGridView1.Columns[1].Visible = false; //Desactiva la columna ID
-                dataGridView1.Columns[2].Width = 170;     //Se asigna tamaño a la columna Nombre Completo
-                dataGridView1.Columns[3].Width = 335; //Desactiva la columna Nombre
-                dataGridView1.Columns[4].Width = 263; //Desactiva la columna Primer Apellido
-                dataGridView1.Columns[5].Width = 263; //Desactiva la columna Primer Apellido
-                                                      //dataGridView1.Columns[5].Width = 250; //Desactiva la columna Primer Apellido
-
+            //Las siguientes dos lineas son las que se encargar de cargar los datos de nuestra base de datos al dataGridView, el primero es la llamada al
+            //procedimiento BarraListadoSPS el cual declaramos en el controladorSPS y es el encargado de realizar la consulta, mientras que la segunda linea
+            //carga los datos de la consulta en nuestro dataGridView.
+            int p = panel3.Width;
+            dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
+            dataGridView1.DataSource = dsTable.Tables[1];
+            dataGridView1.Columns[0].Width = Convert.ToInt32(p * 0.035); //Desactiva la columna ID
+            dataGridView1.Columns[1].Visible = false; //Desactiva la columna ID
+            dataGridView1.Columns[2].Width = Convert.ToInt32(p * 0.145);     //Se asigna tamaño a la columna Nombre Completo
+            dataGridView1.Columns[3].Width = Convert.ToInt32(p * 0.285); //Desactiva la columna Nombre
+            dataGridView1.Columns[4].Width = Convert.ToInt32(p * 0.224); //Desactiva la columna Primer Apellido
+            dataGridView1.Columns[5].Width = Convert.ToInt32(p * 0.224); //Desactiva la columna Primer Apellido
 
 
-                botonPrimero.Enabled = false;
+
+            botonPrimero.Enabled = false;
                 botonAnterior.Enabled = false;
 
                 label9.Text = "Registros: " + objs.Inicio2 + " - " + (objs.Final2) + " de: " + ContadorTotal.ToString();
@@ -215,11 +214,12 @@ namespace WinFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            int p = panel3.Width;
             //Se genera 3 nuevas columas con botones.
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "Ver";
             Ver.Name = "Ver";
-            Ver.Width = 50;
+            Ver.Width = Convert.ToInt32(p * 0.042);
             Ver.FlatStyle = FlatStyle.Flat;
             Ver.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(Ver);
@@ -228,7 +228,7 @@ namespace WinFormsApp1
             DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
             editar.HeaderText = "Editar";
             editar.Name = "Editar";
-            editar.Width = 50;
+            editar.Width = Convert.ToInt32(p * 0.042);
             editar.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(editar);
             //this.dataGridView1.Columns["Editar"].Frozen = true;
@@ -236,10 +236,11 @@ namespace WinFormsApp1
 
         private void CargarBotones()
         {
+            int p = panel3.Width;
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "Ver";
             Ver.Name = "Ver";
-            Ver.Width = 50;
+            Ver.Width = Convert.ToInt32(p * 0.042);
             Ver.FlatStyle = FlatStyle.Flat;
             Ver.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(Ver);
@@ -248,7 +249,7 @@ namespace WinFormsApp1
             DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
             editar.HeaderText = "Editar";
             editar.Name = "Editar";
-            editar.Width = 50;
+            editar.Width = Convert.ToInt32(p * 0.042);
             editar.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(editar);
             //this.dataGridView1.Columns["Editar"].Frozen = true;

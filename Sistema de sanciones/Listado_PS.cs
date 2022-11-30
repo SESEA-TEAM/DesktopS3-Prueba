@@ -182,16 +182,16 @@ namespace Sistema_de_sanciones
                 botonSiguiente.Enabled = true;
                 botonUltimo.Enabled = true;
             }
-
+            int p = panel3.Width;
             dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
-            dataGridView1.Columns[0].Width = 41; //Desactiva la columna ID
+            dataGridView1.Columns[0].Width = Convert.ToInt32(p * 0.035); //Desactiva la columna ID
             dataGridView1.Columns[1].Visible = false; //Desactiva la columna ID
-            dataGridView1.Columns[2].Width = 135; //Desactiva la columna ID
-            dataGridView1.Columns[3].Width = 290;     //Se asigna tamaño a la columna Nombre Completo
-            dataGridView1.Columns[4].Width = 278; //Desactiva la columna Nombre
-            dataGridView1.Columns[5].Width = 75; //Desactiva la columna Primer Apellido
-            dataGridView1.Columns[6].Width = 255; //Desactiva la columna Primer Apellido
+            dataGridView1.Columns[2].Width = Convert.ToInt32(p * 0.115); //Desactiva la columna ID
+            dataGridView1.Columns[3].Width = Convert.ToInt32(p * 0.247);     //Se asigna tamaño a la columna Nombre Completo
+            dataGridView1.Columns[4].Width = Convert.ToInt32(p * 0.236); //Desactiva la columna Nombre
+            dataGridView1.Columns[5].Width = Convert.ToInt32(p * 0.064); //Desactiva la columna Primer Apellido
+            dataGridView1.Columns[6].Width = Convert.ToInt32(p * 0.217); //Desactiva la columna Primer Apellido
 
 
             botonAnterior.Enabled = false;
@@ -229,10 +229,12 @@ namespace Sistema_de_sanciones
 
         private void Listado_PS_Load(object sender, EventArgs e)
         {
+            int p = panel3.Width;
+
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "Ver";
             Ver.Name = "Ver";
-            Ver.Width = 50;
+            Ver.Width = Convert.ToInt32(p * 0.042);
             Ver.FlatStyle = FlatStyle.Flat;
             Ver.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(Ver);
@@ -241,17 +243,18 @@ namespace Sistema_de_sanciones
             DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
             editar.HeaderText = "Editar";
             editar.Name = "Editar";
-            editar.Width = 50;
+            editar.Width = Convert.ToInt32(p * 0.042);
             editar.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(editar);
         }
 
         private void CargarBotones()
         {
+            int p = panel3.Width;
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "Ver";
             Ver.Name = "Ver";
-            Ver.Width = 50;
+            Ver.Width = Convert.ToInt32(p * 0.042);
             Ver.FlatStyle = FlatStyle.Flat;
             Ver.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(Ver);
@@ -260,7 +263,7 @@ namespace Sistema_de_sanciones
             DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
             editar.HeaderText = "Editar";
             editar.Name = "Editar";
-            editar.Width = 50;
+            editar.Width = Convert.ToInt32(p * 0.042);
             editar.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(editar);
             //this.dataGridView1.Columns["Editar"].Frozen = true;

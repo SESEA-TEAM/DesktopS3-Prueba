@@ -139,7 +139,7 @@ namespace Sistema_de_sanciones
 
         private void buttonCapturarParticulares_Click(object sender, EventArgs e)
         {
-            loadform(new CapturaPS(this));
+            loadform(new CapPS(this));
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -171,7 +171,7 @@ namespace Sistema_de_sanciones
 
         public void editarPS(int id)
         {
-            loadform(new modPS(this, id));
+            loadform(new modiPS(this, id));
         }
 
         public void editarSPS(int id)
