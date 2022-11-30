@@ -390,3 +390,5 @@ C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\WinFormsApp1.FormListadoSPS.resources
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modPS.resources
 C:\Users\DarkFrostMoe\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modSPS.resources
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.dll
+C:\Users\Shude\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.DataSet.dll

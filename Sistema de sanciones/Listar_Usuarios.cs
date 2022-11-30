@@ -62,18 +62,22 @@ namespace Sistema_de_sanciones
 
             dsTabla = objp.Seleccionar_Datos_User(); //La tabla se recarga con el procedimiento almacenado Seleccionar_Datos_User.
 
+            //int p = panel3.Width;
+            int p = tabControl1.Width;
+
             dataGridView1.DataSource = dsTabla;
-            
+            dataGridView1.ScrollBars = ScrollBars.None; //Desactivar ScrollBar del DataGridView
+
             dataGridView1.Columns[0].Visible = false; //Desactiva la columna ID
             dataGridView1.Columns[1].Visible = false; //Desactiva la columna IDUsuario
-            dataGridView1.Columns[2].Width = 270;     //Se asigna tamaño a la columna Nombre Completo
+            dataGridView1.Columns[2].Width = (Convert.ToInt32(p * 0.3));     //Se asigna tamaño a la columna Nombre Completo
             dataGridView1.Columns[3].Visible = false; //Desactiva la columna Nombre
             dataGridView1.Columns[4].Visible = false; //Desactiva la columna Primer Apellido
             dataGridView1.Columns[5].Visible = false; //Desactiva la columna Segundo Apellido
             dataGridView1.Columns[6].Visible = false; //Desactiva la columna Cargo
-            dataGridView1.Columns[7].Width = 200;     //Se le asigna tamaño a la columna Usuario
-            dataGridView1.Columns[8].Width = 200;     //Se le asigna tamaño a la columna correo
-            dataGridView1.Columns[9].Width = 230;     //Se le asigna tamaño a la columna Proveedor
+            dataGridView1.Columns[7].Width = (Convert.ToInt32(p * 0.1));     //Se le asigna tamaño a la columna Usuario
+            dataGridView1.Columns[8].Width = (Convert.ToInt32(p * 0.3));     //Se le asigna tamaño a la columna correo
+            dataGridView1.Columns[9].Width = (Convert.ToInt32(p * 0.1));     //Se le asigna tamaño a la columna Proveedor
             dataGridView1.Columns[10].Visible = false; //Desactiva la columna Teléfono
             dataGridView1.Columns[11].Visible = false; //Desactiva la columna Extensión
             dataGridView1.Columns[12].Visible = false; //Desactiva la columna ComboSistemas

@@ -33,7 +33,13 @@ namespace Sistema_de_sanciones
         int vial;
         int paisE;
         int doc;
+
+        //VARIABLES PARA SPS
+        int m, sanSPS, docSPS, faltaSPS, generoSPS;
+
         controlador1PS conPS = new controlador1PS();
+        controlador1SPS conSPS = new controlador1SPS();
+
         private DataSet dtsTablas = new DataSet();
         public CargaMasiva()
         {
@@ -131,7 +137,7 @@ namespace Sistema_de_sanciones
         {
             bool Resultado = true;
             string ClaveExpedientes = @"[ -A-Za-z0-9_(!""#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~)]{3,140}";
-            string cadenaTexto = @"^[ a-zA-ZÀ-ÿfd]+(\s*[a-zA-ZÀ-ÿfd])[a-zA-ZÀ-ÿfd ]+$";
+            string cadenaTexto = @"^[ a-zA-ZÀ-ÿfd]+(\s*[a-zA-ZÀ-ÿfd])[a-zA-ZÀ-ÿfd ,]+$";
             string NoObligatorio = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,140}$";
             string ClavePlazo = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,50}$";
             string ClavesRFCs = @"^([A-ZÑ&]{4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$";
@@ -668,18 +674,24 @@ namespace Sistema_de_sanciones
         public bool validarCamposSPS()
         {
             bool Resultado = true;
-            string cadenaTexto = @"^[a-zA-ZÀ-ÿfd]+(\s*[a-zA-ZÀ-ÿfd])[a-zA-ZÀ-ÿfd]+$";
-            string ClavesGenero = @"^[A-z]{8,9}$";
+            string cadenaTexto = @"^[ a-zA-ZÀ-ÿfd]+(\s*[a-zA-ZÀ-ÿfd])[a-zA-ZÀ-ÿfd ,]+$";
+            string NoObligatorio = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
+            string ClavesGenero = @"^[A-Z ]{8,10}$";
             string ClavesRFC = @"^([A-ZÑ&]{4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$";
             string ClavesCURP = @"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$";
             string ObligatoriaFechas = @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01]){1}$";
-            string Fechas = @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$";
+            string Fechas = @"^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$$";
             string URLS = @"^https?:\/\/[\w\-]+(\.[\w\-]+)+[#?]?.*$";
             string ClavePuesto = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
             string ClaveSiglas = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,10}$";
             string ClaveExpediente = @"[-A-Za-z0-9_(!""#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~)]{3,100}";
             string ClaveClave = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
             string ClaveTipoFalta = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
+            string Monto = @"^[0-9.]{0,200}$";
+
+            string cadenaDocumento = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
+            string URLSDocumento = @"[-A-Za-z0-9_(!""#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~)]{0,200}";
+            string FechaDocumento = @"^[0-9-]{0,10}$";
 
 
             // bool valNombre = Regex.IsMatch(, cadenaTexto);
@@ -687,39 +699,46 @@ namespace Sistema_de_sanciones
             foreach (DataGridViewRow fila1 in dataGridView2.Rows)
             {
 
+                //DATOS GENERALES
                 bool valNombre = Regex.IsMatch(fila1.Cells[0].Value.ToString(), cadenaTexto);
                 bool valApellido = Regex.IsMatch(fila1.Cells[1].Value.ToString(), cadenaTexto);
-                bool valapellidoDos = Regex.IsMatch(fila1.Cells[2].Value.ToString(), cadenaTexto);
+                bool valapellidoDos = Regex.IsMatch(fila1.Cells[2].Value.ToString(), NoObligatorio);
                 bool valGenero = Regex.IsMatch(fila1.Cells[3].Value.ToString(), ClavesGenero);
                 bool valRFC = Regex.IsMatch(fila1.Cells[4].Value.ToString(), ClavesRFC);
                 bool valCURP = Regex.IsMatch(fila1.Cells[5].Value.ToString(), ClavesCURP);
-                bool valPuestoNombre = Regex.IsMatch(fila1.Cells[6].Value.ToString(), ClavePuesto);
+                bool valPuestoNombre = Regex.IsMatch(fila1.Cells[6].Value.ToString(), NoObligatorio);
                 bool valPuestoNivel = Regex.IsMatch(fila1.Cells[7].Value.ToString(), ClavePuesto);
-                bool valNombreInsDep = Regex.IsMatch(fila1.Cells[8].Value.ToString(), ClavePuesto);
+                //DATOS INSTITUCIÓN
+                bool valNombreInsDep = Regex.IsMatch(fila1.Cells[8].Value.ToString(), cadenaTexto);
                 bool valSiglas = Regex.IsMatch(fila1.Cells[9].Value.ToString(), ClaveSiglas);
                 bool valClave = Regex.IsMatch(fila1.Cells[10].Value.ToString(), ClaveClave);
+                //DATOS DE LA SANCIÓN
                 bool valExpediente = Regex.IsMatch(fila1.Cells[11].Value.ToString(), ClaveExpediente);
                 bool valTipoFalta = Regex.IsMatch(fila1.Cells[12].Value.ToString(), ClaveTipoFalta);
-                bool valDescFalta = Regex.IsMatch(fila1.Cells[13].Value.ToString(), ClavePuesto);
+                bool valDescFalta = Regex.IsMatch(fila1.Cells[13].Value.ToString(), NoObligatorio);
                 bool valCausaMotivoHecho = Regex.IsMatch(fila1.Cells[14].Value.ToString(), ClavePuesto);
-                ////Mi parte
-                bool valObservaciones = Regex.IsMatch(fila1.Cells[15].Value.ToString(), cadenaTexto);
+                bool valObservaciones = Regex.IsMatch(fila1.Cells[15].Value.ToString(), NoObligatorio);
+                //DATOS RESOLUCIÓN
                 bool valAutSancionada = Regex.IsMatch(fila1.Cells[16].Value.ToString(), cadenaTexto);
-                bool valFechResolucion = Regex.IsMatch(fila1.Cells[17].Value.ToString(), cadenaTexto);
-                bool valURL = Regex.IsMatch(fila1.Cells[18].Value.ToString(), URLS);
-                bool valPlazo = Regex.IsMatch(fila1.Cells[19].Value.ToString(), cadenaTexto);
+                bool valFechResolucion = Regex.IsMatch(fila1.Cells[17].Value.ToString(), Fechas);
+                bool valURL = Regex.IsMatch(fila1.Cells[18].Value.ToString(), URLSDocumento);
+                //DATOS INHABILITACIÓN
+                bool valPlazo = Regex.IsMatch(fila1.Cells[19].Value.ToString(), NoObligatorio);
                 bool valFechInicial = Regex.IsMatch(fila1.Cells[20].Value.ToString(), Fechas);
                 bool valFechFinal = Regex.IsMatch(fila1.Cells[21].Value.ToString(), Fechas);
-                bool valMonto = Regex.IsMatch(fila1.Cells[22].Value.ToString(), cadenaTexto);
+                //DATOS MULTA
+                bool valMonto = Regex.IsMatch(fila1.Cells[22].Value.ToString(), Monto);
                 bool valMoneda = Regex.IsMatch(fila1.Cells[23].Value.ToString(), cadenaTexto);
+                //DATOS TIPO SANCIÓN
                 bool valTSancion = Regex.IsMatch(fila1.Cells[24].Value.ToString(), cadenaTexto);
-                bool valDescSancion = Regex.IsMatch(fila1.Cells[25].Value.ToString(), cadenaTexto);
-                bool valTitulo = Regex.IsMatch(fila1.Cells[26].Value.ToString(), cadenaTexto);
-                bool valTipoDocumento = Regex.IsMatch(fila1.Cells[27].Value.ToString(), cadenaTexto);
-                bool valDescDocumento = Regex.IsMatch(fila1.Cells[28].Value.ToString(), cadenaTexto);
-                bool valDocURL = Regex.IsMatch(fila1.Cells[29].Value.ToString(), URLS);
-                bool valFecha = Regex.IsMatch(fila1.Cells[30].Value.ToString(), ObligatoriaFechas);
-                
+                bool valDescSancion = Regex.IsMatch(fila1.Cells[25].Value.ToString(), NoObligatorio);
+                //DATOS DOCUMENTOS
+                bool valTitulo = Regex.IsMatch(fila1.Cells[26].Value.ToString(), cadenaDocumento);
+                bool valTipoDocumento = Regex.IsMatch(fila1.Cells[27].Value.ToString(), cadenaDocumento);
+                bool valDescDocumento = Regex.IsMatch(fila1.Cells[28].Value.ToString(), cadenaDocumento);
+                bool valDocURL = Regex.IsMatch(fila1.Cells[29].Value.ToString(), URLSDocumento);
+                bool valFecha = Regex.IsMatch(fila1.Cells[30].Value.ToString(), FechaDocumento);
+
                 if (!valNombre)
                 {
                     fila1.Cells[0].ErrorText = "Nombre invalido";
@@ -751,6 +770,47 @@ namespace Sistema_de_sanciones
                     fila1.Cells[5].ErrorText = "CURP invalido";
                     Resultado = false;
                 }
+                if (!valPuestoNombre)
+                {
+                    fila1.Cells[6].ErrorText = "Puesto nombre invalido";
+                    Resultado = false;
+                }
+                if (!valPuestoNivel)
+                {
+                    fila1.Cells[7].ErrorText = "Puesto nombre invalido";
+                    Resultado = false;
+                }
+                if (!valNombreInsDep)
+                {
+                    fila1.Cells[8].ErrorText = "Puesto nombre invalido";
+                    Resultado = false;
+                }
+                if (!valSiglas)
+                {
+                    fila1.Cells[9].ErrorText = "Puesto nombre invalido";
+                    Resultado = false;
+                }
+                if (!valClave)
+                {
+                    fila1.Cells[10].ErrorText = "Puesto nombre invalido";
+                    Resultado = false;
+                }
+                if (!valExpediente)
+                {
+                    fila1.Cells[11].ErrorText = "Puesto nombre invalido";
+                    Resultado = false;
+                }
+                if (!valTipoFalta)
+                {
+                    fila1.Cells[12].ErrorText = "Puesto nombre invalido";
+                    Resultado = false;
+                }
+                if (!valDescFalta)
+                {
+                    fila1.Cells[13].ErrorText = "Puesto nombre invalido";
+                    Resultado = false;
+                }
+
                 if (!valCausaMotivoHecho)
                 {
                     fila1.Cells[14].ErrorText = "Causa Motivo o Hecho invalida";
@@ -836,7 +896,83 @@ namespace Sistema_de_sanciones
                     fila1.Cells[30].ErrorText = "Fecha invalida";
                     Resultado = false;
                 }
-             
+
+                if (!(obtenerGeneroID(fila1.Cells[3].Value.ToString()) == -1))
+                {
+
+                }
+                else
+                {
+                    fila1.Cells[12].ErrorText = "No corresponde al catalogo Genero";
+                    Resultado = false;
+                }
+
+                //VALIDACIÓN MONEDA
+                if (fila1.Cells[23].Value.ToString() == "")
+                {
+
+                }
+
+                else
+                {
+                    if (!(obtenerMonedaSPSID(fila1.Cells[23].Value.ToString()) == -1))
+                    {
+
+                    }
+                    else
+                    {
+                        fila1.Cells[23].ErrorText = "No corresponde la catalogo Moneda";
+                        Resultado = false;
+                    }
+
+                }
+
+                //VALIDACIÓN TIPO FALTA
+                if (!(obtenerFaltaID(fila1.Cells[12].Value.ToString()) == -1))
+                {
+
+                }
+                else
+                {
+                    fila1.Cells[12].ErrorText = "No corresponde al catalogo Tipo Falta";
+                    Resultado = false;
+                }
+
+                if (fila1.Cells[24].Value.ToString() == "")
+                {
+
+                }
+                else
+                {
+                    if (!(obtenerSancionID(fila1.Cells[24].Value.ToString()) == -1))
+                    {
+
+                    }
+                    else
+                    {
+                        fila1.Cells[24].ErrorText = "No corresponde al catalogo Tipo Sanción";
+                        Resultado = false;
+                    }
+                }
+
+                //VALIDACIPON Documentos
+                if (fila1.Cells[27].Value.ToString() == "")
+                {
+
+                }
+                else
+                {
+                    if (!(obtenerDocumentoSPSID(fila1.Cells[27].Value.ToString()) == -1))
+                    {
+
+                    }
+                    else
+                    {
+                        fila1.Cells[27].ErrorText = "No corresponde al catalogo Tipo Documento";
+                        Resultado = false;
+                    }
+                }
+
 
             }
             return Resultado;
@@ -1302,6 +1438,7 @@ namespace Sistema_de_sanciones
                     if (DatosInsertadosPS == true)
                     {
                        MessageBox.Show("Datos de particulares Sancionados insertados" + ": " + dataGridView1.RowCount);
+                       dataGridView1.DataSource = null;
                     }
                     else
                     {
@@ -1319,6 +1456,270 @@ namespace Sistema_de_sanciones
             //}
            
 
+        }
+        //CARGA MASIVA SERVIDORES PUBLICOS SANCIONADOS
+        private int obtenerSancionID(string sancion)
+        {
+            List<modeloTipoSancion> lSancion2 = new controladorTipoSancion().obtenerListaSanciones();
+            int pos = lSancion2.FindIndex(x => x.valor == sancion);
+            return pos;
+        }
+
+        private int obtenerFaltaID(string sancion)
+        {
+            List<modeloTipoFalta> Falta = new controladorTipoFalta().obtenerListaFaltas();
+            int pos = Falta.FindIndex(x => x.valor == sancion);
+            return pos;
+        }
+        private int obtenerGeneroID(string sancion)
+        {
+            List<modeloListaGenero> Falta = new controladorListaGenero().obtenerListaGenero();
+            int pos = Falta.FindIndex(x => x.valor == sancion);
+            return pos;
+        }
+        private int obtenerMonedaSPSID(string sancion)
+        {
+            List<modeloMoneda> Falta = new controladorMoneda().obtenerListaMonedas();
+            int pos = Falta.FindIndex(x => x.valor == sancion);
+            return pos;
+        }
+        private int obtenerDocumentoSPSID(string documento)
+        {
+            List<modeloTipoDocumento> Falta = new controladorTipoDocumento().obtenerListaDocumentos();
+            int pos = Falta.FindIndex(x => x.tipoDocumento == documento);
+            return pos;
+        }
+
+        public void GuardarDatos()
+        {
+            conSPS.guardarSPS(modSPS);
+        }
+
+        modeloSPS modSPS = new modeloSPS();
+        private void btnGuardarSPS_Click(object sender, EventArgs e)
+        {
+            int columnas = dataGridView2.ColumnCount;
+            if (columnas == 31)
+            {
+
+                modeloTipoSancion modSan = new modeloTipoSancion();
+                modeloTipoDocumento modDoc = new modeloTipoDocumento();
+
+                bool DatosInsertados = false;
+                bool resultados = true;
+                bool documentoSPS = true;
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    if (validarCamposSPS())
+                    {
+                        modSPS.nombreSPS = row.Cells[0].Value.ToString();
+                        modSPS.primerApellidoSPS = row.Cells[1].Value.ToString();
+
+                        if (row.Cells[2].Value.ToString() == "")
+                        {
+                            row.Cells[2].Value = ("NA");
+                            modSPS.segundoApellidoSPS = row.Cells[2].Value.ToString();
+                        }
+                        else
+                        {
+                            modSPS.segundoApellidoSPS = row.Cells[2].Value.ToString();
+                        }
+
+                        generoSPS = obtenerGeneroID(row.Cells[3].Value.ToString());
+                        modSPS.generoSPS = generoSPS;
+
+                        modSPS.rfcSPS = row.Cells[4].Value.ToString();
+                        modSPS.curpSPS = row.Cells[5].Value.ToString();
+                        modSPS.puestoSPS = row.Cells[6].Value.ToString();
+
+                        if (row.Cells[7].Value.ToString() == "")
+                        {
+                            row.Cells[7].Value = ("NA");
+                            modSPS.nivelSPS = row.Cells[7].Value.ToString();
+                        }
+                        else
+                        {
+                            modSPS.nivelSPS = row.Cells[7].Value.ToString();
+                        }
+
+                        modSPS.nombreInstitucionDependencia = row.Cells[8].Value.ToString();
+
+                        if (row.Cells[9].Value.ToString() == "")
+                        {
+                            row.Cells[9].Value = ("NA");
+                            modSPS.siglasInstitucionDependencia = row.Cells[9].Value.ToString();
+                        }
+                        else
+                        {
+                            modSPS.siglasInstitucionDependencia = row.Cells[9].Value.ToString();
+                        }
+
+                        if (row.Cells[10].Value.ToString() == "")
+                        {
+                            row.Cells[10].Value = ("NA");
+                            modSPS.claveInstitucionDependencia = row.Cells[10].Value.ToString();
+                        }
+                        else
+                        {
+                            modSPS.claveInstitucionDependencia = row.Cells[10].Value.ToString();
+                        }
+
+                        modSPS.expediente = row.Cells[11].Value.ToString();
+
+
+
+                        faltaSPS = obtenerFaltaID(row.Cells[12].Value.ToString());
+                        modSPS.tipoFalta = faltaSPS;
+
+
+
+
+                        if (row.Cells[13].Value.ToString() == "")
+                        {
+                            row.Cells[13].Value = ("NA");
+                            modSPS.descripcionFalta = row.Cells[13].Value.ToString();
+                        }
+                        else
+                        {
+                            modSPS.descripcionFalta = row.Cells[13].Value.ToString();
+
+                        }
+
+                        modSPS.causaMotivoHechos = row.Cells[14].Value.ToString();
+
+                        if (row.Cells[15].Value.ToString() == "")
+                        {
+                            row.Cells[15].Value = ("NA");
+                            modSPS.observaciones = row.Cells[15].Value.ToString();
+                        }
+                        else
+                        {
+                            modSPS.observaciones = row.Cells[15].Value.ToString();
+                        }
+
+                        modSPS.autoridadSancionadora = row.Cells[16].Value.ToString();
+
+                        modSPS.fechaResolucion = Convert.ToDateTime(row.Cells[17].Value.ToString()).ToString("yyyy-MM-dd");
+
+                        if (row.Cells[18].Value.ToString() == "")
+                        {
+                            row.Cells[18].Value = ("NA");
+                            modSPS.urlResolucion = row.Cells[18].Value.ToString();
+                        }
+                        else
+                        {
+                            modSPS.urlResolucion = row.Cells[18].Value.ToString();
+                        }
+
+                        if (row.Cells[19].Value.ToString() == "")
+                        {
+                            row.Cells[19].Value = ("NA");
+                            modSPS.plazoInhabilitacion = row.Cells[19].Value.ToString();
+                        }
+                        else
+                        {
+                            modSPS.plazoInhabilitacion = row.Cells[19].Value.ToString();
+                        }
+
+                        modSPS.fechaInicialInhabilitacion = Convert.ToDateTime(row.Cells[20].Value.ToString()).ToString("yyyy-MM-dd");
+                        modSPS.fechaFinalInhabilitacion = Convert.ToDateTime(row.Cells[21].Value.ToString()).ToString("yyyy-MM-dd");
+
+                        if (row.Cells[22].Value.ToString() == "")
+                        {
+                            row.Cells[22].Value = ("0");
+                            modSPS.montoMulta = float.Parse(row.Cells[22].Value.ToString());
+                        }
+                        else
+                        {
+                            modSPS.montoMulta = float.Parse(row.Cells[22].Value.ToString());
+                        }
+
+
+                        if (row.Cells[23].Value.ToString() == "")
+                        {
+
+                        }
+
+                        else
+                        {
+                            m = obtenerMonedaSPSID(row.Cells[23].Value.ToString());
+                            modSPS.monedaMulta = m;
+                        }
+
+                        if (row.Cells[24].Value.ToString() == "")
+                        {
+
+                        }
+                        else
+                        {
+                            sanSPS = obtenerSancionID(row.Cells[24].Value.ToString());
+                        }
+
+
+                        if (row.Cells[27].Value.ToString() == "")
+                        {
+
+                        }
+                        else
+                        {
+                            docSPS = obtenerDocumentoID(row.Cells[27].Value.ToString());
+                        }
+
+                        if (row.Cells[26].Value.ToString() == "")
+                        {
+                            documentoSPS = false;
+                        }
+                        if (row.Cells[28].Value.ToString() == "")
+                        {
+                            documentoSPS = false;
+                        }
+                        if (row.Cells[29].Value.ToString() == "")
+                        {
+                            documentoSPS = false;
+                        }
+                        if (row.Cells[30].Value.ToString() == "")
+                        {
+                            documentoSPS = false;
+                        }
+
+                        if (documentoSPS == false)
+                        {
+
+                        }
+
+                        GuardarDatos();
+
+                        conSPS.guardarSancionSPS(sanSPS, modSan.descripcion = row.Cells[25].Value.ToString());
+
+                        if (documentoSPS == false)
+                        {
+
+                        }
+                        else
+                        {
+                            conSPS.guardarDocumentoSPS(docSPS, modDoc.tituloDocumento = row.Cells[26].Value.ToString(),
+                                modDoc.descripcionDocumento = row.Cells[28].Value.ToString(), modDoc.urlDocumento = row.Cells[29].Value.ToString(),
+                                modDoc.fechaDocumento = Convert.ToDateTime(row.Cells[30].Value.ToString()).ToString("yyyy-MM-dd"));
+                        }
+
+                        DatosInsertados = true;
+                    }
+
+                }
+                if (DatosInsertados == true)
+                {
+                    MessageBox.Show("Datos insertados correctamente" + ": " + dataGridView2.RowCount);
+                    dataGridView2.DataSource = null;
+                }
+                else
+                {
+                    MessageBox.Show("No puedes guardar, hay campos con errores");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No existe ningun registro");
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1387,6 +1788,7 @@ namespace Sistema_de_sanciones
                 panelPS.Visible = false;
                 MostrarPS.Visible = false;
                 dataGridView1.DataSource = null;
+                btnGuardarSPS.Visible = false;
 
             }
             else
@@ -1395,26 +1797,27 @@ namespace Sistema_de_sanciones
                 panelSPS.Visible = false;
                 MostrarPS.Visible = true;
                 btnMostar.Visible = false;
+                btnGuardarSPS.Visible = true;
 
             }
 
-            if(comboSistema.SelectedIndex != 2)
+            if (comboSistema.SelectedIndex != 2)
             {
                 panelSPS.Visible = false;
                 btnMostar.Visible = false;
                 dataGridView2.DataSource = null;
-            
+                buttonGuardar.Visible = false;
+
             }
             else
             {
-                panelSPS.Visible = true;  
+                panelSPS.Visible = true;
                 panelPS.Visible = false;
                 btnMostar.Visible = true;
                 MostrarPS.Visible = false;
-            
+                buttonGuardar.Visible = true;
+
             }
-
-
 
         }
 
