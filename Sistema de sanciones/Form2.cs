@@ -144,7 +144,7 @@ namespace Sistema_de_sanciones
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            DialogResult resut = MessageBox.Show("¿Esta seguro de cerrar sesión?", "Warning", MessageBoxButtons.YesNo);
+            DialogResult resut = MessageBox.Show("¿Está seguro de cerrar sesión?", "Warning", MessageBoxButtons.YesNo);
             if (resut == DialogResult.Yes)
             {
                 log.logoutx(idper);
