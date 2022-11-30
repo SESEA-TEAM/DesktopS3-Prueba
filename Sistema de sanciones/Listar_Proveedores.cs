@@ -39,15 +39,15 @@ namespace Sistema_de_sanciones
         
         private void CargarDG()
         {
-            
+            int p = panel2.Width;
             dsTabla = objp.ControladorProveedor();
 
             dataGridView1.DataSource = dsTabla;
             dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].Width = 305;
+            dataGridView1.Columns[1].Width = Convert.ToInt32(p * 0.260);
             dataGridView1.Columns[2].Visible = false;
-            dataGridView1.Columns[3].Width = 305;
-            dataGridView1.Columns[4].Width = 305;
+            dataGridView1.Columns[3].Width = Convert.ToInt32(p * 0.275);
+            dataGridView1.Columns[4].Width = Convert.ToInt32(p * 0.250);
             dataGridView1.Columns[5].Visible = false;
 
 
@@ -55,25 +55,25 @@ namespace Sistema_de_sanciones
 
         private void Listar_Proveedores_Load(object sender, EventArgs e)
         {
-
+            int p = panel2.Width;
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "Ver";
             Ver.Name = "Ver";
-            Ver.Width = 80;
+            Ver.Width = Convert.ToInt32(p * 0.071);
             Ver.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(Ver);
 
             DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
             btnclm.HeaderText = "Eliminar";
             btnclm.Name = "Eliminar";
-            btnclm.Width = 80;
+            btnclm.Width = Convert.ToInt32(p * 0.071);
             btnclm.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(btnclm);
 
             DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
             editar.HeaderText = "Editar";
             editar.Name = "Editar";
-            editar.Width = 80;
+            editar.Width = Convert.ToInt32(p * 0.071);
             editar.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(editar);
 
@@ -189,24 +189,25 @@ namespace Sistema_de_sanciones
             this.InitializeComponent();
             CargarDG();
             //Listar_Proveedores_Load();
+            int p = panel2.Width;
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "Ver";
             Ver.Name = "Ver";
-            Ver.Width = 80;
+            Ver.Width = Convert.ToInt32(p * 0.071);
             Ver.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(Ver);
 
             DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
             btnclm.HeaderText = "Eliminar";
             btnclm.Name = "Eliminar";
-            btnclm.Width = 80;
+            btnclm.Width = Convert.ToInt32(p * 0.071);
             btnclm.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(btnclm);
 
             DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
             editar.HeaderText = "Editar";
             editar.Name = "Editar";
-            editar.Width = 80;
+            editar.Width = Convert.ToInt32(p * 0.071);
             editar.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(editar);
         }
@@ -220,24 +221,25 @@ namespace Sistema_de_sanciones
             this.InitializeComponent();
             CargarDG();
             //Listar_Proveedores_Load();
+            int p = panel2.Width;
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "Ver";
             Ver.Name = "Ver";
-            Ver.Width = 80;
+            Ver.Width = Convert.ToInt32(p * 0.071);
             Ver.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(Ver);
 
             DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
             btnclm.HeaderText = "Eliminar";
             btnclm.Name = "Eliminar";
-            btnclm.Width = 80;
+            btnclm.Width = Convert.ToInt32(p * 0.071);
             btnclm.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(btnclm);
 
             DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
             editar.HeaderText = "Editar";
             editar.Name = "Editar";
-            editar.Width = 80;
+            editar.Width = Convert.ToInt32(p * 0.071);
             editar.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(editar);
         }
@@ -261,24 +263,25 @@ namespace Sistema_de_sanciones
                 this.InitializeComponent();
                 CargarDG();
                 //Listar_Proveedores_Load();
+                int p = panel2.Width;
                 DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
                 Ver.HeaderText = "Ver";
                 Ver.Name = "Ver";
-                Ver.Width = 80;
+                Ver.Width = Convert.ToInt32(p * 0.071);
                 Ver.FlatStyle = FlatStyle.Flat;
                 dataGridView1.Columns.Add(Ver);
 
                 DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
                 btnclm.HeaderText = "Eliminar";
                 btnclm.Name = "Eliminar";
-                btnclm.Width = 80;
+                btnclm.Width = Convert.ToInt32(p * 0.071);
                 btnclm.FlatStyle = FlatStyle.Flat;
                 dataGridView1.Columns.Add(btnclm);
 
                 DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
                 editar.HeaderText = "Editar";
                 editar.Name = "Editar";
-                editar.Width = 80;
+                editar.Width = Convert.ToInt32(p * 0.071);
                 editar.FlatStyle = FlatStyle.Flat;
                 dataGridView1.Columns.Add(editar);
             }

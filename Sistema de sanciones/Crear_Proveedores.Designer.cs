@@ -99,6 +99,7 @@
             // 
             // comboSistema
             // 
+            this.comboSistema.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboSistema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboSistema.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboSistema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
