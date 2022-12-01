@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\radge\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\radge\\.nuget\\packages"
+      "C:\\Users\\Invitado2022\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Invitado2022\\.nuget\\packages"
     ],
     "configProperties": {
       "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,

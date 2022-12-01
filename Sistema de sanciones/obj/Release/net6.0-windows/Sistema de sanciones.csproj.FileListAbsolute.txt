@@ -60,7 +60,6 @@ C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Release\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema de sanciones.csproj.AssemblyReference.cache
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.CapPS.resources
-C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.CapturaPS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.Captura_SPS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.CargaMasiva.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.Crear_Proveedores.resources
@@ -77,7 +76,6 @@ C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.Listar_Usuarios.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.Login.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.modiPS.resources
-C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.modPS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.modSPS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.Properties.Resources.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.ReporteBitacora.resources

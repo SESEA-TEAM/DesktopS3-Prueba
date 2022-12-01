@@ -164,11 +164,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(395, 9);
+            this.label1.Location = new System.Drawing.Point(405, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(383, 38);
+            this.label1.Size = new System.Drawing.Size(320, 38);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Sistema de los Servidores Públicos Sancionados\r\nCaptura\r\n";
+            this.label1.Text = "Sistema de los Particulares Sancionados\r\nCaptura\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 

@@ -303,6 +303,8 @@ namespace Sistema_de_sanciones
             comboPerfil.ValueMember = "cargo";
         }
 
+        //private bool 
+
         private void button3_Click(object sender, EventArgs e)
         {
             string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
