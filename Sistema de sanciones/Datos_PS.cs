@@ -116,7 +116,7 @@ namespace Sistema_de_sanciones
                 else
                 {
                     panel6.Visible = true;
-                    panel4.Top += 200;
+                    panel4.Top += panel7.Height;
                     if (mps.entidadFederativaV == null)
                     {
                         labelEF.Text = "DNC";
@@ -184,7 +184,7 @@ namespace Sistema_de_sanciones
                 else
                 {
                     panel7.Visible = true;
-                    panel4.Top += 200;
+                    panel4.Top += panel7.Height;
                     labelPais.Text = mps.paisV;
                 }
                 if (mps.calle == null)

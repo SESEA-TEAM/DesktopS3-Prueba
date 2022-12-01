@@ -22,6 +22,9 @@ namespace Sistema_de_sanciones
         String? f1, f2, f3, f4;
         private Particular ParticularS = new Particular();
         private Form2 form2Handler;
+
+        List<modeloTipoDocumento> lDocumentos = new controladorTipoDocumento().obtenerListaDocumentosPS();
+        List<modeloTipoSancion> lSancion = new controladorTipoSancion().obtenerListaSancionesPS();
         public CapPS(Form2 form2)
         {
             InitializeComponent();
@@ -75,11 +78,11 @@ namespace Sistema_de_sanciones
             comboBox1.ValueMember = "valor";
 
             //5doc 6san
-            comboBox8.DataSource = new controladorTipoDocumento().obtenerListaDocumentosPS();
+            comboBox8.DataSource = lDocumentos;
             comboBox8.ValueMember = "tipoDocumento";
 
             //
-            comboBox2.DataSource = new controladorTipoSancion().obtenerListaSancionesPS();
+            comboBox2.DataSource = lSancion;
             comboBox2.ValueMember = "valor";
 
             comboBox3.DataSource = new controladorEntidadFederativa().obtenerListaPais();
@@ -167,6 +170,7 @@ namespace Sistema_de_sanciones
                                 textBox46.Texts = "Descripción*";
                                 textBox44.Texts = "URL*";
                                 dateTimePicker3.Value = new DateTime(2000, 01, 01);
+                                comboBox8.SelectedItem = lDocumentos[0];
                             }
                         }
                     }
@@ -226,12 +230,14 @@ namespace Sistema_de_sanciones
                     modeloTipoSancion sn = (modeloTipoSancion)comboBox2.SelectedItem;
                     dataGridView1.Rows.Add(Convert.ToString(sn.id), comboBox2.Text);
                     textBox1.Texts = "Descripción";
+                    comboBox2.SelectedItem = lSancion[0];
                 }
                 else
                 {
                     modeloTipoSancion sn = (modeloTipoSancion)comboBox2.SelectedItem;
                     dataGridView1.Rows.Add(Convert.ToString(sn.id), comboBox2.Text, textBox1.Texts);
                     textBox1.Texts = "Descripción";
+                    comboBox2.SelectedItem = lSancion[0];
                 }
 
             }

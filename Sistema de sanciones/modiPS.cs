@@ -180,6 +180,7 @@ namespace Sistema_de_sanciones
                                 textBox46.Texts = "Descripción*";
                                 textBox44.Texts = "URL*";
                                 dateTimePicker3.Value = new DateTime(2000, 01, 01);
+                                comboBox8.SelectedItem = lDocumentos[0];
                             }
                         }
                     }
@@ -240,12 +241,14 @@ namespace Sistema_de_sanciones
                     modeloTipoSancion sn = (modeloTipoSancion)comboBox2.SelectedItem;
                     dataGridView1.Rows.Add(Convert.ToString(sn.id), "1", comboBox2.Text);
                     textBox1.Texts = "Descripción";
+                    comboBox2.SelectedItem = lSancion[0];
                 }
                 else
                 {
                     modeloTipoSancion sn = (modeloTipoSancion)comboBox2.SelectedItem;
                     dataGridView1.Rows.Add(Convert.ToString(sn.id), "1", comboBox2.Text, textBox1.Texts);
                     textBox1.Texts = "Descripción";
+                    comboBox2.SelectedItem = lSancion[0];
                 }
 
             }

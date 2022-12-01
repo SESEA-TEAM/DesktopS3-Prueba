@@ -22,6 +22,8 @@ namespace Sistema_de_sanciones
         String? f1, f2, f3, f4;
         private ServidorPublico ServidorP = new ServidorPublico();
         private Form2 form2Handler;
+        List<modeloTipoDocumento> lDocumentos = new controladorTipoDocumento().obtenerListaDocumentos();
+        List<modeloTipoSancion> lSancion = new controladorTipoSancion().obtenerListaSanciones();
         public Captura_SPS(Form2 form2)
         {
             InitializeComponent();
@@ -78,10 +80,10 @@ namespace Sistema_de_sanciones
             comboBox4.ValueMember = "valor";
 
             //5doc 6san
-            comboBox5.DataSource = new controladorTipoDocumento().obtenerListaDocumentos();
+            comboBox5.DataSource = lDocumentos;
             comboBox5.ValueMember = "tipoDocumento";
 
-            comboBox6.DataSource = new controladorTipoSancion().obtenerListaSanciones();
+            comboBox6.DataSource = lSancion;
             comboBox6.ValueMember = "valor";
 
         }
@@ -121,12 +123,14 @@ namespace Sistema_de_sanciones
                     modeloTipoSancion sn = (modeloTipoSancion)comboBox6.SelectedItem;
                     dataGridView1.Rows.Add(Convert.ToString(sn.id), comboBox6.Text);
                     textBox22.Texts = "Descripción";
+                    comboBox6.SelectedItem = lSancion[0];
                 }
                 else
                 {
                     modeloTipoSancion sn = (modeloTipoSancion)comboBox6.SelectedItem;
                     dataGridView1.Rows.Add(Convert.ToString(sn.id), comboBox6.Text, textBox22.Texts);
                     textBox22.Texts = "Descripción";
+                    comboBox6.SelectedItem = lSancion[0];
                 }
                 
             }
@@ -436,6 +440,7 @@ namespace Sistema_de_sanciones
                                 textBox29.Texts = "Descripción*";
                                 textBox20.Texts = "URL*";
                                 dateTimePicker4.Value = new DateTime(2000, 01, 01);
+                                comboBox5.SelectedItem = lDocumentos[0];
                             }
                         }
                     }

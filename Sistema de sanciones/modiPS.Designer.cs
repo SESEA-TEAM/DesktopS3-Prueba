@@ -213,6 +213,7 @@
             this.textBox20.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox20.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox20.BorderSize = 2;
+            this.textBox20.Enabled = false;
             this.textBox20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox20.Location = new System.Drawing.Point(16, 60);
@@ -302,6 +303,7 @@
             this.textBox7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox7.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox7.BorderSize = 2;
+            this.textBox7.Enabled = false;
             this.textBox7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox7.Location = new System.Drawing.Point(16, 280);
@@ -358,6 +360,7 @@
             this.textBox12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox12.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox12.BorderSize = 2;
+            this.textBox12.Enabled = false;
             this.textBox12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox12.Location = new System.Drawing.Point(578, 160);
@@ -404,6 +407,7 @@
             this.textBox17.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox17.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox17.BorderSize = 2;
+            this.textBox17.Enabled = false;
             this.textBox17.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox17.Location = new System.Drawing.Point(16, 110);
@@ -426,6 +430,7 @@
             this.textBox18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox18.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox18.BorderSize = 2;
+            this.textBox18.Enabled = false;
             this.textBox18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox18.Location = new System.Drawing.Point(859, 60);
@@ -448,6 +453,7 @@
             this.textBox19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox19.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox19.BorderSize = 2;
+            this.textBox19.Enabled = false;
             this.textBox19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox19.Location = new System.Drawing.Point(297, 59);
@@ -948,6 +954,7 @@
             // comboBox9
             // 
             this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox9.Enabled = false;
             this.comboBox9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.comboBox9.FormattingEnabled = true;
@@ -1285,6 +1292,7 @@
             this.textBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox3.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox3.BorderSize = 2;
+            this.textBox3.Enabled = false;
             this.textBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox3.Location = new System.Drawing.Point(297, 220);
@@ -1308,6 +1316,7 @@
             this.textBox4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox4.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox4.BorderSize = 2;
+            this.textBox4.Enabled = false;
             this.textBox4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox4.Location = new System.Drawing.Point(16, 220);
@@ -1410,6 +1419,7 @@
             this.textBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox5.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox5.BorderSize = 2;
+            this.textBox5.Enabled = false;
             this.textBox5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
             this.textBox5.Location = new System.Drawing.Point(16, 100);
