@@ -26,6 +26,21 @@ namespace Sistema_de_sanciones
 
             cargarDatos();
             form2Handler = form2;
+            cargarDGV();
+        }
+
+        private void cargarDGV()
+        {
+            int p = panel8.Width;
+            dataGridView1.Columns[1].Width = (Convert.ToInt32(p * 0.5));
+            dataGridView1.Columns[2].Width = (Convert.ToInt32(p * 0.5));
+
+            int p2 = panel9.Width;
+            dataGridView2.Columns[1].Width = (Convert.ToInt32(p * 0.185));
+            dataGridView2.Columns[2].Width = (Convert.ToInt32(p * 0.198));
+            dataGridView2.Columns[3].Width = (Convert.ToInt32(p * 0.235));
+            dataGridView2.Columns[4].Width = (Convert.ToInt32(p * 0.255));
+            dataGridView2.Columns[5].Width = (Convert.ToInt32(p * 0.135));
         }
 
         private void cargarDatos()

@@ -29,6 +29,7 @@ namespace Sistema_de_sanciones
             
             cargarDatos();
             form2Handler = form2;
+            cargarDGV();
         }
 
         private void label13_Click(object sender, EventArgs e)
@@ -63,7 +64,19 @@ namespace Sistema_de_sanciones
 
         }
 
-        
+        private void cargarDGV()
+        {
+            int p = panel3.Width;
+            dataGridView1.Columns[1].Width = (Convert.ToInt32(p * 0.5));
+            dataGridView1.Columns[2].Width = (Convert.ToInt32(p * 0.5));
+
+            int p2 = panel5.Width;
+            dataGridView2.Columns[1].Width = (Convert.ToInt32(p * 0.185));
+            dataGridView2.Columns[2].Width = (Convert.ToInt32(p * 0.198));
+            dataGridView2.Columns[3].Width = (Convert.ToInt32(p * 0.235));
+            dataGridView2.Columns[4].Width = (Convert.ToInt32(p * 0.255));
+            dataGridView2.Columns[5].Width = (Convert.ToInt32(p * 0.135));
+        }
 
         private void cargarDatos()
         {
