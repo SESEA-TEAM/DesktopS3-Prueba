@@ -135,6 +135,7 @@ namespace Sistema_de_sanciones
 
         public bool validarCamposPS()
         {
+            
             bool Resultado = true;
             string ClaveExpedientes = @"[ -A-Za-z0-9_(!""#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~)]{3,140}";
             string cadenaTexto = @"^[ a-zA-ZÀ-ÿfd]+(\s*[a-zA-ZÀ-ÿfd])[a-zA-ZÀ-ÿfd ,]+$";
@@ -166,6 +167,15 @@ namespace Sistema_de_sanciones
 
             foreach (DataGridViewRow fila1 in dataGridView1.Rows)
             {
+
+                moned = 0;
+                san = 0;
+                enti = 0;
+                muni = 0;
+                loc = 0;
+                vial = 0;
+                paisE = 0;
+                doc = 0;
                 bool valExpediente = Regex.IsMatch(fila1.Cells[0].Value.ToString(), ClaveExpedientes);//ok
                 bool valNombres = Regex.IsMatch(fila1.Cells[1].Value.ToString(), ClaveObligatorioPS);//ok
                 bool valRFCs = Regex.IsMatch(fila1.Cells[2].Value.ToString(), ClavesRFCs);//ok
@@ -572,7 +582,9 @@ namespace Sistema_de_sanciones
                 {
                     if (!(obtenerEntidadFederativaID(fila1.Cells[36].Value.ToString()) == -1))
                     {
-                      
+
+                        enti = obtenerEntidadFederativaID(fila1.Cells[36].Value.ToString());
+                       
 
                     }
                     else
@@ -589,7 +601,11 @@ namespace Sistema_de_sanciones
                 {
                     if (!(obtenerMunicipioID(fila1.Cells[37].Value.ToString(), enti) == -1))
                     {
-                        
+                        muni = obtenerMunicipioID(fila1.Cells[37].Value.ToString(), enti);
+                        List<modeloMunicipio> lMunicipio = new controladorMunicipio().obtenerListaMunicipio(enti);
+                       
+                        muni = lMunicipio[muni].id;
+
                     }
                     else
                     {
@@ -606,8 +622,11 @@ namespace Sistema_de_sanciones
                    
                     if (!(obtenerLocalidadID(fila1.Cells[38].Value.ToString(), muni) == -1))
                     {
-                       
-                     
+
+                        loc = obtenerLocalidadID(fila1.Cells[38].Value.ToString(), muni);
+                        List<modeloLocalidad> lLocalida = new controladorLocalidad().obtenerListaLocalidad(muni);
+                      
+
                     }
                     else
                     {
@@ -673,10 +692,12 @@ namespace Sistema_de_sanciones
 
         public bool validarCamposSPS()
         {
+
             bool Resultado = true;
             string cadenaTexto = @"^[ a-zA-ZÀ-ÿfd]+(\s*[a-zA-ZÀ-ÿfd])[a-zA-ZÀ-ÿfd ,]+$";
             string NoObligatorio = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
             string ClavesGenero = @"^[A-Z ]{8,10}$";
+            string ClaveMoneda = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ()]{0,141}$";
             string ClavesRFC = @"^([A-ZÑ&]{4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$";
             string ClavesCURP = @"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$";
             string ObligatoriaFechas = @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01]){1}$";
@@ -689,7 +710,8 @@ namespace Sistema_de_sanciones
             string ClaveTipoFalta = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
             string Monto = @"^[0-9.]{0,200}$";
 
-            string cadenaDocumento = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
+            string cadenaDocumento = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ_]{0,140}$";
+
             string URLSDocumento = @"[-A-Za-z0-9_(!""#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~)]{0,200}";
             string FechaDocumento = @"^[0-9-]{0,10}$";
 
@@ -698,7 +720,11 @@ namespace Sistema_de_sanciones
 
             foreach (DataGridViewRow fila1 in dataGridView2.Rows)
             {
-
+                m = 0;
+                sanSPS = 0;
+                docSPS = 0; 
+                faltaSPS = 0;
+                generoSPS = 0;
                 //DATOS GENERALES
                 bool valNombre = Regex.IsMatch(fila1.Cells[0].Value.ToString(), cadenaTexto);
                 bool valApellido = Regex.IsMatch(fila1.Cells[1].Value.ToString(), cadenaTexto);
@@ -728,7 +754,7 @@ namespace Sistema_de_sanciones
                 bool valFechFinal = Regex.IsMatch(fila1.Cells[21].Value.ToString(), Fechas);
                 //DATOS MULTA
                 bool valMonto = Regex.IsMatch(fila1.Cells[22].Value.ToString(), Monto);
-                bool valMoneda = Regex.IsMatch(fila1.Cells[23].Value.ToString(), cadenaTexto);
+                bool valMoneda = Regex.IsMatch(fila1.Cells[23].Value.ToString(), ClaveMoneda);
                 //DATOS TIPO SANCIÓN
                 bool valTSancion = Regex.IsMatch(fila1.Cells[24].Value.ToString(), cadenaTexto);
                 bool valDescSancion = Regex.IsMatch(fila1.Cells[25].Value.ToString(), NoObligatorio);
@@ -1002,11 +1028,12 @@ namespace Sistema_de_sanciones
             validarCamposPS();
 
         }
-        modeloPS modps = new modeloPS();
+     
 
-        private void GuardarPS()
+        private void GuardarPS(modeloPS PS )
         {
-            conPS.guardarPS(modps);
+           
+            conPS.guardarPS(PS);
            
 
         }
@@ -1084,9 +1111,20 @@ namespace Sistema_de_sanciones
 
               foreach (DataGridViewRow row in dataGridView1.Rows)
               {
+                    modeloPS modps = new modeloPS();
+                    moned = 0;
+                    san = 0;
+                    enti = 0;
+                    muni = 0;
+                    loc = 0;
+                    vial = 0;
+                    paisE = 0;
+                    doc = 0;
+
                     documentos = true;
                  if (validarCamposPS())
                  {
+
                     modps.expediente = row.Cells[0].Value.ToString();
 
                     modps.nombreRazonSocial = row.Cells[1].Value.ToString();
@@ -1111,13 +1149,48 @@ namespace Sistema_de_sanciones
                     }
                     modps.tipoFalta = row.Cells[6].Value.ToString();
                     modps.nombreInstitucionDependencia = row.Cells[7].Value.ToString();
-                    modps.siglasInstitucionDependencia = row.Cells[8].Value.ToString();
-                    modps.claveInstitucionDependencia = row.Cells[9].Value.ToString();
-                    modps.observaciones = row.Cells[10].Value.ToString();
+                    if (row.Cells[8].Value.ToString() == "")
+                    {
+
+                    }
+                    else
+                    {
+                         modps.siglasInstitucionDependencia = row.Cells[8].Value.ToString();
+                    }
+                    if (row.Cells[9].Value.ToString() == "")
+                    {
+
+                    }
+                    else
+                    {
+                         modps.claveInstitucionDependencia = row.Cells[9].Value.ToString();
+                    }
+                    if (row.Cells[10].Value.ToString() == "")
+                    {
+
+                    }
+                    else
+                    {
+                          modps.observaciones = row.Cells[10].Value.ToString();
+                    }
                     modps.autoridadSancionadora = row.Cells[11].Value.ToString();
-                    modps.sentidoResolucion = row.Cells[12].Value.ToString();
-                    modps.urlResolucion = row.Cells[13].Value.ToString();
-                    if (row.Cells[14].Value.ToString() == "")
+                    if (row.Cells[12].Value.ToString() == "")
+                    {
+
+                    }
+                    else
+                    {
+                            modps.sentidoResolucion = row.Cells[12].Value.ToString();
+                    }
+                    if (row.Cells[13].Value.ToString() == "")
+                    {
+
+                    }
+                    else
+                    {
+                            modps.urlResolucion = row.Cells[13].Value.ToString();
+                    }
+                     if (row.Cells[14].Value.ToString() == "")
                     {
                         f1 = null;
                     }
@@ -1416,7 +1489,7 @@ namespace Sistema_de_sanciones
                          documentos = false;
                     }
 
-                        GuardarPS();
+                        GuardarPS(modps);
 
                        conPS.guardarSancionPS(san, modsan.descripcion = row.Cells[24].Value.ToString());
 
@@ -1490,12 +1563,12 @@ namespace Sistema_de_sanciones
             return pos;
         }
 
-        public void GuardarDatos()
+        public void GuardarDatos(modeloSPS SPS)
         {
-            conSPS.guardarSPS(modSPS);
+            conSPS.guardarSPS(SPS);
         }
 
-        modeloSPS modSPS = new modeloSPS();
+      
         private void btnGuardarSPS_Click(object sender, EventArgs e)
         {
             int columnas = dataGridView2.ColumnCount;
@@ -1510,6 +1583,12 @@ namespace Sistema_de_sanciones
                 bool documentoSPS = true;
                 foreach (DataGridViewRow row in dataGridView2.Rows)
                 {
+                    modeloSPS modSPS = new modeloSPS();
+                    m = 0;
+                    sanSPS = 0;
+                    docSPS = 0; 
+                    faltaSPS = 0;
+                    generoSPS = 0;
                     if (validarCamposSPS())
                     {
                         modSPS.nombreSPS = row.Cells[0].Value.ToString();
@@ -1687,7 +1766,7 @@ namespace Sistema_de_sanciones
 
                         }
 
-                        GuardarDatos();
+                        GuardarDatos(modSPS);
 
                         conSPS.guardarSancionSPS(sanSPS, modSan.descripcion = row.Cells[25].Value.ToString());
 
