@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -215,6 +215,8 @@
             this.textNombre.TabIndex = 1;
             this.textNombre.Texts = "Nombre/Razón social";
             this.textNombre.UnderlinedStyle = true;
+            this.textNombre.Enter += new System.EventHandler(this.textNombre_Enter);
+            this.textNombre.Leave += new System.EventHandler(this.textNombre_Leave);
             // 
             // textISD
             // 
@@ -233,6 +235,8 @@
             this.textISD.TabIndex = 1;
             this.textISD.Texts = "Institución / Dependencia";
             this.textISD.UnderlinedStyle = true;
+            this.textISD.Enter += new System.EventHandler(this.textISD_Enter);
+            this.textISD.Leave += new System.EventHandler(this.textISD_Leave);
             // 
             // textExpediente
             // 
@@ -251,6 +255,8 @@
             this.textExpediente.TabIndex = 1;
             this.textExpediente.Texts = "Expediente";
             this.textExpediente.UnderlinedStyle = true;
+            this.textExpediente.Enter += new System.EventHandler(this.textExpediente_Enter);
+            this.textExpediente.Leave += new System.EventHandler(this.textExpediente_Leave);
             // 
             // textBox1
             // 
@@ -307,13 +313,13 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

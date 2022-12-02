@@ -24,6 +24,7 @@ namespace WinFormsApp1
         String? SA = null;
         String? IH = null;
         String? TP = null;
+        List<modeloTipoSancion> lSancion = new controladorTipoSancion().obtenerListaSanciones();
 
         private Form2 form2Handler;
 
@@ -48,7 +49,7 @@ namespace WinFormsApp1
         {
             //La primera linea sirve para indicarle a nuestro comboBox la ubicacion donde este debera tomar los valores, en este caso del
             //controladorListaTipoSancion, mientras que la segunda linea sera para indicarle cual valor de la tabla desplegara, en este caso es valor.
-            comboBox1.DataSource = new controladorTipoSancion().obtenerListaSanciones();
+            comboBox1.DataSource = lSancion;
             comboBox1.ValueMember = "valor";
 
         }
@@ -286,7 +287,7 @@ namespace WinFormsApp1
             textNombre.Texts = "Nombre(s)";
             textPA.Texts = "Primer apellido";
             textSA.Texts = "Segundo apellido";
-            comboBox1.Text = "Tipo Sancion";
+            comboBox1.SelectedItem = lSancion[0];
             FA = null;
             EX = null;
             ISD = null;
@@ -542,5 +543,94 @@ namespace WinFormsApp1
             }
         }
 
+        private void textExpediente_Enter(object sender, EventArgs e)
+        {
+            if (textExpediente.Texts == "Expediente")
+            {
+                textExpediente.Texts = "";
+                textExpediente.ForeColor = Color.Black;
+            }
+        }
+
+        private void textExpediente_Leave(object sender, EventArgs e)
+        {
+            if (textExpediente.Texts == "")
+            {
+                textExpediente.Texts = "Expediente";
+                textExpediente.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textISD_Enter(object sender, EventArgs e)
+        {
+            if (textISD.Texts == "Institución / Dependencia")
+            {
+                textISD.Texts = "";
+                textISD.ForeColor = Color.Black;
+            }
+        }
+
+        private void textISD_Leave(object sender, EventArgs e)
+        {
+            if (textISD.Texts == "")
+            {
+                textISD.Texts = "Institución / Dependencia";
+                textISD.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textNombre_Enter(object sender, EventArgs e)
+        {
+            if (textNombre.Texts == "Nombre(s)")
+            {
+                textNombre.Texts = "";
+                textNombre.ForeColor = Color.Black;
+            }
+        }
+
+        private void textNombre_Leave(object sender, EventArgs e)
+        {
+            if (textNombre.Texts == "")
+            {
+                textNombre.Texts = "Nombre(s)";
+                textNombre.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textPA_Enter(object sender, EventArgs e)
+        {
+            if (textPA.Texts == "Primer apellido")
+            {
+                textPA.Texts = "";
+                textPA.ForeColor = Color.Black;
+            }
+        }
+
+        private void textPA_Leave(object sender, EventArgs e)
+        {
+            if (textPA.Texts == "")
+            {
+                textPA.Texts = "Primer apellido";
+                textPA.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textSA_Enter(object sender, EventArgs e)
+        {
+            if (textSA.Texts == "Segundo apellido")
+            {
+                textSA.Texts = "";
+                textSA.ForeColor = Color.Black;
+            }
+        }
+
+        private void textSA_Leave(object sender, EventArgs e)
+        {
+            if (textSA.Texts == "")
+            {
+                textSA.Texts = "Segundo apellido";
+                textSA.ForeColor = Color.Gray;
+            }
+        }
     }
 }

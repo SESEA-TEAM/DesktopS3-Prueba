@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -179,6 +179,8 @@
             this.textExpediente.TabIndex = 1;
             this.textExpediente.Texts = "Expediente";
             this.textExpediente.UnderlinedStyle = true;
+            this.textExpediente.Enter += new System.EventHandler(this.textExpediente_Enter);
+            this.textExpediente.Leave += new System.EventHandler(this.textExpediente_Leave);
             // 
             // textBox2
             // 
@@ -235,6 +237,8 @@
             this.textPA.TabIndex = 1;
             this.textPA.Texts = "Primer apellido";
             this.textPA.UnderlinedStyle = true;
+            this.textPA.Enter += new System.EventHandler(this.textPA_Enter);
+            this.textPA.Leave += new System.EventHandler(this.textPA_Leave);
             // 
             // textSA
             // 
@@ -253,6 +257,8 @@
             this.textSA.TabIndex = 1;
             this.textSA.Texts = "Segundo apellido";
             this.textSA.UnderlinedStyle = true;
+            this.textSA.Enter += new System.EventHandler(this.textSA_Enter);
+            this.textSA.Leave += new System.EventHandler(this.textSA_Leave);
             // 
             // textNombre
             // 
@@ -271,6 +277,8 @@
             this.textNombre.TabIndex = 1;
             this.textNombre.Texts = "Nombre(s)";
             this.textNombre.UnderlinedStyle = true;
+            this.textNombre.Enter += new System.EventHandler(this.textNombre_Enter);
+            this.textNombre.Leave += new System.EventHandler(this.textNombre_Leave);
             // 
             // textISD
             // 
@@ -289,6 +297,8 @@
             this.textISD.TabIndex = 1;
             this.textISD.Texts = "Institución / Dependencia";
             this.textISD.UnderlinedStyle = true;
+            this.textISD.Enter += new System.EventHandler(this.textISD_Enter);
+            this.textISD.Leave += new System.EventHandler(this.textISD_Leave);
             // 
             // label2
             // 
@@ -328,13 +338,13 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

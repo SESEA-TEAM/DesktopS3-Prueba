@@ -29,6 +29,7 @@ namespace Sistema_de_sanciones
         String? TS = null;
         String? IH = null;
         String? TP = null;
+        List<modeloTipoSancion> lSancion = new controladorTipoSancion().obtenerListaSancionesPS();
 
         private Form2 form2Handler;
         public Listado_PS(Form2 form2)
@@ -56,7 +57,7 @@ namespace Sistema_de_sanciones
         {
             //La primera linea sirve para indicarle a nuestro comboBox la ubicacion donde este debera tomar los valores, en este caso del
             //controladorListaTipoSancion, mientras que la segunda linea sera para indicarle cual valor de la tabla desplegara, en este caso es valor.
-            comboBox2.DataSource = new controladorTipoSancion().obtenerListaSancionesPS();
+            comboBox2.DataSource = lSancion;
             comboBox2.ValueMember = "valor";
 
         }
@@ -207,7 +208,7 @@ namespace Sistema_de_sanciones
             textISD.Texts = "Institución / Dependencia";
             textNombre.Texts = "Nombre/Razón social";
             comboBox1.Text = "Tipo Persona";
-            comboBox2.Text = "Tipo Sancion";
+            comboBox2.SelectedItem = lSancion[0];
             FA = null;
             EX = null;
             ISD = null;
@@ -224,6 +225,7 @@ namespace Sistema_de_sanciones
             botonPrimero.Enabled = false;
             botonAnterior.Enabled = false;
 
+            
 
         }
 
@@ -483,6 +485,60 @@ namespace Sistema_de_sanciones
 
                 e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
                 e.Handled = true;
+            }
+        }
+
+        private void textExpediente_Enter(object sender, EventArgs e)
+        {
+            if (textExpediente.Texts == "Expediente")
+            {
+                textExpediente.Texts = "";
+                textExpediente.ForeColor = Color.Black;
+            }
+        }
+
+        private void textExpediente_Leave(object sender, EventArgs e)
+        {
+            if (textExpediente.Texts == "")
+            {
+                textExpediente.Texts = "Expediente";
+                textExpediente.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textISD_Enter(object sender, EventArgs e)
+        {
+            if (textISD.Texts == "Institución / Dependencia")
+            {
+                textISD.Texts = "";
+                textISD.ForeColor = Color.Black;
+            }
+        }
+
+        private void textISD_Leave(object sender, EventArgs e)
+        {
+            if (textISD.Texts == "")
+            {
+                textISD.Texts = "Institución / Dependencia";
+                textISD.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textNombre_Enter(object sender, EventArgs e)
+        {
+            if (textNombre.Texts == "Nombre/Razón social")
+            {
+                textNombre.Texts = "";
+                textNombre.ForeColor = Color.Black;
+            }
+        }
+
+        private void textNombre_Leave(object sender, EventArgs e)
+        {
+            if (textNombre.Texts == "")
+            {
+                textNombre.Texts = "Nombre/Razón social";
+                textNombre.ForeColor = Color.Gray;
             }
         }
     }
