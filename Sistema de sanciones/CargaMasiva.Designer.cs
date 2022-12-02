@@ -41,8 +41,10 @@
             this.cboHojas = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelSPS = new System.Windows.Forms.Panel();
+            this.btnLimpar2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelPS = new System.Windows.Forms.Panel();
+            this.btnLimpiar1 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnGuardarSPS = new System.Windows.Forms.Button();
             this.MostrarPS = new System.Windows.Forms.Button();
@@ -157,7 +159,7 @@
             this.btnMostar.Name = "btnMostar";
             this.btnMostar.Size = new System.Drawing.Size(95, 30);
             this.btnMostar.TabIndex = 37;
-            this.btnMostar.Text = "Mostrar";
+            this.btnMostar.Text = "Validar";
             this.btnMostar.UseVisualStyleBackColor = false;
             this.btnMostar.Click += new System.EventHandler(this.btnMostar_Click);
             // 
@@ -184,12 +186,28 @@
             // 
             // panelSPS
             // 
+            this.panelSPS.Controls.Add(this.btnLimpar2);
             this.panelSPS.Controls.Add(this.dataGridView1);
             this.panelSPS.Controls.Add(this.buttonGuardar);
             this.panelSPS.Location = new System.Drawing.Point(0, 220);
             this.panelSPS.Name = "panelSPS";
             this.panelSPS.Size = new System.Drawing.Size(1174, 422);
             this.panelSPS.TabIndex = 40;
+            // 
+            // btnLimpar2
+            // 
+            this.btnLimpar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.btnLimpar2.FlatAppearance.BorderSize = 0;
+            this.btnLimpar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLimpar2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnLimpar2.Location = new System.Drawing.Point(30, 387);
+            this.btnLimpar2.Name = "btnLimpar2";
+            this.btnLimpar2.Size = new System.Drawing.Size(100, 28);
+            this.btnLimpar2.TabIndex = 38;
+            this.btnLimpar2.Text = "Limpiar";
+            this.btnLimpar2.UseVisualStyleBackColor = false;
+            this.btnLimpar2.Click += new System.EventHandler(this.btnLimpar2_Click);
             // 
             // dataGridView1
             // 
@@ -198,20 +216,38 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(30, 28);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(1118, 353);
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellLeave);
+            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
             // panelPS
             // 
-            this.panelPS.Controls.Add(this.dataGridView2);
+            this.panelPS.Controls.Add(this.btnLimpiar1);
             this.panelPS.Controls.Add(this.btnGuardarSPS);
+            this.panelPS.Controls.Add(this.dataGridView2);
             this.panelPS.Location = new System.Drawing.Point(0, 220);
             this.panelPS.Name = "panelPS";
             this.panelPS.Size = new System.Drawing.Size(1168, 422);
             this.panelPS.TabIndex = 41;
+            // 
+            // btnLimpiar1
+            // 
+            this.btnLimpiar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.btnLimpiar1.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLimpiar1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnLimpiar1.Location = new System.Drawing.Point(27, 387);
+            this.btnLimpiar1.Name = "btnLimpiar1";
+            this.btnLimpiar1.Size = new System.Drawing.Size(100, 28);
+            this.btnLimpiar1.TabIndex = 44;
+            this.btnLimpiar1.Text = "Limpiar";
+            this.btnLimpiar1.UseVisualStyleBackColor = false;
+            this.btnLimpiar1.Click += new System.EventHandler(this.btnLimpiar1_Click);
             // 
             // dataGridView2
             // 
@@ -220,11 +256,13 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(27, 25);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(1118, 356);
             this.dataGridView2.TabIndex = 38;
             this.dataGridView2.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellLeave);
+            this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView2_RowPostPaint);
             // 
             // btnGuardarSPS
             // 
@@ -252,7 +290,7 @@
             this.MostrarPS.Name = "MostrarPS";
             this.MostrarPS.Size = new System.Drawing.Size(95, 30);
             this.MostrarPS.TabIndex = 42;
-            this.MostrarPS.Text = "Mostrar";
+            this.MostrarPS.Text = "Validar";
             this.MostrarPS.UseVisualStyleBackColor = false;
             this.MostrarPS.Click += new System.EventHandler(this.MostrarPS_Click);
             // 
@@ -263,15 +301,15 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1174, 788);
-            this.Controls.Add(this.panelSPS);
-            this.Controls.Add(this.btnMostar);
             this.Controls.Add(this.cboHojas);
             this.Controls.Add(this.txtRuta);
             this.Controls.Add(this.comboSistema);
             this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSeleccionar);
+            this.Controls.Add(this.btnMostar);
             this.Controls.Add(this.MostrarPS);
+            this.Controls.Add(this.panelSPS);
             this.Controls.Add(this.panelPS);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CargaMasiva";
@@ -306,5 +344,7 @@
         private DataGridView dataGridView2;
         private Button MostrarPS;
         private Button btnGuardarSPS;
+        private Button btnLimpiar1;
+        private Button btnLimpar2;
     }
 }

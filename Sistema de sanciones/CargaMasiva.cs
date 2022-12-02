@@ -138,27 +138,31 @@ namespace Sistema_de_sanciones
             
             bool Resultado = true;
             string ClaveExpedientes = @"[ -A-Za-z0-9_(!""#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~)]{3,140}";
-            string cadenaTexto = @"^[ a-zA-ZÀ-ÿfd]+(\s*[a-zA-ZÀ-ÿfd])[a-zA-ZÀ-ÿfd ,]+$";
-            string NoObligatorio = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,140}$";
-            string ClavePlazo = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,50}$";
+            string nombreDependencia = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,()]{3,140}$";
+            string causaMotivoHecho =  @"[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,0-9()]{0,140}$";
+            string cadenaTexto = @"[ a-zA-ZÀ-ÿfd]+(\s*[a-zA-ZÀ-ÿfd])[a-zA-ZÀ-ÿfd., ]+$";
+            string NoObligatorio = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,140}$";
+            string ClavePlazo = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,0-9()]{0,50}$";
             string ClavesRFCs = @"^([A-ZÑ&]{4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$";
             string Fechas = @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01]){1}$";
             string FechasNobligatoria = @"^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])){0,10}$";
             string URLS = @"^https?:\/\/[\w\-]+(\.[\w\-]+)+[#?]?.*$";
             string urlNoObligatorio = @"[-A-Za-z0-9_(!""#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~)]{0,200}";
-            string ClaveSiglas = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ]{0,50}$";
-            string ClaveClave = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ]{0,140}$";
+            string ClaveSiglas = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,50}$";
+            string ClaveClave = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,140}$";
             string Monto = @"^[0-9.]{0,200}$";
             string Moneda = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ()]{0,141}$";
             string TelefonoNoObligatorio = @"^[0-9]{0,10}$";
             string ClaveObjetoSocial = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
+            string ClaveObjetoSocialClave = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,100}$";
             string ClaveEntidad = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,140}$";
             string ClaveMuni = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,140}$";
             string ClaveLocalidad = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ([\\\])]{0,140}$";
             string ClaveCalle = @"[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,0-9]{0,140}$";
             string ClaveCiudad = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,140}$";
             string ClaveObligatorioPS = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{3,140}$";
-            string ClaveDocumentosPS = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,140}$";
+            string ClaveObligatorioDependencia = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,()]{3,140}$";
+            string ClaveDocumentosPS = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,0-9()]{0,140}$";
             string ClaveCURPPS = @"^[A-Za-z0-9]{0,17}";
             string ClavePais = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ-]{0,140}$";
             string ClaveCodPostalPS = @"^\d{0,50}$";
@@ -177,16 +181,16 @@ namespace Sistema_de_sanciones
                 paisE = 0;
                 doc = 0;
                 bool valExpediente = Regex.IsMatch(fila1.Cells[0].Value.ToString(), ClaveExpedientes);//ok
-                bool valNombres = Regex.IsMatch(fila1.Cells[1].Value.ToString(), ClaveObligatorioPS);//ok
+                bool valNombres = Regex.IsMatch(fila1.Cells[1].Value.ToString(), nombreDependencia);//ok
                 bool valRFCs = Regex.IsMatch(fila1.Cells[2].Value.ToString(), ClavesRFCs);//ok
-                bool valCausaMotivoHecho = Regex.IsMatch(fila1.Cells[3].Value.ToString(), ClaveObligatorioPS);//ok
+                bool valCausaMotivoHecho = Regex.IsMatch(fila1.Cells[3].Value.ToString(), causaMotivoHecho);//ok
                 bool valActo = Regex.IsMatch(fila1.Cells[4].Value.ToString(), NoObligatorio);//ok
                 bool valObjContrato = Regex.IsMatch(fila1.Cells[5].Value.ToString(), NoObligatorio);//ok
                 bool valTipoFalta = Regex.IsMatch(fila1.Cells[6].Value.ToString(), cadenaTexto);//ok
-                bool valNombreInsDep = Regex.IsMatch(fila1.Cells[7].Value.ToString(), ClaveObligatorioPS);//ok
+                bool valNombreInsDep = Regex.IsMatch(fila1.Cells[7].Value.ToString(), ClaveObligatorioDependencia);//ok
                 bool valSiglas = Regex.IsMatch(fila1.Cells[8].Value.ToString(), ClaveSiglas);//ok
                 bool valClave = Regex.IsMatch(fila1.Cells[9].Value.ToString(), ClaveClave);//ok
-                bool Observacion = Regex.IsMatch(fila1.Cells[10].Value.ToString(), NoObligatorio);//ok
+                bool Observacion = Regex.IsMatch(fila1.Cells[10].Value.ToString(), causaMotivoHecho);//ok
                 bool valAutSancionadora = Regex.IsMatch(fila1.Cells[11].Value.ToString(), cadenaTexto);//ok
                 bool valSentido = Regex.IsMatch(fila1.Cells[12].Value.ToString(), NoObligatorio);//ok
                 bool valURL = Regex.IsMatch(fila1.Cells[13].Value.ToString(), urlNoObligatorio);//ok
@@ -201,11 +205,11 @@ namespace Sistema_de_sanciones
                 bool valMonto = Regex.IsMatch(fila1.Cells[21].Value.ToString(), Monto);//ok
                 bool valMoneda = Regex.IsMatch(fila1.Cells[22].Value.ToString(), Moneda);//ok
                 bool valTipoSancion = Regex.IsMatch(fila1.Cells[23].Value.ToString(), cadenaTexto);//ok
-                bool valDescripcion = Regex.IsMatch(fila1.Cells[24].Value.ToString(), NoObligatorio);//ok
+                bool valDescripcion = Regex.IsMatch(fila1.Cells[24].Value.ToString(), causaMotivoHecho);//ok
                 bool valTipoPersona = Regex.IsMatch(fila1.Cells[25].Value.ToString(), cadenaTexto);//ok
                 bool valTelefono = Regex.IsMatch(fila1.Cells[26].Value.ToString(), TelefonoNoObligatorio);//ok
                 ///2DA PARTE
-                bool valObjetoSocial = Regex.IsMatch(fila1.Cells[27].Value.ToString(), ClaveObjetoSocial);
+                bool valObjetoSocial = Regex.IsMatch(fila1.Cells[27].Value.ToString(), ClaveObjetoSocialClave);
                 bool valNombrePS = Regex.IsMatch(fila1.Cells[28].Value.ToString(), ClaveObjetoSocial);
                 bool valPrimerApellidoPS = Regex.IsMatch(fila1.Cells[29].Value.ToString(), ClaveObjetoSocial);
                 bool valSegundoApelldoPS = Regex.IsMatch(fila1.Cells[30].Value.ToString(), ClaveObjetoSocial);
@@ -548,7 +552,7 @@ namespace Sistema_de_sanciones
                 //AQUI
                 if (fila1.Cells[22].Value.ToString() == "")
                 {
-
+                   
                 }
                 else { 
                          if (!(obtenerMonedaID(fila1.Cells[22].Value.ToString()) == -1))
@@ -694,8 +698,10 @@ namespace Sistema_de_sanciones
         {
 
             bool Resultado = true;
-            string cadenaTexto = @"^[ a-zA-ZÀ-ÿfd]+(\s*[a-zA-ZÀ-ÿfd])[a-zA-ZÀ-ÿfd ,]+$";
-            string NoObligatorio = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
+            string cadenaTexto = @"[ a-zA-ZÀ-ÿfd]+(\s*[a-zA-ZÀ-ÿfd])[a-zA-ZÀ-ÿfd.,() ]+$";
+            string NoObligatorio = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,100}$"; 
+           string cLAVEpLAZO = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,0-9()]{0,100}$";
+            string NoObligatorioPuesto = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,100}$";
             string ClavesGenero = @"^[A-Z ]{8,10}$";
             string ClaveMoneda = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ()]{0,141}$";
             string ClavesRFC = @"^([A-ZÑ&]{4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$";
@@ -704,16 +710,17 @@ namespace Sistema_de_sanciones
             string Fechas = @"^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$$";
             string URLS = @"^https?:\/\/[\w\-]+(\.[\w\-]+)+[#?]?.*$";
             string ClavePuesto = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
-            string ClaveSiglas = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,10}$";
+            string ClaveSiglas = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,10}$";
             string ClaveExpediente = @"[-A-Za-z0-9_(!""#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~)]{3,100}";
-            string ClaveClave = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
+            string ClaveClave = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,100}$";
             string ClaveTipoFalta = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
             string Monto = @"^[0-9.]{0,200}$";
-
+            string ClaveObligatorioDependencia = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,()]{0,140}$";
             string cadenaDocumento = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ_]{0,140}$";
 
             string URLSDocumento = @"[-A-Za-z0-9_(!""#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~)]{0,200}";
-            string FechaDocumento = @"^[0-9-]{0,10}$";
+            string FechaDocumento = @"^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])){0,10}$";
+            string ClaveDesc= @"[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,0-9()]{0,140}$";
 
 
             // bool valNombre = Regex.IsMatch(, cadenaTexto);
@@ -732,8 +739,8 @@ namespace Sistema_de_sanciones
                 bool valGenero = Regex.IsMatch(fila1.Cells[3].Value.ToString(), ClavesGenero);
                 bool valRFC = Regex.IsMatch(fila1.Cells[4].Value.ToString(), ClavesRFC);
                 bool valCURP = Regex.IsMatch(fila1.Cells[5].Value.ToString(), ClavesCURP);
-                bool valPuestoNombre = Regex.IsMatch(fila1.Cells[6].Value.ToString(), NoObligatorio);
-                bool valPuestoNivel = Regex.IsMatch(fila1.Cells[7].Value.ToString(), ClavePuesto);
+                bool valPuestoNombre = Regex.IsMatch(fila1.Cells[6].Value.ToString(), NoObligatorioPuesto);
+                bool valPuestoNivel = Regex.IsMatch(fila1.Cells[7].Value.ToString(), NoObligatorioPuesto);
                 //DATOS INSTITUCIÓN
                 bool valNombreInsDep = Regex.IsMatch(fila1.Cells[8].Value.ToString(), cadenaTexto);
                 bool valSiglas = Regex.IsMatch(fila1.Cells[9].Value.ToString(), ClaveSiglas);
@@ -741,15 +748,15 @@ namespace Sistema_de_sanciones
                 //DATOS DE LA SANCIÓN
                 bool valExpediente = Regex.IsMatch(fila1.Cells[11].Value.ToString(), ClaveExpediente);
                 bool valTipoFalta = Regex.IsMatch(fila1.Cells[12].Value.ToString(), ClaveTipoFalta);
-                bool valDescFalta = Regex.IsMatch(fila1.Cells[13].Value.ToString(), NoObligatorio);
-                bool valCausaMotivoHecho = Regex.IsMatch(fila1.Cells[14].Value.ToString(), ClavePuesto);
-                bool valObservaciones = Regex.IsMatch(fila1.Cells[15].Value.ToString(), NoObligatorio);
+                bool valDescFalta = Regex.IsMatch(fila1.Cells[13].Value.ToString(), ClaveDesc);
+                bool valCausaMotivoHecho = Regex.IsMatch(fila1.Cells[14].Value.ToString(), ClaveDesc);
+                bool valObservaciones = Regex.IsMatch(fila1.Cells[15].Value.ToString(), ClaveDesc);
                 //DATOS RESOLUCIÓN
                 bool valAutSancionada = Regex.IsMatch(fila1.Cells[16].Value.ToString(), cadenaTexto);
                 bool valFechResolucion = Regex.IsMatch(fila1.Cells[17].Value.ToString(), Fechas);
                 bool valURL = Regex.IsMatch(fila1.Cells[18].Value.ToString(), URLSDocumento);
                 //DATOS INHABILITACIÓN
-                bool valPlazo = Regex.IsMatch(fila1.Cells[19].Value.ToString(), NoObligatorio);
+                bool valPlazo = Regex.IsMatch(fila1.Cells[19].Value.ToString(), cLAVEpLAZO);
                 bool valFechInicial = Regex.IsMatch(fila1.Cells[20].Value.ToString(), Fechas);
                 bool valFechFinal = Regex.IsMatch(fila1.Cells[21].Value.ToString(), Fechas);
                 //DATOS MULTA
@@ -757,11 +764,11 @@ namespace Sistema_de_sanciones
                 bool valMoneda = Regex.IsMatch(fila1.Cells[23].Value.ToString(), ClaveMoneda);
                 //DATOS TIPO SANCIÓN
                 bool valTSancion = Regex.IsMatch(fila1.Cells[24].Value.ToString(), cadenaTexto);
-                bool valDescSancion = Regex.IsMatch(fila1.Cells[25].Value.ToString(), NoObligatorio);
+                bool valDescSancion = Regex.IsMatch(fila1.Cells[25].Value.ToString(), ClaveDesc);
                 //DATOS DOCUMENTOS
-                bool valTitulo = Regex.IsMatch(fila1.Cells[26].Value.ToString(), cadenaDocumento);
+                bool valTitulo = Regex.IsMatch(fila1.Cells[26].Value.ToString(), ClaveDesc);
                 bool valTipoDocumento = Regex.IsMatch(fila1.Cells[27].Value.ToString(), cadenaDocumento);
-                bool valDescDocumento = Regex.IsMatch(fila1.Cells[28].Value.ToString(), cadenaDocumento);
+                bool valDescDocumento = Regex.IsMatch(fila1.Cells[28].Value.ToString(), ClaveDesc);
                 bool valDocURL = Regex.IsMatch(fila1.Cells[29].Value.ToString(), URLSDocumento);
                 bool valFecha = Regex.IsMatch(fila1.Cells[30].Value.ToString(), FechaDocumento);
 
@@ -1133,7 +1140,8 @@ namespace Sistema_de_sanciones
 
                     if(row.Cells[4].Value.ToString() == "")
                     {
-                           
+                            row.Cells[4].Value = ("");
+                            modps.acto = row.Cells[4].Value.ToString();
                     }
                     else
                     {
@@ -1141,7 +1149,8 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[5].Value.ToString() == "")
                     {
-                      
+                            row.Cells[5].Value = ("");
+                            modps.objetoContrato = row.Cells[5].Value.ToString();
                     }
                     else
                     {
@@ -1151,7 +1160,8 @@ namespace Sistema_de_sanciones
                     modps.nombreInstitucionDependencia = row.Cells[7].Value.ToString();
                     if (row.Cells[8].Value.ToString() == "")
                     {
-
+                            row.Cells[8].Value = ("");
+                            modps.siglasInstitucionDependencia = row.Cells[8].Value.ToString();
                     }
                     else
                     {
@@ -1159,7 +1169,8 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[9].Value.ToString() == "")
                     {
-
+                            row.Cells[9].Value = ("");
+                            modps.claveInstitucionDependencia = row.Cells[9].Value.ToString();
                     }
                     else
                     {
@@ -1167,7 +1178,8 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[10].Value.ToString() == "")
                     {
-
+                            row.Cells[10].Value = ("");
+                            modps.observaciones = row.Cells[10].Value.ToString();
                     }
                     else
                     {
@@ -1176,7 +1188,8 @@ namespace Sistema_de_sanciones
                     modps.autoridadSancionadora = row.Cells[11].Value.ToString();
                     if (row.Cells[12].Value.ToString() == "")
                     {
-
+                            row.Cells[12].Value = ("");
+                            modps.sentidoResolucion = row.Cells[12].Value.ToString();
                     }
                     else
                     {
@@ -1184,7 +1197,8 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[13].Value.ToString() == "")
                     {
-
+                            row.Cells[13].Value = ("");
+                            modps.urlResolucion = row.Cells[13].Value.ToString();
                     }
                     else
                     {
@@ -1192,7 +1206,7 @@ namespace Sistema_de_sanciones
                     }
                      if (row.Cells[14].Value.ToString() == "")
                     {
-                        f1 = null;
+                            f1 = null;
                     }
                     else
                     {
@@ -1202,7 +1216,8 @@ namespace Sistema_de_sanciones
                     modps.primerApellidoRS = row.Cells[16].Value.ToString();
                     if (row.Cells[17].Value.ToString() == "")
                     {
-                        
+                            row.Cells[17].Value = ("");
+                            modps.segundoApellidoRS = row.Cells[17].Value.ToString();
                     }
                     else
                     {
@@ -1210,7 +1225,8 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[18].Value.ToString() == "")
                     {
-                        
+                            row.Cells[18].Value = ("");
+                            modps.plazoInhabilitacion = row.Cells[18].Value.ToString();
                     }
                     else
                     {
@@ -1237,7 +1253,8 @@ namespace Sistema_de_sanciones
 
                     if (row.Cells[21].Value.ToString() == "")
                     {
-                       
+                            row.Cells[21].Value = ("0");
+                            modps.monto = float.Parse(row.Cells[21].Value.ToString());
                     }
                     else
                     {
@@ -1246,7 +1263,7 @@ namespace Sistema_de_sanciones
                     //EL REGEXT TIENE QUE ACEPTAR NULOS Y QUE A LA HORA DE GURDAR DE LA NOTIFICACION QUE NO SE PUDE GUARDAR PORQUE NO COORRESPONDE A LA LISTA 
                     if (row.Cells[22].Value.ToString() == "")
                     {
-
+                        
                     }
                     else {
 
@@ -1261,7 +1278,8 @@ namespace Sistema_de_sanciones
                     modps.tipoPersona = row.Cells[25].Value.ToString();
                     if (row.Cells[26].Value.ToString() == "")
                     {
-                       
+                            row.Cells[26].Value = ("");
+                            modps.telefono = row.Cells[26].Value.ToString();
                     }
                     else
                     {
@@ -1269,15 +1287,17 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[27].Value.ToString() == "")
                     {
-                        
-                    }
+                            row.Cells[27].Value = ("");
+                            modps.objetoSocial = row.Cells[27].Value.ToString();
+                        }
                     else
                     {
                         modps.objetoSocial = row.Cells[27].Value.ToString();
                     }
                     if (row.Cells[28].Value.ToString() == "")
                     {
-                    
+                            row.Cells[28].Value = ("");
+                            modps.nombresDG = row.Cells[28].Value.ToString();
                     }
                     else
                     {
@@ -1285,7 +1305,8 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[29].Value.ToString() == "")
                     {
-                       
+                            row.Cells[29].Value = ("");
+                            modps.primerApellidoDG = row.Cells[29].Value.ToString();
                     }
                     else
                     {
@@ -1293,7 +1314,8 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[30].Value.ToString() == "")
                     {
-                    
+                            row.Cells[30].Value = ("");
+                            modps.segundoApellidoDG = row.Cells[30].Value.ToString();
                     }
                     else
                     {
@@ -1301,7 +1323,8 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[31].Value.ToString() == "")
                     {
-                       
+                            row.Cells[31].Value = ("");
+                            modps.curpDG = row.Cells[31].Value.ToString();
                     }
                     else
                     {
@@ -1309,7 +1332,8 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[32].Value.ToString() == "")
                     {
-                        
+                            row.Cells[32].Value = ("");
+                            modps.nombresAL = row.Cells[32].Value.ToString();
                     }
                     else
                     {
@@ -1317,7 +1341,8 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[33].Value.ToString() == "")
                     {
-                       
+                            row.Cells[33].Value = ("");
+                            modps.primerApellidoAL = row.Cells[33].Value.ToString();
                     }
                     else
                     {
@@ -1325,7 +1350,8 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[34].Value.ToString() == "")
                     {
-                     
+                            row.Cells[34].Value = ("");
+                            modps.segundoApellidoAL = row.Cells[34].Value.ToString();
                     }
                     else
                     {
@@ -1333,7 +1359,8 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[35].Value.ToString() == "")
                     {
-                   
+                            row.Cells[35].Value = ("");
+                            modps.curpAL = row.Cells[35].Value.ToString();
                     }
                     else
                     {
@@ -1341,7 +1368,7 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[36].Value.ToString() == "")
                     {
-
+                       
                     }
                     else { 
                             enti = obtenerEntidadFederativaID(row.Cells[36].Value.ToString());
@@ -1349,7 +1376,7 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[37].Value.ToString() == "")
                     {
-
+                            
                     }
                     else { 
                        
@@ -1361,7 +1388,7 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[38].Value.ToString() == "")
                     {
-
+                    
                     }
                     else {
                    
@@ -1372,7 +1399,7 @@ namespace Sistema_de_sanciones
                    
                     if (row.Cells[39].Value.ToString() == "")
                     {
-
+                       
                     }
                     else { 
                           vial = obtenerVialidadID(row.Cells[39].Value.ToString());
@@ -1381,7 +1408,7 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[40].Value.ToString() == "")
                     {
-                        
+                           
                     }
                     else
                     {
@@ -1389,7 +1416,7 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[41].Value.ToString() == "")
                     {
-                      
+                         
                     }
                     else
                     {
@@ -1397,7 +1424,7 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[42].Value.ToString() == "")
                     {
-                        
+                    
                     }
                     else
                     {
@@ -1405,7 +1432,7 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[43].Value.ToString() == "")
                     {
-                       
+                           
                     }
                     else
                     {
@@ -1413,7 +1440,7 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[44].Value.ToString() == "")
                     {
-                      
+                           
                     }
                     else
                     {
@@ -1421,7 +1448,7 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[45].Value.ToString() == "")
                     {
-                       
+                        
                     }
                     else
                     {
@@ -1429,7 +1456,7 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[46].Value.ToString() == "")
                     {
-                        
+                            
                     }
                     else
                     {
@@ -1437,7 +1464,7 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[47].Value.ToString() == "")
                     {
-                      
+                    
                     }
                     else
                     {
@@ -1446,7 +1473,7 @@ namespace Sistema_de_sanciones
 
                     if (row.Cells[48].Value.ToString() == "")
                     {
-                       
+                          
                     }
                     else
                     {
@@ -1454,7 +1481,7 @@ namespace Sistema_de_sanciones
                     }
                     if (row.Cells[49].Value.ToString() == "")
                     {
-
+                        
                     }
                     else { 
                         
@@ -1568,7 +1595,32 @@ namespace Sistema_de_sanciones
             conSPS.guardarSPS(SPS);
         }
 
-      
+        private void btnLimpiar1_Click(object sender, EventArgs e)
+        {
+            dataGridView2.DataSource = null;
+        }
+
+        private void btnLimpar2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+        }
+
+        private void dataGridView2_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using(SolidBrush br = new SolidBrush(dataGridView2.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex +1).ToString(),e.InheritedRowStyle.Font,br,e.RowBounds.Location.X+10,e.RowBounds.Y +10);
+            }
+        }
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using(SolidBrush brs = new SolidBrush(dataGridView1.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, brs, e.RowBounds.Location.X + 10, e.RowBounds.Y + 10);
+            }
+        }
+
         private void btnGuardarSPS_Click(object sender, EventArgs e)
         {
             int columnas = dataGridView2.ColumnCount;
@@ -1597,7 +1649,7 @@ namespace Sistema_de_sanciones
 
                         if (row.Cells[2].Value.ToString() == "")
                         {
-                            row.Cells[2].Value = ("NA");
+                            row.Cells[2].Value = ("");
                             modSPS.segundoApellidoSPS = row.Cells[2].Value.ToString();
                         }
                         else
@@ -1614,7 +1666,7 @@ namespace Sistema_de_sanciones
 
                         if (row.Cells[7].Value.ToString() == "")
                         {
-                            row.Cells[7].Value = ("NA");
+                            row.Cells[7].Value = ("");
                             modSPS.nivelSPS = row.Cells[7].Value.ToString();
                         }
                         else
@@ -1626,7 +1678,7 @@ namespace Sistema_de_sanciones
 
                         if (row.Cells[9].Value.ToString() == "")
                         {
-                            row.Cells[9].Value = ("NA");
+                            row.Cells[9].Value = ("");
                             modSPS.siglasInstitucionDependencia = row.Cells[9].Value.ToString();
                         }
                         else
@@ -1636,7 +1688,7 @@ namespace Sistema_de_sanciones
 
                         if (row.Cells[10].Value.ToString() == "")
                         {
-                            row.Cells[10].Value = ("NA");
+                            row.Cells[10].Value = ("");
                             modSPS.claveInstitucionDependencia = row.Cells[10].Value.ToString();
                         }
                         else
@@ -1656,7 +1708,7 @@ namespace Sistema_de_sanciones
 
                         if (row.Cells[13].Value.ToString() == "")
                         {
-                            row.Cells[13].Value = ("NA");
+                            row.Cells[13].Value = ("");
                             modSPS.descripcionFalta = row.Cells[13].Value.ToString();
                         }
                         else
@@ -1669,7 +1721,7 @@ namespace Sistema_de_sanciones
 
                         if (row.Cells[15].Value.ToString() == "")
                         {
-                            row.Cells[15].Value = ("NA");
+                            row.Cells[15].Value = ("");
                             modSPS.observaciones = row.Cells[15].Value.ToString();
                         }
                         else
@@ -1683,7 +1735,7 @@ namespace Sistema_de_sanciones
 
                         if (row.Cells[18].Value.ToString() == "")
                         {
-                            row.Cells[18].Value = ("NA");
+                            row.Cells[18].Value = ("");
                             modSPS.urlResolucion = row.Cells[18].Value.ToString();
                         }
                         else
@@ -1693,7 +1745,7 @@ namespace Sistema_de_sanciones
 
                         if (row.Cells[19].Value.ToString() == "")
                         {
-                            row.Cells[19].Value = ("NA");
+                            row.Cells[19].Value = ("");
                             modSPS.plazoInhabilitacion = row.Cells[19].Value.ToString();
                         }
                         else
