@@ -85,7 +85,7 @@
             this.textUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textUsuario.Multiline = false;
             this.textUsuario.Name = "textUsuario";
-            this.textUsuario.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textUsuario.Padding = new System.Windows.Forms.Padding(7);
             this.textUsuario.PasswordChar = false;
             this.textUsuario.Size = new System.Drawing.Size(266, 31);
             this.textUsuario.TabIndex = 1;
@@ -122,7 +122,7 @@
             this.textContrasena.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textContrasena.Multiline = false;
             this.textContrasena.Name = "textContrasena";
-            this.textContrasena.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textContrasena.Padding = new System.Windows.Forms.Padding(7);
             this.textContrasena.PasswordChar = true;
             this.textContrasena.Size = new System.Drawing.Size(266, 31);
             this.textContrasena.TabIndex = 2;
@@ -139,9 +139,9 @@
             this.label3.ForeColor = System.Drawing.Color.Gray;
             this.label3.Location = new System.Drawing.Point(205, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(763, 37);
+            this.label3.Size = new System.Drawing.Size(753, 37);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Servidores Púiblicos y Particulares Sancionados";
+            this.label3.Text = "Servidores Públicos y Particulares Sancionados";
             // 
             // Login
             // 

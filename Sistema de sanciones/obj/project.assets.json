@@ -520,19 +520,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\radge\\.nuget\\packages\\": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
       "projectName": "Sistema de sanciones",
-      "projectPath": "D:\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
-      "packagesPath": "C:\\Users\\radge\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\obj\\",
+      "projectPath": "C:\\Users\\HP\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\Sistema de sanciones.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\Documents\\GitHub\\DesktopS3-Prueba\\Sistema de sanciones\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\radge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -589,7 +589,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

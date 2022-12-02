@@ -1,0 +1,13 @@
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\publish\Sistema de sanciones.exe
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\publish\Sistema de sanciones.dll
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\publish\Sistema de sanciones.deps.json
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\publish\Sistema de sanciones.runtimeconfig.json
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\publish\Sistema de sanciones.pdb
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\publish\ExcelDataReader.dll
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\publish\ExcelDataReader.DataSet.dll
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\publish\System.Data.SqlClient.dll
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\publish\runtimes\win-arm64\native\sni.dll
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\publish\runtimes\win-x64\native\sni.dll
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\publish\runtimes\win-x86\native\sni.dll
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\publish\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\publish\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
