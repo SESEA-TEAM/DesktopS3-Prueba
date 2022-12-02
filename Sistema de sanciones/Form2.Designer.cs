@@ -36,6 +36,7 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblMensajeCap = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,17 +52,18 @@
             this.buttonUsuarios = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panelMenuProv = new System.Windows.Forms.Panel();
             this.buttonCapturarParticulares = new System.Windows.Forms.Button();
             this.buttonCapturarPublicos = new System.Windows.Forms.Button();
             this.buttonCaptura = new System.Windows.Forms.Button();
             this.panelMenuUser = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainPanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -69,7 +71,6 @@
             this.panelMenu.SuspendLayout();
             this.panelMenuProv.SuspendLayout();
             this.panelMenuUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAdministrador
@@ -179,6 +180,16 @@
             this.tabPage1.Size = new System.Drawing.Size(1189, 756);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Inicio";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Sistema_de_sanciones.Properties.Resources.Logo_SEA390X194_Mesa_de_trabajo_1_Mesa_de_trabajo_1;
+            this.pictureBox3.Location = new System.Drawing.Point(270, 237);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(657, 331);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
             // 
             // label5
             // 
@@ -374,6 +385,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.White;
+            this.panelMenu.Controls.Add(this.label3);
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.btnCerrarSesion);
             this.panelMenu.Controls.Add(this.panelMenuProv);
@@ -387,6 +399,16 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(199, 749);
             this.panelMenu.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label3.Location = new System.Drawing.Point(0, 699);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(22, 15);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "1.3";
             // 
             // btnCerrarSesion
             // 
@@ -471,16 +493,6 @@
             this.panelMenuUser.Size = new System.Drawing.Size(199, 78);
             this.panelMenuUser.TabIndex = 3;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Sistema_de_sanciones.Properties.Resources.Logo_SEA390X194_Mesa_de_trabajo_1_Mesa_de_trabajo_1;
-            this.pictureBox3.Location = new System.Drawing.Point(270, 237);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(657, 331);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -496,14 +508,15 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelMenu.ResumeLayout(false);
+            this.panelMenu.PerformLayout();
             this.panelMenuProv.ResumeLayout(false);
             this.panelMenuUser.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -541,5 +554,6 @@
         private PictureBox pictureBox2;
         private Button btnCerrarSesion;
         private PictureBox pictureBox3;
+        private Label label3;
     }
 }

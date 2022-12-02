@@ -34,6 +34,7 @@
             this.textUsuario = new Sistema_de_sanciones.Templates.TextBox();
             this.buttonEntrar = new System.Windows.Forms.Button();
             this.textContrasena = new Sistema_de_sanciones.Templates.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,20 +44,19 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(403, 159);
+            this.label1.Location = new System.Drawing.Point(320, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(580, 46);
+            this.label1.Size = new System.Drawing.Size(533, 37);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Sistema de carga de datos S3";
+            this.label1.Text = "Sistema de Carga de Datos de los";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = global::Sistema_de_sanciones.Properties.Resources.Logo_SEA390X194_Mesa_de_trabajo_1_Mesa_de_trabajo_1;
-            this.pictureBox1.Location = new System.Drawing.Point(403, 212);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(357, 159);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(522, 255);
+            this.pictureBox1.Size = new System.Drawing.Size(457, 191);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -67,9 +67,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label2.Location = new System.Drawing.Point(555, 471);
+            this.label2.Location = new System.Drawing.Point(486, 360);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 40);
+            this.label2.Size = new System.Drawing.Size(191, 32);
             this.label2.TabIndex = 11;
             this.label2.Text = "Iniciar sesión";
             // 
@@ -81,13 +81,13 @@
             this.textUsuario.BorderFocusColor = System.Drawing.Color.DarkRed;
             this.textUsuario.BorderSize = 2;
             this.textUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textUsuario.Location = new System.Drawing.Point(512, 564);
-            this.textUsuario.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.textUsuario.Location = new System.Drawing.Point(448, 423);
+            this.textUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textUsuario.Multiline = false;
             this.textUsuario.Name = "textUsuario";
-            this.textUsuario.Padding = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.textUsuario.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.textUsuario.PasswordChar = false;
-            this.textUsuario.Size = new System.Drawing.Size(304, 38);
+            this.textUsuario.Size = new System.Drawing.Size(266, 31);
             this.textUsuario.TabIndex = 1;
             this.textUsuario.Texts = "Nombre de usuario*";
             this.textUsuario.UnderlinedStyle = true;
@@ -102,10 +102,9 @@
             this.buttonEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEntrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonEntrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonEntrar.Location = new System.Drawing.Point(573, 749);
-            this.buttonEntrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonEntrar.Location = new System.Drawing.Point(501, 555);
             this.buttonEntrar.Name = "buttonEntrar";
-            this.buttonEntrar.Size = new System.Drawing.Size(183, 47);
+            this.buttonEntrar.Size = new System.Drawing.Size(160, 35);
             this.buttonEntrar.TabIndex = 3;
             this.buttonEntrar.Text = "Entrar";
             this.buttonEntrar.UseVisualStyleBackColor = false;
@@ -119,31 +118,43 @@
             this.textContrasena.BorderFocusColor = System.Drawing.Color.DarkRed;
             this.textContrasena.BorderSize = 2;
             this.textContrasena.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textContrasena.Location = new System.Drawing.Point(512, 655);
-            this.textContrasena.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.textContrasena.Location = new System.Drawing.Point(448, 491);
+            this.textContrasena.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textContrasena.Multiline = false;
             this.textContrasena.Name = "textContrasena";
-            this.textContrasena.Padding = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.textContrasena.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.textContrasena.PasswordChar = true;
-            this.textContrasena.Size = new System.Drawing.Size(304, 38);
+            this.textContrasena.Size = new System.Drawing.Size(266, 31);
             this.textContrasena.TabIndex = 2;
             this.textContrasena.Texts = "Contraseña*";
             this.textContrasena.UnderlinedStyle = true;
             this.textContrasena.Enter += new System.EventHandler(this.textBox2_Enter);
             this.textContrasena.Leave += new System.EventHandler(this.textBox2_Leave_1);
             // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.Location = new System.Drawing.Point(205, 115);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(763, 37);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Servidores Púiblicos y Particulares Sancionados";
+            // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1323, 999);
+            this.ClientSize = new System.Drawing.Size(1158, 749);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.textContrasena);
             this.Controls.Add(this.buttonEntrar);
             this.Controls.Add(this.textUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
@@ -161,5 +172,6 @@
         public Button buttonEntrar;
         private Templates.TextBox textUsuario;
         private Templates.TextBox textContrasena;
+        private Label label3;
     }
 }

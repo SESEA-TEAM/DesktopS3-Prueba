@@ -162,7 +162,7 @@ namespace Sistema_de_sanciones
                 textCorreo.ForeColor = Color.Gray;
             }
 
-            string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
+            string emailPattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
             bool isEmailValid = Regex.IsMatch(textCorreo.Texts, emailPattern);
             
             if (!isEmailValid)
@@ -321,7 +321,7 @@ namespace Sistema_de_sanciones
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
+            string emailPattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
             bool isEmailValid = Regex.IsMatch(textCorreo.Texts, emailPattern);
 
             if (!isEmailValid || txtNombres.Texts == "Nombres *" || textPApellido.Texts == "Primer Apellido *" ||
@@ -346,7 +346,7 @@ namespace Sistema_de_sanciones
             }
             else if (!valiUserName(textUser.Texts))
             {
-
+                errorProvider1.SetError(textUser, "Nombre de usuario no válido");
             }
             else
             {
