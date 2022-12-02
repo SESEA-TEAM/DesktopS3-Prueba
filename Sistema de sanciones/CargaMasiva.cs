@@ -1589,6 +1589,7 @@ namespace Sistema_de_sanciones
                     docSPS = 0; 
                     faltaSPS = 0;
                     generoSPS = 0;
+                    documentoSPS = true;
                     if (validarCamposSPS())
                     {
                         modSPS.nombreSPS = row.Cells[0].Value.ToString();
