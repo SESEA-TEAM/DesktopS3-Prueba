@@ -218,7 +218,6 @@ namespace Sistema_de_sanciones
             IH = null;
 
             dataGridView1.Columns.Remove("Ver");
-            dataGridView1.Columns.Remove("Editar");
             IniciarDB();
             CargarBotones();
 
@@ -236,18 +235,11 @@ namespace Sistema_de_sanciones
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "Ver";
             Ver.Name = "Ver";
-            Ver.Width = Convert.ToInt32(p * 0.042);
+            Ver.Width = Convert.ToInt32(p * 0.084);
             Ver.FlatStyle = FlatStyle.Flat;
             Ver.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(Ver);
             //this.dataGridView1.Columns["Ver"].Frozen = true;
-
-            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
-            editar.HeaderText = "Editar";
-            editar.Name = "Editar";
-            editar.Width = Convert.ToInt32(p * 0.042);
-            editar.FlatStyle = FlatStyle.Flat;
-            dataGridView1.Columns.Add(editar);
         }
 
         private void CargarBotones()
@@ -256,19 +248,12 @@ namespace Sistema_de_sanciones
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "Ver";
             Ver.Name = "Ver";
-            Ver.Width = Convert.ToInt32(p * 0.042);
+            Ver.Width = Convert.ToInt32(p * 0.084);
             Ver.FlatStyle = FlatStyle.Flat;
             Ver.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(Ver);
             //this.dataGridView1.Columns["Ver"].Frozen = true;
 
-            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
-            editar.HeaderText = "Editar";
-            editar.Name = "Editar";
-            editar.Width = Convert.ToInt32(p * 0.042);
-            editar.FlatStyle = FlatStyle.Flat;
-            dataGridView1.Columns.Add(editar);
-            //this.dataGridView1.Columns["Editar"].Frozen = true;
         }
 
 
@@ -278,7 +263,6 @@ namespace Sistema_de_sanciones
             objs.Final2 = 10;
             //Cargamos nuevamente el metodo CargarDB y ponemos los datos dentro de nuestro dataGridView.
             dataGridView1.Columns.Remove("Ver");
-            dataGridView1.Columns.Remove("Editar");
             CargarDB();
             CargarBotones();
 
@@ -311,7 +295,6 @@ namespace Sistema_de_sanciones
 
             botonSiguiente.Enabled = true;
             dataGridView1.Columns.Remove("Ver");
-            dataGridView1.Columns.Remove("Editar");
             dsTable.Clear();
             dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
@@ -333,7 +316,6 @@ namespace Sistema_de_sanciones
                 botonAnterior.Enabled = false;
             }
             dataGridView1.Columns.Remove("Ver");
-            dataGridView1.Columns.Remove("Editar");
             dsTable.Clear();
             dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
@@ -354,7 +336,6 @@ namespace Sistema_de_sanciones
                 botonAnterior.Enabled = true;
 
                 dataGridView1.Columns.Remove("Ver");
-                dataGridView1.Columns.Remove("Editar");
                 dsTable.Clear();
                 dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
                 dataGridView1.DataSource = dsTable.Tables[1];
@@ -372,7 +353,6 @@ namespace Sistema_de_sanciones
 
                 botonAnterior.Enabled = true;
                 dataGridView1.Columns.Remove("Ver");
-                dataGridView1.Columns.Remove("Editar");
                 dsTable.Clear();
                 dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
                 dataGridView1.DataSource = dsTable.Tables[1];
@@ -392,7 +372,6 @@ namespace Sistema_de_sanciones
                 objs.Final2 = objs.Inicio2 + 10;
 
                 dataGridView1.Columns.Remove("Ver");
-                dataGridView1.Columns.Remove("Editar");
                 dsTable.Clear();
                 dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
                 dataGridView1.DataSource = dsTable.Tables[1];
@@ -408,7 +387,6 @@ namespace Sistema_de_sanciones
                 objs.Final2 = objs.Inicio2 + 10;
 
                 dataGridView1.Columns.Remove("Ver");
-                dataGridView1.Columns.Remove("Editar");
                 dsTable.Clear();
                 dsTable = objs.BarraListadoPS(EX, ISD, NM, TP, TS, FA, IH);
                 dataGridView1.DataSource = dsTable.Tables[1];
@@ -448,13 +426,6 @@ namespace Sistema_de_sanciones
                     //textExpediente.Texts = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 }
             }
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
-            {
-                if (dataGridView1.SelectedRows.Count > 0)
-                {
-                    form2Handler.editarPS(Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString()));
-                }
-            }
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -473,19 +444,6 @@ namespace Sistema_de_sanciones
                 e.Handled = true;
             }
 
-            if (e.ColumnIndex == 8)
-            {
-                Image someImage = Properties.Resources.lapiz;
-
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                var w = Properties.Resources.lapiz.Width;
-                var h = Properties.Resources.lapiz.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-
-                e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
-                e.Handled = true;
-            }
         }
 
         private void textExpediente_Enter(object sender, EventArgs e)

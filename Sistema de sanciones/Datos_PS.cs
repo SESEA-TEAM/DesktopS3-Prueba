@@ -18,6 +18,7 @@ namespace Sistema_de_sanciones
         controlador1PS consPS = new controlador1PS();
         int idPS;
 
+
         private Form2 form2Handler;
         public Datos_PS(Form2 form2, int id)
         {
@@ -27,7 +28,10 @@ namespace Sistema_de_sanciones
             cargarDatos();
             form2Handler = form2;
             cargarDGV();
+
+
         }
+
 
         private void cargarDGV()
         {

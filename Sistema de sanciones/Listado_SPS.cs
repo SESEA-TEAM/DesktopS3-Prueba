@@ -220,19 +220,11 @@ namespace WinFormsApp1
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "Ver";
             Ver.Name = "Ver";
-            Ver.Width = Convert.ToInt32(p * 0.042);
+            Ver.Width = Convert.ToInt32(p * 0.084);
             Ver.FlatStyle = FlatStyle.Flat;
             Ver.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(Ver);
             //this.dataGridView1.Columns["Ver"].Frozen = true;
-
-            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
-            editar.HeaderText = "Editar";
-            editar.Name = "Editar";
-            editar.Width = Convert.ToInt32(p * 0.042);
-            editar.FlatStyle = FlatStyle.Flat;
-            dataGridView1.Columns.Add(editar);
-            //this.dataGridView1.Columns["Editar"].Frozen = true;
         }
 
         private void CargarBotones()
@@ -241,19 +233,11 @@ namespace WinFormsApp1
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "Ver";
             Ver.Name = "Ver";
-            Ver.Width = Convert.ToInt32(p * 0.042);
+            Ver.Width = Convert.ToInt32(p * 0.084);
             Ver.FlatStyle = FlatStyle.Flat;
             Ver.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(Ver);
             //this.dataGridView1.Columns["Ver"].Frozen = true;
-
-            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
-            editar.HeaderText = "Editar";
-            editar.Name = "Editar";
-            editar.Width = Convert.ToInt32(p * 0.042);
-            editar.FlatStyle = FlatStyle.Flat;
-            dataGridView1.Columns.Add(editar);
-            //this.dataGridView1.Columns["Editar"].Frozen = true;
         }
 
         //Este evento es el encargado de iniciar la busqueda de los registros en nuestro dataGridView, en este caso los contadores Inicio2 y Final2 regresan
@@ -265,7 +249,6 @@ namespace WinFormsApp1
             //Cargamos nuevamente el metodo CargarDB y ponemos los datos dentro de nuestro dataGridView.
 
             dataGridView1.Columns.Remove("Ver");
-            dataGridView1.Columns.Remove("Editar");
             CargarDB();
             CargarBotones();
 
@@ -301,7 +284,6 @@ namespace WinFormsApp1
             //Cargamos nuevamente el metodo CargarDB y ponemos los datos dentro de nuestro dataGridView.
 
             dataGridView1.Columns.Remove("Ver");
-            dataGridView1.Columns.Remove("Editar");
             IniciarDB();
             CargarBotones();
 
@@ -363,7 +345,6 @@ namespace WinFormsApp1
             
             botonSiguiente.Enabled = true;
             dataGridView1.Columns.Remove("Ver");
-            dataGridView1.Columns.Remove("Editar");
             dsTable.Clear();
             dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
@@ -387,7 +368,6 @@ namespace WinFormsApp1
                 botonAnterior.Enabled=false;
             }
             dataGridView1.Columns.Remove("Ver");
-            dataGridView1.Columns.Remove("Editar");
             dsTable.Clear();
             dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
@@ -409,7 +389,6 @@ namespace WinFormsApp1
                 botonPrimero.Enabled = true;
                 botonAnterior.Enabled = true;
                 dataGridView1.Columns.Remove("Ver");
-                dataGridView1.Columns.Remove("Editar");
                 dsTable.Clear();
                 dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
                 
@@ -427,7 +406,6 @@ namespace WinFormsApp1
 
                 botonAnterior.Enabled = true;
                 dataGridView1.Columns.Remove("Ver");
-                dataGridView1.Columns.Remove("Editar");
                 dsTable.Clear();
                 
                 dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
@@ -453,7 +431,6 @@ namespace WinFormsApp1
                 objs.Final2 = objs.Inicio2 + 10;
 
                 dataGridView1.Columns.Remove("Ver");
-                dataGridView1.Columns.Remove("Editar");
                 dsTable.Clear();
                 dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
                 dataGridView1.DataSource = dsTable.Tables[1];
@@ -469,7 +446,6 @@ namespace WinFormsApp1
                 objs.Final2 = objs.Inicio2 + 10;
 
                 dataGridView1.Columns.Remove("Ver");
-                dataGridView1.Columns.Remove("Editar");
                 dsTable.Clear();
                 dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
                 dataGridView1.DataSource = dsTable.Tables[1];
@@ -508,20 +484,6 @@ namespace WinFormsApp1
                 e.Handled = true;
             }
 
-            if (e.ColumnIndex == 7)
-            {
-                Image someImage = Sistema_de_sanciones.Properties.Resources.lapiz;
-
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                var w = Sistema_de_sanciones.Properties.Resources.lapiz.Width;
-                var h = Sistema_de_sanciones.Properties.Resources.lapiz.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-
-                e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
-                
-                e.Handled = true;
-            }
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -532,13 +494,6 @@ namespace WinFormsApp1
                     //Form2.modificarSPS();
                     form2Handler.visualizarSPS(Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString()));
                     //textExpediente.Texts = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                }
-            }
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
-            {
-                if (dataGridView1.SelectedRows.Count > 0)
-                {
-                    form2Handler.editarSPS(Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString()));
                 }
             }
         }

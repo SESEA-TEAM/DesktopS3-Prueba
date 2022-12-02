@@ -37,15 +37,6 @@
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label35 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label75 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
             this.labelSiglas = new System.Windows.Forms.Label();
             this.labelPuesto = new System.Windows.Forms.Label();
             this.labelCURP = new System.Windows.Forms.Label();
@@ -105,22 +96,31 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionxd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.URL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label35 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel5.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,7 +129,6 @@
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label46);
-            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.labelSiglas);
             this.panel2.Controls.Add(this.labelPuesto);
             this.panel2.Controls.Add(this.labelCURP);
@@ -187,6 +186,7 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(0, 63);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1158, 1538);
@@ -270,130 +270,6 @@
             this.label46.TabIndex = 19;
             this.label46.Text = "Institución / Dependencia";
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.dataGridView2);
-            this.panel4.Controls.Add(this.label35);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(0, 1151);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1158, 326);
-            this.panel4.TabIndex = 6;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.ColumnHeadersVisible = false;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.Titulo,
-            this.dataGridViewTextBoxColumn2,
-            this.descripcionxd,
-            this.URL,
-            this.Fecha});
-            this.dataGridView2.EnableHeadersVisualStyles = false;
-            this.dataGridView2.Location = new System.Drawing.Point(25, 124);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1107, 153);
-            this.dataGridView2.TabIndex = 80;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label35.Location = new System.Drawing.Point(535, 20);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(107, 19);
-            this.label35.TabIndex = 4;
-            this.label35.Text = "Documentos";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.panel5.Controls.Add(this.label75);
-            this.panel5.Controls.Add(this.label74);
-            this.panel5.Controls.Add(this.label72);
-            this.panel5.Controls.Add(this.label76);
-            this.panel5.Controls.Add(this.label73);
-            this.panel5.Location = new System.Drawing.Point(25, 61);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1108, 57);
-            this.panel5.TabIndex = 6;
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label75.ForeColor = System.Drawing.SystemColors.Control;
-            this.label75.Location = new System.Drawing.Point(1015, 22);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(43, 16);
-            this.label75.TabIndex = 0;
-            this.label75.Text = "Fecha";
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label74.ForeColor = System.Drawing.SystemColors.Control;
-            this.label74.Location = new System.Drawing.Point(807, 22);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(32, 16);
-            this.label74.TabIndex = 0;
-            this.label74.Text = "URL";
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label72.ForeColor = System.Drawing.SystemColors.Control;
-            this.label72.Location = new System.Drawing.Point(85, 22);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(38, 16);
-            this.label72.TabIndex = 0;
-            this.label72.Text = "Titulo";
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label76.ForeColor = System.Drawing.SystemColors.Control;
-            this.label76.Location = new System.Drawing.Point(270, 22);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(99, 16);
-            this.label76.TabIndex = 1;
-            this.label76.Text = "Tipo documento";
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label73.ForeColor = System.Drawing.SystemColors.Control;
-            this.label73.Location = new System.Drawing.Point(520, 22);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(75, 16);
-            this.label73.TabIndex = 1;
-            this.label73.Text = "Descripción";
-            // 
             // labelSiglas
             // 
             this.labelSiglas.AutoSize = true;
@@ -433,6 +309,7 @@
             this.labelNombres.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelNombres.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelNombres.Location = new System.Drawing.Point(586, 85);
+            this.labelNombres.MaximumSize = new System.Drawing.Size(250, 0);
             this.labelNombres.Name = "labelNombres";
             this.labelNombres.Size = new System.Drawing.Size(34, 16);
             this.labelNombres.TabIndex = 8;
@@ -524,6 +401,7 @@
             this.labelOBS.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelOBS.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelOBS.Location = new System.Drawing.Point(24, 1122);
+            this.labelOBS.MaximumSize = new System.Drawing.Size(250, 0);
             this.labelOBS.Name = "labelOBS";
             this.labelOBS.Size = new System.Drawing.Size(34, 16);
             this.labelOBS.TabIndex = 8;
@@ -547,6 +425,7 @@
             this.labelDF.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelDF.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelDF.Location = new System.Drawing.Point(305, 475);
+            this.labelDF.MaximumSize = new System.Drawing.Size(700, 0);
             this.labelDF.Name = "labelDF";
             this.labelDF.Size = new System.Drawing.Size(34, 16);
             this.labelDF.TabIndex = 8;
@@ -583,6 +462,7 @@
             this.labelURL.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelURL.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelURL.Location = new System.Drawing.Point(586, 590);
+            this.labelURL.MaximumSize = new System.Drawing.Size(500, 50);
             this.labelURL.Name = "labelURL";
             this.labelURL.Size = new System.Drawing.Size(34, 16);
             this.labelURL.TabIndex = 8;
@@ -631,6 +511,7 @@
             this.labelAUSA.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelAUSA.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelAUSA.Location = new System.Drawing.Point(24, 590);
+            this.labelAUSA.MaximumSize = new System.Drawing.Size(250, 0);
             this.labelAUSA.Name = "labelAUSA";
             this.labelAUSA.Size = new System.Drawing.Size(34, 16);
             this.labelAUSA.TabIndex = 8;
@@ -643,6 +524,7 @@
             this.labelCMH.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelCMH.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelCMH.Location = new System.Drawing.Point(24, 1057);
+            this.labelCMH.MaximumSize = new System.Drawing.Size(250, 0);
             this.labelCMH.Name = "labelCMH";
             this.labelCMH.Size = new System.Drawing.Size(34, 16);
             this.labelCMH.TabIndex = 8;
@@ -654,6 +536,7 @@
             this.labelNombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelNombre.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelNombre.Location = new System.Drawing.Point(586, 265);
+            this.labelNombre.MaximumSize = new System.Drawing.Size(500, 0);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(34, 16);
             this.labelNombre.TabIndex = 8;
@@ -1066,50 +949,51 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Resolución";
             // 
-            // label1
+            // panel4
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label1.Location = new System.Drawing.Point(92, -343);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(378, 38);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Sistema de los servidores públicos sancionados\r\nModificar\r\n";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.panel4.Controls.Add(this.dataGridView2);
+            this.panel4.Controls.Add(this.label35);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Location = new System.Drawing.Point(0, 1151);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1158, 326);
+            this.panel4.TabIndex = 6;
             // 
-            // panel1
+            // dataGridView2
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1158, 57);
-            this.panel1.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(24, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 19);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Detalle del registro";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(24, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(183, 16);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "*(DNC) = Dato No Capturado";
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.ColumnHeadersVisible = false;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.Titulo,
+            this.dataGridViewTextBoxColumn2,
+            this.descripcionxd,
+            this.URL,
+            this.Fecha});
+            this.dataGridView2.EnableHeadersVisualStyles = false;
+            this.dataGridView2.Location = new System.Drawing.Point(25, 124);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(1107, 153);
+            this.dataGridView2.TabIndex = 80;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1153,6 +1037,130 @@
             this.Fecha.ReadOnly = true;
             this.Fecha.Width = 150;
             // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
+            this.label35.Location = new System.Drawing.Point(535, 20);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(107, 19);
+            this.label35.TabIndex = 4;
+            this.label35.Text = "Documentos";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.panel5.Controls.Add(this.label75);
+            this.panel5.Controls.Add(this.label74);
+            this.panel5.Controls.Add(this.label72);
+            this.panel5.Controls.Add(this.label76);
+            this.panel5.Controls.Add(this.label73);
+            this.panel5.Location = new System.Drawing.Point(25, 61);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1108, 57);
+            this.panel5.TabIndex = 6;
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label75.ForeColor = System.Drawing.SystemColors.Control;
+            this.label75.Location = new System.Drawing.Point(1015, 22);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(43, 16);
+            this.label75.TabIndex = 0;
+            this.label75.Text = "Fecha";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label74.ForeColor = System.Drawing.SystemColors.Control;
+            this.label74.Location = new System.Drawing.Point(807, 22);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(32, 16);
+            this.label74.TabIndex = 0;
+            this.label74.Text = "URL";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label72.ForeColor = System.Drawing.SystemColors.Control;
+            this.label72.Location = new System.Drawing.Point(85, 22);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(38, 16);
+            this.label72.TabIndex = 0;
+            this.label72.Text = "Titulo";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label76.ForeColor = System.Drawing.SystemColors.Control;
+            this.label76.Location = new System.Drawing.Point(270, 22);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(99, 16);
+            this.label76.TabIndex = 1;
+            this.label76.Text = "Tipo documento";
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label73.ForeColor = System.Drawing.SystemColors.Control;
+            this.label73.Location = new System.Drawing.Point(520, 22);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(75, 16);
+            this.label73.TabIndex = 1;
+            this.label73.Text = "Descripción";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
+            this.label1.Location = new System.Drawing.Point(60, -343);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(378, 38);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Sistema de los servidores públicos sancionados\r\nModificar\r\n";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1158, 57);
+            this.panel1.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(24, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(151, 19);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Detalle del registro";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(24, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(183, 16);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "*(DNC) = Dato No Capturado";
+            // 
             // Datos_SPS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1168,13 +1176,13 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

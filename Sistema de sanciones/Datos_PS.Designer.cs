@@ -386,6 +386,7 @@
             this.labelNR.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelNR.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelNR.Location = new System.Drawing.Point(587, 135);
+            this.labelNR.MaximumSize = new System.Drawing.Size(250, 0);
             this.labelNR.Name = "labelNR";
             this.labelNR.Size = new System.Drawing.Size(34, 16);
             this.labelNR.TabIndex = 138;
@@ -397,6 +398,7 @@
             this.labelActo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelActo.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelActo.Location = new System.Drawing.Point(587, 1065);
+            this.labelActo.MaximumSize = new System.Drawing.Size(550, 0);
             this.labelActo.Name = "labelActo";
             this.labelActo.Size = new System.Drawing.Size(34, 16);
             this.labelActo.TabIndex = 137;
@@ -474,6 +476,7 @@
             this.labelURL.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelURL.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelURL.Location = new System.Drawing.Point(587, 725);
+            this.labelURL.MaximumSize = new System.Drawing.Size(250, 50);
             this.labelURL.Name = "labelURL";
             this.labelURL.Size = new System.Drawing.Size(34, 16);
             this.labelURL.TabIndex = 130;
@@ -485,6 +488,7 @@
             this.labelNMID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelNMID.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelNMID.Location = new System.Drawing.Point(587, 250);
+            this.labelNMID.MaximumSize = new System.Drawing.Size(550, 0);
             this.labelNMID.Name = "labelNMID";
             this.labelNMID.Size = new System.Drawing.Size(34, 16);
             this.labelNMID.TabIndex = 129;
@@ -496,6 +500,7 @@
             this.labelObj.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelObj.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelObj.Location = new System.Drawing.Point(587, 1170);
+            this.labelObj.MaximumSize = new System.Drawing.Size(550, 0);
             this.labelObj.Name = "labelObj";
             this.labelObj.Size = new System.Drawing.Size(34, 16);
             this.labelObj.TabIndex = 128;
@@ -573,6 +578,7 @@
             this.labelObservaciones.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelObservaciones.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelObservaciones.Location = new System.Drawing.Point(26, 315);
+            this.labelObservaciones.MaximumSize = new System.Drawing.Size(1000, 0);
             this.labelObservaciones.Name = "labelObservaciones";
             this.labelObservaciones.Size = new System.Drawing.Size(34, 16);
             this.labelObservaciones.TabIndex = 144;
@@ -639,6 +645,7 @@
             this.labelAUSA.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelAUSA.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelAUSA.Location = new System.Drawing.Point(24, 725);
+            this.labelAUSA.MaximumSize = new System.Drawing.Size(250, 0);
             this.labelAUSA.Name = "labelAUSA";
             this.labelAUSA.Size = new System.Drawing.Size(34, 16);
             this.labelAUSA.TabIndex = 155;
@@ -727,6 +734,7 @@
             this.labelCMH.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelCMH.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.labelCMH.Location = new System.Drawing.Point(24, 1065);
+            this.labelCMH.MaximumSize = new System.Drawing.Size(550, 0);
             this.labelCMH.Name = "labelCMH";
             this.labelCMH.Size = new System.Drawing.Size(34, 16);
             this.labelCMH.TabIndex = 147;
@@ -1264,6 +1272,7 @@
             this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.ColumnHeadersVisible = false;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
