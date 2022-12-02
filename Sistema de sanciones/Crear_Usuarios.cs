@@ -303,7 +303,21 @@ namespace Sistema_de_sanciones
             comboPerfil.ValueMember = "cargo";
         }
 
-        //private bool 
+        private bool valiUserName(string username)
+        {
+            List<modeloListaUsuarios> lUsers = new controladorListaUsusarios().obtenerListaUsuarios();
+
+            int pos = lUsers.FindIndex(x => x.usuario == username);
+
+            if (pos == -1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -329,6 +343,10 @@ namespace Sistema_de_sanciones
             {
                 errorProvider1.SetError(textContraseña, "Las contraseña no coinciden");
                 errorProvider1.SetError(textConfirmarContra, "Las contraseña no coinciden");
+            }
+            else if (!valiUserName(textUser.Texts))
+            {
+
             }
             else
             {
