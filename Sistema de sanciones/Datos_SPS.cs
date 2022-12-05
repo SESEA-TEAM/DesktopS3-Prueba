@@ -18,6 +18,10 @@ namespace Sistema_de_sanciones
     public partial class Datos_SPS : Form
     {
         String? f1, f2, f3, f4;
+        //Estas dos variables son de vital importancia a lo largo del programa, la primera llama al controladorPS para llamar
+        //al metodo para cargar los datos, los cuales seran desplegados en su totalidad desde la ventana de visualizacion. la 
+        //segunda variable es la que se encarga de decirle al programa cual es la sancion que vamos a visualizar, esto gracias
+        //al id de la sancion que vamos a seleccionar desde el dataGridView.
         controlador1SPS conSPS = new controlador1SPS();
         int idSPS;
 
@@ -78,12 +82,20 @@ namespace Sistema_de_sanciones
             dataGridView2.Columns[5].Width = (Convert.ToInt32(p * 0.135));
         }
 
+        //El metodo cargarDatos como su nombre indica, es la llamada al procedimiento CsdsdargarSPS, el cual cargara todos los
+        //datos de la sancion indicada con el idSPS (id de la sancion), para luego cargar todos esos datos en sus respectivos
+        //labels.
         private void cargarDatos()
         {
             modeloSPS mps = new modeloSPS();
             mps = conSPS.CsdsdargarSPS(idSPS);
 
+            //Los labels que no esten dentro de una condicional if, son todos aquellos campos que son obligatorios, por lo que
+            //en ningun caso estos apareceran con una cadena vacio y por consecuente, jamas tendran el texto DNC (Dato No Capturado).
             labelExpediente.Text = mps.expediente;
+            //En el caso de las fechas, se le agrega una pequeña funcion remove al final de este, pues al cargar el llamado, las fechas
+            //apareceran con el formato YYYY-MM-DD y la hora, sin embargo unicamente requerimos de la fecha, por esa razon es que se
+            //agrega la funcion.
             labelFEAC.Text = (mps.ultimaActualizacion.Remove(10, 15));
             labelAUSA.Text = mps.autoridadSancionadora;
             labelCMH.Text = mps.causaMotivoHechos;
@@ -93,6 +105,10 @@ namespace Sistema_de_sanciones
             labelNombres.Text = mps.nombreSPS;
             labelPRAP.Text = mps.primerApellidoSPS;
             labelPuesto.Text = mps.puestoSPS;
+
+            //Para los campos que pueden ser nulos, hay dos caminos, el primero donde si dicho campo es nulo, entonces el texto que
+            //aparecera en pantalla sera el de DNC, pero en el caso de que dicho campo se haya llenado, entonces aparecera aquel
+            //texto o fecha que se haya seleccionado.
             if (mps.claveInstitucionDependencia == null)
             {
                 labelClave.Text = "DNC";
@@ -220,6 +236,9 @@ namespace Sistema_de_sanciones
                 labelDF.Text = Convert.ToString(mps.descripcionFalta);
             }
 
+            //Los siguientes dos modulos son los que se encargan de enlistar todos los documentos y todas las sanciones en las
+            //tablas de visualizar, donde ira colocando una sancion y/o documento, y por cada una que se agregue, se aumentara
+            //en 1 un valor de i, hasta que i sea mayor que el contador de la lista de sanciones y documentos respectivamente.
             List<modeloTipoSancion> listaSancionesSPS = new List<modeloTipoSancion>();
             listaSancionesSPS = conSPS.obtenerSancionesSPS(idSPS);
             for (var i = 0; i < listaSancionesSPS.Count; i++)

@@ -15,6 +15,10 @@ namespace Sistema_de_sanciones
 {
     public partial class Datos_PS : Form
     {
+        //Estas dos variables son de vital importancia a lo largo del programa, la primera llama al controladorPS para llamar
+        //al metodo para cargar los datos, los cuales seran desplegados en su totalidad desde la ventana de visualizacion. la 
+        //segunda variable es la que se encarga de decirle al programa cual es la sancion que vamos a visualizar, esto gracias
+        //al id de la sancion que vamos a seleccionar desde el dataGridView.
         controlador1PS consPS = new controlador1PS();
         int idPS;
 
@@ -28,7 +32,6 @@ namespace Sistema_de_sanciones
             cargarDatos();
             form2Handler = form2;
             cargarDGV();
-
 
         }
 
@@ -47,12 +50,20 @@ namespace Sistema_de_sanciones
             dataGridView2.Columns[5].Width = (Convert.ToInt32(p * 0.135));
         }
 
+        //El metodo cargarDatos como su nombre indica, es la llamada al procedimiento CsdsdargarPS, el cual cargara todos los
+        //datos de la sancion indicada con el idPS (id de la sancion), para luego cargar todos esos datos en sus respectivos
+        //labels.
         private void cargarDatos()
         {
             modeloPS mps = new modeloPS();
             mps = consPS.CsdsdargarPS(idPS);
 
+            //Los labels que no esten dentro de una condicional if, son todos aquellos campos que son obligatorios, por lo que
+            //en ningun caso estos apareceran con una cadena vacio y por consecuente, jamas tendran el texto DNC (Dato No Capturado).
             labelExpediente.Text = mps.expediente;
+            //En el caso de las fechas, se le agrega una pequeña funcion remove al final de este, pues al cargar el llamado, las fechas
+            //apareceran con el formato YYYY-MM-DD y la hora, sin embargo unicamente requerimos de la fecha, por esa razon es que se
+            //agrega la funcion.
             labelFEAC.Text = (mps.ultimaActualizacion.Remove(10, 15));
             labelAUSA.Text = mps.autoridadSancionadora;
             labelCMH.Text = mps.causaMotivoHechos;
@@ -64,6 +75,10 @@ namespace Sistema_de_sanciones
             labelNMID.Text = mps.nombreInstitucionDependencia;
             labelNMRS.Text = mps.nombreRS;
             labelPARS.Text = mps.primerApellidoRS;
+
+            //Para los campos que pueden ser nulos, hay dos caminos, el primero donde si dicho campo es nulo, entonces el texto que
+            //aparecera en pantalla sera el de DNC, pero en el caso de que dicho campo se haya llenado, entonces aparecera aquel
+            //texto o fecha que se haya seleccionado.
 
             //campos de responsable sancion
             if (mps.segundoApellidoRS == null)
@@ -117,25 +132,31 @@ namespace Sistema_de_sanciones
                 labelActo.Text = Convert.ToString(mps.acto);
             }
 
+            //Por defecto, los paneles 6 y 7 que son los paneles de domicilio son visibles, pero estos dejaran de ser visibles en el
+            //caso de que los campos de pais en ambos sea nulo, o si alguno de los dos es uno, lo que causara que el otro se vuelva
+            //invisible.
+            //El primer if es para conocer si paisMX y paisEX son nulos, entonces ambos paneles seran nulos.
             if (mps.paisMX == null && mps.paisEX == null)
             {
                 panel6.Visible = false;
-                //panel6.Top -= 200;
                 panel7.Visible = false;
-                //panel7.Top -= 200;
-                //panel4.Top += 200;
             }
+            //La condicional else entrara cuando alguno de los dos paises es nulo, pues hay que recordar que ambos no pueden ser
+            //no nulos a la vez.
             else
             {
                 //campos de direccion mexico
                 if (mps.paisMX == null)
                 {
+                    //en el caso de que paisMX sea nulo, el panel 6 (domicilio mexicano) se volvera invisible.
                     panel6.Visible = false;
                 }
+                //en el caso de que paisMX no sea nulo, entrara en la condicional else, donde el panel 6 se volvera visible,
+                //y al panel 4 se le sumara el valor de la altura del panel 6.
                 else
                 {
                     panel6.Visible = true;
-                    panel4.Top += panel7.Height;
+                    panel4.Top += panel6.Height;
                     if (mps.entidadFederativaV == null)
                     {
                         labelEF.Text = "DNC";
@@ -197,9 +218,12 @@ namespace Sistema_de_sanciones
                 //campos de direccion extranjero
                 if (mps.paisEX == null)
                 {
+                    //En el caso de que el paisEX sea nulo, entonces el panel 7 (domicilio extranjero) se volvera invisible.
                     panel7.Visible = false;
                     labelPais.Text = "DNC";
                 }
+                //en el caso de que paisEX no sea nulo, entrara en la condicional else, donde el panel 7 se volvera visible,
+                //y al panel 4 se le sumara el valor de la altura del panel 7.
                 else
                 {
                     panel7.Visible = true;
@@ -423,8 +447,9 @@ namespace Sistema_de_sanciones
                 labelMoneda.Text = mps.moneda2;
             }
 
-
-
+            //Los siguientes dos modulos son los que se encargan de enlistar todos los documentos y todas las sanciones en las
+            //tablas de visualizar, donde ira colocando una sancion y/o documento, y por cada una que se agregue, se aumentara
+            //en 1 un valor de i, hasta que i sea mayor que el contador de la lista de sanciones y documentos respectivamente.
             List<modeloTipoSancion> listaSancionesPS = new List<modeloTipoSancion>();
             listaSancionesPS = consPS.obtenerSancionesPS(idPS);
             for (var i = 0; i < listaSancionesPS.Count; i++)
