@@ -30,6 +30,9 @@ namespace WinFormsApp1
 
         public FormListadoSPS(Form2 form2)
         {
+            //En este apartado cargamos todos los componentes, asignamos el valor por defecto a los dateTimePicker, desabilitamos
+            //los botones de la paginacion, agregamos la lista del tipo de persona, llamamos al metodo del listado tipo sancion, y
+            //por ultimo, llamamos al procedimiento para rellenar la base de datos.
             InitializeComponent();
             dateTimePicker1.Value = new DateTime(2000, 01, 01);
             dateTimePicker2.Value = new DateTime(2000, 01, 01);
@@ -54,12 +57,18 @@ namespace WinFormsApp1
 
         }
 
+        //Este metodo sirve para carga la base de datos en un inicio y/o cuando utilizamos el boton limpiar; para poder cargar los
+        //datos cuando no se ingresan los parametros de busqueda a los que se les asigna el valor cuando utilizan el boton busqueda.
         private void IniciarDB()
         {
             objs.Inicio2 = 1;
 
+            //Llamamos al metodo ultimoBarraListado para poder identificar el numero total de registros que hay, y si hay una cantidad
+            //determinada de registros, estos tomaran una via u otra.
             ContadorTotal = objs.UltimoBarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
 
+            //Si los registros son iguales o menores a 10, los botones de la paginacion seran desabilitados y el contador final sera
+            //igual al contador total.
             if (ContadorTotal <= 10)
             {
                 botonPrimero.Enabled = false;
@@ -68,6 +77,8 @@ namespace WinFormsApp1
                 botonFinal.Enabled = false;
                 objs.Final2 = ContadorTotal;
             }
+            //En el caso de que el contador total sea mayor a 10, entonces se habilitaran los botones para pasar a la siguiente y ultimo
+            //registro de la tabla, ademas de asignarle el valor de 10 al contador final.
             else
             {
                 objs.Final2 = 10;
@@ -82,16 +93,25 @@ namespace WinFormsApp1
             int p = panel3.Width;
             dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
-            dataGridView1.Columns[0].Width = Convert.ToInt32(p*0.035); //Desactiva la columna ID
-            dataGridView1.Columns[1].Visible = false; //Desactiva la columna ID
-            dataGridView1.Columns[2].Width = Convert.ToInt32(p*0.145);     //Se asigna tamaño a la columna Nombre Completo
-            dataGridView1.Columns[3].Width = Convert.ToInt32(p*0.285); //Desactiva la columna Nombre
-            dataGridView1.Columns[4].Width = Convert.ToInt32(p*0.224); //Desactiva la columna Primer Apellido
-            dataGridView1.Columns[5].Width = Convert.ToInt32(p * 0.224); //Desactiva la columna Primer Apellido
+            dataGridView1.Columns[0].Width = Convert.ToInt32(p*0.035); //Despliega el id de la tabla temporal.
+            dataGridView1.Columns[1].Visible = false;   //Desactiva la columna ID sancion.
+            dataGridView1.Columns[2].Width = Convert.ToInt32(p*0.145);  //Despliega el expediente.
+            dataGridView1.Columns[3].Width = Convert.ToInt32(p*0.285);  //Despliega la institucion/dependencia.
+            dataGridView1.Columns[4].Width = Convert.ToInt32(p*0.224);  //Despliega el nombre completo.
+            dataGridView1.Columns[5].Width = Convert.ToInt32(p * 0.224);    //Despliega el tipo de sancion.
 
             botonPrimero.Enabled = false;
             botonAnterior.Enabled = false;
 
+            //En el caso de que no exista un registro, tanto el contador inicial como el contador final pasaran a ser 0.
+            if (ContadorTotal == 0)
+            {
+                objs.Final2 = ContadorTotal;
+                objs.Inicio2 = ContadorTotal;
+            }
+
+            //Despliega en el texto de hasta abajo, el numero de registros total y los registros donde nos encontramos, digase
+            //1 al 10, 21 al 31, 41 al 47, etc...
             label9.Text = "Registros: " + objs.Inicio2 + " - " + (objs.Final2) + " de: " + ContadorTotal.ToString();
         }
 
@@ -101,7 +121,10 @@ namespace WinFormsApp1
         //entonces el programa hara la consulta y buscara todos los resultados que coincidan con los parametros indicados.
         private void CargarDB()
         {
-                if (dateTimePicker1.Text == "2000-01-01")
+            //Las siguientes condiciones if son para la realizacion de la busqueda, pues si se hace una busqueda, estos buscaran
+            //todos aquellos registros que coincidan, y en el caso de que no se coloquen, estos se colocaran como nulos, lo que
+            //significa que se buscaran todos los registros con todos los valores en dichos campos que se hayan dejado vacios.
+            if (dateTimePicker1.Text == "2000-01-01")
                 {
                     FA = null;
                 }
@@ -196,12 +219,12 @@ namespace WinFormsApp1
             int p = panel3.Width;
             dsTable = objs.BarraListadoSPS(EX, ISD, NM, PA, SA, TP, FA, IH);
             dataGridView1.DataSource = dsTable.Tables[1];
-            dataGridView1.Columns[0].Width = Convert.ToInt32(p * 0.035); //Desactiva la columna ID
-            dataGridView1.Columns[1].Visible = false; //Desactiva la columna ID
-            dataGridView1.Columns[2].Width = Convert.ToInt32(p * 0.145);     //Se asigna tamaño a la columna Nombre Completo
-            dataGridView1.Columns[3].Width = Convert.ToInt32(p * 0.285); //Desactiva la columna Nombre
-            dataGridView1.Columns[4].Width = Convert.ToInt32(p * 0.224); //Desactiva la columna Primer Apellido
-            dataGridView1.Columns[5].Width = Convert.ToInt32(p * 0.224); //Desactiva la columna Primer Apellido
+            dataGridView1.Columns[0].Width = Convert.ToInt32(p * 0.035); //Despliega el id de la tabla temporal.
+            dataGridView1.Columns[1].Visible = false;   //Desactiva la columna ID sancion.
+            dataGridView1.Columns[2].Width = Convert.ToInt32(p * 0.145);  //Despliega el expediente.
+            dataGridView1.Columns[3].Width = Convert.ToInt32(p * 0.285);  //Despliega la institucion/dependencia.
+            dataGridView1.Columns[4].Width = Convert.ToInt32(p * 0.224);  //Despliega el nombre completo.
+            dataGridView1.Columns[5].Width = Convert.ToInt32(p * 0.224);    //Despliega el tipo de sancion.
 
 
 
@@ -211,8 +234,7 @@ namespace WinFormsApp1
                 label9.Text = "Registros: " + objs.Inicio2 + " - " + (objs.Final2) + " de: " + ContadorTotal.ToString();
             }
 
-
-
+        //Este metodo sirve para cargar el boton para visualizar cada vez que se inicie la base de datos para evitar generar errores.
         private void Form1_Load(object sender, EventArgs e)
         {
             int p = panel3.Width;
@@ -227,6 +249,8 @@ namespace WinFormsApp1
             //this.dataGridView1.Columns["Ver"].Frozen = true;
         }
 
+        //Adiferencia del metodo anterior, este carga los botones nuevamente cada que se realice una busqueda y/o se utilicen los botones
+        //del paginador para pasar a la siguiente o anterior pagina.
         private void CargarBotones()
         {
             int p = panel3.Width;
@@ -261,6 +285,8 @@ namespace WinFormsApp1
             label9.Text = "Registros: " + objs.Inicio2 + " - " + (objs.Final2) + " de: " + ContadorTotal.ToString();
         }
 
+        //El metodo limpiar sirve para regresar todos los campos para la busqueda a su estado original, poner como nulo todas
+        //las variables que hayamos puesto, y recarga el dataGridView para mostrar nuevamente todos los registros.
         private void limpiarBusqueda()
         {
             dateTimePicker1.Text = "2000-01-01";
@@ -458,6 +484,7 @@ namespace WinFormsApp1
             label9.Text = "Registros: " + objs.Inicio2 + " - " + ContadorTotal + " de: " + ContadorTotal.ToString();
         }
 
+        //El evento que llama al metodo de limpiar.
         private void botonLimpiar_Click(object sender, EventArgs e)
         {
             limpiarBusqueda();
@@ -485,13 +512,18 @@ namespace WinFormsApp1
             }
 
         }
+
+        //Este evento es para visualizar los registros al pulsar el boton de ver sobre uno de los registros.
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //La primera condicional if, es para determinar si se esta pulsando la columna con el nombre "Ver" del datagridview.
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Ver")
             {
+                //La segunda condicional if es para saber si el numero de filas que se haya contado sea mayor a 0.
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    //Form2.modificarSPS();
+                    //Despues de eso, se llamara al metodo visualizarPS, donde el numero de la celda actual sea el mismo al
+                    //al numero del id de nuestra tabla temporal, donde contiene el id de la sancion.
                     form2Handler.visualizarSPS(Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString()));
                     //textExpediente.Texts = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 }

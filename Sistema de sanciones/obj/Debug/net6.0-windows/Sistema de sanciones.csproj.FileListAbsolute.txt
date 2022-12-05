@@ -274,23 +274,18 @@ C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema de sanciones.csproj.AssemblyReference.cache
-C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CapturaPS.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Captura_SPS.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CargaMasiva.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Crear_Proveedores.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Crear_Usuarios.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Datos_PS.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Datos_SPS.resources
-C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Editar_Proveedor.resources
-C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Editar_Usuarios.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Form2.resources
-C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Home.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listado_PS.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\WinFormsApp1.FormListadoSPS.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listar_Proveedores.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Listar_Usuarios.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Login.resources
-C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modPS.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modSPS.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.Properties.Resources.resources
 C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.ReporteBitacora.resources
@@ -389,3 +384,7 @@ C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modiPS.resources
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CapPS.resources
 D:\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modiPS.resources
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.dll
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\bin\Debug\net6.0-windows\ExcelDataReader.DataSet.dll
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.CapPS.resources
+C:\Users\HP\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Debug\net6.0-windows\Sistema_de_sanciones.modiPS.resources
