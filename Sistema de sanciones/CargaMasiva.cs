@@ -24,6 +24,7 @@ namespace Sistema_de_sanciones
     public partial class CargaMasiva : Form
     {
         String? f1, f2, f3, f4;
+        String? f5, f6, f7, f8;
    
         int moned;
         int san;
@@ -319,7 +320,7 @@ namespace Sistema_de_sanciones
                 }
                 if (!valNombreRespSocial)
                 {
-                    fila1.Cells[15].ErrorText = "Nombre del Responsable Social Inválido";
+                    fila1.Cells[15].ErrorText = "Nombre del Responsable Sanción Inválido";
                     Resultado = false;
                 }
                 if (!valApellidoUnoResp)
@@ -700,22 +701,18 @@ namespace Sistema_de_sanciones
             bool Resultado = true;
             string cadenaTexto = @"[ a-zA-ZÀ-ÿfd]+(\s*[a-zA-ZÀ-ÿfd])[a-zA-ZÀ-ÿfd.,() ]+$";
             string NoObligatorio = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,100}$"; 
-           string cLAVEpLAZO = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,0-9()]{0,100}$";
-            string NoObligatorioPuesto = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,100}$";
-            string ClavesGenero = @"^[A-Z ]{8,10}$";
+            string cLAVEpLAZO = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,0-9()]{0,100}$";
+            string NoObligatorioPuesto = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,140}$";
+            string ClavesGenero = @"^[A-Z ]{0,10}$";
             string ClaveMoneda = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ()]{0,141}$";
             string ClavesRFC = @"^([A-ZÑ&]{4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$";
             string ClavesCURP = @"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$";
-            string ObligatoriaFechas = @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01]){1}$";
-            string Fechas = @"^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$$";
-            string URLS = @"^https?:\/\/[\w\-]+(\.[\w\-]+)+[#?]?.*$";
-            string ClavePuesto = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
+            string Fechas = @"^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])){0,10}$";
             string ClaveSiglas = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,10}$";
             string ClaveExpediente = @"[-A-Za-z0-9_(!""#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~)]{3,100}";
             string ClaveClave = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,100}$";
-            string ClaveTipoFalta = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,100}$";
+            string ClaveTipoFalta = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{0,140}$";
             string Monto = @"^[0-9.]{0,200}$";
-            string ClaveObligatorioDependencia = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,()]{0,140}$";
             string cadenaDocumento = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ_]{0,140}$";
 
             string URLSDocumento = @"[-A-Za-z0-9_(!""#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~)]{0,200}";
@@ -930,15 +927,27 @@ namespace Sistema_de_sanciones
                     Resultado = false;
                 }
 
-                if (!(obtenerGeneroID(fila1.Cells[3].Value.ToString()) == -1))
+
+                //VALIDACIÓN GENERO
+                if (fila1.Cells[3].Value.ToString() == "")
                 {
 
                 }
                 else
                 {
-                    fila1.Cells[12].ErrorText = "No corresponde al catálogo Género";
-                    Resultado = false;
+
+                    if (!(obtenerGeneroID(fila1.Cells[3].Value.ToString()) == -1))
+                    {
+
+                    }
+                    else
+                    {
+                        fila1.Cells[3].ErrorText = "No corresponde al catálogo Género";
+                        Resultado = false;
+                    }
                 }
+
+
 
                 //VALIDACIÓN MONEDA
                 if (fila1.Cells[23].Value.ToString() == "")
@@ -970,6 +979,8 @@ namespace Sistema_de_sanciones
                     fila1.Cells[12].ErrorText = "No corresponde al catálogo Tipo Falta";
                     Resultado = false;
                 }
+
+
 
                 if (fila1.Cells[24].Value.ToString() == "")
                 {
@@ -1657,8 +1668,20 @@ namespace Sistema_de_sanciones
                             modSPS.segundoApellidoSPS = row.Cells[2].Value.ToString();
                         }
 
-                        generoSPS = obtenerGeneroID(row.Cells[3].Value.ToString());
-                        modSPS.generoSPS = generoSPS;
+
+                        //GENERO
+                        //VALIDACIÓN GENERO
+                        if (row.Cells[3].Value.ToString() == "")
+                        {
+
+                        }
+                        else
+                        {
+                            generoSPS = obtenerGeneroID(row.Cells[3].Value.ToString());
+                            modSPS.generoSPS = generoSPS;
+                        }
+
+
 
                         modSPS.rfcSPS = row.Cells[4].Value.ToString();
                         modSPS.curpSPS = row.Cells[5].Value.ToString();
@@ -1731,7 +1754,16 @@ namespace Sistema_de_sanciones
 
                         modSPS.autoridadSancionadora = row.Cells[16].Value.ToString();
 
-                        modSPS.fechaResolucion = Convert.ToDateTime(row.Cells[17].Value.ToString()).ToString("yyyy-MM-dd");
+                        if (row.Cells[17].Value.ToString() == "")
+                        {
+                            f5 = null;
+                        }
+                        else
+                        {
+                            modSPS.fechaResolucion = Convert.ToDateTime(row.Cells[17].Value.ToString()).ToString("yyyy-MM-dd");
+                        }
+
+
 
                         if (row.Cells[18].Value.ToString() == "")
                         {
@@ -1753,8 +1785,26 @@ namespace Sistema_de_sanciones
                             modSPS.plazoInhabilitacion = row.Cells[19].Value.ToString();
                         }
 
-                        modSPS.fechaInicialInhabilitacion = Convert.ToDateTime(row.Cells[20].Value.ToString()).ToString("yyyy-MM-dd");
-                        modSPS.fechaFinalInhabilitacion = Convert.ToDateTime(row.Cells[21].Value.ToString()).ToString("yyyy-MM-dd");
+                        if (row.Cells[20].Value.ToString() == "")
+                        {
+                            f6 = null;
+                        }
+                        else
+                        {
+                            modSPS.fechaInicialInhabilitacion = Convert.ToDateTime(row.Cells[20].Value.ToString()).ToString("yyyy-MM-dd");
+                        }
+
+
+                        if (row.Cells[21].Value.ToString() == "")
+                        {
+                            f7 = null;
+                        }
+                        else
+                        {
+                            modSPS.fechaFinalInhabilitacion = Convert.ToDateTime(row.Cells[21].Value.ToString()).ToString("yyyy-MM-dd");
+                        }
+
+
 
                         if (row.Cells[22].Value.ToString() == "")
                         {
