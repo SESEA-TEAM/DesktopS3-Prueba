@@ -177,6 +177,7 @@ namespace Sistema_de_sanciones.Controladores
 
                 }
                 dr.Close();
+                //ConexionBD.CerrarConexionSPS();
                 return sps;
             }
             catch (Exception ex)
@@ -258,6 +259,7 @@ namespace Sistema_de_sanciones.Controladores
                     i++;
                 }
                 dr.Close();
+                //ConexionBD.CerrarConexionSPS();
                 return oListaSanciones;
             }
             catch (Exception ex)
@@ -296,6 +298,7 @@ namespace Sistema_de_sanciones.Controladores
                     i++;
                 }
                 dr.Close();
+                //ConexionBD.CerrarConexionSPS();
                 return oListaDocumentos;
             }
             catch (Exception ex)
@@ -321,7 +324,7 @@ namespace Sistema_de_sanciones.Controladores
                 comando.Parameters.AddWithValue("@idSancion", id);
                 comando.ExecuteNonQuery();
                 comando.Parameters.Clear();
-                ConexionBD.CerrarConexionSPS();
+                //ConexionBD.CerrarConexionSPS();
                 return true;
             }
             catch (Exception ex)
@@ -349,7 +352,7 @@ namespace Sistema_de_sanciones.Controladores
                 comando.Parameters.AddWithValue("@idSancion", id);
                 comando.ExecuteNonQuery();
                 comando.Parameters.Clear();
-                ConexionBD.CerrarConexionSPS();
+                //ConexionBD.CerrarConexionSPS();
                 return true;
             }
             catch (Exception ex)

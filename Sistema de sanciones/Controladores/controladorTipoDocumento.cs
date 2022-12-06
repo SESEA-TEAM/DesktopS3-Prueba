@@ -35,6 +35,7 @@ namespace Sistema_de_sanciones.Controladores
                     });
                 }
                 dr.Close();
+                ConexionBD.CerrarConexionSPS();
                 return oListaDocumentos;
             }
             catch (Exception ex)
@@ -67,6 +68,8 @@ namespace Sistema_de_sanciones.Controladores
                     });
                 }
                 dr.Close();
+                ConexionBD.CerrarConexionPS();
+
                 return oListaDocumentos;
             }
             catch (Exception ex)

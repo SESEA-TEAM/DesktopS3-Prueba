@@ -35,6 +35,7 @@ namespace Sistema_de_sanciones.Controladores
                     });
                 }
                 dr.Close();
+                ConexionBD.CerrarConexionSPS();
                 return oListaMonedas;
             }
             catch (Exception ex)
@@ -67,6 +68,7 @@ namespace Sistema_de_sanciones.Controladores
                     });
                 }
                 dr.Close();
+                ConexionBD.CerrarConexionPS();
                 return oListaMonedas;
             }
             catch (Exception ex)

@@ -410,6 +410,7 @@ namespace Sistema_de_sanciones.Controladores
                     i++;
                 }
                 dr.Close();
+                ConexionBD.CerrarConexionPS();
                 return oListaSanciones;
             }
             catch (Exception ex)
@@ -448,6 +449,7 @@ namespace Sistema_de_sanciones.Controladores
                     i++;
                 }
                 dr.Close();
+                ConexionBD.CerrarConexionPS();
                 return oListaDocumentos;
             }
             catch (Exception ex)

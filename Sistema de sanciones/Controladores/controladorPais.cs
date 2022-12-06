@@ -35,6 +35,8 @@ namespace Sistema_de_sanciones.Controladores
                     });
                 }
                 dr.Close();
+                ConexionBD.CerrarConexionPS();
+
                 return oListaMonedas;
             }
             catch (Exception ex)

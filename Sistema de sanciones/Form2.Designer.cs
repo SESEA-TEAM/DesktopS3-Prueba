@@ -80,9 +80,10 @@
             this.buttonAdministrador.FlatAppearance.BorderSize = 0;
             this.buttonAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdministrador.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAdministrador.Location = new System.Drawing.Point(0, 83);
+            this.buttonAdministrador.Location = new System.Drawing.Point(0, 111);
+            this.buttonAdministrador.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAdministrador.Name = "buttonAdministrador";
-            this.buttonAdministrador.Size = new System.Drawing.Size(199, 35);
+            this.buttonAdministrador.Size = new System.Drawing.Size(227, 47);
             this.buttonAdministrador.TabIndex = 2;
             this.buttonAdministrador.Text = "Administrador datos";
             this.buttonAdministrador.UseVisualStyleBackColor = false;
@@ -93,8 +94,9 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Image = global::Sistema_de_sanciones.Properties.Resources.Logo_SEA390X194_Mesa_de_trabajo_1_Mesa_de_trabajo_1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 83);
+            this.pictureBox1.Size = new System.Drawing.Size(227, 111);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -108,9 +110,10 @@
             this.buttonParticular.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonParticular.Image = global::Sistema_de_sanciones.Properties.Resources.flechaAzul;
             this.buttonParticular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonParticular.Location = new System.Drawing.Point(0, 35);
+            this.buttonParticular.Location = new System.Drawing.Point(0, 47);
+            this.buttonParticular.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonParticular.Name = "buttonParticular";
-            this.buttonParticular.Size = new System.Drawing.Size(199, 35);
+            this.buttonParticular.Size = new System.Drawing.Size(227, 47);
             this.buttonParticular.TabIndex = 1;
             this.buttonParticular.Text = "Particulares Sancionados";
             this.buttonParticular.UseVisualStyleBackColor = false;
@@ -126,8 +129,9 @@
             this.buttonPublicos.Image = global::Sistema_de_sanciones.Properties.Resources.flechaAzul;
             this.buttonPublicos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPublicos.Location = new System.Drawing.Point(0, 0);
+            this.buttonPublicos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonPublicos.Name = "buttonPublicos";
-            this.buttonPublicos.Size = new System.Drawing.Size(199, 35);
+            this.buttonPublicos.Size = new System.Drawing.Size(227, 47);
             this.buttonPublicos.TabIndex = 0;
             this.buttonPublicos.Text = "Servidores Sancionados";
             this.buttonPublicos.UseVisualStyleBackColor = false;
@@ -140,9 +144,10 @@
             this.buttonCapturar.FlatAppearance.BorderSize = 0;
             this.buttonCapturar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCapturar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonCapturar.Location = new System.Drawing.Point(0, 196);
+            this.buttonCapturar.Location = new System.Drawing.Point(0, 262);
+            this.buttonCapturar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCapturar.Name = "buttonCapturar";
-            this.buttonCapturar.Size = new System.Drawing.Size(199, 35);
+            this.buttonCapturar.Size = new System.Drawing.Size(227, 47);
             this.buttonCapturar.TabIndex = 6;
             this.buttonCapturar.Text = "Cargar datos";
             this.buttonCapturar.UseVisualStyleBackColor = false;
@@ -153,18 +158,20 @@
             this.mainPanel.Controls.Add(this.tabControl1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mainPanel.Location = new System.Drawing.Point(199, 0);
+            this.mainPanel.Location = new System.Drawing.Point(227, 0);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1177, 749);
+            this.mainPanel.Size = new System.Drawing.Size(1346, 999);
             this.mainPanel.TabIndex = 3;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(-6, -25);
+            this.tabControl1.Location = new System.Drawing.Point(-7, -33);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1197, 784);
+            this.tabControl1.Size = new System.Drawing.Size(1368, 1045);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -174,19 +181,21 @@
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.lblMensajeCap);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1189, 756);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1360, 1012);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Inicio";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Sistema_de_sanciones.Properties.Resources.Logo_SEA390X194_Mesa_de_trabajo_1_Mesa_de_trabajo_1;
-            this.pictureBox3.Location = new System.Drawing.Point(270, 237);
+            this.pictureBox3.Location = new System.Drawing.Point(309, 316);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(657, 331);
+            this.pictureBox3.Size = new System.Drawing.Size(751, 441);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
@@ -197,9 +206,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label5.Location = new System.Drawing.Point(524, 122);
+            this.label5.Location = new System.Drawing.Point(599, 163);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(218, 24);
+            this.label5.Size = new System.Drawing.Size(284, 32);
             this.label5.TabIndex = 10;
             this.label5.Text = "Capturador de datos";
             // 
@@ -209,9 +218,9 @@
             this.lblMensajeCap.AutoSize = true;
             this.lblMensajeCap.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblMensajeCap.ForeColor = System.Drawing.Color.Black;
-            this.lblMensajeCap.Location = new System.Drawing.Point(694, 235);
+            this.lblMensajeCap.Location = new System.Drawing.Point(793, 313);
             this.lblMensajeCap.Name = "lblMensajeCap";
-            this.lblMensajeCap.Size = new System.Drawing.Size(0, 24);
+            this.lblMensajeCap.Size = new System.Drawing.Size(0, 32);
             this.lblMensajeCap.TabIndex = 7;
             // 
             // label1
@@ -220,9 +229,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label1.Location = new System.Drawing.Point(548, 52);
+            this.label1.Location = new System.Drawing.Point(626, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 32);
+            this.label1.Size = new System.Drawing.Size(207, 40);
             this.label1.TabIndex = 4;
             this.label1.Text = "Bienvenido ";
             // 
@@ -236,8 +245,9 @@
             this.panel1.Controls.Add(this.buttonUsuarios);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(199, 343);
+            this.panel1.Size = new System.Drawing.Size(227, 457);
             this.panel1.TabIndex = 24;
             // 
             // button2
@@ -247,9 +257,10 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(0, 308);
+            this.button2.Location = new System.Drawing.Point(0, 412);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(199, 35);
+            this.button2.Size = new System.Drawing.Size(227, 47);
             this.button2.TabIndex = 6;
             this.button2.Text = "Bitácora";
             this.button2.UseVisualStyleBackColor = false;
@@ -260,9 +271,10 @@
             this.panel2.Controls.Add(this.buttonListarProveedor);
             this.panel2.Controls.Add(this.buttonCrearProveedor);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 231);
+            this.panel2.Location = new System.Drawing.Point(0, 309);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(199, 77);
+            this.panel2.Size = new System.Drawing.Size(227, 103);
             this.panel2.TabIndex = 5;
             // 
             // buttonListarProveedor
@@ -273,9 +285,10 @@
             this.buttonListarProveedor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonListarProveedor.Image = global::Sistema_de_sanciones.Properties.Resources.flechaAzul;
             this.buttonListarProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonListarProveedor.Location = new System.Drawing.Point(0, 35);
+            this.buttonListarProveedor.Location = new System.Drawing.Point(0, 47);
+            this.buttonListarProveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonListarProveedor.Name = "buttonListarProveedor";
-            this.buttonListarProveedor.Size = new System.Drawing.Size(199, 35);
+            this.buttonListarProveedor.Size = new System.Drawing.Size(227, 47);
             this.buttonListarProveedor.TabIndex = 7;
             this.buttonListarProveedor.Text = "Listar Proveedor";
             this.buttonListarProveedor.UseVisualStyleBackColor = true;
@@ -290,8 +303,9 @@
             this.buttonCrearProveedor.Image = global::Sistema_de_sanciones.Properties.Resources.flechaAzul;
             this.buttonCrearProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCrearProveedor.Location = new System.Drawing.Point(0, 0);
+            this.buttonCrearProveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCrearProveedor.Name = "buttonCrearProveedor";
-            this.buttonCrearProveedor.Size = new System.Drawing.Size(199, 35);
+            this.buttonCrearProveedor.Size = new System.Drawing.Size(227, 47);
             this.buttonCrearProveedor.TabIndex = 6;
             this.buttonCrearProveedor.Text = "Crear Proveedor";
             this.buttonCrearProveedor.UseVisualStyleBackColor = true;
@@ -304,9 +318,10 @@
             this.buttonProveedores.FlatAppearance.BorderSize = 0;
             this.buttonProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProveedores.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonProveedores.Location = new System.Drawing.Point(0, 196);
+            this.buttonProveedores.Location = new System.Drawing.Point(0, 262);
+            this.buttonProveedores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonProveedores.Name = "buttonProveedores";
-            this.buttonProveedores.Size = new System.Drawing.Size(199, 35);
+            this.buttonProveedores.Size = new System.Drawing.Size(227, 47);
             this.buttonProveedores.TabIndex = 4;
             this.buttonProveedores.Text = "Proveedores";
             this.buttonProveedores.UseVisualStyleBackColor = false;
@@ -317,9 +332,10 @@
             this.panel3.Controls.Add(this.buttonListarUsuarios);
             this.panel3.Controls.Add(this.buttonCrearUsuario);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 118);
+            this.panel3.Location = new System.Drawing.Point(0, 158);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(199, 78);
+            this.panel3.Size = new System.Drawing.Size(227, 104);
             this.panel3.TabIndex = 3;
             // 
             // buttonListarUsuarios
@@ -331,9 +347,10 @@
             this.buttonListarUsuarios.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonListarUsuarios.Image = global::Sistema_de_sanciones.Properties.Resources.flechaAzul;
             this.buttonListarUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonListarUsuarios.Location = new System.Drawing.Point(0, 35);
+            this.buttonListarUsuarios.Location = new System.Drawing.Point(0, 47);
+            this.buttonListarUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonListarUsuarios.Name = "buttonListarUsuarios";
-            this.buttonListarUsuarios.Size = new System.Drawing.Size(199, 35);
+            this.buttonListarUsuarios.Size = new System.Drawing.Size(227, 47);
             this.buttonListarUsuarios.TabIndex = 1;
             this.buttonListarUsuarios.Text = "Listar Usuarios";
             this.buttonListarUsuarios.UseVisualStyleBackColor = false;
@@ -349,8 +366,9 @@
             this.buttonCrearUsuario.Image = global::Sistema_de_sanciones.Properties.Resources.flechaAzul;
             this.buttonCrearUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCrearUsuario.Location = new System.Drawing.Point(0, 0);
+            this.buttonCrearUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCrearUsuario.Name = "buttonCrearUsuario";
-            this.buttonCrearUsuario.Size = new System.Drawing.Size(199, 35);
+            this.buttonCrearUsuario.Size = new System.Drawing.Size(227, 47);
             this.buttonCrearUsuario.TabIndex = 0;
             this.buttonCrearUsuario.Text = "Crear Usuario";
             this.buttonCrearUsuario.UseVisualStyleBackColor = false;
@@ -363,9 +381,10 @@
             this.buttonUsuarios.FlatAppearance.BorderSize = 0;
             this.buttonUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUsuarios.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonUsuarios.Location = new System.Drawing.Point(0, 83);
+            this.buttonUsuarios.Location = new System.Drawing.Point(0, 111);
+            this.buttonUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonUsuarios.Name = "buttonUsuarios";
-            this.buttonUsuarios.Size = new System.Drawing.Size(199, 35);
+            this.buttonUsuarios.Size = new System.Drawing.Size(227, 47);
             this.buttonUsuarios.TabIndex = 2;
             this.buttonUsuarios.Text = "Usuarios";
             this.buttonUsuarios.UseVisualStyleBackColor = false;
@@ -376,8 +395,9 @@
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox2.Image = global::Sistema_de_sanciones.Properties.Resources.Logo_SEA390X194_Mesa_de_trabajo_1_Mesa_de_trabajo_1;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(199, 83);
+            this.pictureBox2.Size = new System.Drawing.Size(227, 111);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -396,19 +416,20 @@
             this.panelMenu.Controls.Add(this.pictureBox1);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(199, 749);
+            this.panelMenu.Size = new System.Drawing.Size(227, 999);
             this.panelMenu.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label3.Location = new System.Drawing.Point(0, 699);
+            this.label3.Location = new System.Drawing.Point(0, 932);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 15);
+            this.label3.Size = new System.Drawing.Size(28, 20);
             this.label3.TabIndex = 25;
-            this.label3.Text = "1.3";
+            this.label3.Text = "1.4";
             // 
             // btnCerrarSesion
             // 
@@ -418,9 +439,10 @@
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 714);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 952);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(199, 35);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(227, 47);
             this.btnCerrarSesion.TabIndex = 24;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
@@ -431,9 +453,10 @@
             this.panelMenuProv.Controls.Add(this.buttonCapturarParticulares);
             this.panelMenuProv.Controls.Add(this.buttonCapturarPublicos);
             this.panelMenuProv.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMenuProv.Location = new System.Drawing.Point(0, 266);
+            this.panelMenuProv.Location = new System.Drawing.Point(0, 356);
+            this.panelMenuProv.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelMenuProv.Name = "panelMenuProv";
-            this.panelMenuProv.Size = new System.Drawing.Size(199, 77);
+            this.panelMenuProv.Size = new System.Drawing.Size(227, 103);
             this.panelMenuProv.TabIndex = 8;
             // 
             // buttonCapturarParticulares
@@ -444,9 +467,10 @@
             this.buttonCapturarParticulares.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCapturarParticulares.Image = global::Sistema_de_sanciones.Properties.Resources.flechaAzul;
             this.buttonCapturarParticulares.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCapturarParticulares.Location = new System.Drawing.Point(0, 35);
+            this.buttonCapturarParticulares.Location = new System.Drawing.Point(0, 47);
+            this.buttonCapturarParticulares.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCapturarParticulares.Name = "buttonCapturarParticulares";
-            this.buttonCapturarParticulares.Size = new System.Drawing.Size(199, 35);
+            this.buttonCapturarParticulares.Size = new System.Drawing.Size(227, 47);
             this.buttonCapturarParticulares.TabIndex = 7;
             this.buttonCapturarParticulares.Text = "Particulares Sancionados";
             this.buttonCapturarParticulares.UseVisualStyleBackColor = true;
@@ -461,8 +485,9 @@
             this.buttonCapturarPublicos.Image = global::Sistema_de_sanciones.Properties.Resources.flechaAzul;
             this.buttonCapturarPublicos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCapturarPublicos.Location = new System.Drawing.Point(0, 0);
+            this.buttonCapturarPublicos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCapturarPublicos.Name = "buttonCapturarPublicos";
-            this.buttonCapturarPublicos.Size = new System.Drawing.Size(199, 35);
+            this.buttonCapturarPublicos.Size = new System.Drawing.Size(227, 47);
             this.buttonCapturarPublicos.TabIndex = 6;
             this.buttonCapturarPublicos.Text = "Servidores Sancionados";
             this.buttonCapturarPublicos.UseVisualStyleBackColor = true;
@@ -475,9 +500,10 @@
             this.buttonCaptura.FlatAppearance.BorderSize = 0;
             this.buttonCaptura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCaptura.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonCaptura.Location = new System.Drawing.Point(0, 231);
+            this.buttonCaptura.Location = new System.Drawing.Point(0, 309);
+            this.buttonCaptura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCaptura.Name = "buttonCaptura";
-            this.buttonCaptura.Size = new System.Drawing.Size(199, 35);
+            this.buttonCaptura.Size = new System.Drawing.Size(227, 47);
             this.buttonCaptura.TabIndex = 7;
             this.buttonCaptura.Text = "Capturar datos";
             this.buttonCaptura.UseVisualStyleBackColor = false;
@@ -488,18 +514,20 @@
             this.panelMenuUser.Controls.Add(this.buttonParticular);
             this.panelMenuUser.Controls.Add(this.buttonPublicos);
             this.panelMenuUser.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMenuUser.Location = new System.Drawing.Point(0, 118);
+            this.panelMenuUser.Location = new System.Drawing.Point(0, 158);
+            this.panelMenuUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelMenuUser.Name = "panelMenuUser";
-            this.panelMenuUser.Size = new System.Drawing.Size(199, 78);
+            this.panelMenuUser.Size = new System.Drawing.Size(227, 104);
             this.panelMenuUser.TabIndex = 3;
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1376, 749);
+            this.ClientSize = new System.Drawing.Size(1573, 999);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panelMenu);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form2";
             this.Text = "Form2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);

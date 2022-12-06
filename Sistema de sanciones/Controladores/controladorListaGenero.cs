@@ -35,6 +35,7 @@ namespace Sistema_de_sanciones.Controladores
                     });
                 }
                 dr.Close();
+                ConexionBD.CerrarConexionSPS();
                 return oListaGenero;
             }
             catch (Exception ex)
