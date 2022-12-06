@@ -231,7 +231,13 @@ namespace WinFormsApp1
             botonPrimero.Enabled = false;
                 botonAnterior.Enabled = false;
 
-                label9.Text = "Registros: " + objs.Inicio2 + " - " + (objs.Final2) + " de: " + ContadorTotal.ToString();
+            if (ContadorTotal == 0)
+            {
+                objs.Final2 = ContadorTotal;
+                objs.Inicio2 = ContadorTotal;
+            }
+
+            label9.Text = "Registros: " + objs.Inicio2 + " - " + (objs.Final2) + " de: " + ContadorTotal.ToString();
             }
 
         //Este metodo sirve para cargar el boton para visualizar cada vez que se inicie la base de datos para evitar generar errores.
