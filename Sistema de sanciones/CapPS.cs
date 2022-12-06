@@ -436,7 +436,7 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox18.ForeColor = Color.Black;
-                Regex RFC = new Regex(@"^([A-ZÑ&]{4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$");
+                Regex RFC = new Regex(@"^[A-Z&Ñ]{3,4}[0-9]{2}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])[A-Z0-9]{2}[0-9A]$");
 
                 Match match = RFC.Match(textBox18.Texts);
 
@@ -1647,7 +1647,7 @@ namespace Sistema_de_sanciones
         {
             Regex ZIPC = new Regex(@"^[0-9]{5}(?:-[0-9]{4})?$");
             Match matchZIPMX = ZIPC.Match(textBox34.Texts);
-            Regex RFC = new Regex(@"^([A-ZÑ&]{4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$");
+            Regex RFC = new Regex(@"^[A-Z&Ñ]{3,4}[0-9]{2}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])[A-Z0-9]{2}[0-9A]$");
             Match matchRFC = RFC.Match(textBox18.Texts);
             Regex nombre = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
             Match matchN = nombre.Match(textBox4.Texts);
