@@ -76,12 +76,14 @@ namespace Sistema_de_sanciones
             labelNMRS.Text = mps.nombreRS;
             labelPARS.Text = mps.primerApellidoRS;
 
+            labelTP.Text = Convert.ToString(mps.tipoPersona);
+
             //Para los campos que pueden ser nulos, hay dos caminos, el primero donde si dicho campo es nulo, entonces el texto que
             //aparecera en pantalla sera el de DNC, pero en el caso de que dicho campo se haya llenado, entonces aparecera aquel
             //texto o fecha que se haya seleccionado.
 
             //campos de responsable sancion
-            if (mps.segundoApellidoRS == null)
+            if (mps.segundoApellidoRS == null || mps.segundoApellidoRS == "")
             {
                 labelSARS.Text = "DNC";
             }
@@ -89,7 +91,7 @@ namespace Sistema_de_sanciones
             {
                 labelSARS.Text = mps.segundoApellidoRS;
             }
-            if (mps.telefono == null)
+            if (mps.telefono == null || mps.telefono == "0")
             {
                 labelTelefono.Text = "DNC";
             }
@@ -99,23 +101,7 @@ namespace Sistema_de_sanciones
             }
 
             //campos generales de la sancion
-            if (mps.tipoFalta == null)
-            {
-                labelTF.Text = "DNC";
-            }
-            else
-            {
-                labelTF.Text = Convert.ToString(mps.tipoFalta);
-            }
-            if (mps.tipoPersona == null)
-            {
-                labelTP.Text = "DNC";
-            }
-            else
-            {
-                labelTP.Text = Convert.ToString(mps.tipoPersona);
-            }
-            if (mps.objetoSocial == null)
+            if (mps.objetoSocial == null || mps.objetoSocial == "")
             {
                 labelObj.Text = "DNC";
             }
@@ -123,7 +109,7 @@ namespace Sistema_de_sanciones
             {
                 labelObj.Text = Convert.ToString(mps.objetoSocial);
             }
-            if (mps.acto == null)
+            if (mps.acto == null || mps.acto == "")
             {
                 labelActo.Text = "DNC";
             }
@@ -157,7 +143,7 @@ namespace Sistema_de_sanciones
                 {
                     panel6.Visible = true;
                     panel4.Top += panel6.Height;
-                    if (mps.entidadFederativaV == null)
+                    if (mps.entidadFederativaV == null || mps.entidadFederativaV == "")
                     {
                         labelEF.Text = "DNC";
                     }
@@ -165,7 +151,7 @@ namespace Sistema_de_sanciones
                     {
                         labelEF.Text = mps.entidadFederativaV;
                     }
-                    if (mps.municipioV == null)
+                    if (mps.municipioV == null || mps.municipioV == "")
                     {
                         labelMunicipio.Text = "DNC";
                     }
@@ -173,7 +159,7 @@ namespace Sistema_de_sanciones
                     {
                         labelMunicipio.Text = mps.municipioV;
                     }
-                    if (mps.localidadV == null)
+                    if (mps.localidadV == null || mps.localidadV == "")
                     {
                         labelLocalidad.Text = "DNC";
                     }
@@ -181,7 +167,7 @@ namespace Sistema_de_sanciones
                     {
                         labelLocalidad.Text = mps.localidadV;
                     }
-                    if (mps.vialidadV == null)
+                    if (mps.vialidadV == null || mps.vialidadV == "")
                     {
                         labelVialidad.Text = "DNC";
                     }
@@ -189,7 +175,7 @@ namespace Sistema_de_sanciones
                     {
                         labelVialidad.Text = mps.vialidadV;
                     }
-                    if (mps.codigoPostalMX == null)
+                    if (mps.codigoPostalMX == null || mps.codigoPostalMX == "")
                     {
                         labelCOPMX.Text = "DNC";
                     }
@@ -197,7 +183,7 @@ namespace Sistema_de_sanciones
                     {
                         labelCOPMX.Text = mps.codigoPostalMX;
                     }
-                    if (mps.numeroExteriorMX == null)
+                    if (mps.numeroExteriorMX == null || mps.numeroExteriorMX == "")
                     {
                         labelNEMX.Text = "DNC";
                     }
@@ -205,7 +191,7 @@ namespace Sistema_de_sanciones
                     {
                         labelNEMX.Text = mps.numeroExteriorMX;
                     }
-                    if (mps.numeroInteriorMX == null)
+                    if (mps.numeroInteriorMX == null || mps.numeroInteriorMX == "")
                     {
                         labelNIMX.Text = "DNC";
                     }
@@ -230,7 +216,7 @@ namespace Sistema_de_sanciones
                     panel4.Top += panel7.Height;
                     labelPais.Text = mps.paisV;
                 }
-                if (mps.calle == null)
+                if (mps.calle == null || mps.calle == "")
                 {
                     labelCalle.Text = "DNC";
                 }
@@ -238,7 +224,7 @@ namespace Sistema_de_sanciones
                 {
                     labelCalle.Text = mps.calle;
                 }
-                if (mps.ciudadLocalidad == null)
+                if (mps.ciudadLocalidad == null || mps.ciudadLocalidad == "")
                 {
                     labelCILO.Text = "DNC";
                 }
@@ -246,7 +232,7 @@ namespace Sistema_de_sanciones
                 {
                     labelCILO.Text = mps.ciudadLocalidad;
                 }
-                if (mps.estadoProvincia == null)
+                if (mps.estadoProvincia == null || mps.estadoProvincia == "")
                 {
                     labelESPR.Text = "DNC";
                 }
@@ -254,7 +240,7 @@ namespace Sistema_de_sanciones
                 {
                     labelESPR.Text = mps.estadoProvincia;
                 }
-                if (mps.codigoPostalEX == null)
+                if (mps.codigoPostalEX == null || mps.codigoPostalEX == "")
                 {
                     labelCOPEX.Text = "DNC";
                 }
@@ -262,7 +248,7 @@ namespace Sistema_de_sanciones
                 {
                     labelCOPEX.Text = mps.codigoPostalEX;
                 }
-                if (mps.numeroExteriorEX == null)
+                if (mps.numeroExteriorEX == null || mps.numeroExteriorEX == "")
                 {
                     labelNEEX.Text = "DNC";
                 }
@@ -270,7 +256,7 @@ namespace Sistema_de_sanciones
                 {
                     labelNEEX.Text = mps.numeroExteriorEX;
                 }
-                if (mps.numeroInteriorEX == null)
+                if (mps.numeroInteriorEX == null || mps.numeroInteriorEX == "")
                 {
                     labelNIEX.Text = "DNC";
                 }
@@ -282,7 +268,7 @@ namespace Sistema_de_sanciones
             //panel4.Visible = false;
 
             //campos de institucion dependencia
-            if (mps.claveInstitucionDependencia == null)
+            if (mps.claveInstitucionDependencia == null || mps.claveInstitucionDependencia == "")
             {
                 labelClave.Text = "DNC";
             }
@@ -291,7 +277,7 @@ namespace Sistema_de_sanciones
                 labelClave.Text = mps.claveInstitucionDependencia;
             }
 
-            if (mps.siglasInstitucionDependencia == null)
+            if (mps.siglasInstitucionDependencia == null || mps.siglasInstitucionDependencia == "")
             {
                 labelSiglas.Text = "DNC";
             }
@@ -301,7 +287,7 @@ namespace Sistema_de_sanciones
             }
 
             //campos de resolucion
-            if (mps.sentidoResolucion == null)
+            if (mps.sentidoResolucion == null || mps.sentidoResolucion == "")
             {
                 labelSentido.Text = "DNC";
             }
@@ -309,7 +295,7 @@ namespace Sistema_de_sanciones
             {
                 labelSentido.Text = mps.sentidoResolucion;
             }
-            if (mps.fechaResolucion == null)
+            if (mps.fechaResolucion == null || mps.fechaResolucion == "")
             {
                 labelFR.Text = "DNC";
             }
@@ -317,7 +303,7 @@ namespace Sistema_de_sanciones
             {
                 labelFR.Text = mps.fechaResolucion.Remove(10, 15);
             }
-            if (mps.urlResolucion == null)
+            if (mps.urlResolucion == null || mps.urlResolucion == "")
             {
                 labelURL.Text = "DNC";
             }
@@ -327,7 +313,7 @@ namespace Sistema_de_sanciones
             }
 
             //campos de inhabilitacion
-            if (mps.plazoInhabilitacion == null)
+            if (mps.plazoInhabilitacion == null || mps.plazoInhabilitacion == "")
             {
                 labelPlazo.Text = "DNC";
             }
@@ -335,7 +321,7 @@ namespace Sistema_de_sanciones
             {
                 labelPlazo.Text = mps.plazoInhabilitacion;
             }
-            if (mps.fechaInicialInhabilitacion == null)
+            if (mps.fechaInicialInhabilitacion == null || mps.fechaInicialInhabilitacion == "")
             {
                 labelFI.Text = "DNC";
             }
@@ -343,7 +329,7 @@ namespace Sistema_de_sanciones
             {
                 labelFI.Text = mps.fechaInicialInhabilitacion.Remove(10, 15);
             }
-            if (mps.fechaFinalInhabilitacion == null)
+            if (mps.fechaFinalInhabilitacion == null || mps.fechaFinalInhabilitacion == "")
             {
                 labelFF.Text = "DNC";
             }
@@ -352,7 +338,7 @@ namespace Sistema_de_sanciones
                 labelFF.Text = mps.fechaFinalInhabilitacion.Remove(10, 15);
             }
 
-            if (mps.observaciones == null)
+            if (mps.observaciones == null || mps.observaciones == "")
             {
                 labelObservaciones.Text = "DNC";
             }
@@ -362,7 +348,7 @@ namespace Sistema_de_sanciones
             }
 
             //campos de director general
-            if (mps.nombresDG == null)
+            if (mps.nombresDG == null || mps.nombresDG == "")
             {
                 labelNMDG.Text = "DNC";
             }
@@ -370,7 +356,7 @@ namespace Sistema_de_sanciones
             {
                 labelNMDG.Text = mps.nombresDG;
             }
-            if (mps.curpDG == null)
+            if (mps.curpDG == null || mps.curpDG == "")
             {
                 labelCURPDG.Text = "DNC";
             }
@@ -378,7 +364,7 @@ namespace Sistema_de_sanciones
             {
                 labelCURPDG.Text = mps.curpDG; ;
             }
-            if (mps.primerApellidoDG == null)
+            if (mps.primerApellidoDG == null || mps.primerApellidoDG == "")
             {
                 labelPADG.Text = "DNC";
             }
@@ -386,7 +372,7 @@ namespace Sistema_de_sanciones
             {
                 labelPADG.Text = mps.primerApellidoDG;
             }
-            if (mps.segundoApellidoDG == null)
+            if (mps.segundoApellidoDG == null || mps.segundoApellidoDG == "")
             {
                 labelSADG.Text = "DNC";
             }
@@ -396,7 +382,7 @@ namespace Sistema_de_sanciones
             }
 
             //campos de apoderado legal
-            if (mps.nombresAL == null)
+            if (mps.nombresAL == null || mps.nombresAL == "")
             {
                 labelNMAL.Text = "DNC";
             }
@@ -404,7 +390,7 @@ namespace Sistema_de_sanciones
             {
                 labelNMAL.Text = mps.nombresAL;
             }
-            if (mps.curpAL == null)
+            if (mps.curpAL == null || mps.curpAL == "")
             {
                 labelCURPAL.Text = "DNC";
             }
@@ -412,7 +398,7 @@ namespace Sistema_de_sanciones
             {
                 labelCURPAL.Text = mps.curpAL; ;
             }
-            if (mps.primerApellidoAL == null)
+            if (mps.primerApellidoAL == null || mps.primerApellidoAL == "")
             {
                 labelPAAL.Text = "DNC";
             }
@@ -420,7 +406,7 @@ namespace Sistema_de_sanciones
             {
                 labelPAAL.Text = mps.primerApellidoAL;
             }
-            if (mps.segundoApellidoAL == null)
+            if (mps.segundoApellidoAL == null || mps.segundoApellidoAL == "")
             {
                 labelSAAL.Text = "DNC";
             }
@@ -430,7 +416,7 @@ namespace Sistema_de_sanciones
             }
 
             //campos de multa
-            if (mps.monto == null)
+            if (mps.monto == null || mps.monto == 0)
             {
                 labelMulta.Text = "DNC";
             }
@@ -438,7 +424,7 @@ namespace Sistema_de_sanciones
             {
                 labelMulta.Text = Convert.ToString(mps.monto);
             }
-            if (mps.moneda2 == null)
+            if (mps.moneda2 == null || mps.moneda2 == "")
             {
                 labelMoneda.Text = "DNC";
             }
