@@ -122,7 +122,7 @@ namespace Sistema_de_sanciones
             //caso de que los campos de pais en ambos sea nulo, o si alguno de los dos es uno, lo que causara que el otro se vuelva
             //invisible.
             //El primer if es para conocer si paisMX y paisEX son nulos, entonces ambos paneles seran nulos.
-            if (mps.paisMX == null && mps.paisEX == null)
+            if (mps.domMX == false && mps.domEX == false)
             {
                 panel6.Visible = false;
                 panel7.Visible = false;
@@ -132,7 +132,7 @@ namespace Sistema_de_sanciones
             else
             {
                 //campos de direccion mexico
-                if (mps.paisMX == null)
+                if (mps.domMX == false)
                 {
                     //en el caso de que paisMX sea nulo, el panel 6 (domicilio mexicano) se volvera invisible.
                     panel6.Visible = false;
@@ -202,7 +202,7 @@ namespace Sistema_de_sanciones
                 }
 
                 //campos de direccion extranjero
-                if (mps.paisEX == null)
+                if (mps.domEX == false)
                 {
                     //En el caso de que el paisEX sea nulo, entonces el panel 7 (domicilio extranjero) se volvera invisible.
                     panel7.Visible = false;
