@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sistema_de_sanciones.ConexionBD
 {
+    //conexiones a las 3 bases de datos.
     public class Conexion
     {
         private SqlConnection ConexionBD = new SqlConnection("Server=localhost;DataBase=Usuario; Integrated Security= true;");

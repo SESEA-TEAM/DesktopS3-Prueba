@@ -13,10 +13,10 @@ namespace Sistema_de_sanciones.Controladores
 {
     public class Controlador_Login
     {
-        //Se realila la conexion a la baase de datos 
+        //Se realiza la conexion a la baase de datos 
         private Conexion ConexionBD = new Conexion();
 
-        //metodo el cual inserta a la base de datos la contraseña encriptada en sha256
+        //método el cual inserta a la base de datos la contraseña encriptada en sha256
         public void Insertar()
 
         {

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Sistema_de_sanciones.Controladores
 {
-   
-        public class Encrypt
+    //Esta clase encripta la contraseña en Sha256, lo que hace es convertir la cadena que se intorduce y la convierte en ASCIIEncoding
+    public class Encrypt
         {
             public static string GetSHA256(string str)
             {

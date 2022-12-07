@@ -15,7 +15,7 @@ namespace Sistema_de_sanciones.Controladores
         private Conexion ConexionBD = new Conexion();
         private SqlDataReader LeerFilas;
 
-
+        //método que manda a llamar el procedimiento almacenado de seleccionar proveedor 
         public DataTable ControladorProveedor()
 
         {
@@ -33,6 +33,7 @@ namespace Sistema_de_sanciones.Controladores
 
 
         }
+        //método que manda a llamar el procedimiento Insertar proveedor, en este procedimiento solo almacena dos valores (proveedor y sistema).
 
         public void InsertarProveedor(string proveedor, string sistema)
         {
@@ -47,7 +48,7 @@ namespace Sistema_de_sanciones.Controladores
             ConexionBD.CerrarConexion();
 
         }
-
+        //método que manda a llamar el procedimiento Editar proveedor, los identifica mediante el ID 
         public void EditarProveedor(int id, string proveedor, string sistema, string estatus )
         {
 
@@ -63,7 +64,7 @@ namespace Sistema_de_sanciones.Controladores
             ConexionBD.CerrarConexion();
 
         }
-
+        //método que manda a llamar el procedimiento Eliminar proveedor, los identifica mediante el ID 
         public void EliminarProveedor(int id)
         {
 
