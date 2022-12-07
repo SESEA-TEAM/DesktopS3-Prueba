@@ -109,7 +109,7 @@ namespace Sistema_de_sanciones
             //Para los campos que pueden ser nulos, hay dos caminos, el primero donde si dicho campo es nulo, entonces el texto que
             //aparecera en pantalla sera el de DNC, pero en el caso de que dicho campo se haya llenado, entonces aparecera aquel
             //texto o fecha que se haya seleccionado.
-            if (mps.claveInstitucionDependencia == null)
+            if (mps.claveInstitucionDependencia == null || mps.claveInstitucionDependencia == "")
             {
                 labelClave.Text = "DNC";
             }
@@ -117,10 +117,10 @@ namespace Sistema_de_sanciones
             {
                 labelClave.Text = mps.claveInstitucionDependencia;
             }
-            
+
             labelNombre.Text = mps.nombreInstitucionDependencia;
 
-            if (mps.plazoInhabilitacion == null)
+            if (mps.plazoInhabilitacion == null || mps.plazoInhabilitacion == "")
             {
                 labelPlazo.Text = "DNC";
             }
@@ -128,7 +128,7 @@ namespace Sistema_de_sanciones
             {
                 labelPlazo.Text = mps.plazoInhabilitacion;
             }
-            if (mps.fechaInicialInhabilitacion == null)
+            if (mps.fechaInicialInhabilitacion == null || mps.fechaInicialInhabilitacion == "")
             {
                 labelFI.Text = "DNC";
             }
@@ -136,7 +136,7 @@ namespace Sistema_de_sanciones
             {
                 labelFI.Text = mps.fechaInicialInhabilitacion.Remove(10, 15);
             }
-            if (mps.fechaFinalInhabilitacion == null)
+            if (mps.fechaFinalInhabilitacion == null || mps.fechaFinalInhabilitacion == "")
             {
                 labelFF.Text = "DNC";
             }
@@ -144,7 +144,7 @@ namespace Sistema_de_sanciones
             {
                 labelFF.Text = mps.fechaFinalInhabilitacion.Remove(10, 15);
             }
-            if (mps.observaciones == null)
+            if (mps.observaciones == null || mps.observaciones == "")
             {
                 labelOBS.Text = "DNC";
             }
@@ -152,7 +152,7 @@ namespace Sistema_de_sanciones
             {
                 labelOBS.Text = mps.observaciones;
             }
-            if (mps.segundoApellidoSPS == null)
+            if (mps.segundoApellidoSPS == null || mps.segundoApellidoSPS == "")
             {
                 labelSEPA.Text = "DNC";
             }
@@ -160,7 +160,7 @@ namespace Sistema_de_sanciones
             {
                 labelSEPA.Text = mps.segundoApellidoSPS;
             }
-            if (mps.nivelSPS == null)
+            if (mps.nivelSPS == null || mps.nivelSPS == "")
             {
                 labelNivel.Text = "DNC";
             }
@@ -168,7 +168,7 @@ namespace Sistema_de_sanciones
             {
                 labelNivel.Text = mps.nivelSPS;
             }
-            if (mps.genero == null)
+            if (mps.genero == null || mps.genero == "")
             {
                 labelGenero.Text = "DNC";
             }
@@ -176,7 +176,7 @@ namespace Sistema_de_sanciones
             {
                 labelGenero.Text = Convert.ToString(mps.genero);
             }
-            if (mps.siglasInstitucionDependencia == null)
+            if (mps.siglasInstitucionDependencia == null || mps.siglasInstitucionDependencia == "")
             {
                 labelSiglas.Text = "DNC";
             }
@@ -184,8 +184,8 @@ namespace Sistema_de_sanciones
             {
                 labelSiglas.Text = mps.siglasInstitucionDependencia;
             }
-            
-            if (mps.fechaResolucion == null)
+
+            if (mps.fechaResolucion == null || mps.fechaResolucion == "")
             {
                 labelFERE.Text = "DNC";
             }
@@ -194,7 +194,7 @@ namespace Sistema_de_sanciones
                 labelFERE.Text = mps.fechaResolucion.Remove(10, 15);
             }
 
-            if (mps.urlResolucion == null)
+            if (mps.urlResolucion == null || mps.urlResolucion == "")
             {
                 labelURL.Text = "DNC";
             }
@@ -203,7 +203,7 @@ namespace Sistema_de_sanciones
                 labelURL.Text = mps.urlResolucion;
             }
 
-            if (mps.montoMulta == null)
+            if (mps.montoMulta == null || mps.montoMulta == 0)
             {
                 labelMulta.Text = "DNC";
             }
@@ -219,7 +219,7 @@ namespace Sistema_de_sanciones
             {
                 labelMoneda.Text = mps.moneda;
             }
-            if (mps.falta == null)
+            if (mps.falta == null || mps.falta == "")
             {
                 labelTF.Text = "DNC";
             }
@@ -227,7 +227,7 @@ namespace Sistema_de_sanciones
             {
                 labelTF.Text = Convert.ToString(mps.falta);
             }
-            if (mps.descripcionFalta == null)
+            if (mps.descripcionFalta == null || mps.descripcionFalta == "")
             {
                 labelDF.Text = "DNC";
             }
@@ -235,7 +235,6 @@ namespace Sistema_de_sanciones
             {
                 labelDF.Text = Convert.ToString(mps.descripcionFalta);
             }
-
             //Los siguientes dos modulos son los que se encargan de enlistar todos los documentos y todas las sanciones en las
             //tablas de visualizar, donde ira colocando una sancion y/o documento, y por cada una que se agregue, se aumentara
             //en 1 un valor de i, hasta que i sea mayor que el contador de la lista de sanciones y documentos respectivamente.

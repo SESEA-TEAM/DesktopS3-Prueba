@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,18 +72,12 @@
             this.label58 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -115,6 +109,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -164,18 +164,18 @@
             this.panel2.Controls.Add(this.label58);
             this.panel2.Controls.Add(this.label50);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label19);
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label22);
+            this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.label41);
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label31);
             this.panel2.Controls.Add(this.label25);
             this.panel2.Controls.Add(this.label29);
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.label27);
+            this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label21);
-            this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label57);
             this.panel2.Controls.Add(this.label49);
             this.panel2.Controls.Add(this.label11);
@@ -212,13 +212,13 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -684,66 +684,6 @@
             this.label13.Text = "Primer apellido";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Enabled = false;
-            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(24, 450);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 16);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Tipo falta";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Enabled = false;
-            this.label19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label19.Location = new System.Drawing.Point(24, 1097);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(100, 16);
-            this.label19.TabIndex = 8;
-            this.label19.Text = "Observaciones";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Enabled = false;
-            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(305, 450);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 16);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Descripción";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Enabled = false;
-            this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(586, 1032);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 16);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "Moneda";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Enabled = false;
-            this.label41.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label41.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label41.Location = new System.Drawing.Point(305, 1032);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(42, 16);
-            this.label41.TabIndex = 8;
-            this.label41.Text = "Multa";
-            // 
             // label31
             // 
             this.label31.AutoSize = true;
@@ -809,18 +749,6 @@
             this.label21.Size = new System.Drawing.Size(159, 16);
             this.label21.TabIndex = 8;
             this.label21.Text = "Autoridad sancionadora";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Enabled = false;
-            this.label18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label18.Location = new System.Drawing.Point(24, 1032);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(162, 16);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "Causa,  motivo o hechos";
             // 
             // label57
             // 
@@ -982,13 +910,13 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1122,7 +1050,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.label1.Location = new System.Drawing.Point(60, -343);
+            this.label1.Location = new System.Drawing.Point(52, -343);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(378, 38);
             this.label1.TabIndex = 7;
@@ -1161,12 +1089,78 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "*(DNC) = Dato No Capturado";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label14.Location = new System.Drawing.Point(24, 450);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(67, 16);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Tipo falta";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label8.Location = new System.Drawing.Point(305, 450);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 16);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Descripción";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(586, 1032);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 16);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Moneda";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label12.Location = new System.Drawing.Point(305, 1032);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(42, 16);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Multa";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label16.Location = new System.Drawing.Point(24, 1097);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(100, 16);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "Observaciones";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label22.Location = new System.Drawing.Point(24, 1032);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(162, 16);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "Causa,  motivo o hechos";
+            // 
             // Datos_SPS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1174, 801);
+            this.ClientSize = new System.Drawing.Size(1174, 788);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
@@ -1212,7 +1206,6 @@
         private Label labelFERE;
         private Label labelAUSA;
         private Label label13;
-        private Label label19;
         private Label label25;
         private Label label29;
         private Label label23;
@@ -1255,15 +1248,10 @@
         private Label labelFF;
         private Label labelFI;
         private Label labelPlazo;
-        private Label label41;
         private Label labelMoneda;
-        private Label label12;
         private Label labelTF;
         private Label labelDF;
-        private Label label8;
-        private Label label7;
         private Label label17;
-        private Label label18;
         private Label label20;
         private Button button1;
         private DataGridView dataGridView1;
@@ -1277,5 +1265,11 @@
         private DataGridViewTextBoxColumn descripcionxd;
         private DataGridViewTextBoxColumn URL;
         private DataGridViewTextBoxColumn Fecha;
+        private Label label8;
+        private Label label14;
+        private Label label22;
+        private Label label16;
+        private Label label12;
+        private Label label7;
     }
 }
