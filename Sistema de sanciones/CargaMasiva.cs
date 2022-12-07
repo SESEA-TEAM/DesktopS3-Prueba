@@ -1059,16 +1059,21 @@ namespace Sistema_de_sanciones
            
 
         }
+        List<modeloMoneda> lMoneda = new controladorMoneda().obtenerListaMonedas();
+        List<modeloTipoSancion> lsancionPS = new controladorTipoSancion().obtenerListaSancionesPS();
+        List<modeloEntidadFederativa> lEntidad = new controladorEntidadFederativa().obtenerListaPais();
+        List<modeloVialidad> lVialidad = new controladorVialidad().obtenerListaVialidad(1);
+        List<modeloTipoDocumento> lDocumento = new controladorTipoDocumento().obtenerListaDocumentosPS();
         //se creo las listas para evaluar que cada valor corresponda a los catálogos 
         private int obtenerMonedaID(string moneda)
         {
-            List<modeloMoneda> lMoneda = new controladorMoneda().obtenerListaMonedas();
+           
             int pos = lMoneda.FindIndex(x => x.valor == moneda);
             return pos;
         }
         private int obtenerTipoSancionPSID( string valor )
         {
-            List<modeloTipoSancion> lsancionPS = new controladorTipoSancion().obtenerListaSancionesPS();
+           
            
             //int pos = lsancionPS.FindIndex(x => x.id == sancionaesid);
             int pos = lsancionPS.FindIndex(x => x.valor == valor);
@@ -1076,7 +1081,7 @@ namespace Sistema_de_sanciones
         }
         private int obtenerEntidadFederativaID(string entidadFederativa)
         {
-            List<modeloEntidadFederativa> lEntidad = new controladorEntidadFederativa().obtenerListaPais();
+            
             int pos = lEntidad.FindIndex(x => x.name == entidadFederativa);
             return pos;
         }
@@ -1100,7 +1105,7 @@ namespace Sistema_de_sanciones
        
         private int obtenerVialidadID(string vialidad)
         {
-            List<modeloVialidad> lVialidad = new controladorVialidad().obtenerListaVialidad(1);
+            
             int pos = lVialidad.FindIndex(x => x.name == vialidad);
             return pos;
         }
@@ -1112,7 +1117,7 @@ namespace Sistema_de_sanciones
         }
         private int obtenerDocumentoID(string documentos)
         {
-            List<modeloTipoDocumento> lDocumento = new controladorTipoDocumento().obtenerListaDocumentosPS();
+            
             int pos = lDocumento.FindIndex(x => x.tipoDocumento == documentos);
             return pos;
         }
