@@ -23,9 +23,10 @@ namespace Sistema_de_sanciones
 {
     public partial class CargaMasiva : Form
     {
+        //Estas variables se usan para las fechas, cada vez que se guardan
         String? f1, f2, f3, f4;
         String? f5, f6, f7, f8;
-   
+        //Estas variables se usan para los catálogos 
         int moned;
         int san;
         int enti;
@@ -37,7 +38,7 @@ namespace Sistema_de_sanciones
 
         //VARIABLES PARA SPS
         int m, sanSPS, docSPS, faltaSPS, generoSPS;
-
+        //Mandamos a llamar los controladores
         controlador1PS conPS = new controlador1PS();
         controlador1SPS conSPS = new controlador1SPS();
 
@@ -54,6 +55,8 @@ namespace Sistema_de_sanciones
             */
             //Sistema de los Servidores Públicos Sancionados
             //Sistema de los Particulares Sancionados
+
+            //Esta es la lista para elegir los sistemas 
             List<string> lista = new List<string>();
             lista.Add("Selecciona el sistema*");
             lista.Add("Sistema de los Servidores Públicos Sancionados");
@@ -133,10 +136,10 @@ namespace Sistema_de_sanciones
             }
 
         }
-
+        //En este metodo declaramos las variables para validar cada campo con un regex
         public bool validarCamposPS()
         {
-            
+            //Usamos esta variable booleana, cuando el resultado cambia a falso, con una condicional, no guarda
             bool Resultado = true;
             string ClaveExpedientes = @"[ -A-Za-z0-9_(!""#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~)]{3,140}";
             string nombreDependencia = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,()]{3,140}$";
@@ -169,10 +172,10 @@ namespace Sistema_de_sanciones
             string ClaveCodPostalPS = @"^\d{0,50}$";
             string Documentonoobligatorio = @"^[A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ_]{0,140}$";
             string ClaveNumeroExterior = @"^\d{0,50}$";
-
+            //El foreach recorre cada fila del archivo XLSX
             foreach (DataGridViewRow fila1 in dataGridView1.Rows)
             {
-
+                //reseteamos el valor de las variables, para evitar duplicación de información
                 moned = 0;
                 san = 0;
                 enti = 0;
@@ -181,6 +184,7 @@ namespace Sistema_de_sanciones
                 vial = 0;
                 paisE = 0;
                 doc = 0;
+                //Evalua cada celda, validando con regex
                 bool valExpediente = Regex.IsMatch(fila1.Cells[0].Value.ToString(), ClaveExpedientes);//ok
                 bool valNombres = Regex.IsMatch(fila1.Cells[1].Value.ToString(), nombreDependencia);//ok
                 bool valRFCs = Regex.IsMatch(fila1.Cells[2].Value.ToString(), ClavesRFCs);//ok
@@ -238,7 +242,7 @@ namespace Sistema_de_sanciones
                 bool valDescripcionDos = Regex.IsMatch(fila1.Cells[52].Value.ToString(), ClaveDocumentosPS);
                 bool valURLDos = Regex.IsMatch(fila1.Cells[53].Value.ToString(), urlNoObligatorio);
                 bool ValFechaPS = Regex.IsMatch(fila1.Cells[54].Value.ToString(), FechasNobligatoria);
-
+                //Todas estas condicionales, evaluan si la celda ingresaron con lo que corresponde al regex, si es verdadero la variable boleana cambia
                 if (!valExpediente)
                 {
                     fila1.Cells[0].ErrorText = "Expediente Inválido";
@@ -550,7 +554,7 @@ namespace Sistema_de_sanciones
                     fila1.Cells[54].ErrorText = "Fecha  inválido";
                     Resultado = false;
                 }
-                //AQUI
+                //En esta parte evaluamos los catálogos, si corresponden a lo que se encuentra en la B.D, no marcara error, de lo contrario si 
                 if (fila1.Cells[22].Value.ToString() == "")
                 {
                    
@@ -1047,7 +1051,7 @@ namespace Sistema_de_sanciones
 
         }
      
-
+        //Guarda los datos que se ingresaron 
         private void GuardarPS(modeloPS PS )
         {
            
@@ -1055,6 +1059,7 @@ namespace Sistema_de_sanciones
            
 
         }
+        //se creo las listas para evaluar que cada valor corresponda a los catálogos 
         private int obtenerMonedaID(string moneda)
         {
             List<modeloMoneda> lMoneda = new controladorMoneda().obtenerListaMonedas();
@@ -1092,7 +1097,7 @@ namespace Sistema_de_sanciones
          
             return pos;
         }
-        //PREGUNTAR
+       
         private int obtenerVialidadID(string vialidad)
         {
             List<modeloVialidad> lVialidad = new controladorVialidad().obtenerListaVialidad(1);
@@ -1119,17 +1124,18 @@ namespace Sistema_de_sanciones
      
             bool documentos = true;
             
-
+            //Evalua que el documento ingresado contiene 55 columnas, si las contiene, abre el documento, de lo contrario no
             int columnas = dataGridView1.ColumnCount;
             if (columnas == 55) 
             {
                 bool DatosInsertadosPS = false;
                 modeloTipoSancion modsan = new modeloTipoSancion();
                 modeloTipoDocumento modoc = new modeloTipoDocumento();
-
+                //Recorre cada fila del documento
               foreach (DataGridViewRow row in dataGridView1.Rows)
               {
                     modeloPS modps = new modeloPS();
+                    //Regresa el valor de las variables, para evitar datos duplicados
                     moned = 0;
                     san = 0;
                     enti = 0;
@@ -1140,9 +1146,10 @@ namespace Sistema_de_sanciones
                     doc = 0;
 
                     documentos = true;
+                    //manda a llamar al metodo, para validar cada celda
                  if (validarCamposPS())
                  {
-
+                    //modps guarda el valor que se ingrese en cada celda
                     modps.expediente = row.Cells[0].Value.ToString();
 
                     modps.nombreRazonSocial = row.Cells[1].Value.ToString();
@@ -1616,6 +1623,7 @@ namespace Sistema_de_sanciones
             dataGridView1.DataSource = null;
         }
 
+        //Este evento pinta las celdas de lado izquierda con numeros 
         private void dataGridView2_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             using(SolidBrush br = new SolidBrush(dataGridView2.RowHeadersDefaultCellStyle.ForeColor))
