@@ -11,13 +11,8 @@
         "version": "6.0.0"
       }
     ],
-    "additionalProbingPaths": [
-      "C:\\Users\\HP\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\HP\\.nuget\\packages"
-    ],
     "configProperties": {
-      "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,
-      "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
+      "System.Reflection.Metadata.MetadataUpdater.IsSupported": false
     }
   }
 }
