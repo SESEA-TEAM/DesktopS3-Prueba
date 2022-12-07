@@ -131,7 +131,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9yJaiF7HcbA8d/H3SP3wokhMp285VFZVYUN/XB8h2fQ=</dsig:DigestValue>
+      <dsig:DigestValue>6o6WRUtV69eQssGuZs+f2SGcP4JdfH3S+RPJ6Orl7vo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Sistema de sanciones.exe" size="149504">

@@ -176,7 +176,7 @@
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1189, 756);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Inicio";
@@ -408,7 +408,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 15);
             this.label3.TabIndex = 25;
-            this.label3.Text = "1.3.8";
+            this.label3.Text = "1.3.9";
             // 
             // btnCerrarSesion
             // 
