@@ -91,7 +91,7 @@ namespace Sistema_de_sanciones
             {
                 labelSARS.Text = mps.segundoApellidoRS;
             }
-            if (mps.telefono == null || mps.telefono == "0")
+            if (mps.telefono == null || mps.telefono == "")
             {
                 labelTelefono.Text = "DNC";
             }
