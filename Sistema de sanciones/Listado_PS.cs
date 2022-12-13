@@ -110,16 +110,16 @@ namespace Sistema_de_sanciones
             dataGridView1.Columns[4].Width = Convert.ToInt32(p*0.236); //Despliega el nombre/razon social
             dataGridView1.Columns[5].Width = Convert.ToInt32(p*0.064); //Despliega el tipo de persona
             dataGridView1.Columns[6].Width = Convert.ToInt32(p*0.217); //Despliega el tipo de sancion
-            dataGridView1.Rows[0].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[1].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[2].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[3].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[4].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[5].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[6].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[7].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[8].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[9].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[0].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[1].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[2].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[3].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[4].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[5].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[6].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[7].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[8].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[9].Height = Convert.ToInt32(panel3.Height * 0.458);
 
             botonPrimero.Enabled = false;
             botonAnterior.Enabled = false;
@@ -232,16 +232,16 @@ namespace Sistema_de_sanciones
             dataGridView1.Columns[4].Width = Convert.ToInt32(p * 0.236); //Despliega el nombre/razon social
             dataGridView1.Columns[5].Width = Convert.ToInt32(p * 0.064); //Despliega el tipo de persona
             dataGridView1.Columns[6].Width = Convert.ToInt32(p * 0.217); //Despliega el tipo de sancion
-            dataGridView1.Rows[0].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[1].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[2].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[3].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[4].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[5].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[6].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[7].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[8].Height = Convert.ToInt32(panel3.Height * 0.458);
-            dataGridView1.Rows[9].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[0].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[1].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[2].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[3].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[4].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[5].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[6].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[7].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[8].Height = Convert.ToInt32(panel3.Height * 0.458);
+            //dataGridView1.Rows[9].Height = Convert.ToInt32(panel3.Height * 0.458);
             //dataGridView1.ro
 
 

@@ -66,10 +66,7 @@ C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.Crear_Usuarios.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.Datos_PS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.Datos_SPS.resources
-C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.Editar_Proveedor.resources
-C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.Editar_Usuarios.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.Form2.resources
-C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.Home.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.Listado_PS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\WinFormsApp1.FormListadoSPS.resources
 C:\Users\Invitado2022\Documents\GitHub\DesktopS3-Prueba\Sistema de sanciones\obj\Release\net6.0-windows\Sistema_de_sanciones.Listar_Proveedores.resources
