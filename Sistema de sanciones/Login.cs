@@ -19,7 +19,8 @@ namespace Sistema_de_sanciones
     {
 
         Controlador_Login objp = new Controlador_Login();
-        private Conexion ConexionBD = new Conexion();
+        private Conexion ConexionBD = new Conexion(); 
+        
         public Login()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace Sistema_de_sanciones
         {
 
         }
-
+        //cambia de color
         private void textBox1_Enter(object sender, EventArgs e)
         {
             if (textUsuario.Texts == "Nombre de usuario*")
@@ -39,7 +40,7 @@ namespace Sistema_de_sanciones
 
             }
         }
-
+        //cambia de color 
         private void textBox1_Leave(object sender, EventArgs e)
         {
             if (textUsuario.Texts == "")
@@ -49,7 +50,7 @@ namespace Sistema_de_sanciones
 
             }
         }
-
+        //cambia de color
         private void textBox2_Enter(object sender, EventArgs e)
         {
             if (textContrasena.Texts == "Contraseña*")
@@ -68,13 +69,13 @@ namespace Sistema_de_sanciones
 
             }
         }
-
+        
         public void logear(string usuario, string contrasena)
 
         {
             try
             {
-
+                //manda a llamar el procedimieto almacenado login, compara la contraseña y el usuario
                 SqlCommand comando = new SqlCommand("login");
                 comando.Connection = ConexionBD.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
@@ -83,7 +84,7 @@ namespace Sistema_de_sanciones
                 SqlDataAdapter sda = new SqlDataAdapter(comando);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
-
+                //Según corresponda su perfil en la B.D accederá a los módulos correspondientes.  
                 if (dt.Rows.Count == 1)
                 {
                     this.Hide();
@@ -114,6 +115,7 @@ namespace Sistema_de_sanciones
 
             }
         }
+        //limpia los campos 
         private void limpiar()
         {
             textUsuario.Texts = "Nombre de usuario*";
@@ -125,11 +127,8 @@ namespace Sistema_de_sanciones
         }
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
-
-            //objp.logear(textUsuario.Texts, textContrasena.Texts);
-            //objp.Insertar();
-            // string valor = Encrypt.GetSHA256(textContrasena.Texts);
-            // objp.logear(textUsuario.Texts, Encrypt.GetSHA256(textContrasena.Texts.Trim()));
+        
+            //manda a llamar el procedimiento almacenado logear, para verificar los campos correspondientes
             logear(textUsuario.Texts, Encrypt.GetSHA256(textContrasena.Texts.Trim()));
             limpiar();
 
