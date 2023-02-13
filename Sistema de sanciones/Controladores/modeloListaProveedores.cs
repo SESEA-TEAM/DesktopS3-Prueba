@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sistema_de_sanciones.Controladores
 {
-    //Este modelo obtiene el id y el proveedor, para usarlo en el modulo crear usuario ComboBox proveedores
+    //Este modelo obtiene el id y el proveedor, para usarlo en el módulo crear usuario ComboBox proveedores
     public class modeloListaProveedores
     {
         public int id { get; set; }

@@ -12,10 +12,11 @@ namespace Sistema_de_sanciones.Controladores
 {
     public class Controlador_Proveedor
     {
+        //Manda a llamar a la conexión a la base de datos.
         private Conexion ConexionBD = new Conexion();
         private SqlDataReader LeerFilas;
 
-        //método que manda a llamar el procedimiento almacenado de seleccionar proveedor 
+        //método que manda a llamar el procedimiento almacenado seleccionar proveedor 
         public DataTable ControladorProveedor()
 
         {

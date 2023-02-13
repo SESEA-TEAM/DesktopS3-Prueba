@@ -13,7 +13,7 @@ namespace Sistema_de_sanciones.Controladores
     public class logout
     {
         private Conexion ConexionBD = new Conexion();
-        //Método que llama el procedimiento alacaenado logout
+        //Método que llama al procedimiento almacenado logout
         public void logoutx(int id)
         {
             try
