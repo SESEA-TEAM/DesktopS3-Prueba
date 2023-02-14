@@ -14,6 +14,8 @@ namespace Sistema_de_sanciones.Controladores
     {
         private Conexion ConexionBD = new Conexion();
 
+        //Este controaldor sirve para poder rellenar las listas de vialidad, esto mediante el uso de un procedimiento almacenado
+        //que hace una consulta a la base de datos.
         public List<modeloVialidad> obtenerListaVialidad(int localidad)
         {
             List<modeloVialidad> oListaMonedas = new List<modeloVialidad>();
