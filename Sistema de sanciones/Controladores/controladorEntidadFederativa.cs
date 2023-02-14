@@ -13,7 +13,9 @@ namespace Sistema_de_sanciones.Controladores
     public class controladorEntidadFederativa
     {
         private Conexion ConexionBD = new Conexion();
-
+        
+        //Este controlador sirve para obtener el listado de las entidades federativas del estado de mexico, esto mediante un
+        //procedimiento almacenado que hace una consulta a la base de datos.
         public List<modeloEntidadFederativa> obtenerListaPais()
         {
             List<modeloEntidadFederativa> oListaMonedas = new List<modeloEntidadFederativa>();

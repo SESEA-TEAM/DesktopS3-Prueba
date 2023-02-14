@@ -15,6 +15,8 @@ namespace Sistema_de_sanciones.Controlador
         private Conexion ConexionBD = new Conexion();
         SqlConnection conexion = new SqlConnection("server=DESKTOP-CDKMLM6;integrated security=true; database=PublicosSancionados");
 
+        //Este controaldor sirve para poder rellenar las listas de tipo sancion, esto mediante el uso de un procedimiento almacenado
+        //que hace una consulta a la base de datos.
         public List<modeloTipoSancion> obtenerTipoSancion()
         {
             List<modeloTipoSancion> oTipoSancion = new List<modeloTipoSancion>();

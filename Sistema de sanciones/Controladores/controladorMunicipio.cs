@@ -14,6 +14,8 @@ namespace Sistema_de_sanciones.Controladores
     {
         private Conexion ConexionBD = new Conexion();
 
+        //Este controaldor sirve para poder rellenar las listas de municipios, esto mediante el uso de un procedimiento almacenado
+        //que hace una consulta a la base de datos.
         public List<modeloMunicipio> obtenerListaMunicipio(int entidad)
         {
             List<modeloMunicipio> oListaMonedas = new List<modeloMunicipio>();

@@ -52,6 +52,7 @@ namespace Sistema_de_sanciones.Controladores
             return Tabla;
         }
 
+        //El metodo que llama al procedimiento almacenado para registrar un nuevo usuario dentro de la base de datos
         public void InsertarUsuario(string nombre, string apellidoUno, string apellidoDos, string cargo, string correoElectronico, 
             string telefono, string extension, string usuario, int proveedorDatos, int perfil, string contrasena)
         {
@@ -75,6 +76,7 @@ namespace Sistema_de_sanciones.Controladores
             ConexionBD.CerrarConexion();
         }
 
+        //El metodo que llama al procedimiento almacenado para editar a un usuario, esto a traves del ID de dicho usuario.
         public void EditarUsuario(int id, string nombre, string apellidoUno, string apellidoDos, string cargo, 
             string correoElectronico, string telefono, string extension, string usuario, int proveedorDatos, 
             string estatus)
@@ -98,6 +100,7 @@ namespace Sistema_de_sanciones.Controladores
             ConexionBD.CerrarConexion();
         }
 
+        //El metodo que llama al procedimiento almacenado para deshabilitar a un usuario, esto a traves del ID de dicho usuario.
         public void EliminarUsuario(int id)
         {
             SqlCommand comando = new SqlCommand("Eliminar_usuario");
@@ -180,6 +183,9 @@ namespace Sistema_de_sanciones.Controladores
             }
         }
 
+        //El para poder ver el numero total de usuarios que hay registrados, lo cual le permite al paginador poder visualizar
+        //10 registros en el dataGridView, ademas de habilitar los botones para avanzar o retroceder si es que hay más de 10
+        //usuarios.
         public int UltimoBarraListadoUsuarios()
         {
             try

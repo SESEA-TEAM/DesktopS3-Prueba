@@ -14,6 +14,8 @@ namespace Sistema_de_sanciones.Controladores
     {
         private Conexion ConexionBD = new Conexion();
 
+        //Este controaldor sirve para poder rellenar las listas de genero, esto mediante el uso de un procedimiento almacenado
+        //que hace una consulta a la base de datos.
         public List<modeloListaGenero> obtenerListaGenero()
         {
             List<modeloListaGenero> oListaGenero = new List<modeloListaGenero>();

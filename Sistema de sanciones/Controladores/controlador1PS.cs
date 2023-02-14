@@ -83,6 +83,8 @@ namespace Sistema_de_sanciones.Controladores
             }
         }
 
+        //metodo que manda a llamar el procedimiento almacenado para modificar un particular sancionado, esto mediante el ID de
+        //dicho particular sancionado.
         public bool modificarPS(modeloPS ps, int id)
         {
             try
@@ -155,6 +157,8 @@ namespace Sistema_de_sanciones.Controladores
             }
         }
 
+        //metodo que hace una consulta a la base de datos y regresa los datos al programa para que estos sean desplegados en sus
+        //respectivos campos
         public modeloPS CsdsdargarPS(int id)
         {
             modeloPS ps = new modeloPS();

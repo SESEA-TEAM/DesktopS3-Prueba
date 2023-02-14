@@ -16,6 +16,8 @@ namespace Sistema_de_sanciones.Controladores
 
         private Conexion ConexionBD = new Conexion();
 
+        //Este controaldor sirve para poder rellenar las listas de tipo sancion, esto mediante el uso de un procedimiento almacenado
+        //que hace una consulta a la base de datos.
         public List<modeloListaUsuarios> obtenerListaUsuarios()
         {
             List<modeloListaUsuarios> oListaUsuarios = new List<modeloListaUsuarios>();
