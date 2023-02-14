@@ -17,12 +17,17 @@ namespace Sistema_de_sanciones
 {   
     public partial class ReporteBitacora : Form
     {
+        //se declara una instancia del controlador de bitácora para facilitar el acceso a sus funciones
         controladorBitacora contB = new controladorBitacora();
-        //modeloListaUsuarios u = new modeloListaUsuarios();
+        //se declara el dataset donde se guardará la informacion de la bitácora
         DataSet dsBit;
+        //fecha inicial
         String? fI = null;
+        //fecha final
         String? fF = null;
+        //sistema
         String? sis = null;
+        //usuario
         String? us = null;
         public ReporteBitacora()
         {
@@ -33,9 +38,11 @@ namespace Sistema_de_sanciones
 
             //lista para combobox sistema aplicable
             List<string> lista = new List<string>();
+            //se declaran los elementos
             lista.Add("Sistema aplicable");
             lista.Add("Sistema de los Particulares Sancionados");
             lista.Add("Sistema de los Servidores Públicos Sancionados");
+            //se asigna la lista al combobox
             comboBox1.DataSource = lista;
 
         }
@@ -48,7 +55,9 @@ namespace Sistema_de_sanciones
         //funcion para cargar la lista de usuarios al combobox
         private void listarUsuarios()
         {
+            //datasource para indicar de donde vienen los datos que conformaran el combobox
             comboBox2.DataSource = new controladorListaUsusarios().obtenerListaUsuarios();
+            //valuemember para definir el atributo que se usara para mostrar en el combobox
             comboBox2.ValueMember = "Usuario";
 
         }
@@ -56,8 +65,10 @@ namespace Sistema_de_sanciones
         //funcion de carga, llamada al procedimiento que regresa un dataset con la consulta a la base de datos
         private void cargarBt()
         {
+            //se completan las cadenas para que coincidan con el formato de la base de datos
             fI = Convert.ToString(dateTimePicker1.Text)+".000";
             fF = Convert.ToString(dateTimePicker2.Text)+".000";
+            //condicion para ver si fue seleccionado algun sistema aplicable en los parametros del reporte
             if (comboBox1.Text== "Sistema aplicable")
             {
 
@@ -66,6 +77,7 @@ namespace Sistema_de_sanciones
             {
                 sis = comboBox1.Text;
             }
+            //condicion para ver si fue seleccionado algun usuario en especifico para la creacion del reporte
             if (comboBox2.Text == "Usuario")
             {
 
@@ -75,8 +87,11 @@ namespace Sistema_de_sanciones
                 modeloListaUsuarios user = (modeloListaUsuarios)comboBox2.SelectedItem;
                 us = Convert.ToString(user.Id);
             }
+            //se manda a llamar la funcion para crear el reporte con los valores declarados
             dsBit = contB.reporteBitacora(fI,fF,sis,us);
+            //se asigna el dataset a el datagrid 
             dataGridView1.DataSource = dsBit.Tables[0];
+            //asignamos los tamaños de las columnas
             dataGridView1.Columns[0].Width = 168;
             dataGridView1.Columns[1].Width = 350;
             dataGridView1.Columns[2].Width = 250;
