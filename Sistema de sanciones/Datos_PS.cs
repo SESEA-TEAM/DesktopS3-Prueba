@@ -35,7 +35,8 @@ namespace Sistema_de_sanciones
 
         }
 
-
+        //el metodo cargarDGV como su nombre lo indica, es el metodo que se encarga de cargar el dataGridView, esto para colocarle
+        //las medidas que utilizara para cada una de las columnas que lo conforman.
         private void cargarDGV()
         {
             int p = panel8.Width;

@@ -470,7 +470,7 @@ namespace Sistema_de_sanciones
             label10.Text = "Registros: " + objs.Inicio2 + " - " + ContadorTotal + " de: " + ContadorTotal.ToString();
         }
 
-        //El evento que llama al metodo de limpiar.
+        //El evento que llama al metodo de limpiar, ademas ponerle el valor de nulo a nuestras variables de busqueda
         private void botonLimpiar_Click(object sender, EventArgs e)
         {
             limpiarBusqueda();
@@ -504,6 +504,7 @@ namespace Sistema_de_sanciones
             }
         }
 
+        //Este metodo sirve para poder colocar el icono a nuestros botones dentro del dataGridView
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.ColumnIndex == 7)
