@@ -119,6 +119,8 @@ namespace Sistema_de_sanciones
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Este regex solo se activara si se coloca una url en el apartado de los documentos, por lo que si se deja vacio, no
+            //saltara ningun mensaje de error, a menos que se coloque algo sobre alguno de los campos de documentos.
             Regex URLS = new Regex(@"^https?:\/\/[\w\-]+(\.[\w\-]+)+[#?]?.*$");
 
             Match match = URLS.Match(textBox44.Texts);
@@ -436,6 +438,10 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox18.ForeColor = Color.Black;
+                //Este regex se encarga de verificar que un RFC sea valido, tomando en consideracion que existen 2 tipos de RFC,
+                //uno para las personas fisicas y otro para las personas morales, y cada uno de ellos tiene sus caracteristicas,
+                //por lo que si colocamos un RFC para una persona fisica (13 caracteres) o uno para una persona moral (11 caracteres)
+                //el regex se encargara de verificar si dicho RFC cumple con las condiciones de alguno de los dos.
                 Regex RFC = new Regex(@"^[A-Z&Ñ]{3,4}[0-9]{2}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])[A-Z0-9]{2}[0-9A]$");
 
                 Match match = RFC.Match(textBox18.Texts);
@@ -650,6 +656,8 @@ namespace Sistema_de_sanciones
             }
             else
             {
+                //El regex de urls para el campo de resolucion, en este caso este regex solo se activara si se coloca algo sobre el
+                //campo de url en resolucion, y si este es el caso, buscara que dicho texto sea una direccion url valida.
                 Regex URLS = new Regex(@"^https?:\/\/[\w\-]+(\.[\w\-]+)+[#?]?.*$");
 
                 Match match = URLS.Match(textBox13.Texts);
@@ -703,6 +711,9 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox4.ForeColor = Color.Black;
+                //El regex para nombres (responsable sancion) busca que solo se puedan colocar letras en dicho campo, tanto mayusculas,
+                //minusculas, y con acentos. En este caso, para evitar que solo se pusiera un caracter, se agrego que el minimo
+                //de caracteres sea 3, mientras que el maximo de caracteres permitidos es de 100.
                 Regex nombre = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
                 Match matchN = nombre.Match(textBox4.Texts);
 
@@ -736,6 +747,9 @@ namespace Sistema_de_sanciones
             }
             else
             {
+                //El regex el apellido paterno (responsable sancion) busca que solo se puedan colocar letras en dicho campo, tanto
+                //mayusculas, minusculas, y con acentos. En este caso, para evitar que solo se pusiera un caracter, se agrego que
+                //el minimo de caracteres sea 3, mientras que el maximo de caracteres permitidos es de 100.
                 textBox3.ForeColor = Color.Black;
                 Regex apellidoP = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
                 Match matchP = apellidoP.Match(textBox3.Texts);
@@ -770,6 +784,9 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox2.ForeColor = Color.Black;
+                //El regex el apellido materno (responsable sancion) busca que solo se puedan colocar letras en dicho campo, tanto
+                //mayusculas, minusculas, y con acentos. En este caso, para evitar que solo se pusiera un caracter, se agrego que
+                //el minimo de caracteres sea 3, mientras que el maximo de caracteres permitidos es de 100.
                 Regex apellidoM = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
                 Match matchM = apellidoM.Match(textBox2.Texts);
 
@@ -893,6 +910,8 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox26.ForeColor = Color.Black;
+                //El regex de telefono nos permite colocar unicamente valores numericos dentro del campo de telefono, y en este caso la
+                //unica condicion para aceptar si un numero es valido o no, es si este cuenta con 10 caracteres.
                 Regex telefono = new Regex(@"^\d{10}$");
                 Match matchT = telefono.Match(textBox26.Texts);
 
@@ -944,6 +963,9 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox31.ForeColor = Color.Black;
+                //El regex para nombres (director general) busca que solo se puedan colocar letras en dicho campo, tanto mayusculas,
+                //minusculas, y con acentos. En este caso, para evitar que solo se pusiera un caracter, se agrego que el minimo
+                //de caracteres sea 3, mientras que el maximo de caracteres permitidos es de 100.
                 Regex nombre = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
                 Match matchN = nombre.Match(textBox31.Texts);
 
@@ -977,6 +999,9 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox30.ForeColor = Color.Black;
+                //El regex el apellido paterno (director general) busca que solo se puedan colocar letras en dicho campo, tanto
+                //mayusculas, minusculas, y con acentos. En este caso, para evitar que solo se pusiera un caracter, se agrego que
+                //el minimo de caracteres sea 3, mientras que el maximo de caracteres permitidos es de 100.
                 Regex apellidoP = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
                 Match matchP = apellidoP.Match(textBox30.Texts);
 
@@ -1010,6 +1035,9 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox29.ForeColor = Color.Black;
+                //El regex el apellido materno (director general) busca que solo se puedan colocar letras en dicho campo, tanto
+                //mayusculas, minusculas, y con acentos. En este caso, para evitar que solo se pusiera un caracter, se agrego que
+                //el minimo de caracteres sea 3, mientras que el maximo de caracteres permitidos es de 100.
                 Regex apellidoM = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
                 Match matchM = apellidoM.Match(textBox29.Texts);
 
@@ -1042,6 +1070,9 @@ namespace Sistema_de_sanciones
             }
             else
             {
+                //El regex para el CURP toma como base el formato oficial para el CURP de un ciudadano mexicano, por lo que debe de
+                //llevar el formato ya establecido. En el caso de que alguno de los caracteres no sea correcto, lanzara un mensaje
+                //de error indicando que el CURP no es valido.
                 textBox28.ForeColor = Color.Black;
                 Regex CURP = new Regex(@"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$");
 
@@ -1076,6 +1107,9 @@ namespace Sistema_de_sanciones
             }
             else
             {
+                //El regex para nombres (apoderado legal) busca que solo se puedan colocar letras en dicho campo, tanto mayusculas,
+                //minusculas, y con acentos. En este caso, para evitar que solo se pusiera un caracter, se agrego que el minimo
+                //de caracteres sea 3, mientras que el maximo de caracteres permitidos es de 100.
                 textBox35.ForeColor = Color.Black;
                 Regex nombre = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
                 Match matchN = nombre.Match(textBox35.Texts);
@@ -1110,6 +1144,9 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox32.ForeColor = Color.Black;
+                //El regex el apellido paterno (apoderado legal) busca que solo se puedan colocar letras en dicho campo, tanto
+                //mayusculas, minusculas, y con acentos. En este caso, para evitar que solo se pusiera un caracter, se agrego que
+                //el minimo de caracteres sea 3, mientras que el maximo de caracteres permitidos es de 100.
                 Regex apellidoP = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
                 Match matchP = apellidoP.Match(textBox32.Texts);
 
@@ -1143,6 +1180,9 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox27.ForeColor = Color.Black;
+                //El regex el apellido materno (apoderado legal) busca que solo se puedan colocar letras en dicho campo, tanto
+                //mayusculas, minusculas, y con acentos. En este caso, para evitar que solo se pusiera un caracter, se agrego que
+                //el minimo de caracteres sea 3, mientras que el maximo de caracteres permitidos es de 100.
                 Regex apellidoM = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
                 Match matchM = apellidoM.Match(textBox27.Texts);
 
@@ -1176,6 +1216,9 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox15.ForeColor = Color.Black;
+                //El regex para el CURP toma como base el formato oficial para el CURP de un ciudadano mexicano, por lo que debe de
+                //llevar el formato ya establecido. En el caso de que alguno de los caracteres no sea correcto, lanzara un mensaje
+                //de error indicando que el CURP no es valido.
                 Regex CURP = new Regex(@"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$");
 
                 Match match = CURP.Match(textBox15.Texts);
@@ -1323,6 +1366,8 @@ namespace Sistema_de_sanciones
             else
             {
                 textBox34.ForeColor = Color.Black;
+                //El regex para el codigo postal toma como referencia el formato del codigo postal de los Estados Unidos Mexicanos,
+                //por lo que este debe de estar conformado por 5 digitos.
                 Regex ZIPC = new Regex(@"^[0-9]{5}(?:-[0-9]{4})?$");
 
                 Match match = ZIPC.Match(textBox34.Texts);
@@ -1645,6 +1690,7 @@ namespace Sistema_de_sanciones
 
         private bool guardar()
         {
+            //La siguiente lista de Regex es para todos aquellos campos que sean obligatorios.
             Regex ZIPC = new Regex(@"^[0-9]{5}(?:-[0-9]{4})?$");
             Match matchZIPMX = ZIPC.Match(textBox34.Texts);
             Regex RFC = new Regex(@"^[A-Z&Ñ]{3,4}[0-9]{2}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])[A-Z0-9]{2}[0-9A]$");
