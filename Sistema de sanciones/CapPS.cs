@@ -18,18 +18,28 @@ namespace Sistema_de_sanciones
     
     public partial class CapPS : Form
     {
+        //declaramos una instancia del controlador de particulares cancionados para poder acceder a sus funciones facilmente
         controlador1PS conPS = new controlador1PS();
+        //variables de ayuda para almacenar fechas
         String? f1, f2, f3, f4;
+        //declaramos una instancia del modelo de particulares cancionados para facilitar el uso del objeto
         private Particular ParticularS = new Particular();
+        //creamos un handler de el form 2 que es nuestro menu principal para posteriormente asignarle una instancia de este y poer acceder a sus funciones
         private Form2 form2Handler;
 
+        //declaramos listas que usaremos en el formulario con ayuda de sus controladores respectivos
         List<modeloTipoDocumento> lDocumentos = new controladorTipoDocumento().obtenerListaDocumentosPS();
         List<modeloTipoSancion> lSancion = new controladorTipoSancion().obtenerListaSancionesPS();
+        
+        //definimos que para llamar a este form se debe de mandar una instancia del form 2 que es el menu principal, desde donde este será llamado
         public CapPS(Form2 form2)
         {
             InitializeComponent();
+            //llamamos a funciones que ayudan a que el formulario funcione correctamente
             llenarCombos();
             CargarDG();
+
+            //asignamos una hora por defecto a los datetimepickers
             dateTimePicker1.Value = new DateTime(2000, 01, 01);
             dateTimePicker2.Value = new DateTime(2000, 01, 01);
             dateTimePicker3.Value = new DateTime(2000, 01, 01);
@@ -41,8 +51,9 @@ namespace Sistema_de_sanciones
             lista.Add("Física");
             lista.Add("Moral");
             comboBox9.DataSource = lista;
-            form2Handler = form2;
 
+            //asignamos la instancia que llega al mandar a llamar este form a nuestro handler para poder usarlo correctamente en el resto de la ejecucion de este form
+            form2Handler = form2;
         }
 
         private void textBox29_Load(object sender, EventArgs e)
@@ -85,11 +96,11 @@ namespace Sistema_de_sanciones
             comboBox2.DataSource = lSancion;
             comboBox2.ValueMember = "valor";
 
+            //
             comboBox3.DataSource = new controladorEntidadFederativa().obtenerListaPais();
             comboBox3.ValueMember = "name";
 
-
-
+            //
             comboBox7.DataSource = new controladorPais().obtenerListaPais();
             comboBox7.ValueMember = "name";
 
