@@ -699,9 +699,10 @@ namespace Sistema_de_sanciones
             return Resultado;
         }
 
+        //En este método declaramos las variables necesarias para validar cada campo con un regex
         public bool validarCamposSPS()
         {
-
+            //Usamos una variable booleana cuando el resultado cambia a false con una condición no la guardará.
             bool Resultado = true;
             string cadenaTexto = @"[ a-zA-ZÀ-ÿfd]+(\s*[a-zA-ZÀ-ÿfd])[a-zA-ZÀ-ÿfd.,() ]+$";
             string NoObligatorio = @"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ.,]{0,100}$"; 
@@ -728,6 +729,7 @@ namespace Sistema_de_sanciones
 
             foreach (DataGridViewRow fila1 in dataGridView2.Rows)
             {
+                //Se usan estas variables para resetear el valor de las variables, para evitar duplicar información.
                 m = 0;
                 sanSPS = 0;
                 docSPS = 0; 
@@ -773,6 +775,7 @@ namespace Sistema_de_sanciones
                 bool valDocURL = Regex.IsMatch(fila1.Cells[29].Value.ToString(), URLSDocumento);
                 bool valFecha = Regex.IsMatch(fila1.Cells[30].Value.ToString(), FechaDocumento);
 
+                //Estas condiciones validan cada una de las celdas conforme al regex asignado, si alguna no cumple con el regex mandara un msj de error.
                 if (!valNombre)
                 {
                     fila1.Cells[0].ErrorText = "Nombre inválido";
@@ -1025,7 +1028,7 @@ namespace Sistema_de_sanciones
             }
             return Resultado;
         }
-        private void btnMostar_Click(object sender, EventArgs e) //Particulares Sancionados
+        private void btnMostrarPS_Click(object sender, EventArgs e) //Particulares Sancionados
         {
             try
             {
@@ -1124,7 +1127,7 @@ namespace Sistema_de_sanciones
 
 
     
-        private void buttonGuardar_Click(object sender, EventArgs e)
+        private void btnGuardarPS_Click(object sender, EventArgs e)
         {
      
             bool documentos = true;
@@ -1573,15 +1576,10 @@ namespace Sistema_de_sanciones
             {
                 MessageBox.Show("No hay ningún registro");
             }
-            //if (validarCamposSPS())
-            //{
-            //     GuardarPS();
-            //}
-           
 
         }
         //CARGA MASIVA SERVIDORES PUBLICOS SANCIONADOS
-        private int obtenerSancionID(string sancion)
+        private int obtenerSancionID(string sancion) //Recupera el ID de los catalogos mediante los modelos.
         {
             List<modeloTipoSancion> lSancion2 = new controladorTipoSancion().obtenerListaSanciones();
             int pos = lSancion2.FindIndex(x => x.valor == sancion);
@@ -1613,7 +1611,7 @@ namespace Sistema_de_sanciones
             return pos;
         }
 
-        public void GuardarDatos(modeloSPS SPS)
+        public void GuardarDatos(modeloSPS SPS) //Metodo para guardar la información de los SPS.
         {
             conSPS.guardarSPS(SPS);
         }
@@ -1648,9 +1646,9 @@ namespace Sistema_de_sanciones
         private void btnGuardarSPS_Click(object sender, EventArgs e)
         {
             int columnas = dataGridView2.ColumnCount;
-            if (columnas == 31)
+            if (columnas == 31) //Verifica si el archivo cuenta con las 31 columnas, si en dado caso cumple esta se podra visualizar en la carga.
             {
-
+                //Se mandan a llamar a los modelos
                 modeloTipoSancion modSan = new modeloTipoSancion();
                 modeloTipoDocumento modDoc = new modeloTipoDocumento();
 
@@ -1660,18 +1658,19 @@ namespace Sistema_de_sanciones
                 foreach (DataGridViewRow row in dataGridView2.Rows)
                 {
                     modeloSPS modSPS = new modeloSPS();
-                    m = 0;
+                    //Se restablecen los valores de las variables para evitar datos duplicados.
+                    m = 0; //Variable de moneda.
                     sanSPS = 0;
                     docSPS = 0; 
                     faltaSPS = 0;
                     generoSPS = 0;
                     documentoSPS = true;
-                    if (validarCamposSPS())
+                    if (validarCamposSPS()) //Condición que validara todos los campos al guardar.
                     {
                         modSPS.nombreSPS = row.Cells[0].Value.ToString();
                         modSPS.primerApellidoSPS = row.Cells[1].Value.ToString();
 
-                        if (row.Cells[2].Value.ToString() == "")
+                        if (row.Cells[2].Value.ToString() == "")  //Si el campo se encuntra vacío este se guardará como null.
                         {
                             row.Cells[2].Value = ("");
                             modSPS.segundoApellidoSPS = row.Cells[2].Value.ToString();
@@ -1684,7 +1683,7 @@ namespace Sistema_de_sanciones
 
                         //GENERO
                         //VALIDACIÓN GENERO
-                        if (row.Cells[3].Value.ToString() == "")
+                        if (row.Cells[3].Value.ToString() == "") //Si el cmapo se encuentra vacío este se guardará como null.
                         {
 
                         }
@@ -1700,7 +1699,7 @@ namespace Sistema_de_sanciones
                         modSPS.curpSPS = row.Cells[5].Value.ToString();
                         modSPS.puestoSPS = row.Cells[6].Value.ToString();
 
-                        if (row.Cells[7].Value.ToString() == "")
+                        if (row.Cells[7].Value.ToString() == "") //Si no se registra algun Nivel esta quedará como null.
                         {
                             row.Cells[7].Value = ("");
                             modSPS.nivelSPS = row.Cells[7].Value.ToString();
@@ -1712,7 +1711,7 @@ namespace Sistema_de_sanciones
 
                         modSPS.nombreInstitucionDependencia = row.Cells[8].Value.ToString();
 
-                        if (row.Cells[9].Value.ToString() == "")
+                        if (row.Cells[9].Value.ToString() == "") //Si no se registra la Institución o Dependencia esta quedará como null.
                         {
                             row.Cells[9].Value = ("");
                             modSPS.siglasInstitucionDependencia = row.Cells[9].Value.ToString();
@@ -1722,7 +1721,7 @@ namespace Sistema_de_sanciones
                             modSPS.siglasInstitucionDependencia = row.Cells[9].Value.ToString();
                         }
 
-                        if (row.Cells[10].Value.ToString() == "")
+                        if (row.Cells[10].Value.ToString() == "") //Si no se registra la Clave de la Institución esta quedará como null.
                         {
                             row.Cells[10].Value = ("");
                             modSPS.claveInstitucionDependencia = row.Cells[10].Value.ToString();
@@ -1736,13 +1735,13 @@ namespace Sistema_de_sanciones
 
 
 
-                        faltaSPS = obtenerFaltaID(row.Cells[12].Value.ToString());
+                        faltaSPS = obtenerFaltaID(row.Cells[12].Value.ToString()); //Obtiene el ID de la falta.
                         modSPS.tipoFalta = faltaSPS;
 
 
 
 
-                        if (row.Cells[13].Value.ToString() == "")
+                        if (row.Cells[13].Value.ToString() == "") //Si no se registra alguna Descripción de la Falta esta quedará como null.
                         {
                             row.Cells[13].Value = ("");
                             modSPS.descripcionFalta = row.Cells[13].Value.ToString();
@@ -1755,7 +1754,7 @@ namespace Sistema_de_sanciones
 
                         modSPS.causaMotivoHechos = row.Cells[14].Value.ToString();
 
-                        if (row.Cells[15].Value.ToString() == "")
+                        if (row.Cells[15].Value.ToString() == "") //Si no se registra alguna observación esta quedará como null.
                         {
                             row.Cells[15].Value = ("");
                             modSPS.observaciones = row.Cells[15].Value.ToString();
@@ -1767,7 +1766,7 @@ namespace Sistema_de_sanciones
 
                         modSPS.autoridadSancionadora = row.Cells[16].Value.ToString();
 
-                        if (row.Cells[17].Value.ToString() == "")
+                        if (row.Cells[17].Value.ToString() == "") //Si el campo fecha queda vacío se guarda como null.
                         {
                             f5 = null;
                         }
@@ -1778,7 +1777,7 @@ namespace Sistema_de_sanciones
 
 
 
-                        if (row.Cells[18].Value.ToString() == "")
+                        if (row.Cells[18].Value.ToString() == "") //Si no se llena el campo URL resolución quedará como null.
                         {
                             row.Cells[18].Value = ("");
                             modSPS.urlResolucion = row.Cells[18].Value.ToString();
@@ -1788,7 +1787,7 @@ namespace Sistema_de_sanciones
                             modSPS.urlResolucion = row.Cells[18].Value.ToString();
                         }
 
-                        if (row.Cells[19].Value.ToString() == "")
+                        if (row.Cells[19].Value.ToString() == "") //Si no llena el campo Plazo Inhabilitación quedará como null.
                         {
                             row.Cells[19].Value = ("");
                             modSPS.plazoInhabilitacion = row.Cells[19].Value.ToString();
@@ -1798,7 +1797,7 @@ namespace Sistema_de_sanciones
                             modSPS.plazoInhabilitacion = row.Cells[19].Value.ToString();
                         }
 
-                        if (row.Cells[20].Value.ToString() == "")
+                        if (row.Cells[20].Value.ToString() == "") //Si no se registra la fecha Inicial de la  Inhabilitación quedará como null.
                         {
                             f6 = null;
                         }
@@ -1808,7 +1807,7 @@ namespace Sistema_de_sanciones
                         }
 
 
-                        if (row.Cells[21].Value.ToString() == "")
+                        if (row.Cells[21].Value.ToString() == "") //Si no se registra la fecha Final de Inhabilitación quedará como null.
                         {
                             f7 = null;
                         }
@@ -1819,7 +1818,7 @@ namespace Sistema_de_sanciones
 
 
 
-                        if (row.Cells[22].Value.ToString() == "")
+                        if (row.Cells[22].Value.ToString() == "") //Si el campo monto se deja vacío lo guardará con valor "0".
                         {
                             row.Cells[22].Value = ("0");
                             modSPS.montoMulta = float.Parse(row.Cells[22].Value.ToString());
@@ -1830,34 +1829,34 @@ namespace Sistema_de_sanciones
                         }
 
 
-                        if (row.Cells[23].Value.ToString() == "")
+                        if (row.Cells[23].Value.ToString() == "") //Si el campo moneda se deja vacío, lo guardara como null.
                         {
 
                         }
 
                         else
                         {
-                            m = obtenerMonedaSPSID(row.Cells[23].Value.ToString());
+                            m = obtenerMonedaSPSID(row.Cells[23].Value.ToString()); //Obtiene el ID del catalogo de moneda.
                             modSPS.monedaMulta = m;
                         }
 
-                        if (row.Cells[24].Value.ToString() == "")
+                        if (row.Cells[24].Value.ToString() == "") //Si el campo Sanción se deja vacío, lo guardará como null.
                         {
 
                         }
                         else
                         {
-                            sanSPS = obtenerSancionID(row.Cells[24].Value.ToString());
+                            sanSPS = obtenerSancionID(row.Cells[24].Value.ToString()); //Obtiene el ID del catalogo Sanación
                         }
 
 
-                        if (row.Cells[27].Value.ToString() == "")
+                        if (row.Cells[27].Value.ToString() == "") //Si el campo Documentos se deja vacío, lo guardará como null.
                         {
 
                         }
                         else
                         {
-                            docSPS = obtenerDocumentoID(row.Cells[27].Value.ToString());
+                            docSPS = obtenerDocumentoID(row.Cells[27].Value.ToString()); //Obtiene el ID del catalogo Documentos.
                         }
 
                         if (row.Cells[26].Value.ToString() == "")
@@ -1882,29 +1881,30 @@ namespace Sistema_de_sanciones
 
                         }
 
-                        GuardarDatos(modSPS);
+                        GuardarDatos(modSPS); //Guarda todos los datos de SPS.
 
-                        conSPS.guardarSancionSPS(sanSPS, modSan.descripcion = row.Cells[25].Value.ToString());
+                        conSPS.guardarSancionSPS(sanSPS, modSan.descripcion = row.Cells[25].Value.ToString()); //Guarda los datos de la sanción.
 
-                        if (documentoSPS == false)
+                        if (documentoSPS == false) //Si ningun dato del apartado de documentos fue completado este se guardará como null.
                         {
 
                         }
                         else
                         {
+                            //Guarda todos los datos del apartado de Documentos.
                             conSPS.guardarDocumentoSPS(docSPS, modDoc.tituloDocumento = row.Cells[26].Value.ToString(),
                                 modDoc.descripcionDocumento = row.Cells[28].Value.ToString(), modDoc.urlDocumento = row.Cells[29].Value.ToString(),
                                 modDoc.fechaDocumento = Convert.ToDateTime(row.Cells[30].Value.ToString()).ToString("yyyy-MM-dd"));
                         }
 
-                        DatosInsertados = true;
+                        DatosInsertados = true; //Si los datos fueron insertados correctamente se guardara en una variable booleana como true;
                     }
 
                 }
-                if (DatosInsertados == true)
+                if (DatosInsertados == true) //Si los datos fueron agregados correctamente, mandara un msj de confirmación, y si no fuese así dará un msj de error.
                 {
                     MessageBox.Show("Datos insertados correctamente" + ": " + dataGridView2.RowCount);
-                    dataGridView2.DataSource = null;
+                    dataGridView2.DataSource = null; //Limpiará todos los datos del DGV
                 }
                 else
                 {
@@ -1917,7 +1917,7 @@ namespace Sistema_de_sanciones
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e) 
         {
             try
             {
@@ -1976,47 +1976,47 @@ namespace Sistema_de_sanciones
 
         }
 
-        private void comboSistema_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboSistema_SelectedIndexChanged(object sender, EventArgs e) //metodo para cambiar el dropdownlist (PSP % PS).
         {
             if (comboSistema.SelectedIndex != 1)
             {
-                panelPS.Visible = false;
-                MostrarPS.Visible = false;
-                dataGridView1.DataSource = null;
-                btnGuardarSPS.Visible = false;
+                panelSPS.Visible = false; //Se ocultara el panel PS.
+                btnMostrarSPS.Visible = false; //Se oculta el botón de validación de SPS.
+                dataGridView1.DataSource = null; //Se limpia el DGV de SPS.
+                btnGuardarSPS.Visible = false; //El botón guardar de SPS se oculta.
+
+            }
+            else //Si la opción es la 1 entonces se mostrara los siguientes componentes.
+            {
+                panelSPS.Visible = true; //El panel SPS se muestra.
+                panelPS.Visible = false; //El panel PSP se oculta.
+                btnMostrarSPS.Visible = true; //Botón mostrar de los SPS se muestra.
+                btnMostrarPS.Visible = false; //El botón de los PS se oculta.
+                btnGuardarSPS.Visible = true; //El botón guardar SPS se muestra.
+
+            }
+
+            if (comboSistema.SelectedIndex != 2) //Si es diferente a la opción 2 (PS).
+            {
+                panelPS.Visible = false; //El panel PS se oculta.
+                btnMostrarPS.Visible = false; //El botón Mostra de los PS se oculta.
+                dataGridView2.DataSource = null; //Limpia el DGV de los SPS.
+                btnGuardarPS.Visible = false; //El botón Guardar de PS se oculta.
 
             }
             else
             {
-                panelPS.Visible = true;
-                panelSPS.Visible = false;
-                MostrarPS.Visible = true;
-                btnMostar.Visible = false;
-                btnGuardarSPS.Visible = true;
-
-            }
-
-            if (comboSistema.SelectedIndex != 2)
-            {
-                panelSPS.Visible = false;
-                btnMostar.Visible = false;
-                dataGridView2.DataSource = null;
-                buttonGuardar.Visible = false;
-
-            }
-            else
-            {
-                panelSPS.Visible = true;
-                panelPS.Visible = false;
-                btnMostar.Visible = true;
-                MostrarPS.Visible = false;
-                buttonGuardar.Visible = true;
+                panelPS.Visible = true; //El panel PS se muestra.
+                panelSPS.Visible = false; //El panel SPS se oculta.
+                btnMostrarPS.Visible = true; //El botón Mostrar de SP se muestra.
+                btnMostrarSPS.Visible = false; //El botón Mostrar SPS se oculta
+                btnGuardarPS.Visible = true; //El botón Guardar PS se muestra.
 
             }
 
         }
 
-        private void MostrarPS_Click(object sender, EventArgs e)
+        private void btnMostrarSPS_Click(object sender, EventArgs e)
         {
             try
             {
