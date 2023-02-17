@@ -62,7 +62,6 @@ namespace Sistema_de_sanciones
 
             dsTabla = objp.Seleccionar_Datos_User(); //La tabla se recarga con el procedimiento almacenado Seleccionar_Datos_User.
 
-            //int p = panel3.Width;
             int p = tabControl1.Width;
 
             dataGridView1.DataSource = dsTabla;
@@ -101,7 +100,6 @@ namespace Sistema_de_sanciones
             Ver.FlatStyle = FlatStyle.Flat;
             Ver.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(Ver);
-            //this.dataGridView1.Columns["Ver"].Frozen = true;
 
             DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
             btnclm.HeaderText = "Eliminar";
@@ -109,7 +107,6 @@ namespace Sistema_de_sanciones
             btnclm.Width = 90;
             btnclm.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(btnclm);
-            //this.dataGridView1.Columns["btnclm"].Frozen = true;
 
             DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
             editar.HeaderText = "Editar";
@@ -117,37 +114,14 @@ namespace Sistema_de_sanciones
             editar.Width = 90;
             editar.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(editar);
-            //this.dataGridView1.Columns["Editar"].Frozen = true;
         }
 
-        //
         private void Listar_Usuarios_Load(object sender, EventArgs e)
         {
             //Se genera 3 nuevas columas con botones.
-            DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
-            Ver.HeaderText = "Ver";
-            Ver.Name = "Ver";
-            Ver.Width = 90;
-            Ver.FlatStyle = FlatStyle.Flat;
-            dataGridView1.Columns.Add(Ver);
-
-            DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
-            btnclm.HeaderText = "Eliminar";
-            btnclm.Name = "Eliminar";
-            btnclm.Width = 90;
-            btnclm.FlatStyle = FlatStyle.Flat;
-            dataGridView1.Columns.Add(btnclm);
-
-            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
-            editar.HeaderText = "Editar";
-            editar.Name = "Editar";
-            editar.Width = 90;
-            editar.FlatStyle = FlatStyle.Flat;
-            dataGridView1.Columns.Add(editar);
-
+            CargarBotones();                                                                                                             
         }
         
-        //
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar") //Si la celda contiene el nombre Eliminar procedera a entrar en la condición.
@@ -187,8 +161,6 @@ namespace Sistema_de_sanciones
                     comboEstatus.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
 
                     tabControl1.SelectedTab = EditarUsuarios;
-     
-
                 }
             }
 
@@ -268,7 +240,7 @@ namespace Sistema_de_sanciones
         }
 
 
-        //Seccion Modificar Usuario
+        //SECCIÓN MODIFICAR USUARIO.
 
         private void txtNombres_Enter(object sender, EventArgs e)
         {
@@ -397,8 +369,8 @@ namespace Sistema_de_sanciones
                 textCorreo.ForeColor = Color.Gray;
             }
 
-            string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
-            bool isEmailValid = Regex.IsMatch(textCorreo.Texts, emailPattern);
+            string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"; //Regex para la validación del correo electronico.
+            bool isEmailValid = Regex.IsMatch(textCorreo.Texts, emailPattern); //Valida si el regex cumpla con los caracteres del correo insertado.
 
             if (!isEmailValid)
             {
@@ -549,56 +521,36 @@ namespace Sistema_de_sanciones
         private void buttonGuardar_Mod_Click(object sender, EventArgs e)
         {
 
-            string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
-            bool isEmailValid = Regex.IsMatch(textCorreo.Texts, emailPattern);
-
+            string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"; //Regex para la validación del correo electronico.
+            bool isEmailValid = Regex.IsMatch(textCorreo.Texts, emailPattern); //Valida si el regex cumpla con los caracteres del correo insertado.
+            //Valida si algun campo no ha sido ingresado.
             if (!isEmailValid || txtNombres.Texts == "Nombres *" || textPApellido.Texts == "Primer Apellido *" ||
                             textCargo.Texts == "Cargo *" || textCorreo.Texts == "Correo eléctronico *" ||
                             textTelefono.Texts == "Número de télefono *" || textUser.Texts == "Nombre de Usuario *" || comboProveedor.Text == "Proveedor")
             {
                 MessageBox.Show("Hay datos que aun no se han proporcionado");
             }
-            else
+            else //Si los datos requeridos han sido insertados procesedara a guardar los datos.
             {
-                modeloListaProveedores user = (modeloListaProveedores)comboProveedor.SelectedItem;
-                int us = Convert.ToInt32(user.id);
-
+                modeloListaProveedores user = (modeloListaProveedores)comboProveedor.SelectedItem; //Se manda a llmaar la lista de os proveedores.
+                int us = Convert.ToInt32(user.id); //Se selecciona el identificador.
+                //Se Guarda la modificación de los datos corregidos.
                 objp.EditarUsuario(Convert.ToInt32(id), txtNombres.Texts, textPApellido.Texts, textSApellido.Texts, textCargo.Texts, textCorreo.Texts, 
                     textTelefono.Texts, textExtension.Texts, textUser.Texts, us, comboEstatus.SelectedItem.ToString());
                 MessageBox.Show("Registro Insertado");
-                tabControl1.SelectedTab = ListaUsuario;
+                tabControl1.SelectedTab = ListaUsuario; //Al guardar la modificacón  automaticamente mandara a la pestaña de Listar Usuarios.
 
                 this.Controls.Clear();
                 this.InitializeComponent();
-                CargarDG();
+                CargarDG(); //Carga el DataGridView
 
-
-                DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
-                Ver.HeaderText = "Ver";
-                Ver.Name = "Ver";
-                Ver.Width = 90;
-                Ver.FlatStyle = FlatStyle.Flat;
-                dataGridView1.Columns.Add(Ver);
-
-                DataGridViewButtonColumn btnclm = new DataGridViewButtonColumn();
-                btnclm.HeaderText = "Eliminar";
-                btnclm.Name = "Eliminar";
-                btnclm.Width = 90;
-                btnclm.FlatStyle = FlatStyle.Flat;
-                dataGridView1.Columns.Add(btnclm);
-
-                DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
-                editar.HeaderText = "Editar";
-                editar.Name = "Editar";
-                editar.Width = 90;
-                editar.FlatStyle = FlatStyle.Flat;
-                dataGridView1.Columns.Add(editar);
+                CargarBotones(); //Se vuelven a generar los botónes.
             }
 
 
         }
 
-        //Sección Ver Usuario
+        //SECCIÓN FUNCIONAMIENTO DEL PAGINADOR.
         private void buttonCancelar_Ver_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = ListaUsuario;
