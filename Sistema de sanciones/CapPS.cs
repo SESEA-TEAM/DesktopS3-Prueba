@@ -84,23 +84,23 @@ namespace Sistema_de_sanciones
         //funcion para cargar la lista de usuarios al combobox
         private void llenarCombos()
         {
-            //
+            //asigna la lista de monedas a el combobox 1
             comboBox1.DataSource = new controladorMoneda().obtenerListaMonedasPS();
             comboBox1.ValueMember = "valor";
 
-            //5doc 6san
+            //asigna la lista de documentos a el combobox 8
             comboBox8.DataSource = lDocumentos;
             comboBox8.ValueMember = "tipoDocumento";
 
-            //
+            //asigna la lista de sanciones a el combobox 2
             comboBox2.DataSource = lSancion;
             comboBox2.ValueMember = "valor";
 
-            //
+            //asigna la lista de entidades a el combobox 3
             comboBox3.DataSource = new controladorEntidadFederativa().obtenerListaPais();
             comboBox3.ValueMember = "name";
 
-            //
+            //asigna la lista de paises a el combobox 7
             comboBox7.DataSource = new controladorPais().obtenerListaPais();
             comboBox7.ValueMember = "name";
 
@@ -108,9 +108,9 @@ namespace Sistema_de_sanciones
         //da formato al datagridview de sanciones
         private void CargarDG()
         {
-
+            //para asignar los tamaños de las columnas se toma como referencia el tamaño de un panel para que la resolucion de la pantalla donde se esta ejecutando no afecte a como se ven las columnas
             int p = panel3.Width;
-
+            //se llama al datagrid y a la columna (estos ya fueron declarados en las propiedades del datagrid), despues con la propiedad de width (ancho) se le asigna un porcentaje del tamaño del panel de referencia
             dataGridView1.Columns[1].Width = (Convert.ToInt32(p * 0.46));
             dataGridView1.Columns[2].Width = (Convert.ToInt32(p * 0.45));
 
@@ -127,7 +127,7 @@ namespace Sistema_de_sanciones
         {
 
         }
-
+        //boton para agregar documentos
         private void button1_Click(object sender, EventArgs e)
         {
             //Este regex solo se activara si se coloca una url en el apartado de los documentos, por lo que si se deja vacio, no
@@ -135,6 +135,7 @@ namespace Sistema_de_sanciones
             Regex URLS = new Regex(@"^https?:\/\/[\w\-]+(\.[\w\-]+)+[#?]?.*$");
 
             Match match = URLS.Match(textBox44.Texts);
+            //comprobamos que el documento tenga una fecha
             if (dateTimePicker3.Text == "2000-01-01")
             {
                 f4 = null;
@@ -143,42 +144,51 @@ namespace Sistema_de_sanciones
             {
                 f4 = dateTimePicker3.Text;
             }
+            //comprobamos que se haya seleccionado algun tipo de documento
             if (comboBox8.Text == "Tipo Documento")
             {
                 errorProvider1.SetError(comboBox8, "Se necesita seleccionar un tipo de documento");
             }
             else
             {
+                //comprobamos que se haya introduido algun titulo
                 if (textBox45.Texts == "Título*")
                 {
                     errorProvider1.SetError(textBox45, "Se necesita introducir el título del documento");
                 }
                 else
                 {
+                    //comprobamos que se haya introducido una descripción
                     if (textBox46.Texts == "Descripción*")
                     {
                         errorProvider1.SetError(textBox46, "Se necesita introducir la descripción del documento");
                     }
                     else
                     {
+                        //comprobamos que se haya introducido una url
                         if (textBox44.Texts == "URL*")
                         {
                             errorProvider1.SetError(textBox44, "Se necesita introducir el URL del documento");
                         }
+                        //se comprueba que la url tenga un formato valido
                         else if (!match.Success)
                         {
                             errorProvider1.SetError(textBox44, "Ingrese un URL válido");
                         }
                         else
                         {
+                            //se comprueba que la fecha se haya introducido
                             if (f4 == null)
                             {
                                 errorProvider1.SetError(dateTimePicker3, "Se necesita introducir una fecha válida");
                             }
                             else
                             {
+                                //se delara un tipo de documento y se le asigna el valor seleccionado en el combobox
                                 modeloTipoDocumento dc = (modeloTipoDocumento)comboBox8.SelectedItem;
+                                //se agregan los valores del documento al datagrid 2
                                 dataGridView2.Rows.Add(Convert.ToString(dc.Id), textBox45.Texts, comboBox8.Text, textBox46.Texts, textBox44.Texts, dateTimePicker3.Text);
+                                //se resetean los campos
                                 textBox45.Texts = "Título*";
                                 textBox46.Texts = "Descripción*";
                                 textBox44.Texts = "URL*";
@@ -191,64 +201,80 @@ namespace Sistema_de_sanciones
             }
         }
 
+        //acciones al cambiar la seleccion del boton de ningun domicilio
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
+            //altura del panel de domicilio mexicano para usar como referencia
             int p = panel10.Height;
+            //si el redio button de ningun domicilio es desseleccionado
             if (!radioButton3.Checked)
             {
-                
-                //panel8.Location = new Point(0,547);
+                //el panel de documentos se recorre hacia abajo
                 panel8.Top += p;
             }
             else
             {
-                //panel8.Location = new Point(0, 321);
-                //panel8.Location = p1;
+                //al seleccionarse el panel de documentos sube
                 panel8.Top -= p;
             }
         }
-
+        //acciones al cambiar la seleccion del boton de domicilio mexico
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+            //si el raio button de domiclio mexico es desseleccionado
             if (!radioButton1.Checked)
             {
+                //el panel de dpmicilio mexicano deja de ser visible
                 panel10.Visible = false;
             }
             else
             {
+                //de lo contrario el panel de domicilio mexicano es visible y el de domicilio extranjero desaparece
                 panel10.Visible = true;
                 panel9.Visible = false;
             }
         }
-
+        //boton de guardar
         private void button4_Click(object sender, EventArgs e)
         {
+            //se llama la funcion de guardar
             if (guardar())
             {
+                //en caso de completarse el guardado se muestra un mensaje de exito y manda a la ventana de listado
                 MessageBox.Show("Se ha realizado el registro con exito");
                 form2Handler.ListaPS();
             }
         }
-
+        //boton para agregar sanciones
         private void button2_Click(object sender, EventArgs e)
         {
+            //comprueba que se haya seleccionado un tipo de sancion
             if (comboBox2.Text == "Tipo Sanción")
             {
+                //se muestra un error de que es requerido
                 errorProvider1.SetError(comboBox2, "Se necesita seleccionar un tipo de sanción");
             }
             else
             {
+                //si la sancion va sin descripcion
                 if (textBox1.Texts == "Descripción")
                 {
+                    //se declara un modelo de sancion y se le asigna el selecionado en el combobox 2
                     modeloTipoSancion sn = (modeloTipoSancion)comboBox2.SelectedItem;
+                    //se agregan los valores al datagrid
                     dataGridView1.Rows.Add(Convert.ToString(sn.id), comboBox2.Text);
+                    //se resetean los campos
                     textBox1.Texts = "Descripción";
                     comboBox2.SelectedItem = lSancion[0];
                 }
+                //si la sancion va con descripcion
                 else
                 {
+                    //se declara un modelo de sancion y se le asigna el selecionado en el combobox 2
                     modeloTipoSancion sn = (modeloTipoSancion)comboBox2.SelectedItem;
+                    //se agregan los valores al datagrid
                     dataGridView1.Rows.Add(Convert.ToString(sn.id), comboBox2.Text, textBox1.Texts);
+                    //se resetean los campos
                     textBox1.Texts = "Descripción";
                     comboBox2.SelectedItem = lSancion[0];
                 }
@@ -258,6 +284,7 @@ namespace Sistema_de_sanciones
 
         private void CapPS_Load(object sender, EventArgs e)
         {
+            //se agregan los botones de quitar a los datagrid
             int p = panel3.Width;
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "quitar";
@@ -282,6 +309,7 @@ namespace Sistema_de_sanciones
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+            //se le inserta el icono de basura al la ccelda 
             if (e.ColumnIndex == 3)
             {
                 Image someImage = Properties.Resources.basura;
@@ -299,6 +327,7 @@ namespace Sistema_de_sanciones
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //accion de cuando la celda es seleccinada
             if (dataGridView1.Columns[e.ColumnIndex].Name == "quitar")
             {
                 if (dataGridView1.SelectedRows.Count > 0)
@@ -311,6 +340,7 @@ namespace Sistema_de_sanciones
 
         private void dataGridView2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+            //se le inserta el icono de basura a la celda
             if (e.ColumnIndex == 6)
             {
                 Image someImage = Properties.Resources.basura;
@@ -328,6 +358,7 @@ namespace Sistema_de_sanciones
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //accion de cuando la celda es seleccionada
             if (dataGridView2.Columns[e.ColumnIndex].Name == "quitar")
             {
                 if (dataGridView2.SelectedRows.Count > 0)
@@ -355,7 +386,7 @@ namespace Sistema_de_sanciones
 
         private void comboBox3_SelectedValueChanged(object sender, EventArgs e)
         {
-
+            //al seleccionar la entidad federativa se toma su valor y se usa para llamar a la lista de municipios que se relacionan con esta
             modeloEntidadFederativa ef = (modeloEntidadFederativa)comboBox3.SelectedItem;
             comboBox4.DataSource = new controladorMunicipio().obtenerListaMunicipio(ef.id);
             comboBox4.ValueMember = "name";
@@ -364,6 +395,7 @@ namespace Sistema_de_sanciones
 
         private void comboBox4_SelectedValueChanged(object sender, EventArgs e)
         {
+            //al seleccionar el municipio se toma su valor y se usa para llamar a la lista de localidades que se relacionan con este
             modeloMunicipio mp = (modeloMunicipio)comboBox4.SelectedItem;
             comboBox5.DataSource = new controladorLocalidad().obtenerListaLocalidad(mp.id);
             comboBox5.ValueMember = "name";
@@ -376,11 +408,19 @@ namespace Sistema_de_sanciones
 
         private void comboBox5_SelectedValueChanged(object sender, EventArgs e)
         {
+            //se toma el valor de la localidad
             modeloLocalidad lc = (modeloLocalidad)comboBox5.SelectedItem;
-            comboBox6.DataSource = new controladorVialidad().obtenerListaVialidad(lc.id);
+            //se llama a la lista de vialidades
+            comboBox6.DataSource = new controladorVialidad().obtenerListaVialidad(0);
             comboBox6.ValueMember = "name";
         }
 
+        /*
+         * Estas funciones proveen la utilidad de que al seleccionar un campo se borre su texto y al dejarlo vacio regrese a su valor por defecto
+         * Se conforma de 2 funciones diferentes para cada textbox, una de enter y una de leave
+         * Enter: tiene una condicion de que si tiene el valor por defecto se vacia 
+         * Leave: si esta vacio vuelve a su valor por defecto, si es un campo obligatorio manda un mensaje de error de que el campo es obligatorio y hay un else para quitar el mensaje de error
+         */
         private void textBox20_Enter(object sender, EventArgs e)
         {
             if (textBox20.Texts == "Expediente*")
@@ -1504,16 +1544,18 @@ namespace Sistema_de_sanciones
                 textBox43.ForeColor = Color.Gray;
             }
         }
-
+        //acciones al cambiar la seleccion del boton de domicilio extranjero
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-
+            //si el radio button de domicilio extranjero es desselccionado
             if (!radioButton2.Checked)
             {
+                //el panel de domicilio extranjero deja de ser visible
                 panel9.Visible = false;
             }
             else
             {
+                //de lo contrario el panel de extranjero es visible y el de mexico deja de ser visible
                 panel9.Visible = true;
                 panel10.Visible = false;
             }
@@ -1673,15 +1715,19 @@ namespace Sistema_de_sanciones
             ParticularS.textBoxEvent.textKeyPress(e);
         }
 
+        //Cancelar registro
         private void button3_Click(object sender, EventArgs e)
         {
+            //se muestra una pestaña emergente para confirmar la accion
             DialogResult resut = MessageBox.Show("¿Desea cancelar esta operación? Si cancela se perderán todos los datos que ha ingresado", "Cancelar registro", MessageBoxButtons.YesNo);
+            //en caso de que se seleccione si se mandara a la ventana de listado
             if (resut == DialogResult.Yes)
             {
 
                 form2Handler.ListaPS();
 
             }
+            //en caso de que se seleccione no permanecera en la misma ventana
             else if (resut == DialogResult.No)
             {
             }
@@ -1714,22 +1760,30 @@ namespace Sistema_de_sanciones
             Match matchM = apellidoM.Match(textBox2.Texts);
             Regex CURP = new Regex(@"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$");
             Match matchC = CURP.Match(textBox28.Texts);
+            //variable de ayuda para el reultado
             bool valor = true;
+            //condicion de que todos los campos obligatorios estan llenos
             if (textBox17.Texts == "Causa, motivo o hechos*" || textBox18.Texts == "RFC*" || textBox20.Texts == "Expediente*" || textBox12.Texts == "Tipo falta*" || textBox7.Texts == "Nombre(s)*" || textBox5.Texts == "Autoridad sancionadora*" || textBox4.Texts == "Nombre(s)*" || textBox3.Texts == "Primer apellido*" || comboBox9.Text == "Tipo persona*" || textBox19.Texts == "Nombre(s)/Razón Social*")
             {
+                //mensaje para informar que falta llenar campos necesarios
                 MessageBox.Show("Debe completar los campos obligatorios para poder hacer el registro");
 
                 valor = false;
             }
             else
             {
+                //se comprueba que haya al menos una sancion
                 if (dataGridView1.Rows.Count <= 0)
                 {
+                    //si no hay sanciones se pide que se agregue al menos una
                     MessageBox.Show("Necesita asignar al menos una sanción al registro");
                     valor = false;
                 }
                 else
                 {
+                    /*
+                     * Los condicionales con match son para saber que los datos de los textbox cumplan con los estandares requeridos
+                     */
                     if (matchRFC.Success)
                     {
                         errorProvider1.SetError(textBox18, String.Empty);
@@ -1758,7 +1812,9 @@ namespace Sistema_de_sanciones
                         valor = false;
                     }
 
-
+                    /*
+                     * se toman los valores de las fechas si es que estas han cambiado del valor por default
+                     */
                     if (dateTimePicker4.Text == "2000-01-01")
                     {
                         f1 = null;
@@ -1783,23 +1839,23 @@ namespace Sistema_de_sanciones
                     {
                         f3 = dateTimePicker2.Text;
                     }
-
-                    //modeloListaGenero gn = (modeloListaGenero)comboBox2.SelectedItem;
-                    //modeloTipoFalta fl = (modeloTipoFalta)comboBox3.SelectedItem;
-
+                    //se toma el item de moneda del comboox 1
                     modeloMoneda mn = (modeloMoneda)comboBox1.SelectedItem;
-                    //modeloTipoSancion sn = (modeloTipoSancion)comboBox3.SelectedItem;
+                    //se declara un particular sancionado para asignarle los valores
                     modeloPS modPS = new modeloPS();
+                    //si se seleccionó un domicilio mexicano
                     if (radioButton1.Checked)
                     {
+                        //se toman los valores de los combobox de domicilio mexicano
                         modeloEntidadFederativa ef = (modeloEntidadFederativa)comboBox3.SelectedItem;
                         modeloMunicipio mp = (modeloMunicipio)comboBox4.SelectedItem;
                         modeloLocalidad lc = (modeloLocalidad)comboBox5.SelectedItem;
                         modeloVialidad v = (modeloVialidad)comboBox6.SelectedItem;
 
-                        //cambiar por el id de mexico en la tabla final de paisas
-                        modPS.paisMX = 3;
+                        //se asigna siempre el pais mexico
+                        modPS.paisMX = 153;
 
+                        //si no se seleccionó alguno de los campos de comicilio no se agrega el atributo
                         if (ef.id == 0)
                         {
 
@@ -1832,6 +1888,7 @@ namespace Sistema_de_sanciones
                         {
                             modPS.vialidad = Convert.ToInt32(v.id);
                         }
+                        //se comprueba que se haya ingresado el codio postal y se comprueba que su estructura sea valida
                         if (textBox34.Texts == "Código postal")
                         {
 
@@ -1850,6 +1907,8 @@ namespace Sistema_de_sanciones
                             }
 
                         }
+
+                        //en caso de haberlos puesto agrga los campos de numeros interior y exterior al particular
                         if (textBox33.Texts == "Número exterior")
                         {
 
@@ -1867,9 +1926,12 @@ namespace Sistema_de_sanciones
                             modPS.numeroInteriorMX = textBox36.Texts;
                         }
                     }
+                    //si se selecciona domicilio extranjero
                     if (radioButton2.Checked)
                     {
+                        //se toma el valor de pais del combobox
                         modeloPais ps = (modeloPais)comboBox7.SelectedItem;
+                        //si se selecciona un pais se asigna el valor
                         if (ps.id == 0)
                         {
 
@@ -1878,6 +1940,7 @@ namespace Sistema_de_sanciones
                         {
                             modPS.paisEX = Convert.ToInt32(ps.id);
                         }
+                        //se asignan los atributos al particular que si se hayan llenado
                         if (textBox37.Texts == "Código Postal")
                         {
 
@@ -1928,6 +1991,11 @@ namespace Sistema_de_sanciones
                         }
 
                     }
+                    /*
+                     * se asignan los atributos a los que si se les han ingresado valores
+                     * se comprueba si el campo tiene el valor default, de no ser asi se asigna el valor al particular
+                     * en caso de que el atributo tenga algun tipo de formato requerido se comprueba que este sea correcto
+                     */
                     if (mn.Id == 0)
                     {
 
@@ -2182,6 +2250,7 @@ namespace Sistema_de_sanciones
 
                     }
 
+                    //los campos que son obligatorios se asignan sin condicional, ya que se comprobo que estos tuvieran informacion en un inicio
                     modPS.causaMotivoHechos = textBox17.Texts;
                     modPS.tipoFalta = textBox12.Texts;
                     modPS.nombreInstitucionDependencia = textBox7.Texts;
@@ -2193,19 +2262,24 @@ namespace Sistema_de_sanciones
                     modPS.expediente = textBox20.Texts;
                     modPS.rfcPS = textBox18.Texts;
 
+                    //con las fechas ya se comprobo si tienen o no un valor, de no tener se quedan con valor null, asi que estas variables se asignan siempre a lo atributos
                     modPS.fechaResolucion = f1;
                     modPS.fechaInicialInhabilitacion = f2;
                     modPS.fechaFinalInhabilitacion = f3;
 
+                    //si la variable de valor no ha cambado de valor, significa que todos los atributos necesarios estan llenos y con formato correcto 
                     if (valor == true)
                     {
+                        //se guarda el particular
                         conPS.guardarPS(modPS);
 
+                        //se guardan las sanciones
                         foreach (DataGridViewRow fila in dataGridView1.Rows)
                         {
                             conPS.guardarSancionPS(Convert.ToInt16(fila.Cells["ID"].Value), Convert.ToString(fila.Cells["Descripcion"].Value));
                         }
 
+                        //se guardan los documentos
                         foreach (DataGridViewRow fila2 in dataGridView2.Rows)
                         {
                             conPS.guardarDocumentoPS(Convert.ToInt16(fila2.Cells["idxd"].Value), Convert.ToString(fila2.Cells["Titulo"].Value), Convert.ToString(fila2.Cells["descripcionxd"].Value), Convert.ToString(fila2.Cells["URL"].Value), Convert.ToString(fila2.Cells["Fecha"].Value));
@@ -2213,6 +2287,7 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
+                        //mensaje de error cuando los atributos necesarios no estan llenos o con formato correcto
                         MessageBox.Show("Debe completar los campos obligatorios para poder hacer el registro");
                     }
                 }
