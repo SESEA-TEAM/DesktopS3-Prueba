@@ -22,14 +22,20 @@ namespace Sistema_de_sanciones
         controlador1PS consPS = new controlador1PS();
         int idPS;
 
-
+        //Creamos un handler del form2 que es nuestro menu principal para posteriormente asignarle una instancia de este y poder acceder a sus funciones.
         private Form2 form2Handler;
+
+        //Definimos que para llamar a este form se debe de mandar una instancia del form2 que es el menu principal, desde donde este sera llamado. A diferencia
+        //que con las capturas o los listados, aqui utilizaremos un segundo parametro, el cual es el ID de la sancion que vayamos a consultar, y para ello
+        //colocaremos que el id sea el valor idPS de la sancion que buscamos.
         public Datos_PS(Form2 form2, int id)
         {
             idPS = id;
             InitializeComponent();
 
             cargarDatos();
+
+            //Asignamos la instancia que llega al mandar a llamar este form a nuestro handler para poder usarlo correctamente en el resto de la ejecucion de este form.
             form2Handler = form2;
             cargarDGV();
 
@@ -604,6 +610,7 @@ namespace Sistema_de_sanciones
 
         }
 
+        //El boton para salir, el cual cerrara nuestra ventana para volver a cargar nuestra ventana de listados.
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();

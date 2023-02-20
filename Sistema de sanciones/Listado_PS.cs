@@ -33,7 +33,10 @@ namespace Sistema_de_sanciones
         String? TP = null;
         List<modeloTipoSancion> lSancion = new controladorTipoSancion().obtenerListaSancionesPS();
 
+        //Creamos un handler del form2 que es nuestro menu principal para posteriormente asignarle una instancia de este y poder acceder a sus funciones.
         private Form2 form2Handler;
+
+        //Definimos que para llamar a este form se debe de mandar una instancia del form2 que es el menu principal, desde donde este sera llamado.
         public Listado_PS(Form2 form2)
         {
             //En este apartado cargamos todos los componentes, asignamos el valor por defecto a los dateTimePicker, desabilitamos
@@ -55,6 +58,7 @@ namespace Sistema_de_sanciones
             IniciarDB();
             //dataGridView1.Height = Convert.ToInt32(panel3.Height*0.458);
             
+            //Asignamos la instancia que llega al mandar a llamar este form a nuestro handler para poder usarlo correctamente en el resto de la ejecucion de este form.
             form2Handler = form2;
         }
 
