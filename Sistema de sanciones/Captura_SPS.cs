@@ -1169,6 +1169,9 @@ namespace Sistema_de_sanciones
             
         }
 
+        //La siguiente serie de comando son los keyPress, los cuales se los asignamos a los textBox para limitar los caracteres que este puede poner, por ejemplo,
+        //todos los que se encuentran a continuacion solo permiten las teclas alfabeticas, por lo que no podremos colocar simbolos y numeros en dichos campos.
+        //Por supuesto, existe otra version unicamente para los caracteres numericos.
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             ServidorP.textBoxEvent.textKeyPress(e);
@@ -1209,6 +1212,7 @@ namespace Sistema_de_sanciones
             ServidorP.textBoxEvent.textKeyPress(e);
         }
 
+        //El siguiente evento es el keypress exclusivo para solo colocar numeros en los campos.
         private void textBox21_KeyPress(object sender, KeyPressEventArgs e)
         {
             ServidorP.textBoxEvent.validarNumeros(e);
