@@ -18,28 +18,36 @@ namespace Sistema_de_sanciones
     
     public partial class Captura_SPS : Form
     {
+        //declaramos una instancia del controlador de servidores sancionados para poder acceder a sus funciones facilmente
         controlador1SPS conSPS = new controlador1SPS();
+        //variables para ayudar a guardar las fechas
         String? f1, f2, f3, f4;
+        //declaramos una instancia del modelo de servidores sancionados para facilitar el uso del objeto
         private ServidorPublico ServidorP = new ServidorPublico();
+        //creamos un handler de el form 2 que es nuestro menu principal para posteriormente asignarle una instancia de este y poder acceder a sus funciones
         private Form2 form2Handler;
+
+        //declaramos listas que usaremos en el formulario con ayuda de sus controladores respectivos
         List<modeloTipoDocumento> lDocumentos = new controladorTipoDocumento().obtenerListaDocumentos();
         List<modeloTipoSancion> lSancion = new controladorTipoSancion().obtenerListaSanciones();
+
+        //definimos que para llamar a este form se debe de mandar una instancia del form 2 que es el menu principal, desde donde este será llamado
         public Captura_SPS(Form2 form2)
         {
+            //llamamos a funciones que ayudan a que el formulario funcione correctamente
             InitializeComponent();
             llenarCombos();
             CargarDG();
+
+            //asignamos una hora por defecto a los datetimepickers
             dateTimePicker1.Value = new DateTime(2000, 01, 01);
             dateTimePicker2.Value = new DateTime(2000, 01, 01);
             dateTimePicker3.Value = new DateTime(2000, 01, 01);
             dateTimePicker4.Value = new DateTime(2000, 01, 01);
 
+            //asignamos la instancia que llega al mandar a llamar este form a nuestro handler para poder usarlo correctamente en el resto de la ejecucion de este form
             form2Handler = form2;
-            //modeloSPS modSPS = new modeloSPS();
-            //dataGridView1.Columns.Add("ID", "ID");
-            //dataGridView1.Columns.Add("Tipo","Tipo");
-            //dataGridView1.Columns.Add("Descripción","Descripción");
-
+            
         }
 
         private void textBox29_Load(object sender, EventArgs e)
@@ -70,19 +78,23 @@ namespace Sistema_de_sanciones
         //funcion para cargar la lista de usuarios al combobox
         private void llenarCombos()
         {
+            //asigna la lista de genero al combobox 2
             comboBox2.DataSource = new controladorListaGenero().obtenerListaGenero();
             comboBox2.ValueMember = "valor";
 
+            //asigna la lista de faltas al combobox 3
             comboBox3.DataSource = new controladorTipoFalta().obtenerListaFaltas();
             comboBox3.ValueMember = "valor";
 
+            //asigna la lista de monedas al combobox 4
             comboBox4.DataSource = new controladorMoneda().obtenerListaMonedas();
             comboBox4.ValueMember = "valor";
 
-            //5doc 6san
+            //asigna la lista de documentos al combobox 5
             comboBox5.DataSource = lDocumentos;
             comboBox5.ValueMember = "tipoDocumento";
 
+            //asigna la lista de sanciones al combobox 6
             comboBox6.DataSource = lSancion;
             comboBox6.ValueMember = "valor";
 
@@ -90,9 +102,9 @@ namespace Sistema_de_sanciones
         //da formato al datagridview de sanciones
         private void CargarDG()
         {
-
+            //para asignar los tamaños de las columnas se toma como referencia el tamaño de un panel para que la resolucion de la pantalla donde se esta ejecutando no afecte a como se ven las columnas
             int p = panel3.Width;
-
+            //se llama al datagrid y a la columna (estos ya fueron declarados en las propiedades del datagrid), despues con la propiedad de width (ancho) se le asigna un porcentaje del tamaño del panel de referencia
             dataGridView1.Columns[1].Width = (Convert.ToInt32(p * 0.46));
             dataGridView1.Columns[2].Width = (Convert.ToInt32(p * 0.45));
 
@@ -109,26 +121,36 @@ namespace Sistema_de_sanciones
         {
 
         }
-
+        //boton para agregar sanciones
         private void button1_Click(object sender, EventArgs e)
         {
+            //comprueba que se haya seleccionado un tipo de sancion
             if (comboBox6.Text == "Tipo Sanción")
             {
+                //se muestra un error de que es requerido
                 errorProvider1.SetError(comboBox6, "Se necesita seleccionar un tipo de sanción");
             }  
             else
             {
+                //si la sancion va sin descripcion
                 if(textBox22.Texts == "Descripción")
                 {
+                    //se declara un modelo de sancion y se le asigna el selecionado en el combobox 6
                     modeloTipoSancion sn = (modeloTipoSancion)comboBox6.SelectedItem;
+                    //se agregan los valores al datagrid
                     dataGridView1.Rows.Add(Convert.ToString(sn.id), comboBox6.Text);
+                    //se resetean los campos
                     textBox22.Texts = "Descripción";
                     comboBox6.SelectedItem = lSancion[0];
                 }
+                //si la sancion va con descripcion
                 else
                 {
+                    //se declara un modelo de sancion y se le asigna el selecionado en el combobox 6
                     modeloTipoSancion sn = (modeloTipoSancion)comboBox6.SelectedItem;
+                    //se agregan los valores al datagrid
                     dataGridView1.Rows.Add(Convert.ToString(sn.id), comboBox6.Text, textBox22.Texts);
+                    //se resetean los campos
                     textBox22.Texts = "Descripción";
                     comboBox6.SelectedItem = lSancion[0];
                 }
@@ -136,6 +158,7 @@ namespace Sistema_de_sanciones
             }
         }
 
+        //funcion de guardar particular
         private bool guardar()
         {
             //La siguiente lista de Regex es para todos aquellos campos que sean obligatorios. 
@@ -151,22 +174,31 @@ namespace Sistema_de_sanciones
             Match matchU = URLS.Match(textBox10.Texts);
             Regex apellidoM = new Regex(@"^[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑñ]{3,100}$");
             Match matchM = apellidoM.Match(textBox3.Texts);
-
+            
+            //variable de ayuda para el resultado
             bool valor = true;
+            
+            //Se comprueba que los campos obligatorios tengan algun valor asignado
             if (textBox1.Texts == "Nombre(s)*" || textBox2.Texts == "Primer apellido*" || textBox4.Texts == "RFC*" || textBox5.Texts == "CURP*" || textBox7.Texts == "Expediente*" || textBox25.Texts == "Puesto nombre*" || textBox15.Texts == "Nombre*" || textBox16.Texts == "Autoridad sancionadora*" || textBox9.Texts == "Causa, motivo o hechos*" || comboBox3.Text == "Tipo falta")
             {
+                //mensaje de que se necesitan terminar de llenar los campos obligatorios
                 MessageBox.Show("Debe completar los campos obligatorios para poder hacer el registro");
                 valor = false;
             }
             else
             {
+                //se comprueba que hay al menos una sancion
                 if (dataGridView1.Rows.Count <= 0)
                 {
+                    //mensaje de error de sanciones
                     MessageBox.Show("Necesita asignar al menos una sanción al registro");
                     valor = false;
                 }
                 else
                 {
+                    /*
+                     * Los condicionales con match son para saber que los datos de los textbox cumplan con los estandares requeridos
+                     */
                     if (matchN.Success)
                     {
                         errorProvider1.SetError(textBox1, String.Empty);
@@ -203,7 +235,9 @@ namespace Sistema_de_sanciones
                         errorProvider1.SetError(textBox5, "Se necesita un CURP válido");
                         valor = false;
                     }
-
+                    /*
+                     * se toman los valores de las fechas si es que estas han cambiado del valor por default
+                     */
                     if (dateTimePicker1.Text == "2000-01-01")
                     {
                         f1 = null;
@@ -229,12 +263,19 @@ namespace Sistema_de_sanciones
                         f3 = dateTimePicker3.Text;
                     }
 
+                    //se toman los items de los combobox correspondientes
                     modeloListaGenero gn = (modeloListaGenero)comboBox2.SelectedItem;
                     modeloTipoFalta fl = (modeloTipoFalta)comboBox3.SelectedItem;
                     modeloMoneda mn = (modeloMoneda)comboBox4.SelectedItem;
 
-
+                    //se declara un servidor publico para asignarle los valores
                     modeloSPS modSPS = new modeloSPS();
+
+                    /*
+                     * se asignan los atributos a los que si se les han ingresado valores
+                     * se comprueba si el campo tiene el valor default, de no ser asi se asigna el valor al particular
+                     * en caso de que el atributo tenga algun tipo de formato requerido se comprueba que este sea correcto
+                     */
                     if (gn.Id == 0)
                     {
 
@@ -341,7 +382,8 @@ namespace Sistema_de_sanciones
                     {
                         modSPS.montoMulta = Convert.ToInt32(textBox21.Texts);
                     }
-                    
+
+                    //los campos que son obligatorios se asignan sin condicional, ya que se comprobo que estos tuvieran informacion en un inicio
                     modSPS.nombreSPS = textBox1.Texts;
                     modSPS.primerApellidoSPS = textBox2.Texts;
                     modSPS.rfcSPS = textBox4.Texts;
@@ -352,19 +394,25 @@ namespace Sistema_de_sanciones
                     modSPS.autoridadSancionadora = textBox16.Texts;
                     modSPS.causaMotivoHechos = textBox9.Texts;
                     modSPS.tipoFalta = fl.Id;
+
+                    //con las fechas ya se comprobo si tienen o no un valor, de no tener se quedan con valor null, asi que estas variables se asignan siempre a lo atributos
                     modSPS.fechaResolucion = f2;
                     modSPS.fechaInicialInhabilitacion = f1;
                     modSPS.fechaFinalInhabilitacion = f3;
 
-                    if(valor == true)
+                    //si la variable de valor no ha cambado de valor, significa que todos los atributos necesarios estan llenos y con formato correcto 
+                    if (valor == true)
                     {
+                        //se guarda el particular
                         conSPS.guardarSPS(modSPS);
 
+                        //se guardan las sanciones
                         foreach (DataGridViewRow fila in dataGridView1.Rows)
                         {
                             conSPS.guardarSancionSPS(Convert.ToInt16(fila.Cells["ID"].Value), Convert.ToString(fila.Cells["Descripcion"].Value));
                         }
 
+                        //se guardan los documentos
                         foreach (DataGridViewRow fila2 in dataGridView2.Rows)
                         {
                             conSPS.guardarDocumentoSPS(Convert.ToInt16(fila2.Cells["idxd"].Value), Convert.ToString(fila2.Cells["Titulo"].Value), Convert.ToString(fila2.Cells["descripcionxd"].Value), Convert.ToString(fila2.Cells["URL"].Value), Convert.ToString(fila2.Cells["Fecha"].Value));
@@ -372,6 +420,7 @@ namespace Sistema_de_sanciones
                     }
                     else
                     {
+                        //mensaje de error cuando los atributos necesarios no estan llenos o con formato correcto
                         MessageBox.Show("Debe completar los campos obligatorios para poder hacer el registro");
                     }
                 }
@@ -379,15 +428,19 @@ namespace Sistema_de_sanciones
             return valor;
         }
 
+        //boton de guardar
         private void button4_Click(object sender, EventArgs e)
         {
+            //si la funcion de guardar devuelve un valor verdadero
             if (guardar())
             {
+                //se manda un aviso de que la operacion se realizo con exito y manda a la ventana de listado
                 MessageBox.Show("Se ha realizado el registro con exito");
                 form2Handler.ListaSPS();
             }
         }
 
+        //agregar documentos
         private void button2_Click(object sender, EventArgs e)
         {
             //Este regex solo se activara si se coloca una url en el apartado de los documentos, por lo que si se deja vacio, no
@@ -395,6 +448,7 @@ namespace Sistema_de_sanciones
             Regex URLS = new Regex(@"^https?:\/\/[\w\-]+(\.[\w\-]+)+[#?]?.*$");
 
             Match match = URLS.Match(textBox20.Texts);
+            //pasa la fecha ingresada a la variable f4
             if (dateTimePicker4.Text == "2000-01-01")
             {
                 f4 = null;
@@ -403,42 +457,51 @@ namespace Sistema_de_sanciones
             {
                 f4 = dateTimePicker4.Text;
             }
+            //comprueba que se haya introducido un tipo de documento
             if (comboBox5.Text == "Tipo Documento")
             {
                 errorProvider1.SetError(comboBox5, "Se necesita seleccionar un tipo de documento");
             }
             else
             {
+                //comprueba que se haya introducido un titulo del documento
                 if(textBox23.Texts == "Título*")
                 {
                     errorProvider1.SetError(textBox23, "Se necesita introducir el título del documento");
                 }
                 else
                 {
+                    //comprueba que se haya introducido una descripcion del documento
                     if(textBox29.Texts == "Descripción*")
                     {
                         errorProvider1.SetError(textBox29, "Se necesita introducir la descripción del documento");
                     }
                     else
                     {
+                        //comprueba que se haya introducido una url del documento
                         if (textBox20.Texts == "URL*")
                         {
                             errorProvider1.SetError(textBox20, "Se necesita introducir el URL del documento");
                         }
+                        //comprueba que la url introducida tenga un formato valido
                         else if (!match.Success)
                         {
                             errorProvider1.SetError(textBox20, "Ingrese un URL válido");
                         }
                         else
                         {
+                            //comprueba que la fecha introducida del documento sea valida
                             if (f4 == null)
                             {
                                 errorProvider1.SetError(dateTimePicker4, "Se necesita introducir una fecha válida");
                             }
                             else
                             {
+                                //se guarda el tipo de documento en un modelo
                                 modeloTipoDocumento dc = (modeloTipoDocumento)comboBox5.SelectedItem;
+                                //se agregan los valores del documento a la tabla
                                 dataGridView2.Rows.Add(Convert.ToString(dc.Id), textBox23.Texts, comboBox5.Text, textBox29.Texts, textBox20.Texts, dateTimePicker4.Text);
+                                //se resetean los campos
                                 textBox23.Texts = "Título*";
                                 textBox29.Texts = "Descripción*";
                                 textBox20.Texts = "URL*";
@@ -454,6 +517,8 @@ namespace Sistema_de_sanciones
 
         private void Captura_SPS_Load(object sender, EventArgs e)
         {
+            //al cargar el form se agregan 2 columnas con combre a los datagrid que serviran como botones
+            
             int p = panel3.Width;
             DataGridViewButtonColumn Ver = new DataGridViewButtonColumn();
             Ver.HeaderText = "quitar";
@@ -478,6 +543,7 @@ namespace Sistema_de_sanciones
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+            //pintamos la celda con el icono de basura
             if (e.ColumnIndex == 3)
             {
                 Image someImage = Properties.Resources.basura;
@@ -495,6 +561,7 @@ namespace Sistema_de_sanciones
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //accion de cuando la celda es presionada
             if (dataGridView1.Columns[e.ColumnIndex].Name == "quitar")
             {
                 if (dataGridView1.SelectedRows.Count > 0)
@@ -507,6 +574,7 @@ namespace Sistema_de_sanciones
 
         private void dataGridView2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+            //pintamos la celda con el icono de basura
             if (e.ColumnIndex == 6)
             {
                 Image someImage = Properties.Resources.basura;
@@ -524,6 +592,7 @@ namespace Sistema_de_sanciones
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //accion de cuando la clda es presionada
             if (dataGridView2.Columns[e.ColumnIndex].Name == "quitar")
             {
                 if (dataGridView2.SelectedRows.Count > 0)
@@ -534,6 +603,12 @@ namespace Sistema_de_sanciones
             }
         }
 
+        /*
+         * Estas funciones proveen la utilidad de que al seleccionar un campo se borre su texto y al dejarlo vacio regrese a su valor por defecto
+         * Se conforma de 2 funciones diferentes para cada textbox, una de enter y una de leave
+         * Enter: tiene una condicion de que si tiene el valor por defecto se vacia 
+         * Leave: si esta vacio vuelve a su valor por defecto, si es un campo obligatorio manda un mensaje de error de que el campo es obligatorio y hay un else para quitar el mensaje de error
+         */
         private void textBox1_Enter(object sender, EventArgs e)
         {
             if (textBox1.Texts == "Nombre(s)*")
@@ -1139,15 +1214,19 @@ namespace Sistema_de_sanciones
             ServidorP.textBoxEvent.validarNumeros(e);
         }
 
+        //boton cancelar
         private void button3_Click(object sender, EventArgs e)
         {
+            //ventana emergente para confirmar la accion
             DialogResult resut = MessageBox.Show("¿Desea cancelar esta operación? Si cancela se perderán todos los datos que ha ingresado", "Cancelar registro", MessageBoxButtons.YesNo);
+            //en caso de seleccionar si se mandara al listado de servidores 
             if (resut == DialogResult.Yes)
             {
 
                 form2Handler.ListaSPS();
 
             }
+            //en caso de selecionar no se permanecera en la misma ventana
             else if (resut == DialogResult.No)
             {
             }
