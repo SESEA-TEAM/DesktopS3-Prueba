@@ -107,6 +107,8 @@ namespace Sistema_de_sanciones
             f.Show();
         }
 
+        //Las siguientes lineas de codigo estan destinadas para cargar cada uno de los forms que conforman el programa, por lo que cada que se presione click
+        //sobre uno de los botones, activara el evento asginado a dicho boton.
         private void buttonPublicos_Click(object sender, EventArgs e)
         {
             loadform(new FormListadoSPS(this));
@@ -142,6 +144,10 @@ namespace Sistema_de_sanciones
             loadform(new CapPS(this));
         }
 
+        //El evento para cerrar la seccion, en este caso no se cerrara automaticamente la sesion, pues nos preguntara si queremos salir o no, en el caso de que
+        //la respuesta sea que no, no ocurrira nada, pues solo el mensaje desaparecera y volveremos a la pantalla en la que estuvieramos en ese momento, y en
+        //el caso de que la opcion sea si, procedera a deslogearse ese usuario, para volver a regresarnos a la pantalla de inicio de sesion, por lo que podra
+        //iniciar sesion con otro usuario.
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             DialogResult resut = MessageBox.Show("¿Está seguro de cerrar sesión?", "Warning", MessageBoxButtons.YesNo);
@@ -159,6 +165,8 @@ namespace Sistema_de_sanciones
             }
         }
 
+        //Para el caso de los visualizar, estos cargaran el form en base al id del elemento seleccionado, por ejemplo, desplegar el form que contendran los
+        //datos del registro 23 729, etc...
         public void visualizarSPS(int id)
         {
             loadform(new Datos_SPS(this, id));
@@ -169,6 +177,7 @@ namespace Sistema_de_sanciones
             loadform(new Datos_PS(this, id));
         }
 
+        //Los editar actualmente ya no tienen ninguna finalidad.
         public void editarPS(int id)
         {
             loadform(new modiPS(this, id));
