@@ -26,8 +26,6 @@ namespace Sistema_de_sanciones.Controladores
                 SqlDataAdapter sda = new SqlDataAdapter(comando);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
-
-
             }
             catch (Exception ex)
             {

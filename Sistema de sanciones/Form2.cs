@@ -18,19 +18,30 @@ namespace Sistema_de_sanciones
     public partial class Form2 : Form
      
     {
+        //log es la variable global que usaremos para mandar a llamar el logout
         logout log = new logout();
+        //handler que nos ayudara a poder acceder a las funciones del form login
         private Login logHandler;
+        //variable de tipo de usuario
         int t;
+        //ariable de id de usuario
         int idper;
+        //instancia de conexion que no se usa
         private Conexion ConexionBD = new Conexion();
+        //para mandar a llamar a este form se necesita una instancia del login, el nombre del usuario, su tipo y su id
         public Form2(Login log, string nombre, int tipo, int id)
         {
             InitializeComponent();
             customDesing();
+            //se asigna el nombre al label
             lblMensajeCap.Text = nombre;
+            //se asigna el tipo a la variable global
             t= tipo;
+            //se manda a llamar la funcion que hace la distincion entre los tipos de usuarios
             tipoUser();
+            //asignamos la instancia que llega al mandar a llamar este form a nuestro handler para poder usarlo correctamente en el resto de la ejecucion de este form
             logHandler = log;
+            //asignamos el id a la variable global
             idper= id;
         }
         private void customDesing()
@@ -41,16 +52,17 @@ namespace Sistema_de_sanciones
             panel3.Visible = false;
         }
 
+        //funcion que asigna los elementos disponibles segun el tipo de usuario
         private void tipoUser()
         {
+            //en caso de ser administrador
             if (t== 0)
             {
-                //panelMenu.Enabled = false;
-                //panelMenu.Visible= false;
                 panel1.Visible = true;
                 panel1.Enabled = true;
                 label5.Text = "Administrador";
             }
+            //en caso de ser capturador
             else if (t== 1)
             {
                 panelMenu.Enabled = true;
@@ -61,6 +73,7 @@ namespace Sistema_de_sanciones
             }
         }
 
+        //funcion de submenus, para que se escondan al seleccionarlos o desseleccionarlos
         private void hideSubMenu()
         {
             if (panelMenuUser.Visible == true)
@@ -73,6 +86,7 @@ namespace Sistema_de_sanciones
                 panel2.Visible = false;
         }
 
+        //funcion de submenus, para que se muestren
         private void showSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
@@ -85,10 +99,12 @@ namespace Sistema_de_sanciones
                 subMenu.Visible = false;
             }
         }
+        //al presionar el boton de administrador se despliega su submenu
         private void buttonAdministrador_Click(object sender, EventArgs e)
         {
             showSubMenu(panelMenuUser);
         }
+        //al presionar el boton de captura se despliega su submenu
         private void buttonCaptura_Click(object sender, EventArgs e)
         {
             showSubMenu(panelMenuProv);
@@ -243,6 +259,7 @@ namespace Sistema_de_sanciones
             this.Hide();
         }
 
+        //evento que asegura que al cerrar el form se cierre la aplicacion y se haga un logout al usuario
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
 
