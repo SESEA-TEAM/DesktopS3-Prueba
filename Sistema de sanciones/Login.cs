@@ -18,7 +18,8 @@ namespace Sistema_de_sanciones
     public partial class Login : Form
     {
 
-        Controlador_Login objp = new Controlador_Login();
+        //Controlador_Login objp = new Controlador_Login();
+        //se manda a lamar a la clase de conexion
         private Conexion ConexionBD = new Conexion(); 
         
         public Login()
@@ -60,6 +61,7 @@ namespace Sistema_de_sanciones
 
             }
         }
+        //cambia el color y regresa al valor por defecto en caso de estar vacio
         private void textBox2_Leave_1(object sender, EventArgs e)
         {
             if (textContrasena.Texts == "")
@@ -70,12 +72,13 @@ namespace Sistema_de_sanciones
             }
         }
         
+        //procedimiento de logueo
         public void logear(string usuario, string contrasena)
 
         {
             try
             {
-                //manda a llamar el procedimieto almacenado login, compara la contraseña y el usuario
+                //manda a llamar el procedimieto almacenado login que consulta si existen el usuario y la contraseña en la base de datos
                 SqlCommand comando = new SqlCommand("login");
                 comando.Connection = ConexionBD.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
@@ -85,6 +88,7 @@ namespace Sistema_de_sanciones
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 //Según corresponda su perfil en la B.D accederá a los módulos correspondientes.  
+                //comprueba que haya habido una coincidencia en la base de datos
                 if (dt.Rows.Count == 1)
                 {
                     this.Hide();
